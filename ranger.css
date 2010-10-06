@@ -1,5 +1,6 @@
 body {
 	background: #EEEEEE;
+	font-family: Bitstream Vera Sans, Verdana;
 }
 h1 {
   text-align: center;
@@ -33,7 +34,10 @@ div.code {
 	padding: 4px 14px;
   margin-left: 18px;
   margin-right: 18px;
+	font-family: monospace;
+  white-space: pre;
 }
 p {
   padding-left: 10px;
+	font-family: Bitstream Vera Sans, Verdana;
 }
