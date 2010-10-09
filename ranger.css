@@ -1,6 +1,6 @@
 body {
-	background: #EEEEEE;
-	font-family: Bitstream Vera Sans, Verdana;
+  background: #EEEEEE;
+  font-family: sans-serif;
 }
 h1 {
   text-align: center;
@@ -17,27 +17,26 @@ a.menu {
 }
 a {
   font-weight: bold;
-	color: #3333ff;/*78821/27587/19705/7882*/
+  color: #3333ff;
 }
 a:visited {
-	color: #6633dd;
+  color: #6633dd;
 }
 a:hover {
   text-decoration: none;
 }
-
 img {
-	border: none;
+  border: none;
 }
 div.code {
-	background-color:#CCCCCC;
-	padding: 4px 14px;
+  background-color :#CCCCCC;
+  padding: 4px 14px;
   margin-left: 18px;
   margin-right: 18px;
-	font-family: monospace;
+  font-family: monospace;
   white-space: pre;
 }
 p {
   padding-left: 10px;
-	font-family: Bitstream Vera Sans, Verdana;
+  font-family: sans-serif;
 }
