@@ -1,0 +1,268 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML><HEAD><TITLE>Man page of RANGER</TITLE>
+</HEAD><BODY>
+<H1>RANGER</H1>
+Section: User Commands  (1)<BR>Updated: ranger-1.2.2<BR><A HREF="#index">Index</A>
+<A HREF="index.html">Return to Main Contents</A><HR>
+
+<A NAME="lbAB">&nbsp;</A>
+<H2>NAME</H2>
+
+ranger - visual file manager
+
+<A NAME="lbAC">&nbsp;</A>
+<H2>SYNOPSIS</H2>
+
+<B>ranger</B>
+
+
+
+<A NAME="lbAD">&nbsp;</A>
+<H2>DESCRIPTION</H2>
+
+Ranger is a file manager with an ncurses frontend written in Python.
+<P>
+
+It is designed to give you a broader overview of the file system by displaying
+previews and backviews, dividing the screen into several columns.
+The keybindings are similar to those of other console programs like
+<B>vim</B>, <B>mutt</B> or <B>ncmpcpp</B>
+
+so the usage will be intuitive and efficient.
+
+<A NAME="lbAE">&nbsp;</A>
+<H2>OPTIONS</H2>
+
+<DL COMPACT>
+<DT>--version<DD>
+Print the version and exit.
+<DT>-h, --help<DD>
+Print a list of options and exit.
+<DT>-d, --debug<DD>
+Activate the debug mode:  Whenever an error occurs, ranger will exit and
+print a full backtrace.  The default behaviour is to merely print the
+name of the exception in the statusbar/log and to try to keep running.
+<DT>-c, --clean<DD>
+Activate the clean mode:  Ranger will not access or create any configuration
+files nor will it leave any traces on your system.  This is useful when
+your configuration is broken, when you want to avoid clutter, etc.
+<DT>--fail-unless-cd<DD>
+Return the exit code 1 if ranger is used to run a file, for example with
+`ranger --fail-unless-cd filename`.  This can be useful for scripts.
+<DT>-r <I>dir</I>, --confdir=<I>dir</I><DD>
+Define a different configuration directory.  The default is
+$XDG_CONFIG_HOME/ranger (which defaults to ~/.config/ranger)
+<DT>-m <I>n</I>, --mode=<I>n</I><DD>
+When a filename is supplied, make it run in mode <I>n</I>. Check the
+documentation for more information on modes.
+<DT>-f <I>flags</I>, --flags=<I>flags</I><DD>
+When a filename is supplied, make it run with the flags <I>flags</I>. Check the
+documentation for more information on flags.
+
+</DL>
+<A NAME="lbAF">&nbsp;</A>
+<H2>USAGE</H2>
+
+
+<A NAME="lbAG">&nbsp;</A>
+<H3>General Keybindings</H3>
+
+Many keybindings take an additional numeric argument.  Type <I>5j</I> to move
+down 5 lines, <I>10&lt;Space&gt;</I> to mark 10 files or <I>3?</I> to read the
+third chapter of the documentation.
+<DL COMPACT>
+<DT>h, j, k, l<DD>
+Move left, down, up, right
+<DT>^D or J, ^U or K<DD>
+Move a half page down, up
+<DT>H, L<DD>
+Move back and forward in the history
+<DT>gg<DD>
+Move to the top
+<DT>G<DD>
+Move to the bottom
+<DT>^R<DD>
+Reload everything
+<DT>^L<DD>
+Redraw the screen
+<DT>S<DD>
+Open a shell in the current directory
+<DT>yy<DD>
+Yank the selection.  (mark the files as copied)
+<DT>dd<DD>
+Cut the selection
+<DT>pp<DD>
+Paste the copied/cut files.  By default, this will not overwrite existing
+files.  To overwrite them, use <B>po</B>.
+<DT>m<I>X</I><DD>
+Create a bookmark with the name <I>X</I>
+<DT>`<I>X</I><DD>
+Move to the bookmark with the name <I>X</I>
+<DT>n, N<DD>
+Find the next file, the previous file.  You can define what to look for
+by typing c<I>X</I>.  If nothing is specified, pressing n will get you to
+the newest file in the directory.
+<DT>o<I>X</I><DD>
+Change the sort method (like in mutt)
+<DT>z<I>X</I><DD>
+Change settings
+<DT>f<DD>
+Quickly navigate by entering a part of the filename
+<DT>Space<DD>
+Mark a file
+<DT>v, V<DD>
+Toggle the mark-status of all files, unmark all files
+<DT>/<DD>
+Open the search console
+<DT>:<DD>
+Open the command console
+<DT>?<DD>
+Opens the help screen with more keybindings and documentation
+
+</DL>
+<A NAME="lbAH">&nbsp;</A>
+<H3>Keybindings for using Tabs</H3>
+
+Tabs are used to work in different directories in the same Ranger instance.
+<DL COMPACT>
+<DT>g<I>N</I><DD>
+Open a tab. N has to be a number from 0 to 9. If the tab doesn't exist yet,
+it will be created.
+<DT>gn, ^N<DD>
+Create a new tab.
+<DT>gt, gT<DD>
+Go to the next or previous tab.  You can also use TAB and SHIFT+TAB.
+<DT>gc, ^W<DD>
+Close the current tab.  The last tab cannot be closed.
+</DL>
+<P>
+
+
+<A NAME="lbAI">&nbsp;</A>
+<H3>Mouse Usage</H3>
+
+<DL COMPACT>
+<DT>Left Mouse Button<DD>
+Click on something and you'll move there.
+To run a file, &quot;enter&quot; it, like a directory, by clicking on the preview.
+<DT>Right Mouse Button<DD>
+Enter a directory
+<DT>Scroll Wheel<DD>
+Scroll
+
+</DL>
+<A NAME="lbAJ">&nbsp;</A>
+<H3>Commands</H3>
+
+<DL COMPACT>
+<DT>:delete<DD>
+Destroy all files in the selection with a roundhouse kick.  Ranger will
+ask for a confirmation if you attempt to delete multiple (marked) files or
+non-empty directories.
+<DT>:rename <I>newname</I><DD>
+Rename the current file.  Also try the keybinding A for appending something
+to a file name.
+<DT>:quit<DD>
+Quit ranger.  The current directory will be bookmarked as ' so you can
+re-enter it by typing `` or '' the next time you start ranger.
+
+</DL>
+<A NAME="lbAK">&nbsp;</A>
+<H2>TIPS</H2>
+
+<A NAME="lbAL">&nbsp;</A>
+<H3>Change the directory after exit</H3>
+
+A script like this in your bashrc would make you change the directory
+of your parent shell after exiting ranger:
+<PRE>
+
+ranger() {
+    command ranger --fail-unless-cd $@ &amp;&amp;
+    cd &quot;$(grep \^\' ~/.config/ranger/bookmarks | cut -b3-)&quot;
+}
+</PRE><A NAME="lbAM">&nbsp;</A>
+<H2>CONFIGURATION</H2>
+
+The files in
+<B>ranger/defaults/</B>
+
+can be copied into your configuration directory (by default, this is
+~/.config/ranger) and customized according to your wishes.
+Most files don't have to be copied completely though: Just define those
+settings you want to add or change and they will override the defauls.
+Colorschemes can be placed in ~/.config/ranger/colorschemes.
+<P>
+
+All configuration is done in Python.
+Each configuration file should contain sufficient documentation.
+
+<A NAME="lbAN">&nbsp;</A>
+<H2>COPYRIGHT</H2>
+
+Copyright &#169;
+2009, 2010
+Roman Zimbelmann
+<P>
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+<P>
+There is NO warranty;
+not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+<A NAME="lbAO">&nbsp;</A>
+<H2>SEE ALSO</H2>
+
+The project page:
+&lt;<B><A HREF="http://savannah.nongnu.org/projects/ranger">http://savannah.nongnu.org/projects/ranger</A></B>&gt;
+
+<P>
+
+The mailing list:
+&lt;<B><A HREF="http://savannah.nongnu.org/mail/?group=ranger">http://savannah.nongnu.org/mail/?group=ranger</A></B>&gt;
+
+
+<A NAME="lbAP">&nbsp;</A>
+<H2>BUGS</H2>
+
+Please report them here and include as much relevant information
+as possible:
+<P>
+
+&lt;<B><A HREF="http://savannah.nongnu.org/bugs/?group=ranger">http://savannah.nongnu.org/bugs/?group=ranger</A></B>&gt;
+
+<P>
+
+<HR>
+<A NAME="index">&nbsp;</A><H2>Index</H2>
+<DL>
+<DT><A HREF="#lbAB">NAME</A><DD>
+<DT><A HREF="#lbAC">SYNOPSIS</A><DD>
+<DT><A HREF="#lbAD">DESCRIPTION</A><DD>
+<DT><A HREF="#lbAE">OPTIONS</A><DD>
+<DT><A HREF="#lbAF">USAGE</A><DD>
+<DL>
+<DT><A HREF="#lbAG">General Keybindings</A><DD>
+<DT><A HREF="#lbAH">Keybindings for using Tabs</A><DD>
+<DT><A HREF="#lbAI">Mouse Usage</A><DD>
+<DT><A HREF="#lbAJ">Commands</A><DD>
+</DL>
+<DT><A HREF="#lbAK">TIPS</A><DD>
+<DL>
+<DT><A HREF="#lbAL">Change the directory after exit</A><DD>
+</DL>
+<DT><A HREF="#lbAM">CONFIGURATION</A><DD>
+<DT><A HREF="#lbAN">COPYRIGHT</A><DD>
+<DT><A HREF="#lbAO">SEE ALSO</A><DD>
+<DT><A HREF="#lbAP">BUGS</A><DD>
+</DL>
+<HR>
+This document was created by
+<A HREF="/cgi-bin/man/man2html">man2html</A>,
+using the manual pages.<BR>
+Time: 03:10:05 GMT, October 10, 2010
+</BODY>
+</HTML>

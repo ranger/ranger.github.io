@@ -1,0 +1,134 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module ranger.core.runner</title>
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong><a href="ranger.html"><font color="#ffffff">ranger</font></a>.<a href="ranger.core.html"><font color="#ffffff">core</font></a>.runner</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:../../ranger/core/runner.py">../../ranger/core/runner.py</a></font></td></tr></table>
+    <p><tt>This&nbsp;module&nbsp;is&nbsp;an&nbsp;abstract&nbsp;layer&nbsp;over&nbsp;subprocess.Popen<br>
+&nbsp;<br>
+It&nbsp;gives&nbsp;you&nbsp;highlevel&nbsp;control&nbsp;about&nbsp;how&nbsp;processes&nbsp;are&nbsp;run.<br>
+&nbsp;<br>
+Example:<br>
+run&nbsp;=&nbsp;<a href="#Runner">Runner</a>(logfunc=print)<br>
+run('sleep&nbsp;2',&nbsp;wait=True)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;waits&nbsp;until&nbsp;the&nbsp;process&nbsp;exists<br>
+run(['ls',&nbsp;'--help'],&nbsp;flags='p')&nbsp;&nbsp;#&nbsp;pipes&nbsp;output&nbsp;to&nbsp;pager<br>
+run()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;prints&nbsp;an&nbsp;error&nbsp;message<br>
+&nbsp;<br>
+List&nbsp;of&nbsp;allowed&nbsp;flags:<br>
+s:&nbsp;silent&nbsp;mode.&nbsp;output&nbsp;will&nbsp;be&nbsp;discarded.<br>
+d:&nbsp;detach&nbsp;the&nbsp;process.<br>
+p:&nbsp;redirect&nbsp;output&nbsp;to&nbsp;the&nbsp;pager<br>
+(An&nbsp;uppercase&nbsp;key&nbsp;ensures&nbsp;that&nbsp;a&nbsp;certain&nbsp;flag&nbsp;will&nbsp;not&nbsp;be&nbsp;used.)</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="os.html">os</a><br>
+</td><td width="25%" valign=top><a href="sys.html">sys</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="__builtin__.html#object">__builtin__.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="ranger.core.runner.html#Context">Context</a>
+</font></dt><dt><font face="helvetica, arial"><a href="ranger.core.runner.html#Runner">Runner</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Context">class <strong>Context</strong></a>(<a href="__builtin__.html#object">__builtin__.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>A&nbsp;context&nbsp;<a href="__builtin__.html#object">object</a>&nbsp;contains&nbsp;data&nbsp;on&nbsp;how&nbsp;to&nbsp;run&nbsp;a&nbsp;process.<br>
+&nbsp;<br>
+The&nbsp;attributes&nbsp;are:<br>
+action&nbsp;--&nbsp;a&nbsp;string&nbsp;with&nbsp;a&nbsp;command&nbsp;or&nbsp;a&nbsp;list&nbsp;of&nbsp;arguments&nbsp;for<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;Popen&nbsp;call.<br>
+app&nbsp;--&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;app&nbsp;function.&nbsp;("vim"&nbsp;for&nbsp;app_vim.)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app&nbsp;is&nbsp;used&nbsp;to&nbsp;get&nbsp;an&nbsp;action&nbsp;if&nbsp;the&nbsp;user&nbsp;didn't&nbsp;specify&nbsp;one.<br>
+mode&nbsp;--&nbsp;a&nbsp;number,&nbsp;mainly&nbsp;used&nbsp;in&nbsp;determining&nbsp;the&nbsp;action&nbsp;in&nbsp;app_xyz()<br>
+flags&nbsp;--&nbsp;a&nbsp;string&nbsp;with&nbsp;flags&nbsp;which&nbsp;change&nbsp;the&nbsp;way&nbsp;programs&nbsp;are&nbsp;run<br>
+files&nbsp;--&nbsp;a&nbsp;list&nbsp;containing&nbsp;files,&nbsp;mainly&nbsp;used&nbsp;in&nbsp;app_xyz<br>
+file&nbsp;--&nbsp;an&nbsp;arbitrary&nbsp;file&nbsp;from&nbsp;that&nbsp;list&nbsp;(or&nbsp;None)<br>
+fm&nbsp;--&nbsp;the&nbsp;filemanager&nbsp;instance<br>
+wait&nbsp;--&nbsp;boolean,&nbsp;wait&nbsp;for&nbsp;the&nbsp;end&nbsp;or&nbsp;execute&nbsp;programs&nbsp;in&nbsp;parallel?<br>
+popen_kws&nbsp;--&nbsp;keyword&nbsp;arguments&nbsp;which&nbsp;are&nbsp;directly&nbsp;passed&nbsp;to&nbsp;Popen<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Context-__init__"><strong>__init__</strong></a>(self, **keywords)</dt></dl>
+
+<dl><dt><a name="Context-__iter__"><strong>__iter__</strong></a>(self)</dt><dd><tt>Iterate&nbsp;over&nbsp;file&nbsp;paths</tt></dd></dl>
+
+<dl><dt><a name="Context-squash_flags"><strong>squash_flags</strong></a>(self)</dt><dd><tt>Remove&nbsp;duplicates&nbsp;and&nbsp;lowercase&nbsp;counterparts&nbsp;of&nbsp;uppercase&nbsp;flags</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>filepaths</strong></dt>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Runner">class <strong>Runner</strong></a>(<a href="__builtin__.html#object">__builtin__.object</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Runner-__call__"><strong>__call__</strong></a>(self, action<font color="#909090">=None</font>, try_app_first<font color="#909090">=False</font>, app<font color="#909090">='default'</font>, files<font color="#909090">=None</font>, mode<font color="#909090">=0</font>, flags<font color="#909090">=''</font>, wait<font color="#909090">=True</font>, **popen_kws)</dt><dd><tt>Run&nbsp;the&nbsp;application&nbsp;in&nbsp;the&nbsp;way&nbsp;specified&nbsp;by&nbsp;the&nbsp;options.<br>
+&nbsp;<br>
+Returns&nbsp;False&nbsp;if&nbsp;nothing&nbsp;can&nbsp;be&nbsp;done,&nbsp;None&nbsp;if&nbsp;there&nbsp;was&nbsp;an&nbsp;error,<br>
+otherwise&nbsp;the&nbsp;process&nbsp;<a href="__builtin__.html#object">object</a>&nbsp;returned&nbsp;by&nbsp;Popen().<br>
+&nbsp;<br>
+This&nbsp;function&nbsp;tries&nbsp;to&nbsp;find&nbsp;an&nbsp;action&nbsp;if&nbsp;none&nbsp;is&nbsp;defined.</tt></dd></dl>
+
+<dl><dt><a name="Runner-__init__"><strong>__init__</strong></a>(self, ui<font color="#909090">=None</font>, logfunc<font color="#909090">=None</font>, apps<font color="#909090">=None</font>)</dt></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-press_enter"><strong>press_enter</strong></a>()</dt><dd><tt>Wait&nbsp;for&nbsp;an&nbsp;ENTER-press</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>ALLOWED_FLAGS</strong> = 'sdpwSDPW'<br>
+<strong>PIPE</strong> = -1<br>
+<strong>devnull</strong> = &lt;open file '/dev/null', mode 'a'&gt;</td></tr></table>
+</body></html>

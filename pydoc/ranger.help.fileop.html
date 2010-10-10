@@ -1,0 +1,102 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module ranger.help.fileop</title>
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong><a href="ranger.html"><font color="#ffffff">ranger</font></a>.<a href="ranger.help.html"><font color="#ffffff">help</font></a>.fileop</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:../../ranger/help/fileop.py">../../ranger/help/fileop.py</a></font></td></tr></table>
+    <p><tt>4.&nbsp;File&nbsp;Operations<br>
+&nbsp;<br>
+4.1.&nbsp;Destructive&nbsp;Operations<br>
+4.2.&nbsp;The&nbsp;Selection<br>
+4.3.&nbsp;Copying&nbsp;and&nbsp;Pasting<br>
+4.4.&nbsp;Task&nbsp;View<br>
+&nbsp;<br>
+&nbsp;<br>
+==============================================================================<br>
+4.1.&nbsp;Destructive&nbsp;Operations<br>
+&nbsp;<br>
+These&nbsp;are&nbsp;all&nbsp;the&nbsp;operations&nbsp;which&nbsp;can&nbsp;change,&nbsp;and&nbsp;with&nbsp;misuse,&nbsp;possibly<br>
+harm&nbsp;your&nbsp;files:<br>
+&nbsp;<br>
+:chmod&nbsp;&lt;number&gt;&nbsp;&nbsp;&nbsp;&nbsp;Change&nbsp;the&nbsp;rights&nbsp;of&nbsp;the&nbsp;selection<br>
+:delete&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DELETES&nbsp;ALL&nbsp;FILES&nbsp;IN&nbsp;THE&nbsp;SELECTION<br>
+:rename&nbsp;&lt;newname&gt;&nbsp;&nbsp;Change&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;current&nbsp;file<br>
+pp,&nbsp;pl,&nbsp;pL,&nbsp;po&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pastes&nbsp;the&nbsp;copied&nbsp;files&nbsp;in&nbsp;different&nbsp;ways<br>
+&nbsp;<br>
+Think&nbsp;twice&nbsp;before&nbsp;using&nbsp;these&nbsp;commands&nbsp;or&nbsp;key&nbsp;combinations.<br>
+&nbsp;<br>
+&nbsp;<br>
+==============================================================================<br>
+4.2.&nbsp;The&nbsp;Selection<br>
+&nbsp;<br>
+Many&nbsp;commands&nbsp;operate&nbsp;on&nbsp;the&nbsp;selection,&nbsp;so&nbsp;it's&nbsp;important&nbsp;to&nbsp;know&nbsp;what<br>
+it&nbsp;is:<br>
+&nbsp;<br>
+If&nbsp;there&nbsp;are&nbsp;marked&nbsp;files:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;selection&nbsp;contains&nbsp;all&nbsp;the&nbsp;marked&nbsp;files.<br>
+Otherwise:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;selection&nbsp;contains&nbsp;only&nbsp;the&nbsp;highlighted&nbsp;file.<br>
+&nbsp;<br>
+"Marked&nbsp;files"&nbsp;are&nbsp;the&nbsp;files&nbsp;which&nbsp;are&nbsp;slightly&nbsp;indented&nbsp;and&nbsp;marked&nbsp;in<br>
+yellow&nbsp;(in&nbsp;the&nbsp;default&nbsp;color&nbsp;scheme.)&nbsp;You&nbsp;can&nbsp;mark&nbsp;files&nbsp;by&nbsp;typing&nbsp;"v"&nbsp;or<br>
+&lt;space&gt;.<br>
+&nbsp;<br>
+The&nbsp;"highlighted&nbsp;file",&nbsp;or&nbsp;the&nbsp;"current&nbsp;file",&nbsp;is&nbsp;the&nbsp;one&nbsp;below&nbsp;the&nbsp;cursor.<br>
+&nbsp;<br>
+&nbsp;<br>
+==============================================================================<br>
+4.3.&nbsp;Copying&nbsp;and&nbsp;Pasting<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;yy&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;copy&nbsp;the&nbsp;selection<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dd&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cut&nbsp;the&nbsp;selection<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ya,&nbsp;da&nbsp;&nbsp;add&nbsp;the&nbsp;selection&nbsp;to&nbsp;the&nbsp;copied/cut&nbsp;files<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;yr,&nbsp;dr&nbsp;&nbsp;remove&nbsp;the&nbsp;selection&nbsp;from&nbsp;the&nbsp;copied/cut&nbsp;files<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;paste&nbsp;the&nbsp;copied/cut&nbsp;files.&nbsp;No&nbsp;file&nbsp;will&nbsp;be&nbsp;overwritten.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Instead,&nbsp;a&nbsp;"_"&nbsp;character&nbsp;will&nbsp;be&nbsp;appended&nbsp;to&nbsp;the&nbsp;new&nbsp;filename.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;po&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;paste&nbsp;the&nbsp;copied/cut&nbsp;files.&nbsp;Existing&nbsp;files&nbsp;are&nbsp;overwritten.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pl&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;create&nbsp;symbolic&nbsp;links&nbsp;to&nbsp;the&nbsp;copied/cut&nbsp;files.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;create&nbsp;relative&nbsp;symbolic&nbsp;links&nbsp;to&nbsp;the&nbsp;copied/cut&nbsp;files.<br>
+&nbsp;<br>
+The&nbsp;difference&nbsp;between&nbsp;copying&nbsp;and&nbsp;cutting&nbsp;should&nbsp;be&nbsp;intuitive:<br>
+&nbsp;<br>
+When&nbsp;pasting&nbsp;files&nbsp;which&nbsp;are&nbsp;copied,&nbsp;the&nbsp;original&nbsp;file&nbsp;remains&nbsp;unchanged<br>
+in&nbsp;any&nbsp;case.<br>
+&nbsp;<br>
+When&nbsp;pasting&nbsp;files&nbsp;which&nbsp;are&nbsp;cut,&nbsp;the&nbsp;original&nbsp;file&nbsp;will&nbsp;be&nbsp;renamed.<br>
+If&nbsp;renaming&nbsp;is&nbsp;not&nbsp;possible&nbsp;because&nbsp;the&nbsp;source&nbsp;and&nbsp;the&nbsp;destination&nbsp;are<br>
+on&nbsp;separate&nbsp;devices,&nbsp;it&nbsp;will&nbsp;be&nbsp;copied&nbsp;and&nbsp;eventually&nbsp;the&nbsp;source&nbsp;is&nbsp;deleted.<br>
+This&nbsp;implies&nbsp;that&nbsp;a&nbsp;file&nbsp;can&nbsp;only&nbsp;be&nbsp;cut&nbsp;+&nbsp;pasted&nbsp;once.<br>
+&nbsp;<br>
+The&nbsp;files&nbsp;are&nbsp;either&nbsp;copied&nbsp;or&nbsp;cut,&nbsp;never&nbsp;mixed&nbsp;even&nbsp;if&nbsp;you&nbsp;mix&nbsp;"da"&nbsp;and&nbsp;"ya"<br>
+keys&nbsp;(in&nbsp;which&nbsp;case&nbsp;the&nbsp;last&nbsp;command&nbsp;is&nbsp;decisive&nbsp;about&nbsp;whether&nbsp;they&nbsp;are&nbsp;copied<br>
+or&nbsp;cut.)<br>
+&nbsp;<br>
+==============================================================================<br>
+4.4.&nbsp;Task&nbsp;View<br>
+&nbsp;<br>
+The&nbsp;task&nbsp;view&nbsp;lets&nbsp;you&nbsp;manage&nbsp;IO&nbsp;tasks&nbsp;like&nbsp;copying,&nbsp;moving&nbsp;and<br>
+loading&nbsp;directories&nbsp;by&nbsp;changing&nbsp;their&nbsp;priority&nbsp;or&nbsp;stop&nbsp;them.<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;w&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;open&nbsp;or&nbsp;close&nbsp;the&nbsp;task&nbsp;view<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dd&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stop&nbsp;the&nbsp;task<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;J&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;decrease&nbsp;the&nbsp;priority&nbsp;of&nbsp;the&nbsp;task<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;K&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;increase&nbsp;the&nbsp;priority&nbsp;of&nbsp;the&nbsp;task<br>
+&nbsp;<br>
+The&nbsp;execution&nbsp;of&nbsp;tasks&nbsp;is&nbsp;not&nbsp;parallel&nbsp;but&nbsp;sequential.&nbsp;&nbsp;Only&nbsp;the<br>
+topmost&nbsp;task&nbsp;is&nbsp;executed.&nbsp;&nbsp;Ranger&nbsp;constantly&nbsp;switches&nbsp;between<br>
+handling&nbsp;GUI&nbsp;and&nbsp;executing&nbsp;tasks.&nbsp;&nbsp;One&nbsp;movement&nbsp;of&nbsp;the&nbsp;throbber&nbsp;at<br>
+the&nbsp;top&nbsp;right&nbsp;represents&nbsp;such&nbsp;a&nbsp;switch,&nbsp;so&nbsp;while&nbsp;the&nbsp;throbber&nbsp;is<br>
+standing&nbsp;still,&nbsp;ranger&nbsp;is&nbsp;locked&nbsp;by&nbsp;a&nbsp;Input/Output&nbsp;operation&nbsp;and<br>
+you&nbsp;will&nbsp;not&nbsp;be&nbsp;able&nbsp;to&nbsp;input&nbsp;any&nbsp;commands.<br>
+&nbsp;<br>
+&nbsp;<br>
+==============================================================================</tt></p>
+
+</body></html>

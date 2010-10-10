@@ -1,0 +1,271 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module ranger.core.fm</title>
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong><a href="ranger.html"><font color="#ffffff">ranger</font></a>.<a href="ranger.core.html"><font color="#ffffff">core</font></a>.fm</strong></big></big> (version 1.2.2)</font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:../../ranger/core/fm.py">../../ranger/core/fm.py</a></font></td></tr></table>
+    <p><tt>The&nbsp;File&nbsp;Manager,&nbsp;putting&nbsp;the&nbsp;pieces&nbsp;together</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="os.html">os</a><br>
+</td><td width="25%" valign=top><a href="ranger.html">ranger</a><br>
+</td><td width="25%" valign=top><a href="sys.html">sys</a><br>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="ranger.core.actions.html#Actions">ranger.core.actions.Actions</a>(<a href="ranger.shared.html#FileManagerAware">ranger.shared.FileManagerAware</a>, <a href="ranger.shared.html#EnvironmentAware">ranger.shared.EnvironmentAware</a>, <a href="ranger.shared.settings.html#SettingsAware">ranger.shared.settings.SettingsAware</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="ranger.core.fm.html#FM">FM</a>(<a href="ranger.core.actions.html#Actions">ranger.core.actions.Actions</a>, <a href="ranger.ext.signal_dispatcher.html#SignalDispatcher">ranger.ext.signal_dispatcher.SignalDispatcher</a>)
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="ranger.ext.signal_dispatcher.html#SignalDispatcher">ranger.ext.signal_dispatcher.SignalDispatcher</a>(<a href="__builtin__.html#object">__builtin__.object</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="ranger.core.fm.html#FM">FM</a>(<a href="ranger.core.actions.html#Actions">ranger.core.actions.Actions</a>, <a href="ranger.ext.signal_dispatcher.html#SignalDispatcher">ranger.ext.signal_dispatcher.SignalDispatcher</a>)
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="FM">class <strong>FM</strong></a>(<a href="ranger.core.actions.html#Actions">ranger.core.actions.Actions</a>, <a href="ranger.ext.signal_dispatcher.html#SignalDispatcher">ranger.ext.signal_dispatcher.SignalDispatcher</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="ranger.core.fm.html#FM">FM</a></dd>
+<dd><a href="ranger.core.actions.html#Actions">ranger.core.actions.Actions</a></dd>
+<dd><a href="ranger.shared.html#FileManagerAware">ranger.shared.FileManagerAware</a></dd>
+<dd><a href="ranger.shared.html#EnvironmentAware">ranger.shared.EnvironmentAware</a></dd>
+<dd><a href="ranger.shared.html#Awareness">ranger.shared.Awareness</a></dd>
+<dd><a href="ranger.shared.settings.html#SettingsAware">ranger.shared.settings.SettingsAware</a></dd>
+<dd><a href="ranger.ext.signal_dispatcher.html#SignalDispatcher">ranger.ext.signal_dispatcher.SignalDispatcher</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="FM-__init__"><strong>__init__</strong></a>(self, ui<font color="#909090">=None</font>, bookmarks<font color="#909090">=None</font>, tags<font color="#909090">=None</font>)</dt><dd><tt>Initialize&nbsp;<a href="#FM">FM</a>.</tt></dd></dl>
+
+<dl><dt><a name="FM-block_input"><strong>block_input</strong></a>(self, sec<font color="#909090">=0</font>)</dt></dl>
+
+<dl><dt><a name="FM-initialize"><strong>initialize</strong></a>(self)</dt><dd><tt>If&nbsp;ui/bookmarks&nbsp;are&nbsp;None,&nbsp;they&nbsp;will&nbsp;be&nbsp;initialized&nbsp;here.</tt></dd></dl>
+
+<dl><dt><a name="FM-input_is_blocked"><strong>input_is_blocked</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="FM-loop"><strong>loop</strong></a>(self)</dt><dd><tt>The&nbsp;main&nbsp;loop&nbsp;consists&nbsp;of:<br>
+1.&nbsp;reloading&nbsp;bookmarks&nbsp;if&nbsp;outdated<br>
+2.&nbsp;letting&nbsp;the&nbsp;loader&nbsp;work<br>
+3.&nbsp;drawing&nbsp;and&nbsp;finalizing&nbsp;ui<br>
+4.&nbsp;reading&nbsp;and&nbsp;handling&nbsp;user&nbsp;input<br>
+5.&nbsp;after&nbsp;X&nbsp;loops:&nbsp;collecting&nbsp;unused&nbsp;directory&nbsp;objects</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>executables</strong></dt>
+<dd><tt>For&nbsp;compatibility.&nbsp;Calls&nbsp;get_executables()</tt></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>input_blocked</strong> = False</dl>
+
+<dl><dt><strong>input_blocked_until</strong> = 0</dl>
+
+<hr>
+Methods inherited from <a href="ranger.core.actions.html#Actions">ranger.core.actions.Actions</a>:<br>
+<dl><dt><a name="FM-cd"><strong>cd</strong></a>(self, path, remember<font color="#909090">=True</font>)</dt><dd><tt>enter&nbsp;the&nbsp;directory&nbsp;at&nbsp;the&nbsp;given&nbsp;path,&nbsp;remember=True</tt></dd></dl>
+
+<dl><dt><a name="FM-copy"><strong>copy</strong></a>(self, mode<font color="#909090">='set'</font>, narg<font color="#909090">=None</font>, dirarg<font color="#909090">=None</font>)</dt><dd><tt>Copy&nbsp;the&nbsp;selected&nbsp;items.&nbsp;&nbsp;Modes&nbsp;are:&nbsp;'set',&nbsp;'add',&nbsp;'remove'.</tt></dd></dl>
+
+<dl><dt><a name="FM-cut"><strong>cut</strong></a>(self, mode<font color="#909090">='set'</font>, narg<font color="#909090">=None</font>, dirarg<font color="#909090">=None</font>)</dt></dl>
+
+<dl><dt><a name="FM-delete"><strong>delete</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="FM-display_command_help"><strong>display_command_help</strong></a>(self, console_widget)</dt></dl>
+
+<dl><dt><a name="FM-display_file"><strong>display_file</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="FM-display_help"><strong>display_help</strong></a>(self, topic<font color="#909090">='index'</font>, narg<font color="#909090">=None</font>)</dt></dl>
+
+<dl><dt><a name="FM-display_log"><strong>display_log</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="FM-draw_bookmarks"><strong>draw_bookmarks</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="FM-edit_file"><strong>edit_file</strong></a>(self, file<font color="#909090">=None</font>)</dt><dd><tt>Calls&nbsp;execute_file&nbsp;with&nbsp;the&nbsp;current&nbsp;file&nbsp;and&nbsp;app='editor'</tt></dd></dl>
+
+<dl><dt><a name="FM-enter_bookmark"><strong>enter_bookmark</strong></a>(self, key)</dt><dd><tt>Enter&nbsp;the&nbsp;bookmark&nbsp;with&nbsp;the&nbsp;name&nbsp;&lt;key&gt;</tt></dd></dl>
+
+<dl><dt><a name="FM-enter_dir"><strong>enter_dir</strong></a>(self, path, remember<font color="#909090">=False</font>, history<font color="#909090">=True</font>)</dt><dd><tt>Enter&nbsp;the&nbsp;directory&nbsp;at&nbsp;the&nbsp;given&nbsp;path</tt></dd></dl>
+
+<dl><dt><a name="FM-execute_command"><strong>execute_command</strong></a>(self, cmd, **kw)</dt></dl>
+
+<dl><dt><a name="FM-execute_console"><strong>execute_console</strong></a>(self, string<font color="#909090">=''</font>)</dt><dd><tt>Execute&nbsp;a&nbsp;command&nbsp;for&nbsp;the&nbsp;console</tt></dd></dl>
+
+<dl><dt><a name="FM-execute_file"><strong>execute_file</strong></a>(self, files, **kw)</dt><dd><tt>Execute&nbsp;a&nbsp;file.<br>
+app&nbsp;is&nbsp;the&nbsp;name&nbsp;of&nbsp;a&nbsp;method&nbsp;in&nbsp;Applications,&nbsp;without&nbsp;the&nbsp;"app_"<br>
+flags&nbsp;is&nbsp;a&nbsp;string&nbsp;consisting&nbsp;of&nbsp;runner.ALLOWED_FLAGS<br>
+mode&nbsp;is&nbsp;a&nbsp;positive&nbsp;integer.<br>
+Both&nbsp;flags&nbsp;and&nbsp;mode&nbsp;specify&nbsp;how&nbsp;the&nbsp;program&nbsp;is&nbsp;run.</tt></dd></dl>
+
+<dl><dt><a name="FM-exit"><strong>exit</strong></a>(self)</dt><dd><tt>Exit&nbsp;the&nbsp;program</tt></dd></dl>
+
+<dl><dt><a name="FM-hide_bookmarks"><strong>hide_bookmarks</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="FM-hint"><strong>hint</strong></a>(self, text)</dt></dl>
+
+<dl><dt><a name="FM-history_go"><strong>history_go</strong></a>(self, relative)</dt><dd><tt>Move&nbsp;back&nbsp;and&nbsp;forth&nbsp;in&nbsp;the&nbsp;history</tt></dd></dl>
+
+<dl><dt><a name="FM-mark"><strong>mark</strong></a>(self, all<font color="#909090">=False</font>, toggle<font color="#909090">=False</font>, val<font color="#909090">=None</font>, movedown<font color="#909090">=None</font>, narg<font color="#909090">=1</font>)</dt><dd><tt>A&nbsp;wrapper&nbsp;for&nbsp;the&nbsp;directory.mark_xyz&nbsp;functions.<br>
+&nbsp;<br>
+Arguments:<br>
+all&nbsp;-&nbsp;change&nbsp;all&nbsp;files&nbsp;of&nbsp;the&nbsp;current&nbsp;directory&nbsp;at&nbsp;once?<br>
+toggle&nbsp;-&nbsp;toggle&nbsp;the&nbsp;marked-status?<br>
+val&nbsp;-&nbsp;mark&nbsp;or&nbsp;unmark?</tt></dd></dl>
+
+<dl><dt><a name="FM-mark_in_direction"><strong>mark_in_direction</strong></a>(self, val<font color="#909090">=True</font>, dirarg<font color="#909090">=None</font>)</dt></dl>
+
+<dl><dt><a name="FM-mkdir"><strong>mkdir</strong></a>(self, name)</dt></dl>
+
+<dl><dt><a name="FM-move"><strong>move</strong></a>(self, narg<font color="#909090">=None</font>, **kw)</dt><dd><tt>A&nbsp;universal&nbsp;movement&nbsp;method.<br>
+&nbsp;<br>
+Accepts&nbsp;these&nbsp;parameters:<br>
+(int)&nbsp;down,&nbsp;(int)&nbsp;up,&nbsp;(int)&nbsp;left,&nbsp;(int)&nbsp;right,&nbsp;(int)&nbsp;to,<br>
+(bool)&nbsp;absolute,&nbsp;(bool)&nbsp;relative,&nbsp;(bool)&nbsp;pages,<br>
+(bool)&nbsp;percentage<br>
+&nbsp;<br>
+to=X&nbsp;is&nbsp;translated&nbsp;to&nbsp;down=X,&nbsp;absolute=True<br>
+&nbsp;<br>
+Example:<br>
+<a href="#FM-move">move</a>(down=4,&nbsp;pages=True)&nbsp;&nbsp;#&nbsp;moves&nbsp;down&nbsp;by&nbsp;4&nbsp;pages.<br>
+<a href="#FM-move">move</a>(to=2,&nbsp;pages=True)&nbsp;&nbsp;#&nbsp;moves&nbsp;to&nbsp;page&nbsp;2.<br>
+<a href="#FM-move">move</a>(to=1,&nbsp;percentage=True)&nbsp;&nbsp;#&nbsp;moves&nbsp;to&nbsp;80%</tt></dd></dl>
+
+<dl><dt><a name="FM-move_parent"><strong>move_parent</strong></a>(self, n)</dt></dl>
+
+<dl><dt><a name="FM-notify"><strong>notify</strong></a>(self, text, duration<font color="#909090">=4</font>, bad<font color="#909090">=False</font>)</dt></dl>
+
+<dl><dt><a name="FM-open_console"><strong>open_console</strong></a>(self, string<font color="#909090">=''</font>, prompt<font color="#909090">=None</font>, position<font color="#909090">=None</font>)</dt><dd><tt>Open&nbsp;the&nbsp;console&nbsp;if&nbsp;the&nbsp;current&nbsp;UI&nbsp;supports&nbsp;that</tt></dd></dl>
+
+<dl><dt><a name="FM-paste"><strong>paste</strong></a>(self, overwrite<font color="#909090">=False</font>)</dt><dd><tt>Paste&nbsp;the&nbsp;selected&nbsp;items&nbsp;into&nbsp;the&nbsp;current&nbsp;directory</tt></dd></dl>
+
+<dl><dt><a name="FM-paste_symlink"><strong>paste_symlink</strong></a>(self, relative<font color="#909090">=False</font>)</dt></dl>
+
+<dl><dt><a name="FM-redraw_window"><strong>redraw_window</strong></a>(self)</dt><dd><tt>Redraw&nbsp;the&nbsp;window</tt></dd></dl>
+
+<dl><dt><a name="FM-reload_cwd"><strong>reload_cwd</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="FM-rename"><strong>rename</strong></a>(self, src, dest)</dt></dl>
+
+<dl><dt><a name="FM-reset"><strong>reset</strong></a>(self)</dt><dd><tt>Reset&nbsp;the&nbsp;filemanager,&nbsp;clearing&nbsp;the&nbsp;directory&nbsp;buffer</tt></dd></dl>
+
+<dl><dt><a name="FM-scroll"><strong>scroll</strong></a>(self, relative)</dt><dd><tt>Scroll&nbsp;down&nbsp;by&nbsp;&lt;relative&gt;&nbsp;lines</tt></dd></dl>
+
+<dl><dt><a name="FM-search"><strong>search</strong></a>(self, order<font color="#909090">=None</font>, forward<font color="#909090">=True</font>)</dt></dl>
+
+<dl><dt><a name="FM-search_file"><strong>search_file</strong></a>(self, text, regexp<font color="#909090">=True</font>)</dt></dl>
+
+<dl><dt><a name="FM-set_bookmark"><strong>set_bookmark</strong></a>(self, key)</dt><dd><tt>Set&nbsp;the&nbsp;bookmark&nbsp;with&nbsp;the&nbsp;name&nbsp;&lt;key&gt;&nbsp;to&nbsp;the&nbsp;current&nbsp;directory</tt></dd></dl>
+
+<dl><dt><a name="FM-set_filter"><strong>set_filter</strong></a>(self, fltr)</dt></dl>
+
+<dl><dt><a name="FM-set_option"><strong>set_option</strong></a>(self, optname, value)</dt><dd><tt>Set&nbsp;the&nbsp;value&nbsp;of&nbsp;an&nbsp;option&nbsp;named&nbsp;&lt;optname&gt;</tt></dd></dl>
+
+<dl><dt><a name="FM-set_search_method"><strong>set_search_method</strong></a>(self, order, forward<font color="#909090">=True</font>)</dt></dl>
+
+<dl><dt><a name="FM-sort"><strong>sort</strong></a>(self, func<font color="#909090">=None</font>, reverse<font color="#909090">=None</font>)</dt></dl>
+
+<dl><dt><a name="FM-substitute_macros"><strong>substitute_macros</strong></a>(self, string)</dt></dl>
+
+<dl><dt><a name="FM-tab_close"><strong>tab_close</strong></a>(self, name<font color="#909090">=None</font>)</dt></dl>
+
+<dl><dt><a name="FM-tab_move"><strong>tab_move</strong></a>(self, offset)</dt></dl>
+
+<dl><dt><a name="FM-tab_new"><strong>tab_new</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="FM-tab_open"><strong>tab_open</strong></a>(self, name, path<font color="#909090">=None</font>)</dt></dl>
+
+<dl><dt><a name="FM-tag_remove"><strong>tag_remove</strong></a>(self, movedown<font color="#909090">=None</font>)</dt></dl>
+
+<dl><dt><a name="FM-tag_toggle"><strong>tag_toggle</strong></a>(self, movedown<font color="#909090">=None</font>)</dt></dl>
+
+<dl><dt><a name="FM-toggle_boolean_option"><strong>toggle_boolean_option</strong></a>(self, string)</dt><dd><tt>Toggle&nbsp;a&nbsp;boolean&nbsp;option&nbsp;named&nbsp;&lt;string&gt;</tt></dd></dl>
+
+<dl><dt><a name="FM-traverse"><strong>traverse</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="FM-uncut"><strong>uncut</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="FM-unset_bookmark"><strong>unset_bookmark</strong></a>(self, key)</dt><dd><tt>Delete&nbsp;the&nbsp;bookmark&nbsp;with&nbsp;the&nbsp;name&nbsp;&lt;key&gt;</tt></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="ranger.core.actions.html#Actions">ranger.core.actions.Actions</a>:<br>
+<dl><dt><strong>search_forward</strong> = False</dl>
+
+<dl><dt><strong>search_method</strong> = 'ctime'</dl>
+
+<hr>
+Data and other attributes inherited from <a href="ranger.shared.html#FileManagerAware">ranger.shared.FileManagerAware</a>:<br>
+<dl><dt><strong>fm</strong> = None</dl>
+
+<hr>
+Data and other attributes inherited from <a href="ranger.shared.html#EnvironmentAware">ranger.shared.EnvironmentAware</a>:<br>
+<dl><dt><strong>env</strong> = None</dl>
+
+<hr>
+Data descriptors inherited from <a href="ranger.shared.html#Awareness">ranger.shared.Awareness</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="ranger.shared.settings.html#SettingsAware">ranger.shared.settings.SettingsAware</a>:<br>
+<dl><dt><strong>settings</strong> = {}</dl>
+
+<hr>
+Methods inherited from <a href="ranger.ext.signal_dispatcher.html#SignalDispatcher">ranger.ext.signal_dispatcher.SignalDispatcher</a>:<br>
+<dl><dt><a name="FM-signal_bind"><strong>signal_bind</strong></a>(self, signal_name, function, priority<font color="#909090">=0.5</font>, weak<font color="#909090">=False</font>)</dt></dl>
+
+<dl><dt><a name="FM-signal_clear"><strong>signal_clear</strong></a> = __init__(self)</dt></dl>
+
+<dl><dt><a name="FM-signal_emit"><strong>signal_emit</strong></a>(self, signal_name, **kw)</dt></dl>
+
+<dl><dt><a name="FM-signal_unbind"><strong>signal_unbind</strong></a>(self, signal_handler)</dt></dl>
+
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-time"><strong>time</strong></a>(...)</dt><dd><tt><a href="#-time">time</a>()&nbsp;-&gt;&nbsp;floating&nbsp;point&nbsp;number<br>
+&nbsp;<br>
+Return&nbsp;the&nbsp;current&nbsp;time&nbsp;in&nbsp;seconds&nbsp;since&nbsp;the&nbsp;Epoch.<br>
+Fractions&nbsp;of&nbsp;a&nbsp;second&nbsp;may&nbsp;be&nbsp;present&nbsp;if&nbsp;the&nbsp;system&nbsp;clock&nbsp;provides&nbsp;them.</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>TICKS_BEFORE_COLLECTING_GARBAGE</strong> = 100<br>
+<strong>TIME_BEFORE_FILE_BECOMES_GARBAGE</strong> = 1200<br>
+<strong>__version__</strong> = '1.2.2'</td></tr></table>
+</body></html>

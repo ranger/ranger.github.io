@@ -1,0 +1,115 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module ranger.help.starting</title>
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong><a href="ranger.html"><font color="#ffffff">ranger</font></a>.<a href="ranger.help.html"><font color="#ffffff">help</font></a>.starting</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:../../ranger/help/starting.py">../../ranger/help/starting.py</a></font></td></tr></table>
+    <p><tt>2.&nbsp;Running&nbsp;Files<br>
+&nbsp;<br>
+2.1.&nbsp;How&nbsp;to&nbsp;run&nbsp;files<br>
+2.2.&nbsp;The&nbsp;"open_with"&nbsp;command<br>
+2.2.&nbsp;Programs<br>
+2.4.&nbsp;Modes<br>
+2.5.&nbsp;Flags<br>
+&nbsp;<br>
+&nbsp;<br>
+==============================================================================<br>
+2.1.&nbsp;How&nbsp;to&nbsp;run&nbsp;files<br>
+&nbsp;<br>
+While&nbsp;highlighting&nbsp;a&nbsp;file,&nbsp;press&nbsp;the&nbsp;"l"&nbsp;key&nbsp;to&nbsp;fire&nbsp;up&nbsp;the&nbsp;automatic<br>
+filetype&nbsp;detection&nbsp;mechanism&nbsp;and&nbsp;attempt&nbsp;to&nbsp;start&nbsp;the&nbsp;file.<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;l&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;run&nbsp;the&nbsp;selection<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;open&nbsp;the&nbsp;console&nbsp;with&nbsp;":open_with"<br>
+&nbsp;<br>
+Note:&nbsp;The&nbsp;selection&nbsp;means,&nbsp;if&nbsp;there&nbsp;are&nbsp;marked&nbsp;files&nbsp;in&nbsp;this&nbsp;directory,<br>
+use&nbsp;them.&nbsp;&nbsp;Otherwise&nbsp;use&nbsp;the&nbsp;file&nbsp;under&nbsp;the&nbsp;cursor.<br>
+&nbsp;<br>
+&nbsp;<br>
+==============================================================================<br>
+2.2.&nbsp;The&nbsp;"open_with"&nbsp;command<br>
+&nbsp;<br>
+If&nbsp;the&nbsp;automatic&nbsp;filetype&nbsp;detection&nbsp;fails&nbsp;or&nbsp;starts&nbsp;the&nbsp;file&nbsp;in&nbsp;a&nbsp;wrong<br>
+way,&nbsp;you&nbsp;can&nbsp;press&nbsp;"r"&nbsp;to&nbsp;manually&nbsp;tell&nbsp;ranger&nbsp;how&nbsp;to&nbsp;run&nbsp;it.<br>
+&nbsp;<br>
+The&nbsp;programs&nbsp;and&nbsp;modes&nbsp;can&nbsp;be&nbsp;defined&nbsp;in&nbsp;the&nbsp;apps.py,&nbsp;giving&nbsp;you&nbsp;a<br>
+high&nbsp;level&nbsp;interface&nbsp;for&nbsp;running&nbsp;files.<br>
+&nbsp;<br>
+Syntax:&nbsp;:open_with&nbsp;&lt;program&gt;&nbsp;&lt;flags&gt;&nbsp;&lt;mode&gt;<br>
+You&nbsp;can&nbsp;leave&nbsp;out&nbsp;parameters&nbsp;or&nbsp;change&nbsp;the&nbsp;order.<br>
+&nbsp;<br>
+Examples:<br>
+Open&nbsp;this&nbsp;file&nbsp;with&nbsp;vim:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:open_with&nbsp;vim<br>
+Run&nbsp;this&nbsp;file&nbsp;like&nbsp;with&nbsp;"./file":<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:open_with&nbsp;self<br>
+Open&nbsp;this&nbsp;file&nbsp;as&nbsp;usual&nbsp;but&nbsp;pipe&nbsp;the&nbsp;output&nbsp;to&nbsp;"less"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:open_with&nbsp;p<br>
+Open&nbsp;this&nbsp;file&nbsp;with&nbsp;mplayer&nbsp;with&nbsp;the&nbsp;"detached"&nbsp;flag:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:open_with&nbsp;mplayer&nbsp;d<br>
+Open&nbsp;this&nbsp;file&nbsp;with&nbsp;totem&nbsp;in&nbsp;mode&nbsp;1,&nbsp;will&nbsp;not&nbsp;detach&nbsp;the&nbsp;process&nbsp;(flag&nbsp;D)<br>
+but&nbsp;discard&nbsp;the&nbsp;output&nbsp;(flag&nbsp;s).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:open_with&nbsp;totem&nbsp;1&nbsp;Ds<br>
+&nbsp;<br>
+The&nbsp;parameters&nbsp;&lt;program&gt;,&nbsp;&lt;flags&gt;&nbsp;and&nbsp;&lt;mode&gt;&nbsp;are&nbsp;explained&nbsp;in&nbsp;the<br>
+following&nbsp;paragraphs<br>
+&nbsp;<br>
+&nbsp;<br>
+==============================================================================<br>
+2.3.&nbsp;Programs<br>
+&nbsp;<br>
+Programs&nbsp;have&nbsp;to&nbsp;be&nbsp;defined&nbsp;in&nbsp;ranger/defaults/apps.py.&nbsp;&nbsp;Each&nbsp;function<br>
+in&nbsp;the&nbsp;class&nbsp;CustomApplications&nbsp;which&nbsp;starts&nbsp;with&nbsp;"app_"&nbsp;can&nbsp;be&nbsp;used<br>
+as&nbsp;a&nbsp;program&nbsp;in&nbsp;the&nbsp;"open_with"&nbsp;command.<br>
+&nbsp;<br>
+You're&nbsp;encouraged&nbsp;to&nbsp;add&nbsp;your&nbsp;own&nbsp;program&nbsp;definitions&nbsp;to&nbsp;the&nbsp;list.&nbsp;&nbsp;Refer&nbsp;to<br>
+the&nbsp;existing&nbsp;examples&nbsp;in&nbsp;the&nbsp;apps.py,&nbsp;it&nbsp;should&nbsp;be&nbsp;easy&nbsp;to&nbsp;adapt&nbsp;it&nbsp;for&nbsp;your<br>
+purposes.<br>
+&nbsp;<br>
+&nbsp;<br>
+==============================================================================<br>
+2.4.&nbsp;Modes<br>
+&nbsp;<br>
+Sometimes&nbsp;there&nbsp;are&nbsp;multiple&nbsp;variants&nbsp;to&nbsp;open&nbsp;a&nbsp;file.&nbsp;&nbsp;For&nbsp;example,&nbsp;ranger<br>
+gives&nbsp;you&nbsp;2&nbsp;ways&nbsp;of&nbsp;opening&nbsp;a&nbsp;video&nbsp;(by&nbsp;default):<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;windowed<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fullscreen<br>
+&nbsp;<br>
+By&nbsp;specifying&nbsp;a&nbsp;mode,&nbsp;you&nbsp;can&nbsp;select&nbsp;one&nbsp;of&nbsp;those.&nbsp;&nbsp;The&nbsp;"l"&nbsp;key&nbsp;will<br>
+start&nbsp;a&nbsp;file&nbsp;in&nbsp;mode&nbsp;0.&nbsp;"4l"&nbsp;will&nbsp;start&nbsp;the&nbsp;file&nbsp;in&nbsp;mode&nbsp;4&nbsp;etc.<br>
+You&nbsp;can&nbsp;specify&nbsp;a&nbsp;mode&nbsp;in&nbsp;the&nbsp;"open_with"&nbsp;command&nbsp;by&nbsp;simply&nbsp;adding<br>
+the&nbsp;number.&nbsp;&nbsp;Eg:&nbsp;":open_with&nbsp;mplayer&nbsp;1"&nbsp;or&nbsp;":open_with&nbsp;1"<br>
+&nbsp;<br>
+For&nbsp;a&nbsp;list&nbsp;of&nbsp;all&nbsp;programs&nbsp;and&nbsp;modes,&nbsp;see&nbsp;ranger/defaults/apps.py<br>
+&nbsp;<br>
+&nbsp;<br>
+==============================================================================<br>
+2.5.&nbsp;Flags<br>
+&nbsp;<br>
+Flags&nbsp;give&nbsp;you&nbsp;a&nbsp;way&nbsp;to&nbsp;modify&nbsp;the&nbsp;behaviour&nbsp;of&nbsp;the&nbsp;spawned&nbsp;process.<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Silent&nbsp;mode.&nbsp;&nbsp;Output&nbsp;will&nbsp;be&nbsp;discarded.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Detach&nbsp;the&nbsp;process.&nbsp;&nbsp;(Run&nbsp;in&nbsp;background)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Redirect&nbsp;output&nbsp;to&nbsp;the&nbsp;pager<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;w&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Wait&nbsp;for&nbsp;an&nbsp;enter-press&nbsp;when&nbsp;the&nbsp;process&nbsp;is&nbsp;done<br>
+&nbsp;<br>
+For&nbsp;example,&nbsp;":open_with&nbsp;p"&nbsp;will&nbsp;pipe&nbsp;the&nbsp;output&nbsp;of&nbsp;that&nbsp;process&nbsp;into<br>
+the&nbsp;pager.<br>
+&nbsp;<br>
+An&nbsp;uppercase&nbsp;flag&nbsp;has&nbsp;the&nbsp;opposite&nbsp;effect.&nbsp;&nbsp;If&nbsp;a&nbsp;program&nbsp;will&nbsp;be&nbsp;detached&nbsp;by<br>
+default,&nbsp;use&nbsp;":open_with&nbsp;D"&nbsp;to&nbsp;not&nbsp;detach&nbsp;it.<br>
+&nbsp;<br>
+Note:&nbsp;Some&nbsp;combinations&nbsp;don't&nbsp;make&nbsp;sense,&nbsp;eg:&nbsp;"vim&nbsp;d"&nbsp;would&nbsp;open&nbsp;the&nbsp;file&nbsp;in<br>
+vim&nbsp;and&nbsp;detach&nbsp;it.&nbsp;&nbsp;Since&nbsp;vim&nbsp;is&nbsp;a&nbsp;console&nbsp;application,&nbsp;you&nbsp;loose&nbsp;grip<br>
+of&nbsp;that&nbsp;process&nbsp;when&nbsp;you&nbsp;detach&nbsp;it.&nbsp;&nbsp;It's&nbsp;up&nbsp;to&nbsp;you&nbsp;to&nbsp;do&nbsp;such&nbsp;sanity&nbsp;checks.<br>
+&nbsp;<br>
+&nbsp;<br>
+==============================================================================</tt></p>
+
+</body></html>
