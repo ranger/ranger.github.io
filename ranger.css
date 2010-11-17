@@ -1,19 +1,23 @@
 body {
   background: #EEEEEE;
+  color: #000000;
   font-family: sans-serif;
 }
 h1 {
-  text-align: center;
   font-size: 24px;
+  text-align: center;
 }
 h2 {
-  font-size: 20px;
+  font-size: 20;
 }
 h3 {
   font-size: 16px;
 }
-a.menu {
-  margin-right: 10px;
+div.menu {
+  text-align: center;
+}
+div.menu a {
+  margin-left: 10px;
 }
 a {
   font-weight: bold;
@@ -30,6 +34,7 @@ img {
 }
 div.code {
   background-color :#CCCCCC;
+  color: #111;
   padding: 4px 14px;
   margin-left: 18px;
   margin-right: 18px;
