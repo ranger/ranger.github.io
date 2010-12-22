@@ -53,14 +53,35 @@ Note: to use custom file previews, you need ranger 1.3.1 or later, and a script 
 </ul>
 <hr /></p>
 <p><h3>Information</h3><ul>
-<li>Latest stable version: <a href="http://nongnu.org/ranger/ranger-stable.tar.gz">1.2.3</a> (2010/12/13)</li>
+<li>Latest stable version: <a href="http://nongnu.org/ranger/ranger-stable.tar.gz">1.4.0</a> (2010/12/22)</li>
 <li>License: GNU GPL version 3 or any later version</li>
 <li>Savannah page: <a href="http://savannah.nongnu.org/projects/ranger/">http://savannah.nongnu.org/projects/ranger/</a></li>
 </ul>
 <hr /></p>
 <p><h3>Changelog</h3></p>
-<p>NOTE: This log only documents changes between stable versions.</p>
-<p>2010-12-13: Version 1.2.3<ul>
+<p>NOTE: This log only documents changes between stable versions.
+Stable versions are identifiable (since 1.2) through their even minor
+version number, like 1.2.x, 1.4.x, etc.  Odd minor version numbers
+are used for rolling-release git snapshots.
+<br /><br /><br /></p>
+<p>2010-12-22: Version 1.4.0<ul>
+<li>Added option to use any external scripts for previews (see scope.sh)</li>
+<li>Added key: zv to toggle the use of the external script</li>
+<li>Added indicator for the used filter (type "zf")</li>
+<li>Added option padding_right to remove whitespace if theres no preview</li>
+<li>Added command :search_inc for incremental search</li>
+<li>Added commands :save_copy_buffer and :load_copy_buffer to share</li>
+</ul>  the copied files between ranger instances<ul>
+<li>Added mimeopen as a fallback if no useful application can be found</li>
+<li>Added natural sort, sorts 1foo before 10foo. (type "on")</li>
+<li>Added keys: yp, yd and yb to copy path, dirname or basename to seleciton</li>
+<li>Let open_with use the selection, not just one file</li>
+<li>Run files with right mouse click</li>
+<li>Implemented copying via coreutils rather than internal python code</li>
+<li>Improved handling of unicode</li>
+<li>Some restructuration of the source code</li>
+</ul>
+2010-12-13: Version 1.2.3<ul>
 <li>Enable binding to alt-keys</li>
 <li>Fixed memory leak in garbage collecting of old, unused directory objects</li>
 <li>Fixed python3 incompatibilities</li>
@@ -91,9 +112,6 @@ Note: to use custom file previews, you need ranger 1.3.1 or later, and a script 
 <li>Use the file ~/.mime.types for mime type detection</li>
 <li>Several clean-ups and fixes</li>
 </ul>
-NOTE: From 1.2 on, odd minor version numbers (1.3, 1.5, 1.7,..) are assigned to
-the fresh git snapshots while stable versions will have even minor numbers.
-<br /><br />
 2010-07-17: Version 1.1.2<ul>
 <li>Fix crash when using scrollwheel to scroll down in some cases</li>
 <li>The command "ranger dir1 dir2 ..." opens multiple directories in tabs</li>
