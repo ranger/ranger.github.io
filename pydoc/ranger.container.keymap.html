@@ -1,6 +1,6 @@
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html><head><title>Python: module ranger.container.keymap</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head><body bgcolor="#f0f0f8">
 
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
@@ -31,7 +31,7 @@
     
 <tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
 <td width="100%"><dl>
-<dt><font face="helvetica, arial"><a href="__builtin__.html#object">__builtin__.object</a>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
 </font></dt><dd>
 <dl>
 <dt><font face="helvetica, arial"><a href="ranger.container.keymap.html#Binding">Binding</a>
@@ -39,7 +39,7 @@
 </font></dt><dt><font face="helvetica, arial"><a href="ranger.container.keymap.html#KeyManager">KeyManager</a>
 </font></dt></dl>
 </dd>
-<dt><font face="helvetica, arial"><a href="ranger.ext.tree.html#Tree">ranger.ext.tree.Tree</a>(<a href="__builtin__.html#object">__builtin__.object</a>)
+<dt><font face="helvetica, arial"><a href="ranger.ext.tree.html#Tree">ranger.ext.tree.Tree</a>(<a href="builtins.html#object">builtins.object</a>)
 </font></dt><dd>
 <dl>
 <dt><font face="helvetica, arial"><a href="ranger.container.keymap.html#KeyMap">KeyMap</a>
@@ -55,10 +55,10 @@
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#ffc8d8">
 <td colspan=3 valign=bottom>&nbsp;<br>
-<font color="#000000" face="helvetica, arial"><a name="Binding">class <strong>Binding</strong></a>(<a href="__builtin__.html#object">__builtin__.object</a>)</font></td></tr>
+<font color="#000000" face="helvetica, arial"><a name="Binding">class <strong>Binding</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
     
 <tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
-<td colspan=2><tt>The&nbsp;keybinding&nbsp;<a href="__builtin__.html#object">object</a><br>&nbsp;</tt></td></tr>
+<td colspan=2><tt>The&nbsp;keybinding&nbsp;<a href="builtins.html#object">object</a><br>&nbsp;</tt></td></tr>
 <tr><td>&nbsp;</td>
 <td width="100%">Methods defined here:<br>
 <dl><dt><a name="Binding-__init__"><strong>__init__</strong></a>(self, keys, actions)</dt></dl>
@@ -75,25 +75,25 @@ Data descriptors defined here:<br>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#ffc8d8">
 <td colspan=3 valign=bottom>&nbsp;<br>
-<font color="#000000" face="helvetica, arial"><a name="CommandArgs">class <strong>CommandArgs</strong></a>(<a href="__builtin__.html#object">__builtin__.object</a>)</font></td></tr>
+<font color="#000000" face="helvetica, arial"><a name="CommandArgs">class <strong>CommandArgs</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
     
 <tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
-<td colspan=2><tt>A&nbsp;<a href="#CommandArgs">CommandArgs</a>&nbsp;<a href="__builtin__.html#object">object</a>&nbsp;is&nbsp;passed&nbsp;to&nbsp;the&nbsp;keybinding&nbsp;function.<br>
+<td colspan=2><tt>A&nbsp;<a href="#CommandArgs">CommandArgs</a>&nbsp;<a href="builtins.html#object">object</a>&nbsp;is&nbsp;passed&nbsp;to&nbsp;the&nbsp;keybinding&nbsp;function.<br>
 &nbsp;<br>
-This&nbsp;<a href="__builtin__.html#object">object</a>&nbsp;simply&nbsp;aggregates&nbsp;information&nbsp;about&nbsp;the&nbsp;pressed&nbsp;keys<br>
+This&nbsp;<a href="builtins.html#object">object</a>&nbsp;simply&nbsp;aggregates&nbsp;information&nbsp;about&nbsp;the&nbsp;pressed&nbsp;keys<br>
 and&nbsp;the&nbsp;current&nbsp;environment.<br>
 &nbsp;<br>
 Attributes:<br>
 fm:&nbsp;the&nbsp;FM&nbsp;instance<br>
 wdg:&nbsp;the&nbsp;currently&nbsp;focused&nbsp;widget&nbsp;(or&nbsp;fm,&nbsp;if&nbsp;none&nbsp;is&nbsp;focused)<br>
-keybuffer:&nbsp;the&nbsp;keybuffer&nbsp;<a href="__builtin__.html#object">object</a><br>
+keybuffer:&nbsp;the&nbsp;keybuffer&nbsp;<a href="builtins.html#object">object</a><br>
 n:&nbsp;the&nbsp;prefixed&nbsp;number,&nbsp;eg&nbsp;5&nbsp;in&nbsp;the&nbsp;command&nbsp;"5yy"<br>
 directions:&nbsp;a&nbsp;list&nbsp;of&nbsp;directions&nbsp;which&nbsp;are&nbsp;entered&nbsp;for&nbsp;"&lt;dir&gt;"<br>
-direction:&nbsp;the&nbsp;first&nbsp;direction&nbsp;<a href="__builtin__.html#object">object</a>&nbsp;from&nbsp;that&nbsp;list<br>
+direction:&nbsp;the&nbsp;first&nbsp;direction&nbsp;<a href="builtins.html#object">object</a>&nbsp;from&nbsp;that&nbsp;list<br>
 keys:&nbsp;a&nbsp;string&nbsp;representation&nbsp;of&nbsp;the&nbsp;keybuffer<br>
 matches:&nbsp;all&nbsp;keys&nbsp;which&nbsp;are&nbsp;entered&nbsp;for&nbsp;"&lt;any&gt;"<br>
 match:&nbsp;the&nbsp;first&nbsp;match<br>
-binding:&nbsp;the&nbsp;used&nbsp;<a href="#Binding">Binding</a>&nbsp;<a href="__builtin__.html#object">object</a><br>&nbsp;</tt></td></tr>
+binding:&nbsp;the&nbsp;used&nbsp;<a href="#Binding">Binding</a>&nbsp;<a href="builtins.html#object">object</a><br>&nbsp;</tt></td></tr>
 <tr><td>&nbsp;</td>
 <td width="100%">Methods defined here:<br>
 <dl><dt><a name="CommandArgs-__init__"><strong>__init__</strong></a>(self, fm, widget, keybuf)</dt></dl>
@@ -114,7 +114,7 @@ Data descriptors defined here:<br>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#ffc8d8">
 <td colspan=3 valign=bottom>&nbsp;<br>
-<font color="#000000" face="helvetica, arial"><a name="KeyManager">class <strong>KeyManager</strong></a>(<a href="__builtin__.html#object">__builtin__.object</a>)</font></td></tr>
+<font color="#000000" face="helvetica, arial"><a name="KeyManager">class <strong>KeyManager</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
     
 <tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
 <td width="100%">Methods defined here:<br>
@@ -154,7 +154,7 @@ Data descriptors defined here:<br>
 <td width="100%"><dl><dt>Method resolution order:</dt>
 <dd><a href="ranger.container.keymap.html#KeyMap">KeyMap</a></dd>
 <dd><a href="ranger.ext.tree.html#Tree">ranger.ext.tree.Tree</a></dd>
-<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
 </dl>
 <hr>
 Methods defined here:<br>
@@ -205,7 +205,7 @@ Data descriptors inherited from <a href="ranger.ext.tree.html#Tree">ranger.ext.t
 <dd><a href="ranger.container.keymap.html#KeyMapWithDirections">KeyMapWithDirections</a></dd>
 <dd><a href="ranger.container.keymap.html#KeyMap">KeyMap</a></dd>
 <dd><a href="ranger.ext.tree.html#Tree">ranger.ext.tree.Tree</a></dd>
-<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
 </dl>
 <hr>
 Methods defined here:<br>

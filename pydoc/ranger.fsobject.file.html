@@ -1,6 +1,6 @@
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html><head><title>Python: module ranger.fsobject.file</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head><body bgcolor="#f0f0f8">
 
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
@@ -31,8 +31,7 @@
     
 <tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
 <td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="re.html">re</a><br>
-</td><td width="25%" valign=top><a href="zipfile.html">zipfile</a><br>
-</td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#ee77aa">
 <td colspan=3 valign=bottom>&nbsp;<br>
@@ -40,7 +39,7 @@
     
 <tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
 <td width="100%"><dl>
-<dt><font face="helvetica, arial"><a href="ranger.fsobject.fsobject.html#FileSystemObject">ranger.fsobject.fsobject.FileSystemObject</a>(<a href="ranger.shared.mimetype.html#MimeTypeAware">ranger.shared.mimetype.MimeTypeAware</a>, <a href="ranger.shared.html#FileManagerAware">ranger.shared.FileManagerAware</a>)
+<dt><font face="helvetica, arial"><a href="ranger.fsobject.fsobject.html#FileSystemObject">ranger.fsobject.fsobject.FileSystemObject</a>(<a href="ranger.core.shared.html#FileManagerAware">ranger.core.shared.FileManagerAware</a>)
 </font></dt><dd>
 <dl>
 <dt><font face="helvetica, arial"><a href="ranger.fsobject.file.html#File">File</a>
@@ -57,14 +56,13 @@
 <td width="100%"><dl><dt>Method resolution order:</dt>
 <dd><a href="ranger.fsobject.file.html#File">File</a></dd>
 <dd><a href="ranger.fsobject.fsobject.html#FileSystemObject">ranger.fsobject.fsobject.FileSystemObject</a></dd>
-<dd><a href="ranger.shared.mimetype.html#MimeTypeAware">ranger.shared.mimetype.MimeTypeAware</a></dd>
-<dd><a href="ranger.shared.html#FileManagerAware">ranger.shared.FileManagerAware</a></dd>
-<dd><a href="ranger.shared.html#Awareness">ranger.shared.Awareness</a></dd>
-<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+<dd><a href="ranger.core.shared.html#FileManagerAware">ranger.core.shared.FileManagerAware</a></dd>
+<dd><a href="ranger.core.shared.html#Awareness">ranger.core.shared.Awareness</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
 </dl>
 <hr>
 Methods defined here:<br>
-<dl><dt><a name="File-get_preview_source"><strong>get_preview_source</strong></a>(self)</dt></dl>
+<dl><dt><a name="File-get_preview_source"><strong>get_preview_source</strong></a>(self, width, height)</dt></dl>
 
 <dl><dt><a name="File-has_preview"><strong>has_preview</strong></a>(self)</dt></dl>
 
@@ -77,6 +75,12 @@ Data descriptors defined here:<br>
 <hr>
 Data and other attributes defined here:<br>
 <dl><dt><strong>is_file</strong> = True</dl>
+
+<dl><dt><strong>preview_data</strong> = None</dl>
+
+<dl><dt><strong>preview_known</strong> = False</dl>
+
+<dl><dt><strong>preview_loading</strong> = False</dl>
 
 <hr>
 Methods inherited from <a href="ranger.fsobject.fsobject.html#FileSystemObject">ranger.fsobject.fsobject.FileSystemObject</a>:<br>
@@ -108,21 +112,29 @@ Data descriptors inherited from <a href="ranger.fsobject.fsobject.html#FileSyste
 </dl>
 <hr>
 Data and other attributes inherited from <a href="ranger.fsobject.fsobject.html#FileSystemObject">ranger.fsobject.fsobject.FileSystemObject</a>:<br>
+<dl><dt><strong>__locals__</strong> = {'__init__': &lt;function __init__&gt;, '__locals__': {'__init__': &lt;function __init__&gt;, '__locals__': {'__init__': &lt;function __init__&gt;, '__locals__': {'__init__': &lt;function __init__&gt;, '__locals__': {'__init__': &lt;function __init__&gt;, '__locals__': {'__init__': &lt;function __init__&gt;, '__locals__': {...}, '__module__': 'ranger.fsobject.fsobject', '__repr__': &lt;function __repr__&gt;, '__str__': &lt;function __str__&gt;, '_mark': &lt;function _mark&gt;, 'accessible': False, 'attr': 'container', 'audio': &lt;ranger.ext.lazy_property.lazy_property object&gt;, 'basename': None, ...}, '__module__': 'ranger.fsobject.fsobject', '__repr__': &lt;function __repr__&gt;, '__str__': &lt;function __str__&gt;, '_mark': &lt;function _mark&gt;, 'accessible': False, 'attr': 'container', 'audio': &lt;ranger.ext.lazy_property.lazy_property object&gt;, 'basename': None, ...}, '__module__': 'ranger.fsobject.fsobject', '__repr__': &lt;function __repr__&gt;, '__str__': &lt;function __str__&gt;, '_mark': &lt;function _mark&gt;, 'accessible': False, 'attr': 'container', 'audio': &lt;ranger.ext.lazy_property.lazy_property object&gt;, 'basename': None, ...}, '__module__': 'ranger.fsobject.fsobject', '__repr__': &lt;function __repr__&gt;, '__str__': &lt;function __str__&gt;, '_mark': &lt;function _mark&gt;, 'accessible': False, 'attr': 'container', 'audio': &lt;ranger.ext.lazy_property.lazy_property object&gt;, 'basename': None, ...}, '__module__': 'ranger.fsobject.fsobject', '__repr__': &lt;function __repr__&gt;, '__str__': &lt;function __str__&gt;, '_mark': &lt;function _mark&gt;, 'accessible': False, 'attr': 'container', 'audio': &lt;ranger.ext.lazy_property.lazy_property object&gt;, 'basename': None, ...}, '__module__': 'ranger.fsobject.fsobject', '__repr__': &lt;function __repr__&gt;, '__str__': &lt;function __str__&gt;, '_mark': &lt;function _mark&gt;, 'accessible': False, 'attr': 'container', 'audio': &lt;ranger.ext.lazy_property.lazy_property object&gt;, 'basename': None, ...}</dl>
+
 <dl><dt><strong>accessible</strong> = False</dl>
 
-<dl><dt><strong>audio</strong> = False</dl>
+<dl><dt><strong>attr</strong> = 'container'</dl>
+
+<dl><dt><strong>audio</strong> = None</dl>
 
 <dl><dt><strong>basename</strong> = None</dl>
 
 <dl><dt><strong>basename_lower</strong> = None</dl>
 
-<dl><dt><strong>container</strong> = False</dl>
+<dl><dt><strong>basename_natural</strong> = None</dl>
+
+<dl><dt><strong>basename_natural_lower</strong> = None</dl>
+
+<dl><dt><strong>container</strong> = None</dl>
 
 <dl><dt><strong>content_loaded</strong> = False</dl>
 
 <dl><dt><strong>dirname</strong> = None</dl>
 
-<dl><dt><strong>document</strong> = False</dl>
+<dl><dt><strong>document</strong> = None</dl>
 
 <dl><dt><strong>exists</strong> = False</dl>
 
@@ -132,7 +144,7 @@ Data and other attributes inherited from <a href="ranger.fsobject.fsobject.html#
 
 <dl><dt><strong>force_load</strong> = False</dl>
 
-<dl><dt><strong>image</strong> = False</dl>
+<dl><dt><strong>image</strong> = None</dl>
 
 <dl><dt><strong>infostring</strong> = None</dl>
 
@@ -150,7 +162,7 @@ Data and other attributes inherited from <a href="ranger.fsobject.fsobject.html#
 
 <dl><dt><strong>marked</strong> = False</dl>
 
-<dl><dt><strong>media</strong> = False</dl>
+<dl><dt><strong>media</strong> = None</dl>
 
 <dl><dt><strong>path</strong> = None</dl>
 
@@ -170,24 +182,20 @@ Data and other attributes inherited from <a href="ranger.fsobject.fsobject.html#
 
 <dl><dt><strong>tagged</strong> = False</dl>
 
-<dl><dt><strong>video</strong> = False</dl>
+<dl><dt><strong>video</strong> = None</dl>
 
 <hr>
-Data descriptors inherited from <a href="ranger.shared.mimetype.html#MimeTypeAware">ranger.shared.mimetype.MimeTypeAware</a>:<br>
+Data and other attributes inherited from <a href="ranger.core.shared.html#FileManagerAware">ranger.core.shared.FileManagerAware</a>:<br>
+<dl><dt><strong>fm</strong> = None</dl>
+
+<hr>
+Data descriptors inherited from <a href="ranger.core.shared.html#Awareness">ranger.core.shared.Awareness</a>:<br>
 <dl><dt><strong>__dict__</strong></dt>
 <dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
 </dl>
 <dl><dt><strong>__weakref__</strong></dt>
 <dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
 </dl>
-<hr>
-Data and other attributes inherited from <a href="ranger.shared.mimetype.html#MimeTypeAware">ranger.shared.mimetype.MimeTypeAware</a>:<br>
-<dl><dt><strong>mimetypes</strong> = {}</dl>
-
-<hr>
-Data and other attributes inherited from <a href="ranger.shared.html#FileManagerAware">ranger.shared.FileManagerAware</a>:<br>
-<dl><dt><strong>fm</strong> = None</dl>
-
 </td></tr></table></td></tr></table><p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#55aa55">
@@ -195,8 +203,10 @@ Data and other attributes inherited from <a href="ranger.shared.html#FileManager
 <font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
     
 <tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><strong>N_FIRST_BYTES</strong> = 20<br>
+<td width="100%"><strong>N_FIRST_BYTES</strong> = 256<br>
+<strong>PIPE</strong> = -1<br>
 <strong>PREVIEW_BLACKLIST</strong> = &lt;_sre.SRE_Pattern object&gt;<br>
 <strong>PREVIEW_WHITELIST</strong> = &lt;_sre.SRE_Pattern object&gt;<br>
-<strong>control_characters</strong> = set(['<font color="#c040c0">\x00</font>', '<font color="#c040c0">\x01</font>', '<font color="#c040c0">\x02</font>', '<font color="#c040c0">\x03</font>', '<font color="#c040c0">\x04</font>', '<font color="#c040c0">\x05</font>', ...])</td></tr></table>
+<strong>control_characters</strong> = set(['<font color="#c040c0">\x00</font>', '<font color="#c040c0">\x01</font>', '<font color="#c040c0">\x02</font>', '<font color="#c040c0">\x03</font>', '<font color="#c040c0">\x04</font>', '<font color="#c040c0">\x05</font>', ...])<br>
+<strong>devnull</strong> = &lt;_io.TextIOWrapper name='/dev/null' encoding='UTF-8'&gt;</td></tr></table>
 </body></html>

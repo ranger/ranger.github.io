@@ -1,6 +1,6 @@
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html><head><title>Python: module ranger.defaults.apps</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head><body bgcolor="#f0f0f8">
 
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
@@ -57,7 +57,7 @@ This&nbsp;example&nbsp;modifies&nbsp;the&nbsp;behaviour&nbsp;of&nbsp;"feh"&nbsp;
     
 <tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
 <td width="100%"><dl>
-<dt><font face="helvetica, arial"><a href="ranger.api.apps.html#Applications">ranger.api.apps.Applications</a>(<a href="ranger.shared.html#FileManagerAware">ranger.shared.FileManagerAware</a>)
+<dt><font face="helvetica, arial"><a href="ranger.api.apps.html#Applications">ranger.api.apps.Applications</a>(<a href="ranger.core.shared.html#FileManagerAware">ranger.core.shared.FileManagerAware</a>)
 </font></dt><dd>
 <dl>
 <dt><font face="helvetica, arial"><a href="ranger.defaults.apps.html#CustomApplications">CustomApplications</a>
@@ -74,9 +74,9 @@ This&nbsp;example&nbsp;modifies&nbsp;the&nbsp;behaviour&nbsp;of&nbsp;"feh"&nbsp;
 <td width="100%"><dl><dt>Method resolution order:</dt>
 <dd><a href="ranger.defaults.apps.html#CustomApplications">CustomApplications</a></dd>
 <dd><a href="ranger.api.apps.html#Applications">ranger.api.apps.Applications</a></dd>
-<dd><a href="ranger.shared.html#FileManagerAware">ranger.shared.FileManagerAware</a></dd>
-<dd><a href="ranger.shared.html#Awareness">ranger.shared.Awareness</a></dd>
-<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+<dd><a href="ranger.core.shared.html#FileManagerAware">ranger.core.shared.FileManagerAware</a></dd>
+<dd><a href="ranger.core.shared.html#Awareness">ranger.core.shared.Awareness</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
 </dl>
 <hr>
 Methods defined here:<br>
@@ -111,6 +111,8 @@ Methods defined here:<br>
 <dl><dt><strong>app_javac</strong> <em>lambda</em> self, context</dt></dl>
 
 <dl><dt><a name="CustomApplications-app_make"><strong>app_make</strong></a>(self, c)</dt></dl>
+
+<dl><dt><a name="CustomApplications-app_mimeopen"><strong>app_mimeopen</strong></a>(self, c)</dt></dl>
 
 <dl><dt><strong>app_mirage</strong> <em>lambda</em> self, context</dt></dl>
 
@@ -147,14 +149,14 @@ Methods inherited from <a href="ranger.api.apps.html#Applications">ranger.api.ap
 
 <hr>
 Class methods inherited from <a href="ranger.api.apps.html#Applications">ranger.api.apps.Applications</a>:<br>
-<dl><dt><a name="CustomApplications-generic"><strong>generic</strong></a>(cls, *args, **keywords)<font color="#909090"><font face="helvetica, arial"> from <a href="__builtin__.html#type">__builtin__.type</a></font></font></dt></dl>
+<dl><dt><a name="CustomApplications-generic"><strong>generic</strong></a>(cls, *args, **keywords)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt></dl>
 
 <hr>
-Data and other attributes inherited from <a href="ranger.shared.html#FileManagerAware">ranger.shared.FileManagerAware</a>:<br>
+Data and other attributes inherited from <a href="ranger.core.shared.html#FileManagerAware">ranger.core.shared.FileManagerAware</a>:<br>
 <dl><dt><strong>fm</strong> = None</dl>
 
 <hr>
-Data descriptors inherited from <a href="ranger.shared.html#Awareness">ranger.shared.Awareness</a>:<br>
+Data descriptors inherited from <a href="ranger.core.shared.html#Awareness">ranger.core.shared.Awareness</a>:<br>
 <dl><dt><strong>__dict__</strong></dt>
 <dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
 </dl>

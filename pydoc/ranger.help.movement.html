@@ -1,6 +1,6 @@
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html><head><title>Python: module ranger.help.movement</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head><body bgcolor="#f0f0f8">
 
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
@@ -19,6 +19,7 @@
 1.6.&nbsp;Tabs<br>
 1.7.&nbsp;Mouse&nbsp;usage<br>
 1.8.&nbsp;Misc&nbsp;keys<br>
+1.9.&nbsp;Previews<br>
 &nbsp;<br>
 &nbsp;<br>
 ==============================================================================<br>
@@ -187,7 +188,7 @@ Clicking&nbsp;into&nbsp;the&nbsp;preview&nbsp;window&nbsp;will&nbsp;usually&nbsp
 &nbsp;<br>
 &nbsp;<br>
 ==============================================================================<br>
-1.8&nbsp;Misc&nbsp;keys<br>
+1.8.&nbsp;Misc&nbsp;keys<br>
 &nbsp;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;W&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Display&nbsp;the&nbsp;message&nbsp;log<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;du&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Display&nbsp;the&nbsp;disk&nbsp;usage&nbsp;of&nbsp;the&nbsp;current&nbsp;directory<br>
@@ -195,6 +196,30 @@ Clicking&nbsp;into&nbsp;the&nbsp;preview&nbsp;window&nbsp;will&nbsp;usually&nbsp
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cw&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Open&nbsp;the&nbsp;console&nbsp;with&nbsp;":rename&nbsp;"<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Open&nbsp;the&nbsp;console&nbsp;with&nbsp;":rename&nbsp;&lt;current&nbsp;filename&gt;"<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Same&nbsp;as&nbsp;A,&nbsp;put&nbsp;the&nbsp;cursor&nbsp;at&nbsp;the&nbsp;beginning&nbsp;of&nbsp;the&nbsp;filename<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;yp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Copy&nbsp;the&nbsp;path&nbsp;of&nbsp;the&nbsp;file&nbsp;(with&nbsp;xsel)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;yn&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Copy&nbsp;the&nbsp;base&nbsp;name&nbsp;of&nbsp;the&nbsp;file&nbsp;(with&nbsp;xsel)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;yd&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Copy&nbsp;the&nbsp;directory&nbsp;name&nbsp;of&nbsp;the&nbsp;file&nbsp;(with&nbsp;xsel)<br>
+&nbsp;<br>
+&nbsp;<br>
+==============================================================================<br>
+1.9.&nbsp;Previews<br>
+&nbsp;<br>
+By&nbsp;default,&nbsp;only&nbsp;text&nbsp;files&nbsp;are&nbsp;previewed,&nbsp;but&nbsp;you&nbsp;can&nbsp;enable&nbsp;external<br>
+preview&nbsp;scripts&nbsp;by&nbsp;creating&nbsp;~/.config/ranger/scope.sh&nbsp;(see&nbsp;preview_script<br>
+option.)&nbsp;&nbsp;This&nbsp;script&nbsp;will&nbsp;then&nbsp;be&nbsp;executed&nbsp;each&nbsp;time&nbsp;you&nbsp;attempt&nbsp;to<br>
+preview&nbsp;a&nbsp;file.<br>
+&nbsp;<br>
+Fetch&nbsp;the&nbsp;default&nbsp;scope.sh&nbsp;(from&nbsp;ranger/data/scope.sh)&nbsp;by&nbsp;running<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ranger&nbsp;--copy-config=scope<br>
+&nbsp;<br>
+This&nbsp;default&nbsp;script&nbsp;contains&nbsp;more&nbsp;documentation&nbsp;and&nbsp;calls&nbsp;to&nbsp;the<br>
+programs&nbsp;"lynx"&nbsp;and&nbsp;"elinks"&nbsp;for&nbsp;html,&nbsp;"highlight"&nbsp;for&nbsp;text/code,<br>
+"img2txt"&nbsp;for&nbsp;images,&nbsp;"atool"&nbsp;for&nbsp;archives,&nbsp;"pdftotext"&nbsp;for&nbsp;PDFs&nbsp;and<br>
+"mediainfo"&nbsp;for&nbsp;video&nbsp;and&nbsp;audio&nbsp;files.<br>
+&nbsp;<br>
+Install&nbsp;these&nbsp;programs&nbsp;(just&nbsp;the&nbsp;ones&nbsp;you&nbsp;need)&nbsp;and&nbsp;scope.sh&nbsp;will<br>
+automatically&nbsp;use&nbsp;them.&nbsp;&nbsp;Make&nbsp;sure&nbsp;to&nbsp;also&nbsp;have&nbsp;the&nbsp;options<br>
+"use_preview_script"&nbsp;and&nbsp;"preview_files"&nbsp;turned&nbsp;on.<br>
 &nbsp;<br>
 &nbsp;<br>
 ==============================================================================</tt></p>

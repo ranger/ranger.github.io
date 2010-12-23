@@ -1,6 +1,6 @@
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html><head><title>Python: module ranger.defaults.commands</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head><body bgcolor="#f0f0f8">
 
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
@@ -64,7 +64,7 @@ For&nbsp;a&nbsp;list&nbsp;of&nbsp;all&nbsp;actions,&nbsp;check&nbsp;/ranger/core
     
 <tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
 <td width="100%"><dl>
-<dt><font face="helvetica, arial"><a href="ranger.api.commands.html#Command">ranger.api.commands.Command</a>(<a href="ranger.shared.html#FileManagerAware">ranger.shared.FileManagerAware</a>)
+<dt><font face="helvetica, arial"><a href="ranger.api.commands.html#Command">ranger.api.commands.Command</a>(<a href="ranger.core.shared.html#FileManagerAware">ranger.core.shared.FileManagerAware</a>)
 </font></dt><dd>
 <dl>
 <dt><font face="helvetica, arial"><a href="ranger.defaults.commands.html#cd">cd</a>
@@ -75,6 +75,7 @@ For&nbsp;a&nbsp;list&nbsp;of&nbsp;all&nbsp;actions,&nbsp;check&nbsp;/ranger/core
 </font></dt><dt><font face="helvetica, arial"><a href="ranger.defaults.commands.html#filter">filter</a>
 </font></dt><dt><font face="helvetica, arial"><a href="ranger.defaults.commands.html#find">find</a>
 </font></dt><dt><font face="helvetica, arial"><a href="ranger.defaults.commands.html#grep">grep</a>
+</font></dt><dt><font face="helvetica, arial"><a href="ranger.defaults.commands.html#load_copy_buffer">load_copy_buffer</a>
 </font></dt><dt><font face="helvetica, arial"><a href="ranger.defaults.commands.html#mark">mark</a>
 </font></dt><dd>
 <dl>
@@ -91,8 +92,10 @@ For&nbsp;a&nbsp;list&nbsp;of&nbsp;all&nbsp;actions,&nbsp;check&nbsp;/ranger/core
 </font></dt></dl>
 </dd>
 <dt><font face="helvetica, arial"><a href="ranger.defaults.commands.html#rename">rename</a>
+</font></dt><dt><font face="helvetica, arial"><a href="ranger.defaults.commands.html#save_copy_buffer">save_copy_buffer</a>
 </font></dt><dt><font face="helvetica, arial"><a href="ranger.defaults.commands.html#search">search</a>
-</font></dt><dt><font face="helvetica, arial"><a href="ranger.defaults.commands.html#set">set</a>
+</font></dt><dt><font face="helvetica, arial"><a href="ranger.defaults.commands.html#search_inc">search_inc</a>
+</font></dt><dt><font face="helvetica, arial"><a href="ranger.defaults.commands.html#set_">set_</a>
 </font></dt><dt><font face="helvetica, arial"><a href="ranger.defaults.commands.html#shell">shell</a>
 </font></dt><dt><font face="helvetica, arial"><a href="ranger.defaults.commands.html#terminal">terminal</a>
 </font></dt><dt><font face="helvetica, arial"><a href="ranger.defaults.commands.html#touch">touch</a>
@@ -114,9 +117,9 @@ The&nbsp;command&nbsp;'<a href="#cd">cd</a>&nbsp;-'&nbsp;is&nbsp;equivalent&nbsp
 <td width="100%"><dl><dt>Method resolution order:</dt>
 <dd><a href="ranger.defaults.commands.html#cd">cd</a></dd>
 <dd><a href="ranger.api.commands.html#Command">ranger.api.commands.Command</a></dd>
-<dd><a href="ranger.shared.html#FileManagerAware">ranger.shared.FileManagerAware</a></dd>
-<dd><a href="ranger.shared.html#Awareness">ranger.shared.Awareness</a></dd>
-<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+<dd><a href="ranger.core.shared.html#FileManagerAware">ranger.core.shared.FileManagerAware</a></dd>
+<dd><a href="ranger.core.shared.html#Awareness">ranger.core.shared.Awareness</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
 </dl>
 <hr>
 Methods defined here:<br>
@@ -137,11 +140,11 @@ Data and other attributes inherited from <a href="ranger.api.commands.html#Comma
 <dl><dt><strong>name</strong> = None</dl>
 
 <hr>
-Data and other attributes inherited from <a href="ranger.shared.html#FileManagerAware">ranger.shared.FileManagerAware</a>:<br>
+Data and other attributes inherited from <a href="ranger.core.shared.html#FileManagerAware">ranger.core.shared.FileManagerAware</a>:<br>
 <dl><dt><strong>fm</strong> = None</dl>
 
 <hr>
-Data descriptors inherited from <a href="ranger.shared.html#Awareness">ranger.shared.Awareness</a>:<br>
+Data descriptors inherited from <a href="ranger.core.shared.html#Awareness">ranger.core.shared.Awareness</a>:<br>
 <dl><dt><strong>__dict__</strong></dt>
 <dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
 </dl>
@@ -168,9 +171,9 @@ Add&nbsp;those&nbsp;numbers&nbsp;to&nbsp;combine&nbsp;them.&nbsp;So&nbsp;a&nbsp;
 <td width="100%"><dl><dt>Method resolution order:</dt>
 <dd><a href="ranger.defaults.commands.html#chmod">chmod</a></dd>
 <dd><a href="ranger.api.commands.html#Command">ranger.api.commands.Command</a></dd>
-<dd><a href="ranger.shared.html#FileManagerAware">ranger.shared.FileManagerAware</a></dd>
-<dd><a href="ranger.shared.html#Awareness">ranger.shared.Awareness</a></dd>
-<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+<dd><a href="ranger.core.shared.html#FileManagerAware">ranger.core.shared.FileManagerAware</a></dd>
+<dd><a href="ranger.core.shared.html#Awareness">ranger.core.shared.Awareness</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
 </dl>
 <hr>
 Methods defined here:<br>
@@ -191,11 +194,11 @@ Data and other attributes inherited from <a href="ranger.api.commands.html#Comma
 <dl><dt><strong>name</strong> = None</dl>
 
 <hr>
-Data and other attributes inherited from <a href="ranger.shared.html#FileManagerAware">ranger.shared.FileManagerAware</a>:<br>
+Data and other attributes inherited from <a href="ranger.core.shared.html#FileManagerAware">ranger.core.shared.FileManagerAware</a>:<br>
 <dl><dt><strong>fm</strong> = None</dl>
 
 <hr>
-Data descriptors inherited from <a href="ranger.shared.html#Awareness">ranger.shared.Awareness</a>:<br>
+Data descriptors inherited from <a href="ranger.core.shared.html#Awareness">ranger.core.shared.Awareness</a>:<br>
 <dl><dt><strong>__dict__</strong></dt>
 <dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
 </dl>
@@ -226,9 +229,9 @@ the&nbsp;line&nbsp;has&nbsp;to&nbsp;start&nbsp;with&nbsp;a&nbsp;'y'.&nbsp;&nbsp;
 <td width="100%"><dl><dt>Method resolution order:</dt>
 <dd><a href="ranger.defaults.commands.html#delete">delete</a></dd>
 <dd><a href="ranger.api.commands.html#Command">ranger.api.commands.Command</a></dd>
-<dd><a href="ranger.shared.html#FileManagerAware">ranger.shared.FileManagerAware</a></dd>
-<dd><a href="ranger.shared.html#Awareness">ranger.shared.Awareness</a></dd>
-<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+<dd><a href="ranger.core.shared.html#FileManagerAware">ranger.core.shared.FileManagerAware</a></dd>
+<dd><a href="ranger.core.shared.html#Awareness">ranger.core.shared.Awareness</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
 </dl>
 <hr>
 Methods defined here:<br>
@@ -251,11 +254,11 @@ Data and other attributes inherited from <a href="ranger.api.commands.html#Comma
 <dl><dt><strong>name</strong> = None</dl>
 
 <hr>
-Data and other attributes inherited from <a href="ranger.shared.html#FileManagerAware">ranger.shared.FileManagerAware</a>:<br>
+Data and other attributes inherited from <a href="ranger.core.shared.html#FileManagerAware">ranger.core.shared.FileManagerAware</a>:<br>
 <dl><dt><strong>fm</strong> = None</dl>
 
 <hr>
-Data descriptors inherited from <a href="ranger.shared.html#Awareness">ranger.shared.Awareness</a>:<br>
+Data descriptors inherited from <a href="ranger.core.shared.html#Awareness">ranger.core.shared.Awareness</a>:<br>
 <dl><dt><strong>__dict__</strong></dt>
 <dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
 </dl>
@@ -276,9 +279,9 @@ Opens&nbsp;the&nbsp;specified&nbsp;file&nbsp;in&nbsp;vim<br>&nbsp;</tt></td></tr
 <td width="100%"><dl><dt>Method resolution order:</dt>
 <dd><a href="ranger.defaults.commands.html#edit">edit</a></dd>
 <dd><a href="ranger.api.commands.html#Command">ranger.api.commands.Command</a></dd>
-<dd><a href="ranger.shared.html#FileManagerAware">ranger.shared.FileManagerAware</a></dd>
-<dd><a href="ranger.shared.html#Awareness">ranger.shared.Awareness</a></dd>
-<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+<dd><a href="ranger.core.shared.html#FileManagerAware">ranger.core.shared.FileManagerAware</a></dd>
+<dd><a href="ranger.core.shared.html#Awareness">ranger.core.shared.Awareness</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
 </dl>
 <hr>
 Methods defined here:<br>
@@ -299,11 +302,11 @@ Data and other attributes inherited from <a href="ranger.api.commands.html#Comma
 <dl><dt><strong>name</strong> = None</dl>
 
 <hr>
-Data and other attributes inherited from <a href="ranger.shared.html#FileManagerAware">ranger.shared.FileManagerAware</a>:<br>
+Data and other attributes inherited from <a href="ranger.core.shared.html#FileManagerAware">ranger.core.shared.FileManagerAware</a>:<br>
 <dl><dt><strong>fm</strong> = None</dl>
 
 <hr>
-Data descriptors inherited from <a href="ranger.shared.html#Awareness">ranger.shared.Awareness</a>:<br>
+Data descriptors inherited from <a href="ranger.core.shared.html#Awareness">ranger.core.shared.Awareness</a>:<br>
 <dl><dt><strong>__dict__</strong></dt>
 <dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
 </dl>
@@ -331,9 +334,9 @@ Examples:<br>
 <td width="100%"><dl><dt>Method resolution order:</dt>
 <dd><a href="ranger.defaults.commands.html#eval_">eval_</a></dd>
 <dd><a href="ranger.api.commands.html#Command">ranger.api.commands.Command</a></dd>
-<dd><a href="ranger.shared.html#FileManagerAware">ranger.shared.FileManagerAware</a></dd>
-<dd><a href="ranger.shared.html#Awareness">ranger.shared.Awareness</a></dd>
-<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+<dd><a href="ranger.core.shared.html#FileManagerAware">ranger.core.shared.FileManagerAware</a></dd>
+<dd><a href="ranger.core.shared.html#Awareness">ranger.core.shared.Awareness</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
 </dl>
 <hr>
 Methods defined here:<br>
@@ -356,11 +359,11 @@ Data and other attributes inherited from <a href="ranger.api.commands.html#Comma
 <dl><dt><strong>allow_abbrev</strong> = True</dl>
 
 <hr>
-Data and other attributes inherited from <a href="ranger.shared.html#FileManagerAware">ranger.shared.FileManagerAware</a>:<br>
+Data and other attributes inherited from <a href="ranger.core.shared.html#FileManagerAware">ranger.core.shared.FileManagerAware</a>:<br>
 <dl><dt><strong>fm</strong> = None</dl>
 
 <hr>
-Data descriptors inherited from <a href="ranger.shared.html#Awareness">ranger.shared.Awareness</a>:<br>
+Data descriptors inherited from <a href="ranger.core.shared.html#Awareness">ranger.core.shared.Awareness</a>:<br>
 <dl><dt><strong>__dict__</strong></dt>
 <dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
 </dl>
@@ -381,9 +384,9 @@ Displays&nbsp;only&nbsp;the&nbsp;files&nbsp;which&nbsp;contain&nbsp;&lt;string&g
 <td width="100%"><dl><dt>Method resolution order:</dt>
 <dd><a href="ranger.defaults.commands.html#filter">filter</a></dd>
 <dd><a href="ranger.api.commands.html#Command">ranger.api.commands.Command</a></dd>
-<dd><a href="ranger.shared.html#FileManagerAware">ranger.shared.FileManagerAware</a></dd>
-<dd><a href="ranger.shared.html#Awareness">ranger.shared.Awareness</a></dd>
-<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+<dd><a href="ranger.core.shared.html#FileManagerAware">ranger.core.shared.FileManagerAware</a></dd>
+<dd><a href="ranger.core.shared.html#Awareness">ranger.core.shared.Awareness</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
 </dl>
 <hr>
 Methods defined here:<br>
@@ -404,11 +407,11 @@ Data and other attributes inherited from <a href="ranger.api.commands.html#Comma
 <dl><dt><strong>name</strong> = None</dl>
 
 <hr>
-Data and other attributes inherited from <a href="ranger.shared.html#FileManagerAware">ranger.shared.FileManagerAware</a>:<br>
+Data and other attributes inherited from <a href="ranger.core.shared.html#FileManagerAware">ranger.core.shared.FileManagerAware</a>:<br>
 <dl><dt><strong>fm</strong> = None</dl>
 
 <hr>
-Data descriptors inherited from <a href="ranger.shared.html#Awareness">ranger.shared.Awareness</a>:<br>
+Data descriptors inherited from <a href="ranger.core.shared.html#Awareness">ranger.core.shared.Awareness</a>:<br>
 <dl><dt><strong>__dict__</strong></dt>
 <dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
 </dl>
@@ -431,9 +434,9 @@ file&nbsp;automatically.<br>&nbsp;</tt></td></tr>
 <td width="100%"><dl><dt>Method resolution order:</dt>
 <dd><a href="ranger.defaults.commands.html#find">find</a></dd>
 <dd><a href="ranger.api.commands.html#Command">ranger.api.commands.Command</a></dd>
-<dd><a href="ranger.shared.html#FileManagerAware">ranger.shared.FileManagerAware</a></dd>
-<dd><a href="ranger.shared.html#Awareness">ranger.shared.Awareness</a></dd>
-<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+<dd><a href="ranger.core.shared.html#FileManagerAware">ranger.core.shared.FileManagerAware</a></dd>
+<dd><a href="ranger.core.shared.html#Awareness">ranger.core.shared.Awareness</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
 </dl>
 <hr>
 Methods defined here:<br>
@@ -458,11 +461,11 @@ Data and other attributes inherited from <a href="ranger.api.commands.html#Comma
 <dl><dt><strong>name</strong> = None</dl>
 
 <hr>
-Data and other attributes inherited from <a href="ranger.shared.html#FileManagerAware">ranger.shared.FileManagerAware</a>:<br>
+Data and other attributes inherited from <a href="ranger.core.shared.html#FileManagerAware">ranger.core.shared.FileManagerAware</a>:<br>
 <dl><dt><strong>fm</strong> = None</dl>
 
 <hr>
-Data descriptors inherited from <a href="ranger.shared.html#Awareness">ranger.shared.Awareness</a>:<br>
+Data descriptors inherited from <a href="ranger.core.shared.html#Awareness">ranger.core.shared.Awareness</a>:<br>
 <dl><dt><strong>__dict__</strong></dt>
 <dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
 </dl>
@@ -483,9 +486,9 @@ Looks&nbsp;for&nbsp;a&nbsp;string&nbsp;in&nbsp;all&nbsp;marked&nbsp;files&nbsp;o
 <td width="100%"><dl><dt>Method resolution order:</dt>
 <dd><a href="ranger.defaults.commands.html#grep">grep</a></dd>
 <dd><a href="ranger.api.commands.html#Command">ranger.api.commands.Command</a></dd>
-<dd><a href="ranger.shared.html#FileManagerAware">ranger.shared.FileManagerAware</a></dd>
-<dd><a href="ranger.shared.html#Awareness">ranger.shared.Awareness</a></dd>
-<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+<dd><a href="ranger.core.shared.html#FileManagerAware">ranger.core.shared.FileManagerAware</a></dd>
+<dd><a href="ranger.core.shared.html#Awareness">ranger.core.shared.Awareness</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
 </dl>
 <hr>
 Methods defined here:<br>
@@ -506,11 +509,63 @@ Data and other attributes inherited from <a href="ranger.api.commands.html#Comma
 <dl><dt><strong>name</strong> = None</dl>
 
 <hr>
-Data and other attributes inherited from <a href="ranger.shared.html#FileManagerAware">ranger.shared.FileManagerAware</a>:<br>
+Data and other attributes inherited from <a href="ranger.core.shared.html#FileManagerAware">ranger.core.shared.FileManagerAware</a>:<br>
 <dl><dt><strong>fm</strong> = None</dl>
 
 <hr>
-Data descriptors inherited from <a href="ranger.shared.html#Awareness">ranger.shared.Awareness</a>:<br>
+Data descriptors inherited from <a href="ranger.core.shared.html#Awareness">ranger.core.shared.Awareness</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="load_copy_buffer">class <strong>load_copy_buffer</strong></a>(<a href="ranger.api.commands.html#Command">ranger.api.commands.Command</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>:<a href="#load_copy_buffer">load_copy_buffer</a><br>
+&nbsp;<br>
+Load&nbsp;the&nbsp;copy&nbsp;buffer&nbsp;from&nbsp;confdir/copy_buffer<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="ranger.defaults.commands.html#load_copy_buffer">load_copy_buffer</a></dd>
+<dd><a href="ranger.api.commands.html#Command">ranger.api.commands.Command</a></dd>
+<dd><a href="ranger.core.shared.html#FileManagerAware">ranger.core.shared.FileManagerAware</a></dd>
+<dd><a href="ranger.core.shared.html#Awareness">ranger.core.shared.Awareness</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="load_copy_buffer-execute"><strong>execute</strong></a>(self)</dt></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>copy_buffer_filename</strong> = 'copy_buffer'</dl>
+
+<hr>
+Methods inherited from <a href="ranger.api.commands.html#Command">ranger.api.commands.Command</a>:<br>
+<dl><dt><a name="load_copy_buffer-__init__"><strong>__init__</strong></a>(self, line)</dt></dl>
+
+<dl><dt><a name="load_copy_buffer-quick"><strong>quick</strong></a>(self)</dt><dd><tt>Override&nbsp;this</tt></dd></dl>
+
+<dl><dt><a name="load_copy_buffer-tab"><strong>tab</strong></a>(self)</dt><dd><tt>Override&nbsp;this</tt></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="ranger.api.commands.html#Command">ranger.api.commands.Command</a>:<br>
+<dl><dt><strong>allow_abbrev</strong> = True</dl>
+
+<dl><dt><strong>name</strong> = None</dl>
+
+<hr>
+Data and other attributes inherited from <a href="ranger.core.shared.html#FileManagerAware">ranger.core.shared.FileManagerAware</a>:<br>
+<dl><dt><strong>fm</strong> = None</dl>
+
+<hr>
+Data descriptors inherited from <a href="ranger.core.shared.html#Awareness">ranger.core.shared.Awareness</a>:<br>
 <dl><dt><strong>__dict__</strong></dt>
 <dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
 </dl>
@@ -531,9 +586,9 @@ Mark&nbsp;all&nbsp;files&nbsp;matching&nbsp;a&nbsp;regular&nbsp;expression.<br>&
 <td width="100%"><dl><dt>Method resolution order:</dt>
 <dd><a href="ranger.defaults.commands.html#mark">mark</a></dd>
 <dd><a href="ranger.api.commands.html#Command">ranger.api.commands.Command</a></dd>
-<dd><a href="ranger.shared.html#FileManagerAware">ranger.shared.FileManagerAware</a></dd>
-<dd><a href="ranger.shared.html#Awareness">ranger.shared.Awareness</a></dd>
-<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+<dd><a href="ranger.core.shared.html#FileManagerAware">ranger.core.shared.FileManagerAware</a></dd>
+<dd><a href="ranger.core.shared.html#Awareness">ranger.core.shared.Awareness</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
 </dl>
 <hr>
 Methods defined here:<br>
@@ -558,11 +613,11 @@ Data and other attributes inherited from <a href="ranger.api.commands.html#Comma
 <dl><dt><strong>name</strong> = None</dl>
 
 <hr>
-Data and other attributes inherited from <a href="ranger.shared.html#FileManagerAware">ranger.shared.FileManagerAware</a>:<br>
+Data and other attributes inherited from <a href="ranger.core.shared.html#FileManagerAware">ranger.core.shared.FileManagerAware</a>:<br>
 <dl><dt><strong>fm</strong> = None</dl>
 
 <hr>
-Data descriptors inherited from <a href="ranger.shared.html#Awareness">ranger.shared.Awareness</a>:<br>
+Data descriptors inherited from <a href="ranger.core.shared.html#Awareness">ranger.core.shared.Awareness</a>:<br>
 <dl><dt><strong>__dict__</strong></dt>
 <dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
 </dl>
@@ -583,9 +638,9 @@ Creates&nbsp;a&nbsp;directory&nbsp;with&nbsp;the&nbsp;name&nbsp;&lt;dirname&gt;.
 <td width="100%"><dl><dt>Method resolution order:</dt>
 <dd><a href="ranger.defaults.commands.html#mkdir">mkdir</a></dd>
 <dd><a href="ranger.api.commands.html#Command">ranger.api.commands.Command</a></dd>
-<dd><a href="ranger.shared.html#FileManagerAware">ranger.shared.FileManagerAware</a></dd>
-<dd><a href="ranger.shared.html#Awareness">ranger.shared.Awareness</a></dd>
-<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+<dd><a href="ranger.core.shared.html#FileManagerAware">ranger.core.shared.FileManagerAware</a></dd>
+<dd><a href="ranger.core.shared.html#Awareness">ranger.core.shared.Awareness</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
 </dl>
 <hr>
 Methods defined here:<br>
@@ -606,11 +661,11 @@ Data and other attributes inherited from <a href="ranger.api.commands.html#Comma
 <dl><dt><strong>name</strong> = None</dl>
 
 <hr>
-Data and other attributes inherited from <a href="ranger.shared.html#FileManagerAware">ranger.shared.FileManagerAware</a>:<br>
+Data and other attributes inherited from <a href="ranger.core.shared.html#FileManagerAware">ranger.core.shared.FileManagerAware</a>:<br>
 <dl><dt><strong>fm</strong> = None</dl>
 
 <hr>
-Data descriptors inherited from <a href="ranger.shared.html#Awareness">ranger.shared.Awareness</a>:<br>
+Data descriptors inherited from <a href="ranger.core.shared.html#Awareness">ranger.core.shared.Awareness</a>:<br>
 <dl><dt><strong>__dict__</strong></dt>
 <dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
 </dl>
@@ -627,9 +682,9 @@ Data descriptors inherited from <a href="ranger.shared.html#Awareness">ranger.sh
 <td width="100%"><dl><dt>Method resolution order:</dt>
 <dd><a href="ranger.defaults.commands.html#open_with">open_with</a></dd>
 <dd><a href="ranger.api.commands.html#Command">ranger.api.commands.Command</a></dd>
-<dd><a href="ranger.shared.html#FileManagerAware">ranger.shared.FileManagerAware</a></dd>
-<dd><a href="ranger.shared.html#Awareness">ranger.shared.Awareness</a></dd>
-<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+<dd><a href="ranger.core.shared.html#FileManagerAware">ranger.core.shared.FileManagerAware</a></dd>
+<dd><a href="ranger.core.shared.html#Awareness">ranger.core.shared.Awareness</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
 </dl>
 <hr>
 Methods defined here:<br>
@@ -650,11 +705,11 @@ Data and other attributes inherited from <a href="ranger.api.commands.html#Comma
 <dl><dt><strong>name</strong> = None</dl>
 
 <hr>
-Data and other attributes inherited from <a href="ranger.shared.html#FileManagerAware">ranger.shared.FileManagerAware</a>:<br>
+Data and other attributes inherited from <a href="ranger.core.shared.html#FileManagerAware">ranger.core.shared.FileManagerAware</a>:<br>
 <dl><dt><strong>fm</strong> = None</dl>
 
 <hr>
-Data descriptors inherited from <a href="ranger.shared.html#Awareness">ranger.shared.Awareness</a>:<br>
+Data descriptors inherited from <a href="ranger.core.shared.html#Awareness">ranger.core.shared.Awareness</a>:<br>
 <dl><dt><strong>__dict__</strong></dt>
 <dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
 </dl>
@@ -675,9 +730,9 @@ Closes&nbsp;the&nbsp;current&nbsp;tab.&nbsp;&nbsp;If&nbsp;there&nbsp;is&nbsp;onl
 <td width="100%"><dl><dt>Method resolution order:</dt>
 <dd><a href="ranger.defaults.commands.html#quit">quit</a></dd>
 <dd><a href="ranger.api.commands.html#Command">ranger.api.commands.Command</a></dd>
-<dd><a href="ranger.shared.html#FileManagerAware">ranger.shared.FileManagerAware</a></dd>
-<dd><a href="ranger.shared.html#Awareness">ranger.shared.Awareness</a></dd>
-<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+<dd><a href="ranger.core.shared.html#FileManagerAware">ranger.core.shared.FileManagerAware</a></dd>
+<dd><a href="ranger.core.shared.html#Awareness">ranger.core.shared.Awareness</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
 </dl>
 <hr>
 Methods defined here:<br>
@@ -698,11 +753,11 @@ Data and other attributes inherited from <a href="ranger.api.commands.html#Comma
 <dl><dt><strong>name</strong> = None</dl>
 
 <hr>
-Data and other attributes inherited from <a href="ranger.shared.html#FileManagerAware">ranger.shared.FileManagerAware</a>:<br>
+Data and other attributes inherited from <a href="ranger.core.shared.html#FileManagerAware">ranger.core.shared.FileManagerAware</a>:<br>
 <dl><dt><strong>fm</strong> = None</dl>
 
 <hr>
-Data descriptors inherited from <a href="ranger.shared.html#Awareness">ranger.shared.Awareness</a>:<br>
+Data descriptors inherited from <a href="ranger.core.shared.html#Awareness">ranger.core.shared.Awareness</a>:<br>
 <dl><dt><strong>__dict__</strong></dt>
 <dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
 </dl>
@@ -724,9 +779,9 @@ Quits&nbsp;the&nbsp;program&nbsp;immediately.<br>&nbsp;</tt></td></tr>
 <dd><a href="ranger.defaults.commands.html#quit_bang">quit_bang</a></dd>
 <dd><a href="ranger.defaults.commands.html#quitall">quitall</a></dd>
 <dd><a href="ranger.api.commands.html#Command">ranger.api.commands.Command</a></dd>
-<dd><a href="ranger.shared.html#FileManagerAware">ranger.shared.FileManagerAware</a></dd>
-<dd><a href="ranger.shared.html#Awareness">ranger.shared.Awareness</a></dd>
-<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+<dd><a href="ranger.core.shared.html#FileManagerAware">ranger.core.shared.FileManagerAware</a></dd>
+<dd><a href="ranger.core.shared.html#Awareness">ranger.core.shared.Awareness</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
 </dl>
 <hr>
 Data and other attributes defined here:<br>
@@ -747,11 +802,11 @@ Methods inherited from <a href="ranger.api.commands.html#Command">ranger.api.com
 <dl><dt><a name="quit_bang-tab"><strong>tab</strong></a>(self)</dt><dd><tt>Override&nbsp;this</tt></dd></dl>
 
 <hr>
-Data and other attributes inherited from <a href="ranger.shared.html#FileManagerAware">ranger.shared.FileManagerAware</a>:<br>
+Data and other attributes inherited from <a href="ranger.core.shared.html#FileManagerAware">ranger.core.shared.FileManagerAware</a>:<br>
 <dl><dt><strong>fm</strong> = None</dl>
 
 <hr>
-Data descriptors inherited from <a href="ranger.shared.html#Awareness">ranger.shared.Awareness</a>:<br>
+Data descriptors inherited from <a href="ranger.core.shared.html#Awareness">ranger.core.shared.Awareness</a>:<br>
 <dl><dt><strong>__dict__</strong></dt>
 <dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
 </dl>
@@ -772,9 +827,9 @@ Quits&nbsp;the&nbsp;program&nbsp;immediately.<br>&nbsp;</tt></td></tr>
 <td width="100%"><dl><dt>Method resolution order:</dt>
 <dd><a href="ranger.defaults.commands.html#quitall">quitall</a></dd>
 <dd><a href="ranger.api.commands.html#Command">ranger.api.commands.Command</a></dd>
-<dd><a href="ranger.shared.html#FileManagerAware">ranger.shared.FileManagerAware</a></dd>
-<dd><a href="ranger.shared.html#Awareness">ranger.shared.Awareness</a></dd>
-<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+<dd><a href="ranger.core.shared.html#FileManagerAware">ranger.core.shared.FileManagerAware</a></dd>
+<dd><a href="ranger.core.shared.html#Awareness">ranger.core.shared.Awareness</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
 </dl>
 <hr>
 Methods defined here:<br>
@@ -795,11 +850,11 @@ Data and other attributes inherited from <a href="ranger.api.commands.html#Comma
 <dl><dt><strong>name</strong> = None</dl>
 
 <hr>
-Data and other attributes inherited from <a href="ranger.shared.html#FileManagerAware">ranger.shared.FileManagerAware</a>:<br>
+Data and other attributes inherited from <a href="ranger.core.shared.html#FileManagerAware">ranger.core.shared.FileManagerAware</a>:<br>
 <dl><dt><strong>fm</strong> = None</dl>
 
 <hr>
-Data descriptors inherited from <a href="ranger.shared.html#Awareness">ranger.shared.Awareness</a>:<br>
+Data descriptors inherited from <a href="ranger.core.shared.html#Awareness">ranger.core.shared.Awareness</a>:<br>
 <dl><dt><strong>__dict__</strong></dt>
 <dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
 </dl>
@@ -820,9 +875,9 @@ Changes&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;currently&nbsp;highlighted&nbsp
 <td width="100%"><dl><dt>Method resolution order:</dt>
 <dd><a href="ranger.defaults.commands.html#rename">rename</a></dd>
 <dd><a href="ranger.api.commands.html#Command">ranger.api.commands.Command</a></dd>
-<dd><a href="ranger.shared.html#FileManagerAware">ranger.shared.FileManagerAware</a></dd>
-<dd><a href="ranger.shared.html#Awareness">ranger.shared.Awareness</a></dd>
-<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+<dd><a href="ranger.core.shared.html#FileManagerAware">ranger.core.shared.FileManagerAware</a></dd>
+<dd><a href="ranger.core.shared.html#Awareness">ranger.core.shared.Awareness</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
 </dl>
 <hr>
 Methods defined here:<br>
@@ -843,11 +898,63 @@ Data and other attributes inherited from <a href="ranger.api.commands.html#Comma
 <dl><dt><strong>name</strong> = None</dl>
 
 <hr>
-Data and other attributes inherited from <a href="ranger.shared.html#FileManagerAware">ranger.shared.FileManagerAware</a>:<br>
+Data and other attributes inherited from <a href="ranger.core.shared.html#FileManagerAware">ranger.core.shared.FileManagerAware</a>:<br>
 <dl><dt><strong>fm</strong> = None</dl>
 
 <hr>
-Data descriptors inherited from <a href="ranger.shared.html#Awareness">ranger.shared.Awareness</a>:<br>
+Data descriptors inherited from <a href="ranger.core.shared.html#Awareness">ranger.core.shared.Awareness</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="save_copy_buffer">class <strong>save_copy_buffer</strong></a>(<a href="ranger.api.commands.html#Command">ranger.api.commands.Command</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>:<a href="#save_copy_buffer">save_copy_buffer</a><br>
+&nbsp;<br>
+Save&nbsp;the&nbsp;copy&nbsp;buffer&nbsp;to&nbsp;confdir/copy_buffer<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="ranger.defaults.commands.html#save_copy_buffer">save_copy_buffer</a></dd>
+<dd><a href="ranger.api.commands.html#Command">ranger.api.commands.Command</a></dd>
+<dd><a href="ranger.core.shared.html#FileManagerAware">ranger.core.shared.FileManagerAware</a></dd>
+<dd><a href="ranger.core.shared.html#Awareness">ranger.core.shared.Awareness</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="save_copy_buffer-execute"><strong>execute</strong></a>(self)</dt></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>copy_buffer_filename</strong> = 'copy_buffer'</dl>
+
+<hr>
+Methods inherited from <a href="ranger.api.commands.html#Command">ranger.api.commands.Command</a>:<br>
+<dl><dt><a name="save_copy_buffer-__init__"><strong>__init__</strong></a>(self, line)</dt></dl>
+
+<dl><dt><a name="save_copy_buffer-quick"><strong>quick</strong></a>(self)</dt><dd><tt>Override&nbsp;this</tt></dd></dl>
+
+<dl><dt><a name="save_copy_buffer-tab"><strong>tab</strong></a>(self)</dt><dd><tt>Override&nbsp;this</tt></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="ranger.api.commands.html#Command">ranger.api.commands.Command</a>:<br>
+<dl><dt><strong>allow_abbrev</strong> = True</dl>
+
+<dl><dt><strong>name</strong> = None</dl>
+
+<hr>
+Data and other attributes inherited from <a href="ranger.core.shared.html#FileManagerAware">ranger.core.shared.FileManagerAware</a>:<br>
+<dl><dt><strong>fm</strong> = None</dl>
+
+<hr>
+Data descriptors inherited from <a href="ranger.core.shared.html#Awareness">ranger.core.shared.Awareness</a>:<br>
 <dl><dt><strong>__dict__</strong></dt>
 <dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
 </dl>
@@ -864,9 +971,9 @@ Data descriptors inherited from <a href="ranger.shared.html#Awareness">ranger.sh
 <td width="100%"><dl><dt>Method resolution order:</dt>
 <dd><a href="ranger.defaults.commands.html#search">search</a></dd>
 <dd><a href="ranger.api.commands.html#Command">ranger.api.commands.Command</a></dd>
-<dd><a href="ranger.shared.html#FileManagerAware">ranger.shared.FileManagerAware</a></dd>
-<dd><a href="ranger.shared.html#Awareness">ranger.shared.Awareness</a></dd>
-<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+<dd><a href="ranger.core.shared.html#FileManagerAware">ranger.core.shared.FileManagerAware</a></dd>
+<dd><a href="ranger.core.shared.html#Awareness">ranger.core.shared.Awareness</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
 </dl>
 <hr>
 Methods defined here:<br>
@@ -887,11 +994,11 @@ Data and other attributes inherited from <a href="ranger.api.commands.html#Comma
 <dl><dt><strong>name</strong> = None</dl>
 
 <hr>
-Data and other attributes inherited from <a href="ranger.shared.html#FileManagerAware">ranger.shared.FileManagerAware</a>:<br>
+Data and other attributes inherited from <a href="ranger.core.shared.html#FileManagerAware">ranger.core.shared.FileManagerAware</a>:<br>
 <dl><dt><strong>fm</strong> = None</dl>
 
 <hr>
-Data descriptors inherited from <a href="ranger.shared.html#Awareness">ranger.shared.Awareness</a>:<br>
+Data descriptors inherited from <a href="ranger.core.shared.html#Awareness">ranger.core.shared.Awareness</a>:<br>
 <dl><dt><strong>__dict__</strong></dt>
 <dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
 </dl>
@@ -902,31 +1009,27 @@ Data descriptors inherited from <a href="ranger.shared.html#Awareness">ranger.sh
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#ffc8d8">
 <td colspan=3 valign=bottom>&nbsp;<br>
-<font color="#000000" face="helvetica, arial"><a name="set">class <strong>set</strong></a>(<a href="ranger.api.commands.html#Command">ranger.api.commands.Command</a>)</font></td></tr>
+<font color="#000000" face="helvetica, arial"><a name="search_inc">class <strong>search_inc</strong></a>(<a href="ranger.api.commands.html#Command">ranger.api.commands.Command</a>)</font></td></tr>
     
-<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
-<td colspan=2><tt>:<a href="#set">set</a>&nbsp;&lt;option&nbsp;name&gt;=&lt;python&nbsp;expression&gt;<br>
-&nbsp;<br>
-Gives&nbsp;an&nbsp;option&nbsp;a&nbsp;new&nbsp;value.<br>&nbsp;</tt></td></tr>
-<tr><td>&nbsp;</td>
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
 <td width="100%"><dl><dt>Method resolution order:</dt>
-<dd><a href="ranger.defaults.commands.html#set">set</a></dd>
+<dd><a href="ranger.defaults.commands.html#search_inc">search_inc</a></dd>
 <dd><a href="ranger.api.commands.html#Command">ranger.api.commands.Command</a></dd>
-<dd><a href="ranger.shared.html#FileManagerAware">ranger.shared.FileManagerAware</a></dd>
-<dd><a href="ranger.shared.html#Awareness">ranger.shared.Awareness</a></dd>
-<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+<dd><a href="ranger.core.shared.html#FileManagerAware">ranger.core.shared.FileManagerAware</a></dd>
+<dd><a href="ranger.core.shared.html#Awareness">ranger.core.shared.Awareness</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
 </dl>
 <hr>
 Methods defined here:<br>
-<dl><dt><a name="set-execute"><strong>execute</strong></a>(self)</dt></dl>
-
-<dl><dt><a name="set-tab"><strong>tab</strong></a>(self)</dt></dl>
+<dl><dt><a name="search_inc-quick"><strong>quick</strong></a>(self)</dt></dl>
 
 <hr>
 Methods inherited from <a href="ranger.api.commands.html#Command">ranger.api.commands.Command</a>:<br>
-<dl><dt><a name="set-__init__"><strong>__init__</strong></a>(self, line)</dt></dl>
+<dl><dt><a name="search_inc-__init__"><strong>__init__</strong></a>(self, line)</dt></dl>
 
-<dl><dt><a name="set-quick"><strong>quick</strong></a>(self)</dt><dd><tt>Override&nbsp;this</tt></dd></dl>
+<dl><dt><a name="search_inc-execute"><strong>execute</strong></a>(self)</dt><dd><tt>Override&nbsp;this</tt></dd></dl>
+
+<dl><dt><a name="search_inc-tab"><strong>tab</strong></a>(self)</dt><dd><tt>Override&nbsp;this</tt></dd></dl>
 
 <hr>
 Data and other attributes inherited from <a href="ranger.api.commands.html#Command">ranger.api.commands.Command</a>:<br>
@@ -935,11 +1038,61 @@ Data and other attributes inherited from <a href="ranger.api.commands.html#Comma
 <dl><dt><strong>name</strong> = None</dl>
 
 <hr>
-Data and other attributes inherited from <a href="ranger.shared.html#FileManagerAware">ranger.shared.FileManagerAware</a>:<br>
+Data and other attributes inherited from <a href="ranger.core.shared.html#FileManagerAware">ranger.core.shared.FileManagerAware</a>:<br>
 <dl><dt><strong>fm</strong> = None</dl>
 
 <hr>
-Data descriptors inherited from <a href="ranger.shared.html#Awareness">ranger.shared.Awareness</a>:<br>
+Data descriptors inherited from <a href="ranger.core.shared.html#Awareness">ranger.core.shared.Awareness</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="set_">class <strong>set_</strong></a>(<a href="ranger.api.commands.html#Command">ranger.api.commands.Command</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>:set&nbsp;&lt;option&nbsp;name&gt;=&lt;python&nbsp;expression&gt;<br>
+&nbsp;<br>
+Gives&nbsp;an&nbsp;option&nbsp;a&nbsp;new&nbsp;value.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="ranger.defaults.commands.html#set_">set_</a></dd>
+<dd><a href="ranger.api.commands.html#Command">ranger.api.commands.Command</a></dd>
+<dd><a href="ranger.core.shared.html#FileManagerAware">ranger.core.shared.FileManagerAware</a></dd>
+<dd><a href="ranger.core.shared.html#Awareness">ranger.core.shared.Awareness</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="set_-execute"><strong>execute</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="set_-tab"><strong>tab</strong></a>(self)</dt></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>name</strong> = 'set'</dl>
+
+<hr>
+Methods inherited from <a href="ranger.api.commands.html#Command">ranger.api.commands.Command</a>:<br>
+<dl><dt><a name="set_-__init__"><strong>__init__</strong></a>(self, line)</dt></dl>
+
+<dl><dt><a name="set_-quick"><strong>quick</strong></a>(self)</dt><dd><tt>Override&nbsp;this</tt></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="ranger.api.commands.html#Command">ranger.api.commands.Command</a>:<br>
+<dl><dt><strong>allow_abbrev</strong> = True</dl>
+
+<hr>
+Data and other attributes inherited from <a href="ranger.core.shared.html#FileManagerAware">ranger.core.shared.FileManagerAware</a>:<br>
+<dl><dt><strong>fm</strong> = None</dl>
+
+<hr>
+Data descriptors inherited from <a href="ranger.core.shared.html#Awareness">ranger.core.shared.Awareness</a>:<br>
 <dl><dt><strong>__dict__</strong></dt>
 <dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
 </dl>
@@ -956,9 +1109,9 @@ Data descriptors inherited from <a href="ranger.shared.html#Awareness">ranger.sh
 <td width="100%"><dl><dt>Method resolution order:</dt>
 <dd><a href="ranger.defaults.commands.html#shell">shell</a></dd>
 <dd><a href="ranger.api.commands.html#Command">ranger.api.commands.Command</a></dd>
-<dd><a href="ranger.shared.html#FileManagerAware">ranger.shared.FileManagerAware</a></dd>
-<dd><a href="ranger.shared.html#Awareness">ranger.shared.Awareness</a></dd>
-<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+<dd><a href="ranger.core.shared.html#FileManagerAware">ranger.core.shared.FileManagerAware</a></dd>
+<dd><a href="ranger.core.shared.html#Awareness">ranger.core.shared.Awareness</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
 </dl>
 <hr>
 Methods defined here:<br>
@@ -979,11 +1132,11 @@ Data and other attributes inherited from <a href="ranger.api.commands.html#Comma
 <dl><dt><strong>name</strong> = None</dl>
 
 <hr>
-Data and other attributes inherited from <a href="ranger.shared.html#FileManagerAware">ranger.shared.FileManagerAware</a>:<br>
+Data and other attributes inherited from <a href="ranger.core.shared.html#FileManagerAware">ranger.core.shared.FileManagerAware</a>:<br>
 <dl><dt><strong>fm</strong> = None</dl>
 
 <hr>
-Data descriptors inherited from <a href="ranger.shared.html#Awareness">ranger.shared.Awareness</a>:<br>
+Data descriptors inherited from <a href="ranger.core.shared.html#Awareness">ranger.core.shared.Awareness</a>:<br>
 <dl><dt><strong>__dict__</strong></dt>
 <dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
 </dl>
@@ -1004,9 +1157,9 @@ Spawns&nbsp;an&nbsp;"x-<a href="#terminal">terminal</a>-emulator"&nbsp;starting&
 <td width="100%"><dl><dt>Method resolution order:</dt>
 <dd><a href="ranger.defaults.commands.html#terminal">terminal</a></dd>
 <dd><a href="ranger.api.commands.html#Command">ranger.api.commands.Command</a></dd>
-<dd><a href="ranger.shared.html#FileManagerAware">ranger.shared.FileManagerAware</a></dd>
-<dd><a href="ranger.shared.html#Awareness">ranger.shared.Awareness</a></dd>
-<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+<dd><a href="ranger.core.shared.html#FileManagerAware">ranger.core.shared.FileManagerAware</a></dd>
+<dd><a href="ranger.core.shared.html#Awareness">ranger.core.shared.Awareness</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
 </dl>
 <hr>
 Methods defined here:<br>
@@ -1027,11 +1180,11 @@ Data and other attributes inherited from <a href="ranger.api.commands.html#Comma
 <dl><dt><strong>name</strong> = None</dl>
 
 <hr>
-Data and other attributes inherited from <a href="ranger.shared.html#FileManagerAware">ranger.shared.FileManagerAware</a>:<br>
+Data and other attributes inherited from <a href="ranger.core.shared.html#FileManagerAware">ranger.core.shared.FileManagerAware</a>:<br>
 <dl><dt><strong>fm</strong> = None</dl>
 
 <hr>
-Data descriptors inherited from <a href="ranger.shared.html#Awareness">ranger.shared.Awareness</a>:<br>
+Data descriptors inherited from <a href="ranger.core.shared.html#Awareness">ranger.core.shared.Awareness</a>:<br>
 <dl><dt><strong>__dict__</strong></dt>
 <dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
 </dl>
@@ -1052,9 +1205,9 @@ Creates&nbsp;a&nbsp;file&nbsp;with&nbsp;the&nbsp;name&nbsp;&lt;fname&gt;.<br>&nb
 <td width="100%"><dl><dt>Method resolution order:</dt>
 <dd><a href="ranger.defaults.commands.html#touch">touch</a></dd>
 <dd><a href="ranger.api.commands.html#Command">ranger.api.commands.Command</a></dd>
-<dd><a href="ranger.shared.html#FileManagerAware">ranger.shared.FileManagerAware</a></dd>
-<dd><a href="ranger.shared.html#Awareness">ranger.shared.Awareness</a></dd>
-<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+<dd><a href="ranger.core.shared.html#FileManagerAware">ranger.core.shared.FileManagerAware</a></dd>
+<dd><a href="ranger.core.shared.html#Awareness">ranger.core.shared.Awareness</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
 </dl>
 <hr>
 Methods defined here:<br>
@@ -1075,11 +1228,11 @@ Data and other attributes inherited from <a href="ranger.api.commands.html#Comma
 <dl><dt><strong>name</strong> = None</dl>
 
 <hr>
-Data and other attributes inherited from <a href="ranger.shared.html#FileManagerAware">ranger.shared.FileManagerAware</a>:<br>
+Data and other attributes inherited from <a href="ranger.core.shared.html#FileManagerAware">ranger.core.shared.FileManagerAware</a>:<br>
 <dl><dt><strong>fm</strong> = None</dl>
 
 <hr>
-Data descriptors inherited from <a href="ranger.shared.html#Awareness">ranger.shared.Awareness</a>:<br>
+Data descriptors inherited from <a href="ranger.core.shared.html#Awareness">ranger.core.shared.Awareness</a>:<br>
 <dl><dt><strong>__dict__</strong></dt>
 <dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
 </dl>
@@ -1101,9 +1254,9 @@ Unmark&nbsp;all&nbsp;files&nbsp;matching&nbsp;a&nbsp;regular&nbsp;expression.<br
 <dd><a href="ranger.defaults.commands.html#unmark">unmark</a></dd>
 <dd><a href="ranger.defaults.commands.html#mark">mark</a></dd>
 <dd><a href="ranger.api.commands.html#Command">ranger.api.commands.Command</a></dd>
-<dd><a href="ranger.shared.html#FileManagerAware">ranger.shared.FileManagerAware</a></dd>
-<dd><a href="ranger.shared.html#Awareness">ranger.shared.Awareness</a></dd>
-<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+<dd><a href="ranger.core.shared.html#FileManagerAware">ranger.core.shared.FileManagerAware</a></dd>
+<dd><a href="ranger.core.shared.html#Awareness">ranger.core.shared.Awareness</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
 </dl>
 <hr>
 Data and other attributes defined here:<br>
@@ -1128,11 +1281,11 @@ Data and other attributes inherited from <a href="ranger.api.commands.html#Comma
 <dl><dt><strong>name</strong> = None</dl>
 
 <hr>
-Data and other attributes inherited from <a href="ranger.shared.html#FileManagerAware">ranger.shared.FileManagerAware</a>:<br>
+Data and other attributes inherited from <a href="ranger.core.shared.html#FileManagerAware">ranger.core.shared.FileManagerAware</a>:<br>
 <dl><dt><strong>fm</strong> = None</dl>
 
 <hr>
-Data descriptors inherited from <a href="ranger.shared.html#Awareness">ranger.shared.Awareness</a>:<br>
+Data descriptors inherited from <a href="ranger.core.shared.html#Awareness">ranger.core.shared.Awareness</a>:<br>
 <dl><dt><strong>__dict__</strong></dt>
 <dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
 </dl>

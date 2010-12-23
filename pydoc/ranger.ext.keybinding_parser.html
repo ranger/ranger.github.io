@@ -1,6 +1,6 @@
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html><head><title>Python: module ranger.ext.keybinding_parser</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head><body bgcolor="#f0f0f8">
 
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
@@ -38,10 +38,13 @@
 <font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
     
 <tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><dl><dt><a name="-parse_keybinding"><strong>parse_keybinding</strong></a>(obj)</dt><dd><tt>Translate&nbsp;a&nbsp;keybinding&nbsp;to&nbsp;a&nbsp;sequence&nbsp;of&nbsp;integers<br>
+<td width="100%"><dl><dt><a name="-parse_keybinding"><strong>parse_keybinding</strong></a>(obj)</dt><dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Translate&nbsp;a&nbsp;keybinding&nbsp;to&nbsp;a&nbsp;sequence&nbsp;of&nbsp;integers<br>
 &nbsp;<br>
-Example:<br>
-lol&lt;CR&gt;&nbsp;&nbsp;&nbsp;=&gt;&nbsp;&nbsp;&nbsp;(108,&nbsp;111,&nbsp;108,&nbsp;10)</tt></dd></dl>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lol&lt;CR&gt;&nbsp;&nbsp;&nbsp;=&gt;&nbsp;&nbsp;&nbsp;(ord('l'),&nbsp;ord('o'),&nbsp;ord('l'),&nbsp;ord('<br>
+'))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&gt;&nbsp;&nbsp;&nbsp;(108,&nbsp;111,&nbsp;108,&nbsp;10)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x&lt;A-Left&gt;&nbsp;=&gt;&nbsp;&nbsp;&nbsp;(120,&nbsp;(27,&nbsp;curses.KEY_LEFT))</tt></dd></dl>
 </td></tr></table><p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#55aa55">
@@ -53,7 +56,10 @@ lol&lt;CR&gt;&nbsp;&nbsp;&nbsp;=&gt;&nbsp;&nbsp;&nbsp;(108,&nbsp;111,&nbsp;108,&
 <strong>DIRKEY</strong> = 9001<br>
 <strong>PASSIVE_ACTION</strong> = 9003<br>
 <strong>ascii_lowercase</strong> = 'abcdefghijklmnopqrstuvwxyz'<br>
-<strong>char</strong> = '9'<br>
+<strong>char</strong> = 'z'<br>
+<strong>key</strong> = 'delete'<br>
 <strong>n</strong> = 63<br>
-<strong>special_keys</strong> = {'a-0': (27, 48), 'a-1': (27, 49), 'a-2': (27, 50), 'a-3': (27, 51), 'a-4': (27, 52), 'a-5': (27, 53), 'a-6': (27, 54), 'a-7': (27, 55), 'a-8': (27, 56), 'a-9': (27, 57), ...}</td></tr></table>
+<strong>special_keys</strong> = {'a-0': (27, 48), 'a-1': (27, 49), 'a-2': (27, 50), 'a-3': (27, 51), 'a-4': (27, 52), 'a-5': (27, 53), 'a-6': (27, 54), 'a-7': (27, 55), 'a-8': (27, 56), 'a-9': (27, 57), ...}<br>
+<strong>val</strong> = 330<br>
+<strong>very_special_keys</strong> = {'any': 9002, 'bg': 9003, 'dir': 9001}</td></tr></table>
 </body></html>

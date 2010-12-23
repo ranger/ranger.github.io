@@ -1,6 +1,6 @@
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html><head><title>Python: module ranger.core.environment</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head><body bgcolor="#f0f0f8">
 
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
@@ -42,16 +42,16 @@
     
 <tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
 <td width="100%"><dl>
-<dt><font face="helvetica, arial"><a href="ranger.ext.signal_dispatcher.html#SignalDispatcher">ranger.ext.signal_dispatcher.SignalDispatcher</a>(<a href="__builtin__.html#object">__builtin__.object</a>)
+<dt><font face="helvetica, arial"><a href="ranger.core.shared.html#SettingsAware">ranger.core.shared.SettingsAware</a>(<a href="ranger.core.shared.html#Awareness">ranger.core.shared.Awareness</a>)
 </font></dt><dd>
 <dl>
-<dt><font face="helvetica, arial"><a href="ranger.core.environment.html#Environment">Environment</a>(<a href="ranger.shared.settings.html#SettingsAware">ranger.shared.settings.SettingsAware</a>, <a href="ranger.ext.signal_dispatcher.html#SignalDispatcher">ranger.ext.signal_dispatcher.SignalDispatcher</a>)
+<dt><font face="helvetica, arial"><a href="ranger.core.environment.html#Environment">Environment</a>(<a href="ranger.core.shared.html#SettingsAware">ranger.core.shared.SettingsAware</a>, <a href="ranger.ext.signals.html#SignalDispatcher">ranger.ext.signals.SignalDispatcher</a>)
 </font></dt></dl>
 </dd>
-<dt><font face="helvetica, arial"><a href="ranger.shared.settings.html#SettingsAware">ranger.shared.settings.SettingsAware</a>(<a href="__builtin__.html#object">__builtin__.object</a>)
+<dt><font face="helvetica, arial"><a href="ranger.ext.signals.html#SignalDispatcher">ranger.ext.signals.SignalDispatcher</a>(<a href="builtins.html#object">builtins.object</a>)
 </font></dt><dd>
 <dl>
-<dt><font face="helvetica, arial"><a href="ranger.core.environment.html#Environment">Environment</a>(<a href="ranger.shared.settings.html#SettingsAware">ranger.shared.settings.SettingsAware</a>, <a href="ranger.ext.signal_dispatcher.html#SignalDispatcher">ranger.ext.signal_dispatcher.SignalDispatcher</a>)
+<dt><font face="helvetica, arial"><a href="ranger.core.environment.html#Environment">Environment</a>(<a href="ranger.core.shared.html#SettingsAware">ranger.core.shared.SettingsAware</a>, <a href="ranger.ext.signals.html#SignalDispatcher">ranger.ext.signals.SignalDispatcher</a>)
 </font></dt></dl>
 </dd>
 </dl>
@@ -59,16 +59,17 @@
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#ffc8d8">
 <td colspan=3 valign=bottom>&nbsp;<br>
-<font color="#000000" face="helvetica, arial"><a name="Environment">class <strong>Environment</strong></a>(<a href="ranger.shared.settings.html#SettingsAware">ranger.shared.settings.SettingsAware</a>, <a href="ranger.ext.signal_dispatcher.html#SignalDispatcher">ranger.ext.signal_dispatcher.SignalDispatcher</a>)</font></td></tr>
+<font color="#000000" face="helvetica, arial"><a name="Environment">class <strong>Environment</strong></a>(<a href="ranger.core.shared.html#SettingsAware">ranger.core.shared.SettingsAware</a>, <a href="ranger.ext.signals.html#SignalDispatcher">ranger.ext.signals.SignalDispatcher</a>)</font></td></tr>
     
 <tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
 <td colspan=2><tt>A&nbsp;collection&nbsp;of&nbsp;data&nbsp;which&nbsp;is&nbsp;relevant&nbsp;for&nbsp;more&nbsp;than&nbsp;one&nbsp;class.<br>&nbsp;</tt></td></tr>
 <tr><td>&nbsp;</td>
 <td width="100%"><dl><dt>Method resolution order:</dt>
 <dd><a href="ranger.core.environment.html#Environment">Environment</a></dd>
-<dd><a href="ranger.shared.settings.html#SettingsAware">ranger.shared.settings.SettingsAware</a></dd>
-<dd><a href="ranger.ext.signal_dispatcher.html#SignalDispatcher">ranger.ext.signal_dispatcher.SignalDispatcher</a></dd>
-<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+<dd><a href="ranger.core.shared.html#SettingsAware">ranger.core.shared.SettingsAware</a></dd>
+<dd><a href="ranger.core.shared.html#Awareness">ranger.core.shared.Awareness</a></dd>
+<dd><a href="ranger.ext.signals.html#SignalDispatcher">ranger.ext.signals.SignalDispatcher</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
 </dl>
 <hr>
 Methods defined here:<br>
@@ -130,7 +131,11 @@ Data and other attributes defined here:<br>
 <dl><dt><strong>termsize</strong> = None</dl>
 
 <hr>
-Data descriptors inherited from <a href="ranger.shared.settings.html#SettingsAware">ranger.shared.settings.SettingsAware</a>:<br>
+Data and other attributes inherited from <a href="ranger.core.shared.html#SettingsAware">ranger.core.shared.SettingsAware</a>:<br>
+<dl><dt><strong>settings</strong> = None</dl>
+
+<hr>
+Data descriptors inherited from <a href="ranger.core.shared.html#Awareness">ranger.core.shared.Awareness</a>:<br>
 <dl><dt><strong>__dict__</strong></dt>
 <dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
 </dl>
@@ -138,16 +143,14 @@ Data descriptors inherited from <a href="ranger.shared.settings.html#SettingsAwa
 <dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
 </dl>
 <hr>
-Data and other attributes inherited from <a href="ranger.shared.settings.html#SettingsAware">ranger.shared.settings.SettingsAware</a>:<br>
-<dl><dt><strong>settings</strong> = {}</dl>
-
-<hr>
-Methods inherited from <a href="ranger.ext.signal_dispatcher.html#SignalDispatcher">ranger.ext.signal_dispatcher.SignalDispatcher</a>:<br>
+Methods inherited from <a href="ranger.ext.signals.html#SignalDispatcher">ranger.ext.signals.SignalDispatcher</a>:<br>
 <dl><dt><a name="Environment-signal_bind"><strong>signal_bind</strong></a>(self, signal_name, function, priority<font color="#909090">=0.5</font>, weak<font color="#909090">=False</font>)</dt></dl>
 
 <dl><dt><a name="Environment-signal_clear"><strong>signal_clear</strong></a> = __init__(self)</dt></dl>
 
 <dl><dt><a name="Environment-signal_emit"><strong>signal_emit</strong></a>(self, signal_name, **kw)</dt></dl>
+
+<dl><dt><a name="Environment-signal_garbage_collect"><strong>signal_garbage_collect</strong></a>(self)</dt></dl>
 
 <dl><dt><a name="Environment-signal_unbind"><strong>signal_unbind</strong></a>(self, signal_handler)</dt></dl>
 
