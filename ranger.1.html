@@ -431,7 +431,7 @@ loss.  When false, bookmarks are saved when ranger is exited.</p>
 <p>When no preview is visible, should the last column be squeezed to make use of
 the whitespace?</p>
 </dd>
-<dt><strong><a name="colorscheme_overlay_python_function_none" class="item">colorscheme_overlay [python function, None]</a></strong></dt>
+<dt><strong><a name="colorscheme_overlay_function_none" class="item">colorscheme_overlay [function, None]</a></strong></dt>
 
 <dd>
 <p>An overlay function for colorschemes.  See the default options.py for an
@@ -488,7 +488,7 @@ with the preview column being as large as the other columns combined.</p>
 with &quot;j&quot;, ranger stops scrolling instantly when you release the key.  One
 disadvantage is that when you type commands blindly, some keys might get lost.</p>
 </dd>
-<dt><strong><a name="hidden_filter_regular_expression" class="item">hidden_filter [regular expression]</a></strong></dt>
+<dt><strong><a name="hidden_filter_regexp" class="item">hidden_filter [regexp]</a></strong></dt>
 
 <dd>
 <p>A regular expression pattern for files which should be hidden.</p>
@@ -757,10 +757,11 @@ doesn't work for functions and regular expressions. Valid values are:</p>
 <pre>
  None           None
  bool           True or False
+ integer        0 or 1 or -1 or 2 etc.
  list           [1, 2, 3]
  tuple          1, 2, 3 or (1, 2, 3)
  function       lambda &lt;arguments&gt;: &lt;expression&gt;
- regexp         regexp('&lt;regexp&gt;')
+ regexp         regexp('&lt;pattern&gt;')
  string         Anything</pre>
 </dd>
 <dt><strong><a name="shell_flags_command" class="item">shell [-<em>flags</em>] <em>command</em></a></strong></dt>
