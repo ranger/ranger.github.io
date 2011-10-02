@@ -53,17 +53,30 @@ Note: to use custom file previews, you need ranger 1.3.1 or later, and a script 
 </ul>
 <hr /></p>
 <p><h3>Information</h3><ul>
-<li>Latest stable version: <a href="http://nongnu.org/ranger/ranger-stable.tar.gz">1.4.3</a> (2011/04/05)</li>
+<li>Latest stable version: <a href="http://nongnu.org/ranger/ranger-stable.tar.gz">1.4.4</a> (2011/10/02)</li>
 <li>License: GNU GPL version 3 or any later version</li>
 <li>Savannah page: <a href="http://savannah.nongnu.org/projects/ranger/">http://savannah.nongnu.org/projects/ranger/</a></li>
 </ul>
 <hr /></p>
 <p><h3>Changelog</h3></p>
-<p>NOTE: This log only documents changes between stable versions.
-Stable versions are identifiable (since 1.2) through their even minor
-version number, like 1.2.x, 1.4.x, etc.  Odd minor version numbers
-are used for rolling-release git snapshots.
-<br /><br /><br />
+<p>This log documents changes between stable versions.</p>
+<p><br /><br /><br />
+2011-10-02: Version 1.4.4<ul>
+<li>Added various key bindings</li>
+<li>Fixed blocking when using interactive scripts in scope.sh</li>
+<li>Added wavpack and webm types to mime.types</li>
+<li>Forbid piping things into ranger</li>
+<li>Added bittorrent preview</li>
+<li>Improved hints</li>
+<li>Added option "display_tags_in_all_columns"</li>
+<li>Fixed issues with ALT key</li>
+<li>Added command.cancel method which is called when pressing ESC in console</li>
+<li>Added sorting and cycling by ctime and atime</li>
+<li>Added custom tags (press "x)</li>
+<li>Fixed pager crash when trying to read non-readable file</li>
+<li>Added keys for chmod (like +ow for "chmod o+w", etc)</li>
+<li>Added "c" flag for running files</li>
+</ul>
 2011-04-05: Version 1.4.3<ul>
 <li>Fixed mimetype checking when invoking ranger with a filename</li>
 <li>Fixed loss of bookmarks when disk is full</li>
