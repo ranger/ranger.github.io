@@ -14,30 +14,33 @@
   <a href="http://ourproject.org/moin/projects/ranger">Wiki</a>
 </div>
 <p><h2>Description</h2></p>
-<p>ranger is a free console file manager that gives you greater flexibility
-and a good overview of your files without having to leave your *nix console.
-It visualizes the directory tree in two dimensions: the directory hierarchy
-on one, lists of files on the other, with a preview to the right so you know
-where you'll be going.</p>
+<p>ranger is a file manager with VI key bindings.  It provides a minimalistic yet
+nice curses interface with a view on the directory hierarchy.  The secondary
+task of ranger is to psychically guess which program you want to use for
+opening particular files.</p>
 <p><a href="screenshots/screenshot0.png"><img src="screenshots/screenshot0thumb.png" alt="Image: Screenshot 0" /></a></p>
-<p>The default keys are similar to those of Vim, Emacs and Midnight Commander,
-though ranger is easily controllable with just the arrow keys or the mouse.</p>
-<p>The program is written in Python (2.6 or 3.1) and uses curses for the
-text-based user interface.</p>
+<p>A note to packagers:  Versions meant for packaging are listed in the changelog
+and are usually announced on this
+<a href="https://savannah.nongnu.org/news/atom.php?group=ranger">atom feed</a> and in
+the <a href="https://lists.nongnu.org/mailman/listinfo/ranger-users">mailing list</a>.</p>
 <p>Thanks to the fantastic people from the <a href="http://www.gnu.org">GNU project</a> for <a href="http://savannah.nongnu.org/projects/ranger/">hosting ranger</a> even though ranger is not part of gnu, hence the nongnu.org domain.</p>
 <p><hr /></p>
 <p><h3>Dependencies</h3><ul>
-<li><a href="http://python.org">Python 2.6 or 3.1</a></li>
-<li><a href="http://www.darwinsys.com/file/">file</a> (optional)</li>
-<li>Any pager, by default <a href="http://www.gnu.org/software/less/">less</a> (optional)</li>
+<li><a href="http://python.org">Python</a> (tested with version 2.6, 2.7, 3.1, 3.2) with support for ncurses and (optionally) wide-unicode.</li>
+<li>A pager (<a href="http://www.gnu.org/software/less/">less</a> by default)</li>
 </ul>
-For file previews, all optional:<ul>
-<li>archives: <a href="http://www.nongnu.org/atool/">atool</a></li>
-<li>audio/video: <a href="http://mediainfo.sourceforge.net/en">mediainfo</a></li>
-<li>code: <a href="http://www.andre-simon.de/doku/highlight/en/highlight.html">highlight</a></li>
-<li>html: <a href="http://elinks.or.cz/">elinks</a> or <a href="http://lynx.browser.org">lynx</a> or w3m</li>
-<li>images: img2txt from <a href="http://caca.zoy.org/wiki/libcaca">caca-utils</a></li>
-<li>pdf: pdftotext</li>
+Optional:<ul>
+<li><a href="http://www.darwinsys.com/file/">file</a> for determining file types</li>
+<li>The python module <a href="http://pypi.python.org/pypi/chardet">chardet</a>, in case of encoding detection problems</li>
+</ul>
+Optional, for enhanced file previews (with "scope.sh"):<ul>
+<li>img2txt (from <a href="http://caca.zoy.org/wiki/libcaca">caca-utils</a>) for previewing images</li>
+<li><a href="http://www.andre-simon.de/doku/highlight/en/highlight.html">highlight</a> for syntax highlighting of code</li>
+<li><a href="http://www.nongnu.org/atool/">atool</a> for previews of archives</li>
+<li><a href="http://lynx.browser.org">lynx</a>, <a href="http://w3m.sourceforge.net/">w3m</a> or <a href="http://elinks.or.cz/">elinks</a> for previews of html pages</li>
+<li>pdftotext for pdf previews</li>
+<li><a href="http://www.transmissionbt.com/">transmission-show</a> for viewing bit-torrent information</li>
+<li><a href="http://mediainfo.sourceforge.net/en">mediainfo</a> for viewing information about media files</li>
 </ul>
 Note: to use custom file previews, you need ranger 1.3.1 or later, and a script that creates previews. Use the default script by typing:</p>
 <p><div class='code'>ranger --copy-config=scope</div></p>
