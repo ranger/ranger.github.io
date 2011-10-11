@@ -56,7 +56,7 @@ Note: to use custom file previews, you need ranger 1.3.1 or later, and a script 
 </ul>
 <hr /></p>
 <p><h3>Information</h3><ul>
-<li>Latest stable version: <a href="http://nongnu.org/ranger/ranger-stable.tar.gz">1.4.4</a> (2011/10/02)</li>
+<li>Latest stable version: <a href="http://nongnu.org/ranger/ranger-stable.tar.gz">1.5.0</a> (2011/10/11)</li>
 <li>License: GNU GPL version 3 or any later version</li>
 <li>Savannah page: <a href="http://savannah.nongnu.org/projects/ranger/">http://savannah.nongnu.org/projects/ranger/</a></li>
 </ul>
@@ -64,6 +64,30 @@ Note: to use custom file previews, you need ranger 1.3.1 or later, and a script 
 <p><h3>Changelog</h3></p>
 <p>This log documents changes between stable versions.</p>
 <p><br />
+2011-10-11: Version 1.5.0<ul>
+<li>Full python3.2 compatibility</li>
+<li>Added new configuration file "rc.conf" which contains a list of commands that are executed on startup - mainly used for keybindings</li>
+<li>Added --list-unused-keys</li>
+<li>Added new program handlers to apps.py</li>
+<li>Added pop-up window for keychains and bookmarks</li>
+<li>Added load_default_rc option</li>
+<li>Fixed all known unicode issues</li>
+<li>Fixed crash when $TERM is unknown to the system</li>
+<li>Fixed scrolling in colored preview</li>
+<li>Changed the default column_ratios to 1/3/4 and sorting method to "natural"</li>
+<li>Changed :rename so it doesn't overwrite existing files</li>
+<li>Internal actions are now accessible as commands</li>
+<li>Replaced unittests by doctests</li>
+<li>Replaced integrated help with an extended man page and dynamic lists of keybindings, commands and settings.</li>
+<li>Removed "keys.py" configuration file in favor of "rc.conf"</li>
+<li>Removed "texas" colorscheme</li>
+<li>apps.py: Now able to define programs that only run with Xorg</li>
+<li>commands.py: Using parse(self.line) to parse the line is unnecessary now.  parse(self.line).rest(n) is now written as self.rest(n).  However, parse(self.line).chunk(n) has been renamed to self.arg(n).</li>
+<li>commands.py: parse(self.line) + X is now self.firstpart + X</li>
+<li>commands.py: New special attribute "resolve_macros" which decides whether strings like %f should be expanded to the name of the current file, etc.</li>
+<li>commands.py: New special attribute "escape_macros_for_shell" to toggle whether or not macros should be escaped, so you can use them in other commands than :shell, for example :edit %f</li>
+<li>Countless small fixes and improvements</li>
+</ul>
 2011-10-02: Version 1.4.4<ul>
 <li>Added various key bindings</li>
 <li>Fixed blocking when using interactive scripts in scope.sh</li>
