@@ -56,7 +56,7 @@ Note: to use custom file previews, you need ranger 1.3.1 or later, and a script 
 </ul>
 <hr /></p>
 <p><h3>Information</h3><ul>
-<li>Latest stable version: <a href="http://nongnu.org/ranger/ranger-stable.tar.gz">1.5.0</a> (2011/10/11)</li>
+<li>Latest stable version: <a href="http://nongnu.org/ranger/ranger-stable.tar.gz">1.5.1</a> (2011/10/11)</li>
 <li>License: GNU GPL version 3 or any later version</li>
 <li>Savannah page: <a href="http://savannah.nongnu.org/projects/ranger/">http://savannah.nongnu.org/projects/ranger/</a></li>
 </ul>
@@ -64,6 +64,17 @@ Note: to use custom file previews, you need ranger 1.3.1 or later, and a script 
 <p><h3>Changelog</h3></p>
 <p>This log documents changes between stable versions.</p>
 <p><br />
+2011-10-23: Version 1.5.1<ul>
+<li>Added fm.select_file(path)</li>
+<li>Added --choosefiles option (like --choosefile, but chooses multiple files)</li>
+<li>Fixed --list-unused-keys</li>
+<li>Fixed Zombie processes</li>
+<li>Fixed handling of filenames with undecodable bytes (unicode surrogates)</li>
+<li>Fixed crashes due to incomplete loading of directories</li>
+<li>Fixed tab completion of the command "shell"</li>
+<li>Fixed "ot" and "oT" keys in rc.conf</li>
+<li>Fixed parsing of chained commands (like in the binding "om")</li>
+</ul>
 2011-10-11: Version 1.5.0<ul>
 <li>Full python3.2 compatibility</li>
 <li>Added new configuration file "rc.conf" which contains a list of commands that are executed on startup - mainly used for keybindings</li>
