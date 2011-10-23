@@ -1,6 +1,6 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html><head><title>Python: module ranger.defaults.options</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head><body bgcolor="#f0f0f8">
 
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
@@ -9,21 +9,21 @@
 <font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong><a href="ranger.html"><font color="#ffffff">ranger</font></a>.<a href="ranger.defaults.html"><font color="#ffffff">defaults</font></a>.options</strong></big></big></font></td
 ><td align=right valign=bottom
 ><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:../../ranger/defaults/options.py">../../ranger/defaults/options.py</a></font></td></tr></table>
-    <p><tt>This&nbsp;is&nbsp;the&nbsp;default&nbsp;configuration&nbsp;file&nbsp;of&nbsp;ranger.<br>
-&nbsp;<br>
-There&nbsp;are&nbsp;two&nbsp;ways&nbsp;of&nbsp;customizing&nbsp;ranger.&nbsp;&nbsp;The&nbsp;first&nbsp;and&nbsp;recommended<br>
-method&nbsp;is&nbsp;creating&nbsp;a&nbsp;file&nbsp;at&nbsp;~/.config/ranger/options.py&nbsp;and&nbsp;adding<br>
-those&nbsp;lines&nbsp;you&nbsp;want&nbsp;to&nbsp;change.&nbsp;&nbsp;It&nbsp;might&nbsp;look&nbsp;like&nbsp;this:<br>
-&nbsp;<br>
-from&nbsp;ranger.api.options&nbsp;import&nbsp;*<br>
-preview_files&nbsp;=&nbsp;False&nbsp;&nbsp;#&nbsp;I&nbsp;hate&nbsp;previews!<br>
-max_history_size&nbsp;=&nbsp;2000&nbsp;&nbsp;#&nbsp;I&nbsp;can&nbsp;afford&nbsp;it.<br>
-&nbsp;<br>
-The&nbsp;other&nbsp;way&nbsp;is&nbsp;directly&nbsp;editing&nbsp;this&nbsp;file.&nbsp;&nbsp;This&nbsp;will&nbsp;make&nbsp;upgrades<br>
-of&nbsp;ranger&nbsp;more&nbsp;complicated&nbsp;though.<br>
-&nbsp;<br>
-Whatever&nbsp;you&nbsp;do,&nbsp;make&nbsp;sure&nbsp;the&nbsp;import-line&nbsp;stays&nbsp;intact&nbsp;and&nbsp;the&nbsp;type<br>
-of&nbsp;the&nbsp;values&nbsp;stay&nbsp;the&nbsp;same.</tt></p>
+    <p><tt>#&nbsp;-*-&nbsp;coding:&nbsp;utf-8&nbsp;-*-<br>
+#&nbsp;Copyright&nbsp;(C)&nbsp;2009,&nbsp;2010,&nbsp;2011&nbsp;&nbsp;Roman&nbsp;Zimbelmann&nbsp;&lt;romanz@lavabit.com&gt;<br>
+#&nbsp;This&nbsp;configuration&nbsp;file&nbsp;is&nbsp;licensed&nbsp;under&nbsp;the&nbsp;same&nbsp;terms&nbsp;as&nbsp;ranger.<br>
+#&nbsp;===================================================================<br>
+#&nbsp;This&nbsp;is&nbsp;the&nbsp;main&nbsp;configuration&nbsp;file&nbsp;of&nbsp;ranger.&nbsp;&nbsp;It&nbsp;consists&nbsp;of&nbsp;python<br>
+#&nbsp;code,&nbsp;but&nbsp;fear&nbsp;not,&nbsp;you&nbsp;don't&nbsp;need&nbsp;any&nbsp;python&nbsp;knowledge&nbsp;for&nbsp;changing<br>
+#&nbsp;the&nbsp;settings.<br>
+#<br>
+#&nbsp;Lines&nbsp;beginning&nbsp;with&nbsp;#&nbsp;are&nbsp;comments.&nbsp;&nbsp;To&nbsp;enable&nbsp;a&nbsp;line,&nbsp;remove&nbsp;the&nbsp;#.<br>
+#<br>
+#&nbsp;You&nbsp;can&nbsp;customize&nbsp;ranger&nbsp;in&nbsp;the&nbsp;file&nbsp;~/.config/ranger/options.py.<br>
+#&nbsp;It&nbsp;has&nbsp;the&nbsp;same&nbsp;syntax&nbsp;as&nbsp;this&nbsp;file.&nbsp;&nbsp;In&nbsp;fact,&nbsp;you&nbsp;can&nbsp;just&nbsp;copy&nbsp;this<br>
+#&nbsp;file&nbsp;there&nbsp;with&nbsp;`ranger&nbsp;--copy-config=options'&nbsp;and&nbsp;make&nbsp;your&nbsp;modifications.<br>
+#&nbsp;But&nbsp;make&nbsp;sure&nbsp;you&nbsp;update&nbsp;your&nbsp;configs&nbsp;when&nbsp;you&nbsp;update&nbsp;ranger.<br>
+#&nbsp;===================================================================</tt></p>
 <p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#aa55cc">
@@ -32,30 +32,30 @@ of&nbsp;the&nbsp;values&nbsp;stay&nbsp;the&nbsp;same.</tt></p>
     
 <tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
 <td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="ranger.api.apps.html">ranger.api.apps</a><br>
-<a href="ranger.gui.color.html">ranger.gui.color</a><br>
+</td><td width="25%" valign=top><a href="ranger.gui.color.html">ranger.gui.color</a><br>
 </td><td width="25%" valign=top><a href="ranger.api.commands.html">ranger.api.commands</a><br>
-<a href="ranger.api.keys.html">ranger.api.keys</a><br>
 </td><td width="25%" valign=top><a href="re.html">re</a><br>
-</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+</td></tr></table></td></tr></table><p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#55aa55">
 <td colspan=3 valign=bottom>&nbsp;<br>
 <font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
     
 <tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><strong>DELETE_WARNING</strong> = 'delete seriously? '<br>
-<strong>autosave_bookmarks</strong> = True<br>
+<td width="100%"><strong>autosave_bookmarks</strong> = True<br>
 <strong>collapse_preview</strong> = True<br>
 <strong>colorscheme</strong> = 'default'<br>
 <strong>colorscheme_overlay</strong> = None<br>
-<strong>column_ratios</strong> = (1, 1, 4, 3)<br>
+<strong>column_ratios</strong> = (1, 3, 4)<br>
 <strong>dirname_in_tabs</strong> = False<br>
 <strong>display_size_in_main_column</strong> = True<br>
 <strong>display_size_in_status_bar</strong> = False<br>
+<strong>display_tags_in_all_columns</strong> = True<br>
 <strong>draw_bookmark_borders</strong> = True<br>
 <strong>draw_borders</strong> = False<br>
 <strong>flushinput</strong> = True<br>
 <strong>hidden_filter</strong> = &lt;_sre.SRE_Pattern object&gt;<br>
+<strong>load_default_rc</strong> = True<br>
 <strong>max_console_history_size</strong> = 50<br>
 <strong>max_history_size</strong> = 20<br>
 <strong>mouse_enabled</strong> = True<br>
@@ -69,11 +69,12 @@ of&nbsp;the&nbsp;values&nbsp;stay&nbsp;the&nbsp;same.</tt></p>
 <strong>show_cursor</strong> = False<br>
 <strong>show_hidden</strong> = False<br>
 <strong>show_hidden_bookmarks</strong> = True<br>
-<strong>sort</strong> = 'basename'<br>
+<strong>sort</strong> = 'natural'<br>
 <strong>sort_case_insensitive</strong> = False<br>
 <strong>sort_directories_first</strong> = True<br>
 <strong>sort_reverse</strong> = False<br>
 <strong>tilde_in_titlebar</strong> = True<br>
+<strong>unicode_ellipsis</strong> = False<br>
 <strong>update_title</strong> = True<br>
 <strong>use_preview_script</strong> = True<br>
 <strong>xterm_alt_key</strong> = False</td></tr></table>

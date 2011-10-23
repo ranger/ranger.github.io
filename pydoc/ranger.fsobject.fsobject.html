@@ -1,6 +1,6 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html><head><title>Python: module ranger.fsobject.fsobject</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head><body bgcolor="#f0f0f8">
 
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
@@ -9,7 +9,7 @@
 <font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong><a href="ranger.html"><font color="#ffffff">ranger</font></a>.<a href="ranger.fsobject.html"><font color="#ffffff">fsobject</font></a>.fsobject</strong></big></big></font></td
 ><td align=right valign=bottom
 ><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:../../ranger/fsobject/fsobject.py">../../ranger/fsobject/fsobject.py</a></font></td></tr></table>
-    <p><tt>#&nbsp;Copyright&nbsp;(C)&nbsp;2009,&nbsp;2010&nbsp;&nbsp;Roman&nbsp;Zimbelmann&nbsp;&lt;romanz@lavabit.com&gt;<br>
+    <p><tt>#&nbsp;Copyright&nbsp;(C)&nbsp;2009,&nbsp;2010,&nbsp;2011&nbsp;&nbsp;Roman&nbsp;Zimbelmann&nbsp;&lt;romanz@lavabit.com&gt;<br>
 #<br>
 #&nbsp;This&nbsp;program&nbsp;is&nbsp;free&nbsp;software:&nbsp;you&nbsp;can&nbsp;redistribute&nbsp;it&nbsp;and/or&nbsp;modify<br>
 #&nbsp;it&nbsp;under&nbsp;the&nbsp;terms&nbsp;of&nbsp;the&nbsp;GNU&nbsp;General&nbsp;Public&nbsp;License&nbsp;as&nbsp;published&nbsp;by<br>
@@ -57,7 +57,7 @@
 <dd><a href="ranger.fsobject.fsobject.html#FileSystemObject">FileSystemObject</a></dd>
 <dd><a href="ranger.core.shared.html#FileManagerAware">ranger.core.shared.FileManagerAware</a></dd>
 <dd><a href="ranger.core.shared.html#Awareness">ranger.core.shared.Awareness</a></dd>
-<dd><a href="builtins.html#object">builtins.object</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
 </dl>
 <hr>
 Methods defined here:<br>
@@ -89,8 +89,6 @@ Data descriptors defined here:<br>
 </dl>
 <hr>
 Data and other attributes defined here:<br>
-<dl><dt><strong>__locals__</strong> = {'__init__': &lt;function __init__&gt;, '__locals__': {'__init__': &lt;function __init__&gt;, '__locals__': {'__init__': &lt;function __init__&gt;, '__locals__': {'__init__': &lt;function __init__&gt;, '__locals__': {'__init__': &lt;function __init__&gt;, '__locals__': {'__init__': &lt;function __init__&gt;, '__locals__': {...}, '__module__': 'ranger.fsobject.fsobject', '__repr__': &lt;function __repr__&gt;, '__str__': &lt;function __str__&gt;, '_mark': &lt;function _mark&gt;, 'accessible': False, 'attr': 'container', 'audio': &lt;ranger.ext.lazy_property.lazy_property object&gt;, 'basename': None, ...}, '__module__': 'ranger.fsobject.fsobject', '__repr__': &lt;function __repr__&gt;, '__str__': &lt;function __str__&gt;, '_mark': &lt;function _mark&gt;, 'accessible': False, 'attr': 'container', 'audio': &lt;ranger.ext.lazy_property.lazy_property object&gt;, 'basename': None, ...}, '__module__': 'ranger.fsobject.fsobject', '__repr__': &lt;function __repr__&gt;, '__str__': &lt;function __str__&gt;, '_mark': &lt;function _mark&gt;, 'accessible': False, 'attr': 'container', 'audio': &lt;ranger.ext.lazy_property.lazy_property object&gt;, 'basename': None, ...}, '__module__': 'ranger.fsobject.fsobject', '__repr__': &lt;function __repr__&gt;, '__str__': &lt;function __str__&gt;, '_mark': &lt;function _mark&gt;, 'accessible': False, 'attr': 'container', 'audio': &lt;ranger.ext.lazy_property.lazy_property object&gt;, 'basename': None, ...}, '__module__': 'ranger.fsobject.fsobject', '__repr__': &lt;function __repr__&gt;, '__str__': &lt;function __str__&gt;, '_mark': &lt;function _mark&gt;, 'accessible': False, 'attr': 'container', 'audio': &lt;ranger.ext.lazy_property.lazy_property object&gt;, 'basename': None, ...}, '__module__': 'ranger.fsobject.fsobject', '__repr__': &lt;function __repr__&gt;, '__str__': &lt;function __str__&gt;, '_mark': &lt;function _mark&gt;, 'accessible': False, 'attr': 'container', 'audio': &lt;ranger.ext.lazy_property.lazy_property object&gt;, 'basename': None, ...}</dl>
-
 <dl><dt><strong>accessible</strong> = False</dl>
 
 <dl><dt><strong>attr</strong> = 'container'</dl>
@@ -182,34 +180,12 @@ Data descriptors inherited from <a href="ranger.core.shared.html#Awareness">rang
 <font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
     
 <tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><dl><dt><a name="-access"><strong>access</strong></a>(...)</dt><dd><tt><a href="#-access">access</a>(path,&nbsp;mode)&nbsp;-&gt;&nbsp;True&nbsp;if&nbsp;granted,&nbsp;False&nbsp;otherwise<br>
-&nbsp;<br>
-Use&nbsp;the&nbsp;real&nbsp;uid/gid&nbsp;to&nbsp;test&nbsp;for&nbsp;access&nbsp;to&nbsp;a&nbsp;path.&nbsp;&nbsp;Note&nbsp;that&nbsp;most<br>
-operations&nbsp;will&nbsp;use&nbsp;the&nbsp;effective&nbsp;uid/gid,&nbsp;therefore&nbsp;this&nbsp;routine&nbsp;can<br>
-be&nbsp;used&nbsp;in&nbsp;a&nbsp;suid/sgid&nbsp;environment&nbsp;to&nbsp;test&nbsp;if&nbsp;the&nbsp;invoking&nbsp;user&nbsp;has&nbsp;the<br>
-specified&nbsp;access&nbsp;to&nbsp;the&nbsp;path.&nbsp;&nbsp;The&nbsp;mode&nbsp;argument&nbsp;can&nbsp;be&nbsp;F_OK&nbsp;to&nbsp;test<br>
-existence,&nbsp;or&nbsp;the&nbsp;inclusive-OR&nbsp;of&nbsp;R_OK,&nbsp;W_OK,&nbsp;and&nbsp;X_OK.</tt></dd></dl>
- <dl><dt><a name="-listdir"><strong>listdir</strong></a>(...)</dt><dd><tt><a href="#-listdir">listdir</a>(path)&nbsp;-&gt;&nbsp;list_of_strings<br>
-&nbsp;<br>
-Return&nbsp;a&nbsp;list&nbsp;containing&nbsp;the&nbsp;names&nbsp;of&nbsp;the&nbsp;entries&nbsp;in&nbsp;the&nbsp;directory.<br>
-&nbsp;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;path:&nbsp;path&nbsp;of&nbsp;directory&nbsp;to&nbsp;list<br>
-&nbsp;<br>
-The&nbsp;list&nbsp;is&nbsp;in&nbsp;arbitrary&nbsp;order.&nbsp;&nbsp;It&nbsp;does&nbsp;not&nbsp;include&nbsp;the&nbsp;special<br>
-entries&nbsp;'.'&nbsp;and&nbsp;'..'&nbsp;even&nbsp;if&nbsp;they&nbsp;are&nbsp;present&nbsp;in&nbsp;the&nbsp;directory.</tt></dd></dl>
- <dl><dt><a name="-lstat"><strong>lstat</strong></a>(...)</dt><dd><tt><a href="#-lstat">lstat</a>(path)&nbsp;-&gt;&nbsp;stat&nbsp;result<br>
+<td width="100%"><dl><dt><a name="-lstat"><strong>lstat</strong></a>(...)</dt><dd><tt><a href="#-lstat">lstat</a>(path)&nbsp;-&gt;&nbsp;stat&nbsp;result<br>
 &nbsp;<br>
 Like&nbsp;<a href="#-stat">stat</a>(path),&nbsp;but&nbsp;do&nbsp;not&nbsp;follow&nbsp;symbolic&nbsp;links.</tt></dd></dl>
- <dl><dt><a name="-readlink"><strong>readlink</strong></a>(...)</dt><dd><tt><a href="#-readlink">readlink</a>(path)&nbsp;-&gt;&nbsp;path<br>
-&nbsp;<br>
-Return&nbsp;a&nbsp;string&nbsp;representing&nbsp;the&nbsp;path&nbsp;to&nbsp;which&nbsp;the&nbsp;symbolic&nbsp;link&nbsp;points.</tt></dd></dl>
  <dl><dt><a name="-stat"><strong>stat</strong></a>(...)</dt><dd><tt><a href="#-stat">stat</a>(path)&nbsp;-&gt;&nbsp;stat&nbsp;result<br>
 &nbsp;<br>
 Perform&nbsp;a&nbsp;stat&nbsp;system&nbsp;call&nbsp;on&nbsp;the&nbsp;given&nbsp;path.</tt></dd></dl>
- <dl><dt><a name="-time"><strong>time</strong></a>(...)</dt><dd><tt><a href="#-time">time</a>()&nbsp;-&gt;&nbsp;floating&nbsp;point&nbsp;number<br>
-&nbsp;<br>
-Return&nbsp;the&nbsp;current&nbsp;time&nbsp;in&nbsp;seconds&nbsp;since&nbsp;the&nbsp;Epoch.<br>
-Fractions&nbsp;of&nbsp;a&nbsp;second&nbsp;may&nbsp;be&nbsp;present&nbsp;if&nbsp;the&nbsp;system&nbsp;clock&nbsp;provides&nbsp;them.</tt></dd></dl>
 </td></tr></table><p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#55aa55">
@@ -217,7 +193,6 @@ Fractions&nbsp;of&nbsp;a&nbsp;second&nbsp;may&nbsp;be&nbsp;present&nbsp;if&nbsp;
 <font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
     
 <tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><strong>BAD_INFO</strong> = '?'<br>
-<strong>CONTAINER_EXTENSIONS</strong> = ('7z', 'ace', 'ar', 'arc', 'bz', 'bz2', 'cab', 'cpio', 'cpt', 'deb', 'dgc', 'dmg', 'gz', 'iso', 'jar', 'msi', 'pkg', 'rar', 'shar', 'tar', ...)<br>
+<td width="100%"><strong>CONTAINER_EXTENSIONS</strong> = ('7z', 'ace', 'ar', 'arc', 'bz', 'bz2', 'cab', 'cpio', 'cpt', 'deb', 'dgc', 'dmg', 'gz', 'iso', 'jar', 'msi', 'pkg', 'rar', 'shar', 'tar', ...)<br>
 <strong>extsep</strong> = '.'</td></tr></table>
 </body></html>

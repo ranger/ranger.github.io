@@ -1,6 +1,6 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html><head><title>Python: module ranger.ext.keybinding_parser</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head><body bgcolor="#f0f0f8">
 
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
@@ -9,7 +9,7 @@
 <font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong><a href="ranger.html"><font color="#ffffff">ranger</font></a>.<a href="ranger.ext.html"><font color="#ffffff">ext</font></a>.keybinding_parser</strong></big></big></font></td
 ><td align=right valign=bottom
 ><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:../../ranger/ext/keybinding_parser.py">../../ranger/ext/keybinding_parser.py</a></font></td></tr></table>
-    <p><tt>#&nbsp;Copyright&nbsp;(C)&nbsp;2009,&nbsp;2010&nbsp;&nbsp;Roman&nbsp;Zimbelmann&nbsp;&lt;romanz@lavabit.com&gt;<br>
+    <p><tt>#&nbsp;Copyright&nbsp;(C)&nbsp;2009,&nbsp;2010,&nbsp;2011&nbsp;&nbsp;Roman&nbsp;Zimbelmann&nbsp;&lt;romanz@lavabit.com&gt;<br>
 #<br>
 #&nbsp;This&nbsp;program&nbsp;is&nbsp;free&nbsp;software:&nbsp;you&nbsp;can&nbsp;redistribute&nbsp;it&nbsp;and/or&nbsp;modify<br>
 #&nbsp;it&nbsp;under&nbsp;the&nbsp;terms&nbsp;of&nbsp;the&nbsp;GNU&nbsp;General&nbsp;Public&nbsp;License&nbsp;as&nbsp;published&nbsp;by<br>
@@ -30,21 +30,191 @@
 <font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
     
 <tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="curses.html">curses</a><br>
-</td><td width="25%" valign=top></td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="copy.html">copy</a><br>
+</td><td width="25%" valign=top><a href="curses.html">curses</a><br>
+</td><td width="25%" valign=top><a href="sys.html">sys</a><br>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="__builtin__.html#dict">__builtin__.dict</a>(<a href="__builtin__.html#object">__builtin__.object</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="ranger.ext.keybinding_parser.html#KeyMaps">KeyMaps</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="__builtin__.html#object">__builtin__.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="ranger.ext.keybinding_parser.html#KeyBuffer">KeyBuffer</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="KeyBuffer">class <strong>KeyBuffer</strong></a>(<a href="__builtin__.html#object">__builtin__.object</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="KeyBuffer-__init__"><strong>__init__</strong></a>(self, keymap<font color="#909090">=None</font>)</dt></dl>
+
+<dl><dt><a name="KeyBuffer-__str__"><strong>__str__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="KeyBuffer-add"><strong>add</strong></a>(self, key)</dt></dl>
+
+<dl><dt><a name="KeyBuffer-clear"><strong>clear</strong></a>(self)</dt></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>any_key</strong> = 9001</dl>
+
+<dl><dt><strong>exclude_from_anykey</strong> = [27]</dl>
+
+<dl><dt><strong>passive_key</strong> = 9002</dl>
+
+<dl><dt><strong>quantifier_key</strong> = 9004</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="KeyMaps">class <strong>KeyMaps</strong></a>(<a href="__builtin__.html#dict">__builtin__.dict</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="ranger.ext.keybinding_parser.html#KeyMaps">KeyMaps</a></dd>
+<dd><a href="__builtin__.html#dict">__builtin__.dict</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="KeyMaps-__init__"><strong>__init__</strong></a>(self, keybuffer<font color="#909090">=None</font>)</dt></dl>
+
+<dl><dt><a name="KeyMaps-bind"><strong>bind</strong></a>(self, context, keys, leaf)</dt></dl>
+
+<dl><dt><a name="KeyMaps-copy"><strong>copy</strong></a>(self, context, source, target)</dt></dl>
+
+<dl><dt><a name="KeyMaps-unbind"><strong>unbind</strong></a>(self, context, keys)</dt></dl>
+
+<dl><dt><a name="KeyMaps-use_keymap"><strong>use_keymap</strong></a>(self, keymap_name)</dt></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Methods inherited from <a href="__builtin__.html#dict">__builtin__.dict</a>:<br>
+<dl><dt><a name="KeyMaps-__cmp__"><strong>__cmp__</strong></a>(...)</dt><dd><tt>x.<a href="#KeyMaps-__cmp__">__cmp__</a>(y)&nbsp;&lt;==&gt;&nbsp;cmp(x,y)</tt></dd></dl>
+
+<dl><dt><a name="KeyMaps-__contains__"><strong>__contains__</strong></a>(...)</dt><dd><tt>D.<a href="#KeyMaps-__contains__">__contains__</a>(k)&nbsp;-&gt;&nbsp;True&nbsp;if&nbsp;D&nbsp;has&nbsp;a&nbsp;key&nbsp;k,&nbsp;else&nbsp;False</tt></dd></dl>
+
+<dl><dt><a name="KeyMaps-__delitem__"><strong>__delitem__</strong></a>(...)</dt><dd><tt>x.<a href="#KeyMaps-__delitem__">__delitem__</a>(y)&nbsp;&lt;==&gt;&nbsp;del&nbsp;x[y]</tt></dd></dl>
+
+<dl><dt><a name="KeyMaps-__eq__"><strong>__eq__</strong></a>(...)</dt><dd><tt>x.<a href="#KeyMaps-__eq__">__eq__</a>(y)&nbsp;&lt;==&gt;&nbsp;x==y</tt></dd></dl>
+
+<dl><dt><a name="KeyMaps-__ge__"><strong>__ge__</strong></a>(...)</dt><dd><tt>x.<a href="#KeyMaps-__ge__">__ge__</a>(y)&nbsp;&lt;==&gt;&nbsp;x&gt;=y</tt></dd></dl>
+
+<dl><dt><a name="KeyMaps-__getattribute__"><strong>__getattribute__</strong></a>(...)</dt><dd><tt>x.<a href="#KeyMaps-__getattribute__">__getattribute__</a>('name')&nbsp;&lt;==&gt;&nbsp;x.name</tt></dd></dl>
+
+<dl><dt><a name="KeyMaps-__getitem__"><strong>__getitem__</strong></a>(...)</dt><dd><tt>x.<a href="#KeyMaps-__getitem__">__getitem__</a>(y)&nbsp;&lt;==&gt;&nbsp;x[y]</tt></dd></dl>
+
+<dl><dt><a name="KeyMaps-__gt__"><strong>__gt__</strong></a>(...)</dt><dd><tt>x.<a href="#KeyMaps-__gt__">__gt__</a>(y)&nbsp;&lt;==&gt;&nbsp;x&gt;y</tt></dd></dl>
+
+<dl><dt><a name="KeyMaps-__iter__"><strong>__iter__</strong></a>(...)</dt><dd><tt>x.<a href="#KeyMaps-__iter__">__iter__</a>()&nbsp;&lt;==&gt;&nbsp;iter(x)</tt></dd></dl>
+
+<dl><dt><a name="KeyMaps-__le__"><strong>__le__</strong></a>(...)</dt><dd><tt>x.<a href="#KeyMaps-__le__">__le__</a>(y)&nbsp;&lt;==&gt;&nbsp;x&lt;=y</tt></dd></dl>
+
+<dl><dt><a name="KeyMaps-__len__"><strong>__len__</strong></a>(...)</dt><dd><tt>x.<a href="#KeyMaps-__len__">__len__</a>()&nbsp;&lt;==&gt;&nbsp;len(x)</tt></dd></dl>
+
+<dl><dt><a name="KeyMaps-__lt__"><strong>__lt__</strong></a>(...)</dt><dd><tt>x.<a href="#KeyMaps-__lt__">__lt__</a>(y)&nbsp;&lt;==&gt;&nbsp;x&lt;y</tt></dd></dl>
+
+<dl><dt><a name="KeyMaps-__ne__"><strong>__ne__</strong></a>(...)</dt><dd><tt>x.<a href="#KeyMaps-__ne__">__ne__</a>(y)&nbsp;&lt;==&gt;&nbsp;x!=y</tt></dd></dl>
+
+<dl><dt><a name="KeyMaps-__repr__"><strong>__repr__</strong></a>(...)</dt><dd><tt>x.<a href="#KeyMaps-__repr__">__repr__</a>()&nbsp;&lt;==&gt;&nbsp;repr(x)</tt></dd></dl>
+
+<dl><dt><a name="KeyMaps-__setitem__"><strong>__setitem__</strong></a>(...)</dt><dd><tt>x.<a href="#KeyMaps-__setitem__">__setitem__</a>(i,&nbsp;y)&nbsp;&lt;==&gt;&nbsp;x[i]=y</tt></dd></dl>
+
+<dl><dt><a name="KeyMaps-__sizeof__"><strong>__sizeof__</strong></a>(...)</dt><dd><tt>D.<a href="#KeyMaps-__sizeof__">__sizeof__</a>()&nbsp;-&gt;&nbsp;size&nbsp;of&nbsp;D&nbsp;in&nbsp;memory,&nbsp;in&nbsp;bytes</tt></dd></dl>
+
+<dl><dt><a name="KeyMaps-clear"><strong>clear</strong></a>(...)</dt><dd><tt>D.<a href="#KeyMaps-clear">clear</a>()&nbsp;-&gt;&nbsp;None.&nbsp;&nbsp;Remove&nbsp;all&nbsp;items&nbsp;from&nbsp;D.</tt></dd></dl>
+
+<dl><dt><a name="KeyMaps-get"><strong>get</strong></a>(...)</dt><dd><tt>D.<a href="#KeyMaps-get">get</a>(k[,d])&nbsp;-&gt;&nbsp;D[k]&nbsp;if&nbsp;k&nbsp;in&nbsp;D,&nbsp;else&nbsp;d.&nbsp;&nbsp;d&nbsp;defaults&nbsp;to&nbsp;None.</tt></dd></dl>
+
+<dl><dt><a name="KeyMaps-has_key"><strong>has_key</strong></a>(...)</dt><dd><tt>D.<a href="#KeyMaps-has_key">has_key</a>(k)&nbsp;-&gt;&nbsp;True&nbsp;if&nbsp;D&nbsp;has&nbsp;a&nbsp;key&nbsp;k,&nbsp;else&nbsp;False</tt></dd></dl>
+
+<dl><dt><a name="KeyMaps-items"><strong>items</strong></a>(...)</dt><dd><tt>D.<a href="#KeyMaps-items">items</a>()&nbsp;-&gt;&nbsp;list&nbsp;of&nbsp;D's&nbsp;(key,&nbsp;value)&nbsp;pairs,&nbsp;as&nbsp;2-tuples</tt></dd></dl>
+
+<dl><dt><a name="KeyMaps-iteritems"><strong>iteritems</strong></a>(...)</dt><dd><tt>D.<a href="#KeyMaps-iteritems">iteritems</a>()&nbsp;-&gt;&nbsp;an&nbsp;iterator&nbsp;over&nbsp;the&nbsp;(key,&nbsp;value)&nbsp;items&nbsp;of&nbsp;D</tt></dd></dl>
+
+<dl><dt><a name="KeyMaps-iterkeys"><strong>iterkeys</strong></a>(...)</dt><dd><tt>D.<a href="#KeyMaps-iterkeys">iterkeys</a>()&nbsp;-&gt;&nbsp;an&nbsp;iterator&nbsp;over&nbsp;the&nbsp;keys&nbsp;of&nbsp;D</tt></dd></dl>
+
+<dl><dt><a name="KeyMaps-itervalues"><strong>itervalues</strong></a>(...)</dt><dd><tt>D.<a href="#KeyMaps-itervalues">itervalues</a>()&nbsp;-&gt;&nbsp;an&nbsp;iterator&nbsp;over&nbsp;the&nbsp;values&nbsp;of&nbsp;D</tt></dd></dl>
+
+<dl><dt><a name="KeyMaps-keys"><strong>keys</strong></a>(...)</dt><dd><tt>D.<a href="#KeyMaps-keys">keys</a>()&nbsp;-&gt;&nbsp;list&nbsp;of&nbsp;D's&nbsp;keys</tt></dd></dl>
+
+<dl><dt><a name="KeyMaps-pop"><strong>pop</strong></a>(...)</dt><dd><tt>D.<a href="#KeyMaps-pop">pop</a>(k[,d])&nbsp;-&gt;&nbsp;v,&nbsp;remove&nbsp;specified&nbsp;key&nbsp;and&nbsp;return&nbsp;the&nbsp;corresponding&nbsp;value.<br>
+If&nbsp;key&nbsp;is&nbsp;not&nbsp;found,&nbsp;d&nbsp;is&nbsp;returned&nbsp;if&nbsp;given,&nbsp;otherwise&nbsp;KeyError&nbsp;is&nbsp;raised</tt></dd></dl>
+
+<dl><dt><a name="KeyMaps-popitem"><strong>popitem</strong></a>(...)</dt><dd><tt>D.<a href="#KeyMaps-popitem">popitem</a>()&nbsp;-&gt;&nbsp;(k,&nbsp;v),&nbsp;remove&nbsp;and&nbsp;return&nbsp;some&nbsp;(key,&nbsp;value)&nbsp;pair&nbsp;as&nbsp;a<br>
+2-tuple;&nbsp;but&nbsp;raise&nbsp;KeyError&nbsp;if&nbsp;D&nbsp;is&nbsp;empty.</tt></dd></dl>
+
+<dl><dt><a name="KeyMaps-setdefault"><strong>setdefault</strong></a>(...)</dt><dd><tt>D.<a href="#KeyMaps-setdefault">setdefault</a>(k[,d])&nbsp;-&gt;&nbsp;D.<a href="#KeyMaps-get">get</a>(k,d),&nbsp;also&nbsp;set&nbsp;D[k]=d&nbsp;if&nbsp;k&nbsp;not&nbsp;in&nbsp;D</tt></dd></dl>
+
+<dl><dt><a name="KeyMaps-update"><strong>update</strong></a>(...)</dt><dd><tt>D.<a href="#KeyMaps-update">update</a>(E,&nbsp;**F)&nbsp;-&gt;&nbsp;None.&nbsp;&nbsp;Update&nbsp;D&nbsp;from&nbsp;<a href="__builtin__.html#dict">dict</a>/iterable&nbsp;E&nbsp;and&nbsp;F.<br>
+If&nbsp;E&nbsp;has&nbsp;a&nbsp;.<a href="#KeyMaps-keys">keys</a>()&nbsp;method,&nbsp;does:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;k&nbsp;in&nbsp;E:&nbsp;D[k]&nbsp;=&nbsp;E[k]<br>
+If&nbsp;E&nbsp;lacks&nbsp;.<a href="#KeyMaps-keys">keys</a>()&nbsp;method,&nbsp;does:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(k,&nbsp;v)&nbsp;in&nbsp;E:&nbsp;D[k]&nbsp;=&nbsp;v<br>
+In&nbsp;either&nbsp;case,&nbsp;this&nbsp;is&nbsp;followed&nbsp;by:&nbsp;for&nbsp;k&nbsp;in&nbsp;F:&nbsp;D[k]&nbsp;=&nbsp;F[k]</tt></dd></dl>
+
+<dl><dt><a name="KeyMaps-values"><strong>values</strong></a>(...)</dt><dd><tt>D.<a href="#KeyMaps-values">values</a>()&nbsp;-&gt;&nbsp;list&nbsp;of&nbsp;D's&nbsp;values</tt></dd></dl>
+
+<dl><dt><a name="KeyMaps-viewitems"><strong>viewitems</strong></a>(...)</dt><dd><tt>D.<a href="#KeyMaps-viewitems">viewitems</a>()&nbsp;-&gt;&nbsp;a&nbsp;set-like&nbsp;<a href="__builtin__.html#object">object</a>&nbsp;providing&nbsp;a&nbsp;view&nbsp;on&nbsp;D's&nbsp;items</tt></dd></dl>
+
+<dl><dt><a name="KeyMaps-viewkeys"><strong>viewkeys</strong></a>(...)</dt><dd><tt>D.<a href="#KeyMaps-viewkeys">viewkeys</a>()&nbsp;-&gt;&nbsp;a&nbsp;set-like&nbsp;<a href="__builtin__.html#object">object</a>&nbsp;providing&nbsp;a&nbsp;view&nbsp;on&nbsp;D's&nbsp;keys</tt></dd></dl>
+
+<dl><dt><a name="KeyMaps-viewvalues"><strong>viewvalues</strong></a>(...)</dt><dd><tt>D.<a href="#KeyMaps-viewvalues">viewvalues</a>()&nbsp;-&gt;&nbsp;an&nbsp;<a href="__builtin__.html#object">object</a>&nbsp;providing&nbsp;a&nbsp;view&nbsp;on&nbsp;D's&nbsp;values</tt></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="__builtin__.html#dict">__builtin__.dict</a>:<br>
+<dl><dt><strong>__hash__</strong> = None</dl>
+
+<dl><dt><strong>__new__</strong> = &lt;built-in method __new__ of type object&gt;<dd><tt>T.<a href="#KeyMaps-__new__">__new__</a>(S,&nbsp;...)&nbsp;-&gt;&nbsp;a&nbsp;new&nbsp;<a href="__builtin__.html#object">object</a>&nbsp;with&nbsp;type&nbsp;S,&nbsp;a&nbsp;subtype&nbsp;of&nbsp;T</tt></dl>
+
+<dl><dt><strong>fromkeys</strong> = &lt;built-in method fromkeys of type object&gt;<dd><tt><a href="__builtin__.html#dict">dict</a>.<a href="#KeyMaps-fromkeys">fromkeys</a>(S[,v])&nbsp;-&gt;&nbsp;New&nbsp;<a href="__builtin__.html#dict">dict</a>&nbsp;with&nbsp;keys&nbsp;from&nbsp;S&nbsp;and&nbsp;values&nbsp;equal&nbsp;to&nbsp;v.<br>
+v&nbsp;defaults&nbsp;to&nbsp;None.</tt></dl>
+
+</td></tr></table></td></tr></table><p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#eeaa77">
 <td colspan=3 valign=bottom>&nbsp;<br>
 <font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
     
 <tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><dl><dt><a name="-parse_keybinding"><strong>parse_keybinding</strong></a>(obj)</dt><dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Translate&nbsp;a&nbsp;keybinding&nbsp;to&nbsp;a&nbsp;sequence&nbsp;of&nbsp;integers<br>
+<td width="100%"><dl><dt><a name="-construct_keybinding"><strong>construct_keybinding</strong></a>(iterable)</dt><dd><tt>Does&nbsp;the&nbsp;reverse&nbsp;of&nbsp;parse_keybinding</tt></dd></dl>
+ <dl><dt><a name="-key_to_string"><strong>key_to_string</strong></a>(key)</dt></dl>
+ <dl><dt><a name="-parse_keybinding"><strong>parse_keybinding</strong></a>(obj)</dt><dd><tt>Translate&nbsp;a&nbsp;keybinding&nbsp;to&nbsp;a&nbsp;sequence&nbsp;of&nbsp;integers<br>
 &nbsp;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lol&lt;CR&gt;&nbsp;&nbsp;&nbsp;=&gt;&nbsp;&nbsp;&nbsp;(ord('l'),&nbsp;ord('o'),&nbsp;ord('l'),&nbsp;ord('<br>
-'))<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&gt;&nbsp;&nbsp;&nbsp;(108,&nbsp;111,&nbsp;108,&nbsp;10)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x&lt;A-Left&gt;&nbsp;=&gt;&nbsp;&nbsp;&nbsp;(120,&nbsp;(27,&nbsp;curses.KEY_LEFT))</tt></dd></dl>
+Example:<br>
+lol&lt;CR&gt;&nbsp;&nbsp;&nbsp;=&gt;&nbsp;&nbsp;&nbsp;(ord('l'),&nbsp;ord('o'),&nbsp;ord('l'),&nbsp;ord('\n'))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&gt;&nbsp;&nbsp;&nbsp;(108,&nbsp;111,&nbsp;108,&nbsp;10)<br>
+x&lt;A-Left&gt;&nbsp;=&gt;&nbsp;&nbsp;&nbsp;(120,&nbsp;(27,&nbsp;curses.KEY_LEFT))</tt></dd></dl>
 </td></tr></table><p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#55aa55">
@@ -52,14 +222,16 @@
 <font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
     
 <tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><strong>ANYKEY</strong> = 9002<br>
-<strong>DIRKEY</strong> = 9001<br>
-<strong>PASSIVE_ACTION</strong> = 9003<br>
-<strong>ascii_lowercase</strong> = 'abcdefghijklmnopqrstuvwxyz'<br>
+<td width="100%"><strong>ALT_KEY</strong> = 9003<br>
+<strong>ANYKEY</strong> = 9001<br>
+<strong>PASSIVE_ACTION</strong> = 9002<br>
+<strong>PY3</strong> = False<br>
+<strong>QUANT_KEY</strong> = 9004<br>
 <strong>char</strong> = 'z'<br>
+<strong>digits</strong> = set([48, 49, 50, 51, 52, 53, ...])<br>
 <strong>key</strong> = 'delete'<br>
 <strong>n</strong> = 63<br>
-<strong>special_keys</strong> = {'a-0': (27, 48), 'a-1': (27, 49), 'a-2': (27, 50), 'a-3': (27, 51), 'a-4': (27, 52), 'a-5': (27, 53), 'a-6': (27, 54), 'a-7': (27, 55), 'a-8': (27, 56), 'a-9': (27, 57), ...}<br>
-<strong>val</strong> = 330<br>
-<strong>very_special_keys</strong> = {'any': 9002, 'bg': 9003, 'dir': 9001}</td></tr></table>
+<strong>reversed_special_keys</strong> = {1: 'c-a', 2: 'c-b', 3: 'c-c', 4: 'c-d', 5: 'c-e', 6: 'c-f', 7: 'c-g', 8: 'c-h', 9: 'c-i', 10: 'enter', ...}<br>
+<strong>special_keys</strong> = {'a-0': (9003, 48), 'a-1': (9003, 49), 'a-2': (9003, 50), 'a-3': (9003, 51), 'a-4': (9003, 52), 'a-5': (9003, 53), 'a-6': (9003, 54), 'a-7': (9003, 55), 'a-8': (9003, 56), 'a-9': (9003, 57), ...}<br>
+<strong>val</strong> = 330</td></tr></table>
 </body></html>

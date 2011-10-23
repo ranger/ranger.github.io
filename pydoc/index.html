@@ -1,22 +1,19 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html><head><title>Python: package ranger</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head><body bgcolor="#f0f0f8">
 
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
 <tr bgcolor="#7799ee">
 <td valign=bottom>&nbsp;<br>
-<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>ranger</strong></big></big> (version 1.4.0)</font></td
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>ranger</strong></big></big> (version 1.5.1)</font></td
 ><td align=right valign=bottom
 ><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:../../ranger/__init__.py">../../ranger/__init__.py</a></font></td></tr></table>
-    <p><tt>Console-based&nbsp;visual&nbsp;file&nbsp;manager.<br>
+    <p><tt>A&nbsp;console&nbsp;file&nbsp;manager&nbsp;with&nbsp;VI&nbsp;key&nbsp;bindings.<br>
 &nbsp;<br>
-Ranger&nbsp;is&nbsp;a&nbsp;file&nbsp;manager&nbsp;with&nbsp;an&nbsp;ncurses&nbsp;frontend&nbsp;written&nbsp;in&nbsp;Python.<br>
-It&nbsp;is&nbsp;designed&nbsp;to&nbsp;give&nbsp;you&nbsp;a&nbsp;broader&nbsp;overview&nbsp;of&nbsp;the&nbsp;file&nbsp;system&nbsp;by<br>
-displaying&nbsp;previews&nbsp;and&nbsp;backviews,&nbsp;dividing&nbsp;the&nbsp;screen&nbsp;into&nbsp;columns.<br>
-&nbsp;<br>
-The&nbsp;keybindings&nbsp;are&nbsp;similar&nbsp;to&nbsp;those&nbsp;of&nbsp;other&nbsp;console&nbsp;programs&nbsp;like<br>
-vim,&nbsp;mutt&nbsp;or&nbsp;ncmpcpp&nbsp;so&nbsp;the&nbsp;usage&nbsp;will&nbsp;be&nbsp;intuitive&nbsp;and&nbsp;efficient.</tt></p>
+It&nbsp;provides&nbsp;a&nbsp;minimalistic&nbsp;and&nbsp;nice&nbsp;curses&nbsp;interface&nbsp;with&nbsp;a&nbsp;view&nbsp;on&nbsp;the<br>
+directory&nbsp;hierarchy.&nbsp;&nbsp;The&nbsp;secondary&nbsp;task&nbsp;of&nbsp;ranger&nbsp;is&nbsp;to&nbsp;figure&nbsp;out&nbsp;which<br>
+program&nbsp;you&nbsp;want&nbsp;to&nbsp;use&nbsp;to&nbsp;open&nbsp;your&nbsp;files&nbsp;with.</tt></p>
 <p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#aa55cc">
@@ -26,26 +23,32 @@ vim,&nbsp;mutt&nbsp;or&nbsp;ncmpcpp&nbsp;so&nbsp;the&nbsp;usage&nbsp;will&nbsp;b
 <tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
 <td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="ranger.api.html"><strong>api</strong>&nbsp;(package)</a><br>
 <a href="ranger.colorschemes.html"><strong>colorschemes</strong>&nbsp;(package)</a><br>
-<a href="ranger.container.html"><strong>container</strong>&nbsp;(package)</a><br>
-</td><td width="25%" valign=top><a href="ranger.core.html"><strong>core</strong>&nbsp;(package)</a><br>
-<a href="ranger.defaults.html"><strong>defaults</strong>&nbsp;(package)</a><br>
+</td><td width="25%" valign=top><a href="ranger.container.html"><strong>container</strong>&nbsp;(package)</a><br>
+<a href="ranger.core.html"><strong>core</strong>&nbsp;(package)</a><br>
+</td><td width="25%" valign=top><a href="ranger.defaults.html"><strong>defaults</strong>&nbsp;(package)</a><br>
 <a href="ranger.ext.html"><strong>ext</strong>&nbsp;(package)</a><br>
 </td><td width="25%" valign=top><a href="ranger.fsobject.html"><strong>fsobject</strong>&nbsp;(package)</a><br>
 <a href="ranger.gui.html"><strong>gui</strong>&nbsp;(package)</a><br>
-<a href="ranger.help.html"><strong>help</strong>&nbsp;(package)</a><br>
-</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+</td></tr></table></td></tr></table><p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#55aa55">
 <td colspan=3 valign=bottom>&nbsp;<br>
 <font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
     
 <tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><strong>RANGERDIR</strong> = '../../ranger'<br>
+<td width="100%"><strong>CONFDIR</strong> = '~/.config/ranger'<br>
+<strong>LOGFILE</strong> = '/tmp/ranger_errorlog'<br>
+<strong>MACRO_DELIMITER</strong> = '%'<br>
+<strong>RANGERDIR</strong> = '../../ranger'<br>
+<strong>STABLE</strong> = True<br>
+<strong>TICKS_BEFORE_COLLECTING_GARBAGE</strong> = 100<br>
+<strong>TIME_BEFORE_FILE_BECOMES_GARBAGE</strong> = 1200<br>
+<strong>USAGE</strong> = '%prog [options] [path/filename]'<br>
 <strong>__author__</strong> = 'Roman Zimbelmann'<br>
 <strong>__email__</strong> = 'romanz@lavabit.com'<br>
 <strong>__license__</strong> = 'GPL3'<br>
 <strong>__maintainer__</strong> = 'Roman Zimbelmann'<br>
-<strong>__version__</strong> = '1.4.0'</td></tr></table><p>
+<strong>__version__</strong> = '1.5.1'</td></tr></table><p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#7799ee">
 <td colspan=3 valign=bottom>&nbsp;<br>

@@ -1,6 +1,6 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html><head><title>Python: module ranger.gui.widgets.statusbar</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head><body bgcolor="#f0f0f8">
 
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
@@ -22,7 +22,7 @@ such&nbsp;as&nbsp;the&nbsp;space&nbsp;used&nbsp;by&nbsp;all&nbsp;the&nbsp;files&
     
 <tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
 <td width="100%"><dl>
-<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+<dt><font face="helvetica, arial"><a href="__builtin__.html#object">__builtin__.object</a>
 </font></dt><dd>
 <dl>
 <dt><font face="helvetica, arial"><a href="ranger.gui.widgets.statusbar.html#Message">Message</a>
@@ -39,7 +39,7 @@ such&nbsp;as&nbsp;the&nbsp;space&nbsp;used&nbsp;by&nbsp;all&nbsp;the&nbsp;files&
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#ffc8d8">
 <td colspan=3 valign=bottom>&nbsp;<br>
-<font color="#000000" face="helvetica, arial"><a name="Message">class <strong>Message</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+<font color="#000000" face="helvetica, arial"><a name="Message">class <strong>Message</strong></a>(<a href="__builtin__.html#object">__builtin__.object</a>)</font></td></tr>
     
 <tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
 <td width="100%">Methods defined here:<br>
@@ -85,15 +85,17 @@ such&nbsp;as&nbsp;the&nbsp;space&nbsp;used&nbsp;by&nbsp;all&nbsp;the&nbsp;files&
 <dd><a href="ranger.gui.curses_shortcuts.html#CursesShortcuts">ranger.gui.curses_shortcuts.CursesShortcuts</a></dd>
 <dd><a href="ranger.core.shared.html#SettingsAware">ranger.core.shared.SettingsAware</a></dd>
 <dd><a href="ranger.core.shared.html#Awareness">ranger.core.shared.Awareness</a></dd>
-<dd><a href="builtins.html#object">builtins.object</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
 </dl>
 <hr>
 Methods defined here:<br>
 <dl><dt><a name="StatusBar-__init__"><strong>__init__</strong></a>(self, win, column<font color="#909090">=None</font>)</dt></dl>
 
+<dl><dt><a name="StatusBar-clear_message"><strong>clear_message</strong></a>(self)</dt></dl>
+
 <dl><dt><a name="StatusBar-draw"><strong>draw</strong></a>(self)</dt><dd><tt>Draw&nbsp;the&nbsp;statusbar</tt></dd></dl>
 
-<dl><dt><a name="StatusBar-notify"><strong>notify</strong></a>(self, text, duration<font color="#909090">=4</font>, bad<font color="#909090">=False</font>)</dt></dl>
+<dl><dt><a name="StatusBar-notify"><strong>notify</strong></a>(self, text, duration<font color="#909090">=0</font>, bad<font color="#909090">=False</font>)</dt></dl>
 
 <dl><dt><a name="StatusBar-request_redraw"><strong>request_redraw</strong></a>(self)</dt></dl>
 
@@ -124,7 +126,7 @@ Methods inherited from <a href="ranger.gui.displayable.html#Displayable">ranger.
 <dl><dt><a name="StatusBar-__bool__"><strong>__bool__</strong></a> = __nonzero__(self)</dt><dd><tt>Always&nbsp;True</tt></dd></dl>
 
 <dl><dt><a name="StatusBar-__contains__"><strong>__contains__</strong></a>(self, item)</dt><dd><tt>Is&nbsp;item&nbsp;inside&nbsp;the&nbsp;boundaries?<br>
-item&nbsp;can&nbsp;be&nbsp;an&nbsp;iterable&nbsp;like&nbsp;[y,&nbsp;x]&nbsp;or&nbsp;an&nbsp;<a href="builtins.html#object">object</a>&nbsp;with&nbsp;x&nbsp;and&nbsp;y&nbsp;methods.</tt></dd></dl>
+item&nbsp;can&nbsp;be&nbsp;an&nbsp;iterable&nbsp;like&nbsp;[y,&nbsp;x]&nbsp;or&nbsp;an&nbsp;<a href="__builtin__.html#object">object</a>&nbsp;with&nbsp;x&nbsp;and&nbsp;y&nbsp;methods.</tt></dd></dl>
 
 <dl><dt><a name="StatusBar-__nonzero__"><strong>__nonzero__</strong></a>(self)</dt><dd><tt>Always&nbsp;True</tt></dd></dl>
 
@@ -134,9 +136,9 @@ item&nbsp;can&nbsp;be&nbsp;an&nbsp;iterable&nbsp;like&nbsp;[y,&nbsp;x]&nbsp;or&n
 Override&nbsp;this!</tt></dd></dl>
 
 <dl><dt><a name="StatusBar-contains_point"><strong>contains_point</strong></a>(self, y, x)</dt><dd><tt>Test&nbsp;whether&nbsp;the&nbsp;point&nbsp;(with&nbsp;absolute&nbsp;coordinates)&nbsp;lies<br>
-within&nbsp;the&nbsp;boundaries&nbsp;of&nbsp;this&nbsp;<a href="builtins.html#object">object</a>.</tt></dd></dl>
+within&nbsp;the&nbsp;boundaries&nbsp;of&nbsp;this&nbsp;<a href="__builtin__.html#object">object</a>.</tt></dd></dl>
 
-<dl><dt><a name="StatusBar-destroy"><strong>destroy</strong></a>(self)</dt><dd><tt>Called&nbsp;when&nbsp;the&nbsp;<a href="builtins.html#object">object</a>&nbsp;is&nbsp;destroyed.<br>
+<dl><dt><a name="StatusBar-destroy"><strong>destroy</strong></a>(self)</dt><dd><tt>Called&nbsp;when&nbsp;the&nbsp;<a href="__builtin__.html#object">object</a>&nbsp;is&nbsp;destroyed.<br>
 Override&nbsp;this!</tt></dd></dl>
 
 <dl><dt><a name="StatusBar-finalize"><strong>finalize</strong></a>(self)</dt><dd><tt>Called&nbsp;after&nbsp;every&nbsp;displayable&nbsp;is&nbsp;done&nbsp;drawing.<br>
