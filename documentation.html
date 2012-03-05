@@ -13,19 +13,38 @@
   <a href="contact.html">Contact</a>
   <a href="http://ourproject.org/moin/projects/ranger">Wiki</a>
 </div>
-<p><h2>Documentation</h2>
+
+<h2>Documentation</h2>
+
 <ul>
-<li>Type <b>F1</b> or <b>?</b> in ranger</li>
 <li><a href="ranger.1.html">ranger(1) manpage</a></li>
 <li><a href="pydoc/">Source code documentation</a> generated with pydoc</li>
-<li><a href="http://git.savannah.gnu.org/cgit/ranger.git/tree/README?h=stable">README</a>, <a href="http://git.savannah.gnu.org/cgit/ranger.git/tree/INSTALL?h=stable">INSTALL</a>, <a href="http://git.savannah.gnu.org/cgit/ranger.git/tree/HACKING?h=stable">HACKING</a>, <a href="http://git.savannah.gnu.org/cgit/ranger.git/tree/doc?h=stable">doc/*</a></li>
+<li><a href="http://git.savannah.gnu.org/cgit/ranger.git/tree/README?h=stable">README</a>, <a href="http://git.savannah.gnu.org/cgit/ranger.git/tree/doc/HACKING?h=stable">HACKING</a>, <a href="http://git.savannah.gnu.org/cgit/ranger.git/tree/doc?h=stable">doc/*</a></li>
 <li><a href="http://wiki.archlinux.org/index.php/Ranger">Arch Linux Wiki</a></li>
 </ul>
-<h3>pydoc</h3></p>
-<p>To generate the <a href="http://docs.python.org/library/pydoc.html">pydoc</a> HTML pages yourself:
-<div class="code">make doc
-ls doc/pydoc</div></p>
+
+<h3>Makefile</h3>
+
 <p>
+  There are several ways the Makefile can help you to obtain documentation, for example by generating pydoc html pages.  List all options by running "make options"
+</p>
+<div class="code">make:          Test and compile ranger.
+make install:  Install ranger
+make clean:    Remove the compiled files (*.pyc, *.pyo)
+make doc:      Create the pydoc documentation
+make cleandoc: Remove the pydoc documentation
+make man:      Compile the manpage with "pod2man"
+make manhtml:  Compile the html manpage with "pod2html"
+make snapshot: Create a tar.gz of the current git revision
+make test:     Test all testable modules of ranger
+make todo:     Look for TODO and XXX markers in the source code
+
+Options:
+PYTHON = /usr/bin/python
+PYOPTIMIZE = 1
+DOCDIR = doc/pydoc
+DESTDIR = / </div>
+
 </div>
 </body></html>
 
