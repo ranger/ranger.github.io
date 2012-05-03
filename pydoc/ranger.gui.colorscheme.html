@@ -76,25 +76,20 @@ which&nbsp;fits&nbsp;to&nbsp;the&nbsp;given&nbsp;keys.<br>&nbsp;</tt></td></tr>
 </dl>
 <hr>
 Methods defined here:<br>
-<dl><dt><a name="ColorScheme-__init__"><strong>__init__</strong></a>(self)</dt></dl>
-
 <dl><dt><a name="ColorScheme-get"><strong>get</strong></a>(self, *keys)</dt><dd><tt>Returns&nbsp;the&nbsp;(fg,&nbsp;bg,&nbsp;attr)&nbsp;for&nbsp;the&nbsp;given&nbsp;keys.<br>
 &nbsp;<br>
 Using&nbsp;this&nbsp;function&nbsp;rather&nbsp;than&nbsp;<a href="#ColorScheme-use">use</a>()&nbsp;will&nbsp;cache&nbsp;all<br>
 colors&nbsp;for&nbsp;faster&nbsp;access.</tt></dd></dl>
 
-<dl><dt><a name="ColorScheme-get_attr"><strong>get_attr</strong></a>(self, *keys)</dt><dd><tt>Returns&nbsp;the&nbsp;curses&nbsp;attribute&nbsp;for&nbsp;the&nbsp;specified&nbsp;keys<br>
-&nbsp;<br>
-Ready&nbsp;to&nbsp;use&nbsp;for&nbsp;curses.setattr()</tt></dd></dl>
+<dl><dt><a name="ColorScheme-get_attr"><strong>get_attr</strong></a> = inner_cached_function(*args)</dt></dl>
 
 <dl><dt><a name="ColorScheme-use"><strong>use</strong></a>(self, context)</dt><dd><tt>Use&nbsp;the&nbsp;colorscheme&nbsp;to&nbsp;determine&nbsp;the&nbsp;(fg,&nbsp;bg,&nbsp;attr)&nbsp;tuple.<br>
 &nbsp;<br>
 Override&nbsp;this&nbsp;method&nbsp;in&nbsp;your&nbsp;own&nbsp;colorscheme.</tt></dd></dl>
 
 <hr>
-Data and other attributes inherited from <a href="ranger.core.shared.html#SettingsAware">ranger.core.shared.SettingsAware</a>:<br>
-<dl><dt><strong>settings</strong> = None</dl>
-
+Methods inherited from <a href="ranger.core.shared.html#SettingsAware">ranger.core.shared.SettingsAware</a>:<br>
+<strong>settings</strong> = None
 <hr>
 Data descriptors inherited from <a href="ranger.core.shared.html#Awareness">ranger.core.shared.Awareness</a>:<br>
 <dl><dt><strong>__dict__</strong></dt>

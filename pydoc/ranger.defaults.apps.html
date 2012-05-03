@@ -25,9 +25,17 @@
 #&nbsp;in&nbsp;your&nbsp;~/.config/ranger/apps.py,&nbsp;you&nbsp;should&nbsp;subclass&nbsp;the&nbsp;class&nbsp;defined<br>
 #&nbsp;here&nbsp;like&nbsp;this:<br>
 #<br>
-#&nbsp;from&nbsp;ranger.defaults.apps&nbsp;import&nbsp;<a href="#CustomApplications">CustomApplications</a>&nbsp;as&nbsp;DefaultApps<br>
-#&nbsp;class&nbsp;<a href="#CustomApplications">CustomApplications</a>(DeafultApps):<br>
-#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;your&nbsp;definitions&nbsp;here&gt;<br>
+#&nbsp;&nbsp;&nbsp;from&nbsp;ranger.defaults.apps&nbsp;import&nbsp;<a href="#CustomApplications">CustomApplications</a>&nbsp;as&nbsp;DefaultApps<br>
+#&nbsp;&nbsp;&nbsp;class&nbsp;<a href="#CustomApplications">CustomApplications</a>(DeafultApps):<br>
+#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;your&nbsp;definitions&nbsp;here&gt;<br>
+#<br>
+#&nbsp;To&nbsp;override&nbsp;app_defaults,&nbsp;you&nbsp;can&nbsp;write&nbsp;something&nbsp;like:<br>
+#<br>
+#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;app_defaults(self,&nbsp;c):<br>
+#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f&nbsp;=&nbsp;c.file<br>
+#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;f.extension&nbsp;==&nbsp;'lol':<br>
+#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;"lolopener",&nbsp;c<br>
+#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;DefaultApps.app_default(self,&nbsp;c)<br>
 #<br>
 #&nbsp;===================================================================<br>
 #&nbsp;This&nbsp;system&nbsp;is&nbsp;based&nbsp;on&nbsp;things&nbsp;called&nbsp;MODES&nbsp;and&nbsp;FLAGS.&nbsp;&nbsp;You&nbsp;can&nbsp;read<br>
@@ -38,6 +46,8 @@
 #&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p&nbsp;&nbsp;&nbsp;Redirect&nbsp;output&nbsp;to&nbsp;the&nbsp;pager<br>
 #&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;w&nbsp;&nbsp;&nbsp;Wait&nbsp;for&nbsp;an&nbsp;Enter-press&nbsp;when&nbsp;the&nbsp;process&nbsp;is&nbsp;done<br>
 #&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c&nbsp;&nbsp;&nbsp;Run&nbsp;the&nbsp;current&nbsp;file&nbsp;only,&nbsp;instead&nbsp;of&nbsp;the&nbsp;selection<br>
+#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r&nbsp;&nbsp;&nbsp;Run&nbsp;application&nbsp;with&nbsp;root&nbsp;privilege&nbsp;<br>
+#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;t&nbsp;&nbsp;&nbsp;Run&nbsp;application&nbsp;in&nbsp;a&nbsp;new&nbsp;terminal&nbsp;window<br>
 #<br>
 #&nbsp;To&nbsp;implement&nbsp;flags&nbsp;in&nbsp;this&nbsp;file,&nbsp;you&nbsp;could&nbsp;do&nbsp;this:<br>
 #&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;context.flags&nbsp;+=&nbsp;"d"<br>
@@ -134,6 +144,8 @@
 </dl>
 <hr>
 Methods defined here:<br>
+<dl><dt><strong>app_abiword</strong> <em>lambda</em> self, context</dt></dl>
+
 <dl><dt><strong>app_apvlv</strong> <em>lambda</em> self, context</dt></dl>
 
 <dl><dt><a name="CustomApplications-app_aunpack"><strong>app_aunpack</strong></a>(self, c)</dt></dl>
@@ -145,6 +157,10 @@ Methods defined here:<br>
 <dl><dt><a name="CustomApplications-app_editor"><strong>app_editor</strong></a>(self, c)</dt></dl>
 
 <dl><dt><strong>app_eog</strong> <em>lambda</em> self, context</dt></dl>
+
+<dl><dt><strong>app_epdfview</strong> <em>lambda</em> self, context</dt></dl>
+
+<dl><dt><strong>app_epiphany</strong> <em>lambda</em> self, context</dt></dl>
 
 <dl><dt><strong>app_evince</strong> <em>lambda</em> self, context</dt></dl>
 
@@ -158,11 +174,29 @@ Methods defined here:<br>
 
 <dl><dt><strong>app_gimp</strong> <em>lambda</em> self, context</dt></dl>
 
+<dl><dt><strong>app_gmplayer</strong> <em>lambda</em> self, context</dt></dl>
+
+<dl><dt><strong>app_gnumeric</strong> <em>lambda</em> self, context</dt></dl>
+
+<dl><dt><strong>app_iceweasel</strong> <em>lambda</em> self, context</dt></dl>
+
 <dl><dt><a name="CustomApplications-app_java"><strong>app_java</strong></a>(self, c)</dt></dl>
 
 <dl><dt><strong>app_jumanji</strong> <em>lambda</em> self, context</dt></dl>
 
+<dl><dt><strong>app_konqueror</strong> <em>lambda</em> self, context</dt></dl>
+
+<dl><dt><strong>app_kspread</strong> <em>lambda</em> self, context</dt></dl>
+
+<dl><dt><strong>app_libreoffice</strong> <em>lambda</em> self, context</dt></dl>
+
+<dl><dt><strong>app_llpp</strong> <em>lambda</em> self, context</dt></dl>
+
+<dl><dt><strong>app_luakit</strong> <em>lambda</em> self, context</dt></dl>
+
 <dl><dt><a name="CustomApplications-app_make"><strong>app_make</strong></a>(self, c)</dt></dl>
+
+<dl><dt><strong>app_midori</strong> <em>lambda</em> self, context</dt></dl>
 
 <dl><dt><a name="CustomApplications-app_mimeopen"><strong>app_mimeopen</strong></a>(self, c)</dt></dl>
 
@@ -172,16 +206,38 @@ Methods defined here:<br>
 
 <dl><dt><a name="CustomApplications-app_mplayer2"><strong>app_mplayer2</strong></a>(self, c)</dt></dl>
 
+<dl><dt><strong>app_mupdf</strong> <em>lambda</em> self, context</dt></dl>
+
+<dl><dt><strong>app_okular</strong> <em>lambda</em> self, context</dt></dl>
+
+<dl><dt><strong>app_ooffice</strong> <em>lambda</em> self, context</dt></dl>
+
 <dl><dt><strong>app_opera</strong> <em>lambda</em> self, context</dt></dl>
 
 <dl><dt><a name="CustomApplications-app_pager"><strong>app_pager</strong></a>(self, c)</dt><dd><tt>#&nbsp;-----------------------------------------&nbsp;application&nbsp;definitions<br>
 #&nbsp;Note:&nbsp;Trivial&nbsp;application&nbsp;definitions&nbsp;are&nbsp;at&nbsp;the&nbsp;bottom</tt></dd></dl>
 
+<dl><dt><strong>app_seamonkey</strong> <em>lambda</em> self, context</dt></dl>
+
 <dl><dt><a name="CustomApplications-app_set_bg_with_feh"><strong>app_set_bg_with_feh</strong></a>(self, c)</dt><dd><tt>#&nbsp;A&nbsp;dependence&nbsp;on&nbsp;"X"&nbsp;means:&nbsp;this&nbsp;programs&nbsp;requires&nbsp;a&nbsp;running&nbsp;X&nbsp;server!</tt></dd></dl>
+
+<dl><dt><strong>app_smplayer</strong> <em>lambda</em> self, context</dt></dl>
+
+<dl><dt><strong>app_soffice</strong> <em>lambda</em> self, context</dt></dl>
+
+<dl><dt><strong>app_surf</strong> <em>lambda</em> self, context</dt></dl>
 
 <dl><dt><a name="CustomApplications-app_sxiv"><strong>app_sxiv</strong></a>(self, c)</dt></dl>
 
 <dl><dt><a name="CustomApplications-app_totem"><strong>app_totem</strong></a>(self, c)</dt></dl>
+
+<dl><dt><strong>app_uzbl</strong> <em>lambda</em> self, context</dt></dl>
+
+<dl><dt><strong>app_vimprobable</strong> <em>lambda</em> self, context</dt></dl>
+
+<dl><dt><strong>app_vimprobable2</strong> <em>lambda</em> self, context</dt></dl>
+
+<dl><dt><strong>app_vlc</strong> <em>lambda</em> self, context</dt></dl>
 
 <dl><dt><strong>app_wine</strong> <em>lambda</em> self, context</dt></dl>
 
@@ -208,9 +264,8 @@ Class methods inherited from <a href="ranger.api.apps.html#Applications">ranger.
 <dl><dt><a name="CustomApplications-generic"><strong>generic</strong></a>(cls, *args, **keywords)<font color="#909090"><font face="helvetica, arial"> from <a href="__builtin__.html#type">__builtin__.type</a></font></font></dt></dl>
 
 <hr>
-Data and other attributes inherited from <a href="ranger.core.shared.html#FileManagerAware">ranger.core.shared.FileManagerAware</a>:<br>
-<dl><dt><strong>fm</strong> = None</dl>
-
+Methods inherited from <a href="ranger.core.shared.html#FileManagerAware">ranger.core.shared.FileManagerAware</a>:<br>
+<strong>fm</strong> = None
 <hr>
 Data descriptors inherited from <a href="ranger.core.shared.html#Awareness">ranger.core.shared.Awareness</a>:<br>
 <dl><dt><strong>__dict__</strong></dt>

@@ -25,6 +25,8 @@ d:&nbsp;detach&nbsp;the&nbsp;process.<br>
 p:&nbsp;redirect&nbsp;output&nbsp;to&nbsp;the&nbsp;pager<br>
 c:&nbsp;run&nbsp;only&nbsp;the&nbsp;current&nbsp;file&nbsp;(not&nbsp;handled&nbsp;here)<br>
 w:&nbsp;wait&nbsp;for&nbsp;enter-press&nbsp;afterwards<br>
+r:&nbsp;run&nbsp;application&nbsp;with&nbsp;root&nbsp;privilege&nbsp;(requires&nbsp;sudo)<br>
+t:&nbsp;run&nbsp;application&nbsp;in&nbsp;a&nbsp;new&nbsp;terminal&nbsp;window<br>
 (An&nbsp;uppercase&nbsp;key&nbsp;negates&nbsp;the&nbsp;respective&nbsp;lower&nbsp;case&nbsp;flag)</tt></p>
 <p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
@@ -105,7 +107,7 @@ otherwise&nbsp;the&nbsp;process&nbsp;<a href="__builtin__.html#object">object</a
 &nbsp;<br>
 This&nbsp;function&nbsp;tries&nbsp;to&nbsp;find&nbsp;an&nbsp;action&nbsp;if&nbsp;none&nbsp;is&nbsp;defined.</tt></dd></dl>
 
-<dl><dt><a name="Runner-__init__"><strong>__init__</strong></a>(self, ui<font color="#909090">=None</font>, logfunc<font color="#909090">=None</font>, apps<font color="#909090">=None</font>)</dt></dl>
+<dl><dt><a name="Runner-__init__"><strong>__init__</strong></a>(self, ui<font color="#909090">=None</font>, logfunc<font color="#909090">=None</font>, apps<font color="#909090">=None</font>, fm<font color="#909090">=None</font>)</dt></dl>
 
 <hr>
 Data descriptors defined here:<br>
@@ -130,6 +132,6 @@ Data descriptors defined here:<br>
 <font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
     
 <tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><strong>ALLOWED_FLAGS</strong> = 'sdpwcSDPWC'<br>
+<td width="100%"><strong>ALLOWED_FLAGS</strong> = 'sdpwcrtSDPWCRT'<br>
 <strong>PIPE</strong> = -1</td></tr></table>
 </body></html>

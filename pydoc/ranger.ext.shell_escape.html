@@ -26,7 +26,8 @@
 <font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
     
 <tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><strong>META_CHARS</strong> = (' ', "'", '"', '`', '&amp;', '|', ';', '$', '!', '(', ')', '[', ']', '&lt;', '&gt;')<br>
-<strong>META_DICT</strong> = {' ': r'\ ', '!': r'\!', '"': r'\"', '$': r'\$', '&amp;': r'\&amp;', "'": r"\'", '(': r'\(', ')': r'\)', ';': r'\;', '&lt;': r'\&lt;', ...}<br>
-<strong>mc</strong> = '&gt;'</td></tr></table>
+<td width="100%"><strong>META_CHARS</strong> = (' ', "'", '"', '`', '&amp;', '|', ';', '$', '!', '(', ')', '[', ']', '&lt;', '&gt;', '<font color="#c040c0">\t</font>')<br>
+<strong>META_DICT</strong> = {'<font color="#c040c0">\t</font>': '<font color="#c040c0">\\\t</font>', ' ': r'\ ', '!': r'\!', '"': r'\"', '$': r'\$', '&amp;': r'\&amp;', "'": r"\'", '(': r'\(', ')': r'\)', ';': r'\;', ...}<br>
+<strong>UNESCAPABLE</strong> = set(['<font color="#c040c0">\x00</font>', '<font color="#c040c0">\x01</font>', '<font color="#c040c0">\x02</font>', '<font color="#c040c0">\x03</font>', '<font color="#c040c0">\x04</font>', '<font color="#c040c0">\x05</font>', ...])<br>
+<strong>mc</strong> = '<font color="#c040c0">\t</font>'</td></tr></table>
 </body></html>

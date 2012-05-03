@@ -57,21 +57,16 @@ Methods defined here:<br>
 
 <hr>
 Methods inherited from <a href="ranger.gui.colorscheme.html#ColorScheme">ranger.gui.colorscheme.ColorScheme</a>:<br>
-<dl><dt><a name="Scheme-__init__"><strong>__init__</strong></a>(self)</dt></dl>
-
 <dl><dt><a name="Scheme-get"><strong>get</strong></a>(self, *keys)</dt><dd><tt>Returns&nbsp;the&nbsp;(fg,&nbsp;bg,&nbsp;attr)&nbsp;for&nbsp;the&nbsp;given&nbsp;keys.<br>
 &nbsp;<br>
 Using&nbsp;this&nbsp;function&nbsp;rather&nbsp;than&nbsp;<a href="#Scheme-use">use</a>()&nbsp;will&nbsp;cache&nbsp;all<br>
 colors&nbsp;for&nbsp;faster&nbsp;access.</tt></dd></dl>
 
-<dl><dt><a name="Scheme-get_attr"><strong>get_attr</strong></a>(self, *keys)</dt><dd><tt>Returns&nbsp;the&nbsp;curses&nbsp;attribute&nbsp;for&nbsp;the&nbsp;specified&nbsp;keys<br>
-&nbsp;<br>
-Ready&nbsp;to&nbsp;use&nbsp;for&nbsp;curses.setattr()</tt></dd></dl>
+<dl><dt><a name="Scheme-get_attr"><strong>get_attr</strong></a> = inner_cached_function(*args)</dt></dl>
 
 <hr>
-Data and other attributes inherited from <a href="ranger.core.shared.html#SettingsAware">ranger.core.shared.SettingsAware</a>:<br>
-<dl><dt><strong>settings</strong> = None</dl>
-
+Methods inherited from <a href="ranger.core.shared.html#SettingsAware">ranger.core.shared.SettingsAware</a>:<br>
+<strong>settings</strong> = None
 <hr>
 Data descriptors inherited from <a href="ranger.core.shared.html#Awareness">ranger.core.shared.Awareness</a>:<br>
 <dl><dt><strong>__dict__</strong></dt>
