@@ -20,9 +20,22 @@
 	<li><a href="#synopsis">SYNOPSIS</a></li>
 	<li><a href="#description">DESCRIPTION</a></li>
 	<li><a href="#options">OPTIONS</a></li>
+	<li><a href="#concepts">CONCEPTS</a></li>
+	<ul>
+
+		<li><a href="#tags">TAGS</a></li>
+		<li><a href="#previews">PREVIEWS</a></li>
+		<li><a href="#selection">SELECTION</a></li>
+		<li><a href="#macros">MACROS</a></li>
+		<li><a href="#bookmarks">BOOKMARKS</a></li>
+		<li><a href="#flags">FLAGS</a></li>
+		<li><a href="#modes">MODES</a></li>
+	</ul>
+
 	<li><a href="#key_bindings">KEY BINDINGS</a></li>
 	<ul>
 
+		<li><a href="#main_bindings">MAIN BINDINGS</a></li>
 		<li><a href="#midnight_commander_like_bindings">MIDNIGHT COMMANDER-LIKE BINDINGS</a></li>
 		<li><a href="#readline_like_bindings_in_the_console">READLINE-LIKE BINDINGS IN THE CONSOLE</a></li>
 	</ul>
@@ -41,6 +54,7 @@
 	<li><a href="#examples">EXAMPLES</a></li>
 	<ul>
 
+		<li><a href="#bash__display_that_the_shell_spawned_from_ranger_">BASH: Display that the shell spawned from ranger:</a></li>
 		<li><a href="#vim__file_chooser">VIM: File Chooser</a></li>
 		<li><a href="#bash__cd_to_last_path_after_exit">Bash: cd to last path after exit</a></li>
 	</ul>
@@ -62,31 +76,30 @@
 </p>
 <hr />
 <h1><a name="synopsis">SYNOPSIS</a></h1>
-<p><strong>ranger</strong> [<em>options</em>] [<em>path/filename</em>]</p>
+<p><strong>ranger</strong> [<strong>--help</strong>] [<strong>--version</strong>] [<strong>--debug</strong>] [<strong>--clean</strong>]
+[<strong>--list-unused-keys</strong>] [<strong>--fail-unless-cd</strong>] [<strong>--choosedir</strong>=<em>targetfile</em>]
+[<strong>--choosefile</strong>=<em>targetfile</em>] [<strong>--copy-config</strong>=<em>file</em>] [<strong>--mode</strong>=<em>mode</em>]
+[<strong>--flags</strong>=<em>flags</em>] [<em>path/filename</em>]</p>
 <p>
 </p>
 <hr />
 <h1><a name="description">DESCRIPTION</a></h1>
-<p>Ranger is a file manager with an ncurses front-end written in Python.</p>
-<p>It is designed to give you a broader overview of the file system by displaying
-previews and backviews, dividing the screen into several columns.  The
-key bindings are similar to those of other console programs like <strong>vim</strong>,
-<strong>mutt</strong> or <strong>ncmpcpp</strong> so the usage will be intuitive and efficient.</p>
+<p>ranger is a console file manager with VI key bindings.  It provides a
+minimalistic and nice curses interface with a view on the directory hierarchy.
+The secondary task of ranger is to figure out which program you want to use to
+open your files with.</p>
+<p>This manual mainly contains information on the usage of ranger.  Refer to the
+<em class="file">README</em> for install instructions and to <em class="file">doc/HACKING</em> for development
+specific information.  For configuration, see the files in <em class="file">ranger/defaults</em>.
+They are usually installed to <em class="file">/usr/lib/python*/site-packages/ranger/defaults</em>
+and can be obtained with ranger's --copy-config option.</p>
+<p>Inside ranger, you can press <em>1?</em> for a list of key bindings, <em>2?</em> for a list
+of commands and <em>3?</em> for a list of settings.</p>
 <p>
 </p>
 <hr />
 <h1><a name="options">OPTIONS</a></h1>
 <dl>
-<dt><strong><a name="verison" class="item"><strong>--verison</strong></a></strong></dt>
-
-<dd>
-<p>Print the version and exit.</p>
-</dd>
-<dt><strong><a name="h_help" class="item"><strong>-h</strong>, <strong>--help</strong></a></strong></dt>
-
-<dd>
-<p>Print a list of options and exit.</p>
-</dd>
 <dt><strong><a name="d_debug" class="item"><strong>-d</strong>, <strong>--debug</strong></a></strong></dt>
 
 <dd>
@@ -97,7 +110,7 @@ exception in the statusbar/log and try to keep running.</p>
 <dt><strong><a name="c_clean" class="item"><strong>-c</strong>, <strong>--clean</strong></a></strong></dt>
 
 <dd>
-<p>Activate the clean mode:  Ranger will not access or create any configuration
+<p>Activate the clean mode:  ranger will not access or create any configuration
 files nor will it leave any traces on your system.  This is useful when your
 configuration is broken, when you want to avoid clutter, etc.</p>
 </dd>
@@ -105,8 +118,15 @@ configuration is broken, when you want to avoid clutter, etc.</p>
 
 <dd>
 <p>Allows you to pick a file with ranger.  This changes the behavior so that when
-you open a file, ranger will exit and write the name of that file into
+you open a file, ranger will exit and write the absolute path of that file into
 <em>targetfile</em>.</p>
+</dd>
+<dt><strong><a name="choosefiles_targetfile" class="item"><strong>--choosefiles</strong>=<em>targetfile</em></a></strong></dt>
+
+<dd>
+<p>Allows you to pick multiple files with ranger.  This changes the behavior so
+that when you open a file, ranger will exit and write the absolute paths of all
+selected files into <em>targetfile</em>, adding one newline after each filename.</p>
 </dd>
 <dt><strong><a name="choosedir_targetfile" class="item"><strong>--choosedir</strong>=<em>targetfile</em></a></strong></dt>
 
@@ -114,14 +134,32 @@ you open a file, ranger will exit and write the name of that file into
 <p>Allows you to pick a directory with ranger.  When you exit ranger, it will
 write the last visited directory into <em>targetfile</em>.</p>
 </dd>
+<dt><strong><a name="selectfile_targetfile" class="item"><strong>--selectfile</strong>=<em>targetfile</em></a></strong></dt>
+
+<dd>
+<p>Open ranger with <em>targetfile</em> selected.</p>
+</dd>
 <dt><strong><a name="copy_config_file" class="item"><strong>--copy-config</strong>=<em>file</em></a></strong></dt>
 
 <dd>
 <p>Create copies of the default configuration files in your local configuration
 directory.  Existing ones will not be overwritten.  Possible values: <em>all</em>,
-<em>apps</em>, <em>commands</em>, <em>keys</em>, <em>options</em>, <em>scope</em>.</p>
+<em>rc</em>, <em>apps</em>, <em>commands</em>, <em>options</em>, <em>scope</em>.</p>
 </dd>
-<dt><strong><a name="fail_unless_cd" class="item"><strong>--fail-unless-c</strong>d</a></strong></dt>
+<dt><strong><a name="list_unused_keys" class="item"><strong>--list-unused-keys</strong></a></strong></dt>
+
+<dd>
+<p>List common keys which are not bound to any action in the &quot;browser&quot; context.
+This list is not complete, you can bind any key that is supported by curses:
+use the key code returned by <code>getch()</code>.</p>
+</dd>
+<dt><strong><a name="list_tagged_files_tag" class="item"><strong>--list-tagged-files</strong>=<em>tag</em></a></strong></dt>
+
+<dd>
+<p>List all files which are tagged with the given tag.  Note: Tags are single
+characters.  The default tag is &quot;*&quot;</p>
+</dd>
+<dt><strong><a name="fail_unless_cd" class="item"><strong>--fail-unless-cd</strong></a></strong></dt>
 
 <dd>
 <p>Return the exit code 1 if ranger is used to run a file instead of used for file
@@ -140,17 +178,127 @@ the execution of this file type is explicitly handled in the configuration.</p>
 behavior.  The execution of this file type is explicitly handled in the
 configuration.</p>
 </dd>
+<dt><strong><a name="cmd_command" class="item"><strong>--cmd</strong>=<em>command</em></a></strong></dt>
+
+<dd>
+<p>Execute the command after the configuration has been read.  Use this option
+multiple times to run multiple commands.</p>
+</dd>
+<dt><strong><a name="version" class="item"><strong>--version</strong></a></strong></dt>
+
+<dd>
+<p>Print the version and exit.</p>
+</dd>
+<dt><strong><a name="h_help" class="item"><strong>-h</strong>, <strong>--help</strong></a></strong></dt>
+
+<dd>
+<p>Print a list of options and exit.</p>
+</dd>
 </dl>
 <p>
 </p>
 <hr />
+<h1><a name="concepts">CONCEPTS</a></h1>
+<p>
+</p>
+<h2><a name="tags">TAGS</a></h2>
+<p>Tags are single characters which are displayed left of a filename.  You can use
+tags however you want.  Press &quot;t&quot; to toggle tags and &quot;T&quot; to remove any tags of
+the selection. The default tag is an Asterisk (&quot;*&quot;), but you can use any tag by
+typing <em>&quot;&lt;tagname&gt;</em>.</p>
+<p>
+</p>
+<h2><a name="previews">PREVIEWS</a></h2>
+<p>By default, only text files are previewed, but you can enable external preview
+scripts by setting the option <code>use_preview_script</code> and <code>preview_files</code> to True.</p>
+<p>This default script is <em class="file">~/.config/ranger/scope.sh</em>. It contains more
+documentation and calls to the programs <em>lynx</em> and <em>elinks</em> for html,
+<em>highlight</em> for text/code, <em>img2txt</em> for images, <em>atool</em> for archives,
+<em>pdftotext</em> for PDFs and <em>mediainfo</em> for video and audio files.</p>
+<p>Install these programs (just the ones you need) and scope.sh will automatically
+use them.</p>
+<p>
+</p>
+<h2><a name="selection">SELECTION</a></h2>
+<p>The <em>selection</em> is defined as &quot;All marked files IF THERE ARE ANY, otherwise
+the current file.&quot;  Be aware of this when using the :delete command, which
+deletes all files in the selection.</p>
+<p>You can mark files by pressing &lt;Space&gt;, v, etc.  A yellow <strong>Mrk</strong> symbol at the
+bottom right indicates that there are marked files in this directory.</p>
+<p>
+</p>
+<h2><a name="macros">MACROS</a></h2>
+<p>Macros can be used in commands to abbreviate things.</p>
+<pre>
+ %f   the highlighted file
+ %d   the path of the current directory
+ %s   the selected files in the current directory.
+ %t   all tagged files in the current directory
+ %c   the full paths of the currently copied/cut files</pre>
+<p>The macros %f, %d and %s also have upper case variants, %F, %D and %S,
+which refer to the next tab.  To refer to specific tabs, add a number in
+between.  (%7s = selection of the seventh tab.)</p>
+<p>%c is the only macro which ranges out of the current directory. So you may
+&quot;abuse&quot; the copying function for other purposes, like diffing two files which
+are in different directories:</p>
+<pre>
+ Yank the file A (type yy), move to the file B, then type
+ @diff %c %f</pre>
+<p>Macros for file paths are generally shell-escaped so they can be used in the
+:shell command.</p>
+<p>
+</p>
+<h2><a name="bookmarks">BOOKMARKS</a></h2>
+<p>Type <strong>m&lt;key&gt;</strong> to bookmark the current directory. You can re-enter this
+directory by typing <strong>`&lt;key&gt;</strong>. &lt;key&gt; can be any letter or digit.  Unlike vim,
+both lowercase and uppercase bookmarks are persistent.</p>
+<p>Each time you jump to a bookmark, the special bookmark at key ` will be set
+to the last directory. So typing &quot;``&quot; gets you back to where you were before.</p>
+<p>Bookmarks are selectable when tabbing in the :cd command.</p>
+<p>Note: The bookmarks ' (Apostrophe) and ` (Backtick) are the same.</p>
+<p>
+</p>
+<h2><a name="flags">FLAGS</a></h2>
+<p>Flags give you a way to modify the behavior of the spawned process.  They are
+used in the commands :open_with (key &quot;r&quot;) and :shell (key &quot;!&quot;).</p>
+<pre>
+ s   Silent mode.  Output will be discarded.
+ d   Detach the process.  (Run in background)
+ p   Redirect output to the pager
+ w   Wait for an Enter-press when the process is done
+ c   Run the current file only, instead of the selection
+ r   Run application with root privilege (requires sudo)
+ t   Run application in a new terminal window</pre>
+<p>By default, all the flags are off unless specified otherwise in the <em class="file">apps.py</em>
+configuration file.  You can specify as many flags as you want.  An uppercase
+flag negates the effect: &quot;ddcccDs&quot; is equivalent to &quot;cs&quot;.</p>
+<p>The &quot;t&quot; flag looks for the environment variable TERMCMD, and uses it as the
+terminal command, if it's not set it'll use xterm.</p>
+<p>Examples: <code>:open_with p</code> will pipe the output of that process into
+the pager.  <code>:shell -w df</code> will run &quot;df&quot; and wait for you to press Enter before
+switching back to ranger.</p>
+<p>
+</p>
+<h2><a name="modes">MODES</a></h2>
+<p>By specifying a mode (a positive integer), you can tell ranger what to do with
+a file when running it. You can specify which mode to use by typing &lt;mode&gt;l or
+&lt;mode&gt;&lt;Enter&gt; or :open_with &lt;mode&gt;.  The default mode is 0.</p>
+<p>Examples: <code>l</code> (mode zero) to list the contents of an archive, <code>1l</code> (mode one)
+to extract an archive.  See the <em class="file">apps.py</em> configuration file for all programs
+and modes.</p>
+<p>
+</p>
+<hr />
 <h1><a name="key_bindings">KEY BINDINGS</a></h1>
+<p>Key bindings are defined in the file <em class="file">ranger/defaults/rc.conf</em>.  Check this
+file for a list of all key bindings.  You can copy it to your local
+configuration directory with the --copy-config=rc option.</p>
 <p>Many key bindings take an additional numeric argument.  Type <em>5j</em> to move
-down 5 lines, <em>2l</em> to open a file in mode 2, <em>10&lt;Space&gt;</em> to mark 10 files
-or <em>3?</em> to read the third chapter of the documentation.</p>
-<p>Key bindings can be changed.  Detailed instructions for this are in the
-key binding configuration file at ranger/defaults/keys.py. You can copy it to
-your local configuration directory with the --copy-config option.</p>
+down 5 lines, <em>2l</em> to open a file in mode 2, <em>10&lt;Space&gt;</em> to mark 10 files.</p>
+<p>This list contains the most useful bindings:</p>
+<p>
+</p>
+<h2><a name="main_bindings">MAIN BINDINGS</a></h2>
 <dl>
 <dt><strong><a name="h_j_k_l" class="item">h, j, k, l</a></strong></dt>
 
@@ -191,6 +339,11 @@ your local configuration directory with the --copy-config option.</p>
 
 <dd>
 <p>Open a shell in the current directory</p>
+</dd>
+<dt><strong><a name="" class="item">?</a></strong></dt>
+
+<dd>
+<p>Opens this man page</p>
 </dd>
 <dt><strong><a name="yy" class="item">yy</a></strong></dt>
 
@@ -262,17 +415,17 @@ hotkey.</p>
 <dd>
 <p>Unmark all files</p>
 </dd>
-<dt><strong><a name="vdirection" class="item">^V<em>direction</em></a></strong></dt>
+<dt><strong><a name="_" class="item">/</a></strong></dt>
 
 <dd>
-<p>Mark all files in the given direction.  Works just like d<em>direction</em>.</p>
+<p>Search for files in the current directory.</p>
 </dd>
-<dt><strong><a name="u_vdirection" class="item">u^V<em>direction</em></a></strong></dt>
+<dt><strong><a name="_" class="item">:</a></strong></dt>
 
 <dd>
-<p>Unmark all files in the given direction.  Works just like d<em>direction</em>.</p>
+<p>Open the console.</p>
 </dd>
-<dt><strong><a name="gn" class="item">g<em>N</em></a></strong></dt>
+<dt><strong><a name="alt_n" class="item">Alt-<em>N</em></a></strong></dt>
 
 <dd>
 <p>Open a tab. N has to be a number from 0 to 9. If the tab doesn't exist yet, it
@@ -292,21 +445,6 @@ will be created.</p>
 
 <dd>
 <p>Close the current tab.  The last tab cannot be closed this way.</p>
-</dd>
-<dt><strong><a name="_" class="item">/</a></strong></dt>
-
-<dd>
-<p>Search for files in the current directory.</p>
-</dd>
-<dt><strong><a name="_" class="item">:</a></strong></dt>
-
-<dd>
-<p>Open the console.</p>
-</dd>
-<dt><strong><a name="" class="item">?</a></strong></dt>
-
-<dd>
-<p>Opens the help screen with more key bindings and documentation</p>
 </dd>
 </dl>
 <p>
@@ -414,9 +552,10 @@ switch directories.</p>
 <p>This section lists all built-in settings of ranger.  The valid types for the
 value are in [brackets].  The hotkey to toggle the setting is in &lt;brokets&gt;, if
 a hotkey exists.</p>
-<p>Settings can be changed in the file ~/.config/ranger/options.py or on the fly
-with the command <strong>:set option value</strong>.  Examples: <code>:set column_ratios (1,2,3)</code>, 
-<code>:set show_hidden=True</code></p>
+<p>Settings can be changed in the file <em class="file">~/.config/ranger/options.py</em> or on the
+fly with the command <strong>:set option value</strong>.  Examples:
+ :set column_ratios (1,2,3)
+ :set show_hidden=True</p>
 <dl>
 <dt><strong><a name="autosave_bookmarks_bool" class="item">autosave_bookmarks [bool]</a></strong></dt>
 
@@ -567,7 +706,8 @@ directories are displayed at once, False turns off this feature.</p>
 <dt><strong><a name="sort_case_insensitive_bool_zc" class="item">sort_case_insensitive [bool] &lt;zc&gt;</a></strong></dt>
 
 <dd>
-<p>Sort case-insensitively?  If true, &quot;a&quot; will be listed before &quot;B&quot; even though its ASCII value is higher.</p>
+<p>Sort case-insensitively?  If true, &quot;a&quot; will be listed before &quot;B&quot; even though
+its ASCII value is higher.</p>
 </dd>
 <dt><strong><a name="sort_directories_first_bool_zd" class="item">sort_directories_first [bool] &lt;zd&gt;</a></strong></dt>
 
@@ -617,6 +757,11 @@ directories are displayed at once, False turns off this feature.</p>
 </p>
 <hr />
 <h1><a name="commands">COMMANDS</a></h1>
+<p>You can enter the commands in the console which is opened by pressing &quot;:&quot;.</p>
+<p>There are additional commands which are directly translated to python
+functions, one for every method in the ranger.core.actions.Actions class.
+They are not documented here, since they are mostly for key bindings, not to be
+typed in by a user.  Read the source if you are interested in them.</p>
 <dl>
 <dt><strong><a name="bulkrename" class="item">bulkrename</a></strong></dt>
 
@@ -633,6 +778,11 @@ it, it will be executed.</p>
 <p>The cd command changes the directory.  The command <code>:cd -</code> is equivalent to
 typing ``.</p>
 </dd>
+<dt><strong><a name="chain_command1_command2_command3" class="item">chain <em>command1</em>[; <em>command2</em>[; <em>command3</em>...]]</a></strong></dt>
+
+<dd>
+<p>Combines multiple commands into one, separated by columns.</p>
+</dd>
 <dt><strong><a name="chmod_octal_number" class="item">chmod <em>octal_number</em></a></strong></dt>
 
 <dd>
@@ -646,10 +796,50 @@ example, <strong>+ar</strong> allows reading for everyone, -ow forbids others to
 =777 allows everything.</p>
 <p>See also: man 1 chmod</p>
 </dd>
+<dt><strong><a name="cmap_key_command" class="item">cmap <em>key</em> <em>command</em></a></strong></dt>
+
+<dd>
+<p>Binds keys for the console. Works like the <code>map</code> command.</p>
+</dd>
+<dt><strong><a name="console_pn_command" class="item">console [-p<em>N</em>] <em>command</em></a></strong></dt>
+
+<dd>
+<p>Opens the console with the command already typed in.  The cursor is placed at
+<em>N</em>.</p>
+</dd>
+<dt><strong><a name="copycmap_key_newkey_newkey2" class="item">copycmap <em>key</em> <em>newkey</em> [<em>newkey2</em> ...]</a></strong></dt>
+
+<dd>
+<p>See <code>copymap</code></p>
+</dd>
+<dt><strong><a name="copymap_key_newkey_newkey2" class="item">copymap <em>key</em> <em>newkey</em> [<em>newkey2</em> ...]</a></strong></dt>
+
+<dd>
+<p>Copies the keybinding <em>key</em> to <em>newkey</em> in the &quot;browser&quot; context.  This is a
+deep copy, so if you change the new binding (or parts of it) later, the old one
+is not modified.</p>
+<p>To copy key bindings of the console, taskview, or pager use &quot;copycmap&quot;,
+&quot;copytmap&quot; or &quot;copypmap&quot;.</p>
+</dd>
+<dt><strong><a name="copypmap_key_newkey_newkey2" class="item">copypmap <em>key</em> <em>newkey</em> [<em>newkey2</em> ...]</a></strong></dt>
+
+<dd>
+<p>See <code>copymap</code></p>
+</dd>
+<dt><strong><a name="copytmap_key_newkey_newkey2" class="item">copytmap <em>key</em> <em>newkey</em> [<em>newkey2</em> ...]</a></strong></dt>
+
+<dd>
+<p>See <code>copymap</code></p>
+</dd>
+<dt><strong><a name="cunmap_key_command" class="item">cunmap <em>key</em> <em>command</em></a></strong></dt>
+
+<dd>
+<p>Removes key mappings of the console. Works like the <code>unmap</code> command.</p>
+</dd>
 <dt><strong><a name="delete_confirmation" class="item">delete [<em>confirmation</em>]</a></strong></dt>
 
 <dd>
-<p>Destroy all files in the selection with a roundhouse kick.  Ranger will ask for
+<p>Destroy all files in the selection with a roundhouse kick.  ranger will ask for
 a confirmation if you attempt to delete multiple (marked) files or non-empty
 directories.</p>
 <p>When asking for confirmation, this command will only proceed if the last given
@@ -660,11 +850,12 @@ word starts with a `y'.</p>
 <dd>
 <p>Edit the current file or the file in the argument.</p>
 </dd>
-<dt><strong><a name="eval_python_code" class="item">eval <em>python_code</em></a></strong></dt>
+<dt><strong><a name="eval_q_python_code" class="item">eval [<em>-q</em>] <em>python_code</em></a></strong></dt>
 
 <dd>
 <p>Evaluates the python code.  `fm' is a reference to the FM instance.  To display
-text, use the function `p'.</p>
+text, use the function `p'.  The result is displayed on the screen unless you
+use the &quot;-q&quot; option.</p>
 <p>Examples:
  :eval fm
  :eval len(fm.env.directories)
@@ -690,8 +881,19 @@ it will be run immediately. (Or entered, if it's a directory.)</p>
 <dt><strong><a name="load_copy_buffer" class="item">load_copy_buffer</a></strong></dt>
 
 <dd>
-<p>Load the copy buffer from <em>confdir/copy_buffer</em>.  This can be used to pass the
-list of copied files to another ranger instance.</p>
+<p>Load the copy buffer from <em class="file">~/.config/ranger/copy_buffer</em>.  This can be used to
+pass the list of copied files to another ranger instance.</p>
+</dd>
+<dt><strong><a name="map_key_command" class="item">map <em>key</em> <em>command</em></a></strong></dt>
+
+<dd>
+<p>Assign the key combination to the given command.  Whenever you type the
+key/keys, the command will be executed.  Additionally, if you use a quantifier
+when typing the key, like 5j, it will be passed to the command as the attribute
+&quot;self.quantifier&quot;.</p>
+<p>The keys you bind with this command are accessible in the file browser only,
+not in the console, task view or pager.  To bind keys there, use the commands
+&quot;cmap&quot;, &quot;tmap&quot; or &quot;pmap&quot;.</p>
 </dd>
 <dt><strong><a name="mark_pattern" class="item">mark <em>pattern</em></a></strong></dt>
 
@@ -711,6 +913,16 @@ which case the default application is used.  <em>flags</em> are characters out o
 &quot;sdpcwSDPCW&quot; and <em>mode</em> is any positive integer. Their meanings are discussed
 in their own sections.</p>
 </dd>
+<dt><strong><a name="pmap_key_command" class="item">pmap <em>key</em> <em>command</em></a></strong></dt>
+
+<dd>
+<p>Binds keys for the pager. Works like the <code>map</code> command.</p>
+</dd>
+<dt><strong><a name="punmap_key_command" class="item">punmap <em>key</em> <em>command</em></a></strong></dt>
+
+<dd>
+<p>Removes key mappings of the pager. Works like the <code>unmap</code> command.</p>
+</dd>
 <dt><strong><a name="quit" class="item">quit</a></strong></dt>
 
 <dd>
@@ -725,9 +937,13 @@ it by typing `` or '' the next time you start ranger.</p>
 <dt><strong><a name="rename_newname" class="item">rename <em>newname</em></a></strong></dt>
 
 <dd>
-<p>Rename the current file.  If a file with that name already exists, it will be
-overwritten without notice.  Also try the key binding A for appending something
-to a file name.</p>
+<p>Rename the current file.  If a file with that name already exists, the renaming
+will fail.  Also try the key binding A for appending something to a file name.</p>
+</dd>
+<dt><strong><a name="relink_newpath" class="item">relink <em>newpath</em></a></strong></dt>
+
+<dd>
+<p>Change the link destination of the current symlink file to &lt;newpath&gt;. First &lt;tab&gt; will load the original link.</p>
 </dd>
 <dt><strong><a name="save_copy_buffer" class="item">save_copy_buffer</a></strong></dt>
 
@@ -779,6 +995,22 @@ doesn't work for functions and regular expressions. Valid values are:</p>
 <dd>
 <p>Creates an empty file with the name <em>filename</em>, unless it already exists.</p>
 </dd>
+<dt><strong><a name="tmap_key_command" class="item">tmap <em>key</em> <em>command</em></a></strong></dt>
+
+<dd>
+<p>Binds keys for the taskview. Works like the <code>map</code> command.</p>
+</dd>
+<dt><strong><a name="tunmap_key_command" class="item">tunmap <em>key</em> <em>command</em></a></strong></dt>
+
+<dd>
+<p>Removes key mappings of the taskview. Works like the <code>unmap</code> command.</p>
+</dd>
+<dt><strong><a name="unmap_keys" class="item">unmap [<em>keys</em> ...]</a></strong></dt>
+
+<dd>
+<p>Removes the given key mappings in the &quot;browser&quot; context.  To unmap key bindings
+in the console, taskview, or pager use &quot;cunmap&quot;, &quot;tunmap&quot; or &quot;punmap&quot;.</p>
+</dd>
 <dt><strong><a name="unmark_pattern" class="item">unmark <em>pattern</em></a></strong></dt>
 
 <dd>
@@ -790,16 +1022,18 @@ doesn't work for functions and regular expressions. Valid values are:</p>
 <hr />
 <h1><a name="files">FILES</a></h1>
 <p>ranger reads several configuration files which are located in
-$HOME/.config/ranger or $XDG_CONFIG_HOME/ranger if $XDG_CONFIG_HOME is defined.
-The configuration is done mostly in python.  When removing a configuration file,
-remove its compiled version too.  (Python automatically compiles modules.
-Since python3 they are saved in the __pycache__ directory, earlier versions
-store them with the .pyc extension in the same directory.)</p>
+<em class="file">$HOME/.config/ranger</em> or <em class="file">$XDG_CONFIG_HOME/ranger</em> if $XDG_CONFIG_HOME is
+defined.  The configuration is done mostly in python.  When removing a
+configuration file, remove its compiled version too.  (Python automatically
+compiles modules.  Since python3 they are saved in the __pycache__ directory,
+earlier versions store them with the .pyc extension in the same directory.)</p>
 <p>Use the --copy-config option to obtain the default configuration files.  They
 include further documentation and it's too much to put here.</p>
 <p>You don't need to copy the whole file though, most configuration files are
-overlaid on top of the defaults (options.py, command.py, keys.py) or can be
-sub-classed (apps.py, colorschemes).</p>
+overlaid on top of the defaults (<em class="file">options.py</em>, <em class="file">command.py</em>, <em class="file">rc.conf</em>) or
+can be sub-classed (<em class="file">apps.py</em>, <em class="file">colorschemes</em>).</p>
+<p>When starting ranger with the <strong>--clean</strong> option, it will not access or create
+any of these files.</p>
 <p>
 </p>
 <h2><a name="configuration">CONFIGURATION</a></h2>
@@ -814,10 +1048,11 @@ sub-classed (apps.py, colorschemes).</p>
 <dd>
 <p>Defines commands which can be used by typing &quot;:&quot;.</p>
 </dd>
-<dt><strong><a name="keys_py" class="item">keys.py</a></strong></dt>
+<dt><strong><a name="rc_conf" class="item">rc.conf</a></strong></dt>
 
 <dd>
-<p>Defines key bindings.</p>
+<p>Contains a list of commands which are executed on startup.  Mostly key bindings
+are defined here.</p>
 </dd>
 <dt><strong><a name="options_py" class="item">options.py</a></strong></dt>
 
@@ -879,6 +1114,13 @@ with T.  To assign a named tag, type &quot;&lt;tagname&gt;.</p>
 <h1><a name="environment">ENVIRONMENT</a></h1>
 <p>These environment variables have an effect on ranger:</p>
 <dl>
+<dt><strong><a name="ranger_level" class="item">RANGER_LEVEL</a></strong></dt>
+
+<dd>
+<p>Ranger sets this environment variable to &quot;1&quot; or increments it if it already
+exists.  External programs can determine whether they were spawned from ranger
+by checking for this variable.</p>
+</dd>
 <dt><strong><a name="editor" class="item">EDITOR</a></strong></dt>
 
 <dd>
@@ -891,10 +1133,26 @@ program out of &quot;vim&quot;, &quot;emacs&quot; and &quot;nano&quot;.</p>
 <p>Defines the shell that ranger is going to use with the :shell command and
 the &quot;S&quot; key.  Defaults to &quot;bash&quot;.</p>
 </dd>
+<dt><strong><a name="termcmd" class="item">TERMCMD</a></strong></dt>
+
+<dd>
+<p>Defines the terminal emulator command that ranger is going to use with the
+:terminal command and the &quot;t&quot; run flag.  Defaults to &quot;x-terminal-emulator&quot; or
+&quot;xterm&quot;</p>
+</dd>
 <dt><strong><a name="xdg_config_home" class="item">XDG_CONFIG_HOME</a></strong></dt>
 
 <dd>
-<p>Specifies the directory for configuration files. Defaults to &quot;$HOME/.config&quot;.</p>
+<p>Specifies the directory for configuration files. Defaults to <em class="file">$HOME/.config</em>.</p>
+</dd>
+<dt><strong><a name="pythonoptimize" class="item">PYTHONOPTIMIZE</a></strong></dt>
+
+<dd>
+<p>This variable determines the optimize level of python.</p>
+<p>Using PYTHONOPTIMIZE=1 (like python -O) will make python discard assertion
+statements.  You will gain efficiency at the cost of losing some debug info.</p>
+<p>Using PYTHONOPTIMIZE=2 (like python -OO) will additionally discard any
+docstrings.  Using this will disable the &lt;F1&gt; key on commands.</p>
 </dd>
 </dl>
 <p>
@@ -903,12 +1161,19 @@ the &quot;S&quot; key.  Defaults to &quot;bash&quot;.</p>
 <h1><a name="examples">EXAMPLES</a></h1>
 <p>
 </p>
+<h2><a name="bash__display_that_the_shell_spawned_from_ranger_">BASH: Display that the shell spawned from ranger:</a></h2>
+<p>By putting this in ~/.bashrc, &quot;(in ranger) &quot; will be displayed next to your
+prompt to notify you that the shell spawned from ranger.</p>
+<pre>
+ [ -n &quot;$RANGER_LEVEL&quot; ] &amp;&amp; PS1=&quot;$PS1&quot;'(in ranger) '</pre>
+<p>
+</p>
 <h2><a name="vim__file_chooser">VIM: File Chooser</a></h2>
 <p>This is a vim function which allows you to use ranger to select a file for
 opening in your current vim session.</p>
 <pre>
  fun! RangerChooser()
-   silent !ranger --choosefile=/tmp/chosenfile `[ -z '%' ] &amp;&amp; echo -n . || dirname %`
+   exec &quot;silent !ranger --choosefile=/tmp/chosenfile &quot; . expand(&quot;%:p:h&quot;)
    if filereadable('/tmp/chosenfile')
      exec 'edit ' . system('cat /tmp/chosenfile')
      call system('rm /tmp/chosenfile')
@@ -919,19 +1184,22 @@ opening in your current vim session.</p>
 <p>
 </p>
 <h2><a name="bash__cd_to_last_path_after_exit">Bash: cd to last path after exit</a></h2>
-<p>This is a bash function (to put in your ~/.bashrc) to change the directory to
-the last visited one after ranger quits.  You can always type <code>cd -</code> to go
-back to the original one.</p>
+<p>This is a bash function (for <em class="file">~/.bashrc</em>) to change the directory to the last
+visited one after ranger quits.  You can always type <code>cd -</code> to go back to the
+original one.</p>
 <pre>
  function ranger-cd {
-   tempfile=/tmp/chosendir
-   /usr/bin/ranger --choosedir=$tempfile &quot;$@&quot;
-   if [ -f $tempfile -a &quot;$(cat $tempfile)&quot; != &quot;$(pwd | tr -d &quot;\n&quot;)&quot; ]
-   then
-     cd &quot;$(cat $tempfile)&quot;
-     rm $tempfile
+   tempfile='/tmp/chosendir'
+   /usr/bin/ranger --choosedir=&quot;$tempfile&quot; &quot;${@:-$(pwd)}&quot;
+   test -f &quot;$tempfile&quot; &amp;&amp;
+   if [ &quot;$(cat -- &quot;$tempfile&quot;)&quot; != &quot;$(echo -n `pwd`)&quot; ]; then
+     cd -- &quot;$(cat &quot;$tempfile&quot;)&quot;
    fi
+   rm -f -- &quot;$tempfile&quot;
  }</pre>
+<pre>
+ # This binds Ctrl-O to ranger-cd:
+ bind '&quot;\C-o&quot;:&quot;ranger-cd\C-m&quot;'</pre>
 <p>
 </p>
 <hr />
@@ -957,9 +1225,9 @@ copy, run:</p>
 </p>
 <hr />
 <h1><a name="bugs">BUGS</a></h1>
-<p>Please report bugs here: <a href="http://savannah.nongnu.org/bugs/?group=ranger">http://savannah.nongnu.org/bugs/</a></p>
-<p>In many cases, ranger prints more diagnostics information when you run it with
-the <strong>--debug</strong> option. Please include as much relevant information as possible.</p>
+<p>Report bugs here: <a href="http://savannah.nongnu.org/bugs/?group=ranger">http://savannah.nongnu.org/bugs/</a></p>
+<p>Please include as much relevant information as possible.  For the most
+diagnostic output, run ranger like this: <code>PYTHONOPTIMIZE= ranger --debug</code></p>
 
 </body>
 
