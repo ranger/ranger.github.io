@@ -1,4 +1,5 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!--head-->
 <html><head>
   <title>ranger</title>
   <link rel="stylesheet" href="ranger.css" type="text/css" />
@@ -13,6 +14,7 @@
   <a href="contact.html">Contact</a>
   <a href="http://ourproject.org/moin/projects/ranger">Wiki</a>
 </div>
+<!--/head-->
 
 <h2>Description</h2>
 
@@ -24,7 +26,10 @@
 </p>
 <ul>
   <li>Uses <a href="http://python.org">Python</a> (2.6 or higher)</li>
-  <li>Latest stable version: <a href="http://nongnu.org/ranger/ranger-stable.tar.gz">ranger 1.5.4</a> (2012/05/03)</li>
+  <li>Latest stable version:
+    <a href="http://nongnu.org/ranger/ranger-stable.tar.gz">ranger <!--run cat CHANGELOG | grep -m 1 -o '[0-9]\.[0-9]\.[0-9]'-->1.5.4<!--/run--></a>
+    (<!--run cat CHANGELOG | grep -m 1 -o 20[0-9][0-9]-[0-9][0-9]-[0-9][0-9]-->2012-05-03<!--/run-->)
+  </li>
   <li>git clone git://git.savannah.nongnu.org/ranger.git</li>
 </ul>
 <p>
@@ -91,214 +96,190 @@
 
 <h3>Changelog</h3>
 
-<p>This log documents changes between stable versions.</p>
+<pre><!--run cat CHANGELOG | sed 's:^\(2.*\)$:<b>\1</b>:' -->This log documents changes between stable versions.
 
 <b>2012-05-03: Version 1.5.4</b>
-<ul>
-<li>Added exiftool to scope.sh by default</li>
-<li>Fixed a crash when entering a directory with a unicode name</li>
-<li>Speedup in ranger.ext.get_executables</li>
-</ul>
+* Added exiftool to scope.sh by default
+* Fixed a crash when entering a directory with a unicode name
+* Speedup in ranger.ext.get_executables
 
 <b>2012-03-05: Version 1.5.3</b>
-<ul>
-<li>Added <b>--selectfile option</b> that selects a certain file on startup</li>
-<li>Added <b>--list-tagged-files</b> option</li>
-<li>Added <b>--cmd</b> option to run commands on startup</li>
-<li>Added <b>--profile</b> option for additional debug information on exit</li>
-<li>Added a visual mode (activate with "<b>V</b>", deactivate with <b>Esc</b>)</li>
-<li>Added a reversed visual mode (activate with "<b>uV</b>")</li>
-<li>Added <b>$RANGER_LEVEL</b> environment variable which ranger sets to "1" or higher so programs can know that they were spawned from ranger</li>
-<li>Added run flag "<b>r</b>" for running with root privileges (needs sudo)</li>
-<li>Added run flag "<b>t</b>" for running in a new terminal (as specified in $TERMCMD)</li>
-<li>Added <b>:relink</b> command to change destinations of symlinks</li>
-<li>Added "<b>dc</b>" binding for getting the cumulative size of a directory</li>
-<li>Added "<b>autoupdate_cumulative_size</b>" option</li>
-<li>Added "<b>pht</b>" binding to Paste Hardlinked subTrees (like cp -l)</li>
-<li>Improved sorting speed of signals (noticable when caching many directories)</li>
-<li>Improved drawing speed</li>
-<li>Fixed unexpected behavior when displaying nonprintable characters</li>
-<li>Fixed <b>:bulkrename</b> to work with files starting with a minus sign</li>
-<li>Fixed RangerChooser example in man page</li>
-<li>Fixed crash when opening images with sxiv/feh by running "ranger &lt;image&gt;"</li>
-</ul>
+* Added --selectfile option that selects a certain file on startup
+* Added --list-tagged-files option
+* Added --cmd option to run commands on startup
+* Added --profile option for additional debug information on exit
+* Added a visual mode (activate with "V", deactivate with Esc)
+* Added a reversed visual mode (activate with "uV")
+* Added $RANGER_LEVEL environment variable which ranger sets to "1" or higher
+  so programs can know that they were spawned from ranger
+* Added run flag "r" for running with root privileges (needs sudo)
+* Added run flag "t" for running in a new terminal (as specified in $TERMCMD)
+* Added :relink command to change destinations of symlinks
+* Added "dc" binding for getting the cumulative size of a directory
+* Added "autoupdate_cumulative_size" option
+* Added "pht" binding to Paste Hardlinked subTrees (like cp -l)
+* Improved sorting speed of signals (noticable when caching many directories)
+* Improved drawing speed
+* Fixed unexpected behavior when displaying nonprintable characters
+* Fixed :bulkrename to work with files starting with a minus sign
+* Fixed RangerChooser example in man page
+* Fixed crash when opening images with sxiv/feh by running "ranger <image>"
 
 <b>2011-10-23: Version 1.5.2</b>
-<ul>
-<li>Fixed graphical bug that appears in certian cases when drawing characters at the right edge.</li>
-</ul>
+* Fixed graphical bug that appears in certian cases when drawing
+  characters at the right edge.
 
 <b>2011-10-23: Version 1.5.1</b>
-<ul>
-<li>Added fm.select_file(path)</li>
-<li>Added --choosefiles option (like --choosefile, but chooses multiple files)</li>
-<li>Fixed --list-unused-keys</li>
-<li>Fixed Zombie processes</li>
-<li>Fixed handling of filenames with undecodable bytes (unicode surrogates)</li>
-<li>Fixed crashes due to incomplete loading of directories</li>
-<li>Fixed tab completion of the command "shell"</li>
-<li>Fixed "ot" and "oT" keys in rc.conf</li>
-<li>Fixed parsing of chained commands (like in the binding "om")</li>
-</ul>
+* Added fm.select_file(path)
+* Added --choosefiles option (like --choosefile, but chooses multiple files)
+* Fixed --list-unused-keys
+* Fixed Zombie processes
+* Fixed handling of filenames with undecodable bytes (unicode surrogates)
+* Fixed crashes due to incomplete loading of directories
+* Fixed tab completion of the command "shell"
+* Fixed "ot" and "oT" keys in rc.conf
+* Fixed parsing of chained commands (like in the binding "om")
 
 <b>2011-10-11: Version 1.5.0</b>
-<ul>
-<li>Full python3.2 compatibility</li>
-<li>Added new configuration file "rc.conf" which contains a list of commands that are executed on startup - mainly used for keybindings</li>
-<li>Added --list-unused-keys</li>
-<li>Added new program handlers to apps.py</li>
-<li>Added pop-up window for keychains and bookmarks</li>
-<li>Added load_default_rc option</li>
-<li>Fixed all known unicode issues</li>
-<li>Fixed crash when $TERM is unknown to the system</li>
-<li>Fixed scrolling in colored preview</li>
-<li>Changed the default column_ratios to 1/3/4 and sorting method to "natural"</li>
-<li>Changed :rename so it doesn't overwrite existing files</li>
-<li>Internal actions are now accessible as commands</li>
-<li>Replaced unittests by doctests</li>
-<li>Replaced integrated help with an extended man page and dynamic lists of keybindings, commands and settings.</li>
-<li>Removed "keys.py" configuration file in favor of "rc.conf"</li>
-<li>Removed "texas" colorscheme</li>
-<li>apps.py: Now able to define programs that only run with Xorg</li>
-<li>commands.py: Using parse(self.line) to parse the line is unnecessary now.  parse(self.line).rest(n) is now written as self.rest(n).  However, parse(self.line).chunk(n) has been renamed to self.arg(n).</li>
-<li>commands.py: parse(self.line) + X is now self.firstpart + X</li>
-<li>commands.py: New special attribute "resolve_macros" which decides whether strings like %f should be expanded to the name of the current file, etc.</li>
-<li>commands.py: New special attribute "escape_macros_for_shell" to toggle whether or not macros should be escaped, so you can use them in other commands than :shell, for example :edit %f</li>
-<li>Countless small fixes and improvements</li>
-</ul>
+* Full python3.2 compatibility
+* Added new configuration file "rc.conf" which contains a list
+  of commands that are executed on startup - mainly used for keybindings
+* Added --list-unused-keys
+* Added new program handlers to apps.py
+* Added pop-up window for keychains and bookmarks
+* Added load_default_rc option
+* Fixed all known unicode issues
+* Fixed crash when $TERM is unknown to the system
+* Fixed scrolling in colored preview
+* Changed the default column_ratios to 1/3/4 and sorting method to "natural"
+* Changed :rename so it doesn't overwrite existing files
+* Internal actions are now accessible as commands
+* Replaced unittests by doctests
+* Replaced integrated help with an extended man page and dynamic lists
+  of keybindings, commands and settings.
+* Removed "keys.py" configuration file in favor of "rc.conf"
+* Removed "texas" colorscheme
+* apps.py: Now able to define programs that only run with Xorg
+* commands.py: Using parse(self.line) to parse the line is unnecessary now.
+  parse(self.line).rest(n) is now written as self.rest(n).
+  However, parse(self.line).chunk(n) has been renamed to self.arg(n).
+* commands.py: parse(self.line) + X is now self.firstpart + X
+* commands.py: New special attribute "resolve_macros" which decides whether
+  strings like %f should be expanded to the name of the current file, etc.
+* commands.py: New special attribute "escape_macros_for_shell" to toggle
+  whether or not macros should be escaped, so you can use them in other
+  commands than :shell, for example :edit %f
+* Countless small fixes and improvements
 
 <b>2011-10-02: Version 1.4.4</b>
-<ul>
-<li>Added various key bindings</li>
-<li>Fixed blocking when using interactive scripts in scope.sh</li>
-<li>Added wavpack and webm types to mime.types</li>
-<li>Forbid piping things into ranger</li>
-<li>Added bittorrent preview</li>
-<li>Improved hints</li>
-<li>Added option "display_tags_in_all_columns"</li>
-<li>Fixed issues with ALT key</li>
-<li>Added command.cancel method which is called when pressing ESC in console</li>
-<li>Added sorting and cycling by ctime and atime</li>
-<li>Added custom tags (press "x)</li>
-<li>Fixed pager crash when trying to read non-readable file</li>
-<li>Added keys for chmod (like +ow for "chmod o+w", etc)</li>
-<li>Added "c" flag for running files</li>
-</ul>
+* Added keys for chmod (like +ow for "chmod o+w", etc)
+* Added "c" flag for running files
+* Added various key bindings
+* Added wavpack and webm types to mime.types
+* Added option "display_tags_in_all_columns"
+* Added command.cancel method which is called when pressing ESC in console
+* Added sorting and cycling by ctime and atime
+* Added custom tags (press "x)
+* Added bittorrent preview
+* Fixed blocking when using interactive scripts in scope.sh
+* Fixed issues with ALT key
+* Fixed pager crash when trying to read non-readable file
+* Forbid piping things into ranger
+* Improved hints
 
 <b>2011-04-05: Version 1.4.3</b>
-<ul>
-<li>Fixed mimetype checking when invoking ranger with a filename</li>
-<li>Fixed loss of bookmarks when disk is full</li>
-<li>Minor improvements</li>
-</ul>
+* Fixed mimetype checking when invoking ranger with a filename
+* Fixed loss of bookmarks when disk is full
+* Minor improvements
 
 <b>2011-03-05: Version 1.4.2</b>
-<ul>
-<li>Added --choosefile and --choosedir flag</li>
-<li>Added use of bookmarks in tab completion of the :cd command</li>
-<li>Fixed bug with detached programs and python 3.2</li>
-</ul>
+* Added --choosefile and --choosedir flag
+* Added use of bookmarks in tab completion of the :cd command
+* Fixed bug with detached programs and python 3.2
 
 <b>2011-01-04: Version 1.4.1</b>
-<ul>
-<li>Fixed crash when preview failed under some circumstances</li>
-<li>Fixed graphical bug when pressing i</li>
-</ul>
+* Fixed crash when preview failed under some circumstances
+* Fixed graphical bug when pressing i
 
 <b>2010-12-22: Version 1.4.0</b>
-<ul>
-<li>Added option to use any external scripts for previews (type 19?)</li>
-<li>Added key: zv to toggle the use of the external script</li>
-<li>Added indicator for the used filter (type "zf")</li>
-<li>Added option padding_right to remove whitespace if theres no preview</li>
-<li>Added command :search_inc for incremental search</li>
-<li>Added commands :save_copy_buffer and :load_copy_buffer to share the copied files between ranger instances</li>
-<li>Added mimeopen as a fallback if no useful application can be found</li>
-<li>Added natural sort, sorts 1foo before 10foo. (type "on")</li>
-<li>Added keys: yp, yd and yb to copy path, dirname or basename to seleciton</li>
-<li>Let open_with use the selection, not just one file</li>
-<li>Run files with right mouse click</li>
-<li>Implemented copying via coreutils rather than internal python code</li>
-<li>Improved handling of unicode</li>
-<li>Some restructuration of the source code</li>
-</ul>
+* Added option to use any external scripts for previews (see scope.sh)
+* Added key: zv to toggle the use of the external script
+* Added indicator for the used filter (type "zf")
+* Added option padding_right to remove whitespace if theres no preview
+* Added command :search_inc for incremental search
+* Added commands :save_copy_buffer and :load_copy_buffer to share
+  the copied files between ranger instances
+* Added mimeopen as a fallback if no useful application can be found
+* Added natural sort, sorts 1foo before 10foo. (type "on")
+* Added keys: yp, yd and yb to copy path, dirname or basename to seleciton
+* Let open_with use the selection, not just one file
+* Run files with right mouse click
+* Implemented copying via coreutils rather than internal python code
+* Improved handling of unicode
+* Some restructuration of the source code
 
 <b>2010-12-13: Version 1.2.3</b>
-<ul>
-<li>Enable binding to alt-keys</li>
-<li>Fixed memory leak in garbage collecting of old, unused directory objects</li>
-<li>Fixed python3 incompatibilities</li>
-<li>Fixed problems with identifying changes of files</li>
-<li>Fixed lazy lookup of some FSObject attributes</li>
-</ul>
+* Enable binding to alt-keys
+* Fixed memory leak in garbage collecting of old, unused directory objects
+* Fixed python3 incompatibilities
+* Fixed problems with identifying changes of files
+* Fixed lazy lookup of some FSObject attributes
 
 <b>2010-10-10: Version 1.2.2</b>
-<ul>
-<li>Prevent currently used directories from being garbage collected</li>
-<li>Disable mouse buttons when console is open</li>
-<li>Fixed :cd command: Without arguments, cd's into $HOME</li>
-<li>Fixed bug which prevented pydoc to work on some config files</li>
-<li>Fixed some bugs in "snow" and "jungle" colorschemes</li>
-<li>Several other clean-ups and fixes</li>
-</ul>
+* Prevent currently used directories from being garbage collected
+* Disable mouse buttons when console is open
+* Fixed :cd command: Without arguments, cd's into $HOME
+* Fixed bug which prevented pydoc to work on some config files
+* Fixed some bugs in "snow" and "jungle" colorschemes
+* Several other clean-ups and fixes
 
 <b>2010-09-16: Version 1.2.1</b>
-<ul>
-<li>Fixed yy/pp bug when yanking multiple directories</li>
-</ul>
+* Fixed yy/pp bug when yanking multiple directories
 
 <b>2010-09-13: Version 1.2.0</b>
-<ul>
-<li>!!! Changed the default configuration directory to ~/.config/ranger !!!</li>
-<li>Removed "Console Modes", each old mode is now a simple command</li>
-<li>Disabled file previews by default if ranger is used by root</li>
-<li>Allow to jump to specific help sections by typing two numbers, e.g. 13?</li>
-<li>Added keys: da, dr, ya, yr for adding and removing files from copy buffer</li>
-<li>Added keys: gl and gL to resolve links, see 11?</li>
-<li>Added key: pL to create a relative symlink</li>
-<li>Added %&lt;LETTER> and %&lt;N>&lt;LETTER> macros for the console, see 33?</li>
-<li>Fixed ansi codes for colors in the pager</li>
-<li>Use the file ~/.mime.types for mime type detection</li>
-<li>Several clean-ups and fixes</li>
-</ul>
+* !!! Changed the default configuration directory to ~/.config/ranger !!!
+* Removed "Console Modes", each old mode is now a simple command
+* Disabled file previews by default if ranger is used by root
+* Allow to jump to specific help sections by typing two numbers, e.g. 13?
+* Added keys: da, dr, ya, yr for adding and removing files from copy buffer
+* Added keys: gl and gL to resolve links, see 11?
+* Added key: pL to create a relative symlink
+* Added %<LETTER> and %<N><LETTER> macros for the console, see 33?
+* Fixed ansi codes for colors in the pager
+* Use the file ~/.mime.types for mime type detection
+* Several clean-ups and fixes
 
 <b>2010-07-17: Version 1.1.2</b>
-<ul>
-<li>Fix crash when using scrollwheel to scroll down in some cases</li>
-<li>The command "ranger dir1 dir2 ..." opens multiple directories in tabs</li>
-<li>Removed pydoc html documentation by default, re-create it with "make doc"</li>
-<li>Minor fixes</li>
-</ul>
+* Fix crash when using scrollwheel to scroll down in some cases
+* The command "ranger dir1 dir2 ..." opens multiple directories in tabs
+* Removed pydoc html documentation by default, re-create it with "make doc"
+* Minor fixes
 
 <b>2010-06-18: Version 1.1.1</b>
-<ul>
-<li>New install script, "setup.py"</li>
-<li>New flag for running programs: "w" (waits for enter press)</li>
-<li>Minor fixes</li>
-</ul>
+* New install script, "setup.py"
+* New flag for running programs: "w" (waits for enter press)
+* Minor fixes
 
 <b>2010-06-09: Version 1.1.0</b>
-<ul>
-<li>Added a man page</li>
-<li>Tab support</li>
-<li>Improved directory loading performance</li>
-<li>Commands are definable in ~/.ranger/commands.py</li>
-<li>Case insensitive sorting (type zs)</li>
-<li>Better UTF support</li>
-<li>Possibility to turn off previews (zp and zP)</li>
-<li>Changing options with :set (e.g. :set column_ratios=1,2,3,4)</li>
-<li>Ask for confirmation when using :delete</li>
-<li>New invocation flag: --fail-unless-cd</li>
-<li>New hotkeys, commands, options.</li>
-<li>New syntax for ~/.ranger/keys.py</li>
-<li>Several user contributions</li>
-<li>And tons of general improvements</li>
-</ul>
+* Added a man page
+* Tab support
+* Improved directory loading performance
+* Commands are definable in ~/.ranger/commands.py
+* Case insensitive sorting (type zs)
+* Better UTF support
+* Possibility to turn off previews (zp and zP)
+* Changing options with :set (e.g. :set column_ratios=1,2,3,4)
+* Ask for confirmation when using :delete
+* New invocation flag: --fail-unless-cd
+* New hotkeys, commands, options.
+* New syntax for ~/.ranger/keys.py
+* Several user contributions
+* And tons of general improvements
 
-<p>
-  NOTE: The syntax for configuration is still subject to change.
-</p>
+NOTE: The syntax for configuration is still subject to change.<!--/run-->
+</pre>
 
+<!--foot-->
 </div>
 </body></html>
-
+<!--/foot-->
