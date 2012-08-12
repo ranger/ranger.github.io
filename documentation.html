@@ -23,29 +23,59 @@
 <li><a href="pydoc/">Source code documentation</a> generated with pydoc</li>
 <li><a href="http://git.savannah.gnu.org/cgit/ranger.git/tree/README?h=stable">README</a>, <a href="http://git.savannah.gnu.org/cgit/ranger.git/tree/doc/HACKING?h=stable">HACKING</a>, <a href="http://git.savannah.gnu.org/cgit/ranger.git/tree/doc?h=stable">doc/*</a></li>
 <li><a href="http://wiki.archlinux.org/index.php/Ranger">Arch Linux Wiki</a></li>
+<li>Running "<b>make options</b>" will inform you about how to generate informations yourself</li>
 </ul>
 
-<h3>Makefile</h3>
 
-<p>
-  There are several ways the Makefile can help you to obtain documentation, for example by generating pydoc html pages.  List all options by running "make options"
-</p>
-<div class="code">make:          Test and compile ranger.
-make install:  Install ranger
-make clean:    Remove the compiled files (*.pyc, *.pyo)
-make doc:      Create the pydoc documentation
-make cleandoc: Remove the pydoc documentation
-make man:      Compile the manpage with "pod2man"
-make manhtml:  Compile the html manpage with "pod2html"
-make snapshot: Create a tar.gz of the current git revision
-make test:     Test all testable modules of ranger
-make todo:     Look for TODO and XXX markers in the source code
-
-Options:
-PYTHON = /usr/bin/python
-PYOPTIMIZE = 1
-DOCDIR = doc/pydoc
-DESTDIR = / </div>
+<h2>Frequently Asked Questions</h2>
+<dl>
+<dt><b>How to extract archives?</b></dt>
+<dd>
+You need the program "atool" which handles extraction of all sorts of archives automatically.
+Then, open the archive file in ranger "with the mode 1".  You can read about "modes" in the man page, the short answer is that you have to select the archive file and type "<b>1l</b>" or "<b>1&lt;Enter&gt;</b>".  Newer ranger versions can display a list of all possible modes if you press "r".
+</dd>
+<br />
+<dt><b>How to change the editor which opens text files?</b></dt>
+<dd>
+In your shell rc file, add:<br />
+<br />
+<div class="code">export EDITOR=emacs</div>
+</dd>
+<br />
+<dt><b>How to change the program which opens file type XYZ?</b></dt>
+<dd>
+Ranger has a configuration file which contains instructions on how to do that.  Which file it is depends on your ranger version though.  Ranger version 1.0.1 through 1.5.x uses <b>apps.py</b> whereas ranger-git and versions since 1.6.0 use <b>rifle.conf</b>.  In both cases, it can be obtained by running "ranger --copy-config=apps" or "ranger --copy-config=rifle" respectively and it will be copied to ~/.config/ranger/.
+</dd>
+<br />
+<dt><b>How to change or add key bindings?</b></dt>
+<dd>
+Since ranger 1.5.0, key bindings are defined in the configuration file <b>rc.conf</b> which can be obtained with "ranger --copy-config=rc".  The file should be self-explanatory.
+</dd>
+<br />
+<dt><b>How to use a trash bin instead of deleting files permanently?</b></dt>
+<dd>
+That is not supported by default, but you can add this simple command to your ~/.config/ranger/rc.conf, then type X to trash a file:<br />
+<br />
+<div class="code">map X shell mkdir -p ~/.trash; mv -bv %s ~/.trash/</div>
+</dd>
+<br />
+<dt><b>How to view all image files in feh/sxiv starting with the current file? (ranger-git only)</b></dt>
+<dd>
+You'll have to modify the rc.conf:<br />
+With feh, you can use the --start-at option and add a line to rifle.conf like:<br />
+<br />
+<div class="code">ext png|bmp|gif|jpe?g, X, flag f = feh -FZx *.bmp *.jpg *.png *.gif *.jpeg --start-at "$(basename "$1")"</div><br />
+With sxiv, you can use this <a href="http://git.savannah.gnu.org/cgit/ranger.git/tree/examples/rifle_sxiv.sh">script</a> combined with this line in rifle.conf:<br />
+<br />
+<div class="code">mime ^image, X, flag f = /path/to/script "$@"</div><br />
+Note that the first line that matches the image file will be used by default, so you will want to put this line at the top.
+</dd>
+<br />
+<dt><b>Why is my question not in this list?</b></dt>
+<dd>
+Probably because I forgot about it.  Or it wasn't asked yet.  Either way, you can fix this by <a href="contact.html">asking</a> your question.
+</dd>
+</dl>
 
 <!--get foot from index.html-->
 </div>
