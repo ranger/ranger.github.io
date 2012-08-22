@@ -58,6 +58,38 @@ git commit -a        # commit your changes to your local branch</div>
 
 <p> <hr /> </p>
 
+<h3 id="signed">Signed Packages</h3>
+
+If you want to be sure of the authenticity of the snapshot, please download <a href="ranger-stable.tar.gz">ranger-stable.tar.gz</a> and its <a href="ranger-stable.tar.gz.sig">signature</a>, then verify the signature with the author's public key: <a href="huterich.gpg">huterich.gpg</a>.<br />
+<br />
+<div class="code">gpg --import huterich.gpg
+gpg --verify ranger-stable.tar.gz.sig
+</div>
+<br />
+If this prints '<i>Good signature from "huterich &lt;hut@lavabit.com&gt;"</i>', the signature was verified.  However, you can only trust the authenticity of the snapshot as much as you trust the authenticity of the public key. Please ensure that the key really belongs to Roman Zimbelmann alias hut by verifying it from multiple sources.  Once you are sure, you can sign the key with your own signature as described <a href="http://www.dewinter.com/gnupg_howto/english/GPGMiniHowto-3.html#ss3.6">here</a> to avoid the warning that says "This key is not certified with a trusted signature! There is no indication that the signature belongs to the owner."<br />
+<br />
+This is a list of all released packages since 1.2.2 with their signatures:
+<ul>
+  <!-- run ls *.tar.gz | sort -r | sed 's,\(.*\),<li><a href="\1">\1</a> - <a href="\1.sig">signature</a></li>,' -->
+<li><a href="ranger-stable.tar.gz">ranger-stable.tar.gz</a> - <a href="ranger-stable.tar.gz.sig">signature</a></li>
+<li><a href="ranger-1.5.5.tar.gz">ranger-1.5.5.tar.gz</a> - <a href="ranger-1.5.5.tar.gz.sig">signature</a></li>
+<li><a href="ranger-1.5.4.tar.gz">ranger-1.5.4.tar.gz</a> - <a href="ranger-1.5.4.tar.gz.sig">signature</a></li>
+<li><a href="ranger-1.5.3.tar.gz">ranger-1.5.3.tar.gz</a> - <a href="ranger-1.5.3.tar.gz.sig">signature</a></li>
+<li><a href="ranger-1.5.2.tar.gz">ranger-1.5.2.tar.gz</a> - <a href="ranger-1.5.2.tar.gz.sig">signature</a></li>
+<li><a href="ranger-1.5.1.tar.gz">ranger-1.5.1.tar.gz</a> - <a href="ranger-1.5.1.tar.gz.sig">signature</a></li>
+<li><a href="ranger-1.5.0.tar.gz">ranger-1.5.0.tar.gz</a> - <a href="ranger-1.5.0.tar.gz.sig">signature</a></li>
+<li><a href="ranger-1.4.4.tar.gz">ranger-1.4.4.tar.gz</a> - <a href="ranger-1.4.4.tar.gz.sig">signature</a></li>
+<li><a href="ranger-1.4.3.tar.gz">ranger-1.4.3.tar.gz</a> - <a href="ranger-1.4.3.tar.gz.sig">signature</a></li>
+<li><a href="ranger-1.4.2.tar.gz">ranger-1.4.2.tar.gz</a> - <a href="ranger-1.4.2.tar.gz.sig">signature</a></li>
+<li><a href="ranger-1.4.1.tar.gz">ranger-1.4.1.tar.gz</a> - <a href="ranger-1.4.1.tar.gz.sig">signature</a></li>
+<li><a href="ranger-1.4.0.tar.gz">ranger-1.4.0.tar.gz</a> - <a href="ranger-1.4.0.tar.gz.sig">signature</a></li>
+<li><a href="ranger-1.2.3.tar.gz">ranger-1.2.3.tar.gz</a> - <a href="ranger-1.2.3.tar.gz.sig">signature</a></li>
+<li><a href="ranger-1.2.2.tar.gz">ranger-1.2.2.tar.gz</a> - <a href="ranger-1.2.2.tar.gz.sig">signature</a></li>
+<!-- /run -->
+</ul>
+
+<hr />
+
 <h3>Package Managers</h3>
 
 <p>
@@ -71,6 +103,9 @@ git commit -a        # commit your changes to your local branch</div>
 </p>
 <p>
   <b>Gentoo</b>: Stable versions of ranger are in <a href="http://packages.gentoo.org/package/app-misc/ranger">Portage</a>
+</p>
+<p>
+  <b>FreeBSD</b>: py-ranger in the <a href="http://www.freebsd.org/cgi/cvsweb.cgi/ports/sysutils/py-ranger/">ports</a>
 </p>
 
 <!--get foot from index.html-->
