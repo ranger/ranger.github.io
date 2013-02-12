@@ -29,6 +29,11 @@
 
 <h2>Frequently Asked Questions</h2>
 <dl>
+<dt><b>The preview of code files is empty when using scope.sh on Linux Mint</b></dt>
+<dd>
+You probably need to change the program call for "highlight" to "/usr/bin/highlight" in your scope.sh, because Linux Mint ships with another, completely unrelated "highlight" program which scope.sh ends up using.  See <url="http://forums.linuxmint.com/viewtopic.php?t=122220#p686532">http://forums.linuxmint.com/viewtopic.php?t=122220#p686532</url>
+</dd>
+<br />
 <dt><b>How to extract archives?</b></dt>
 <dd>
 You need the program "atool" which handles extraction of all sorts of archives automatically.
