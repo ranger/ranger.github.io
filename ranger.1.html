@@ -2,1233 +2,1318 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>ranger - visual file manager</title>
+<title></title>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link rev="made" href="mailto:root@localhost" />
+<link rev="made" href="mailto:kevin@archlinux.org" />
 </head>
 
 <body style="background-color: white">
 
 
-<!-- INDEX BEGIN -->
-<div name="index">
-<p><a name="__index__"></a></p>
 
-<ul>
-
-	<li><a href="#name">NAME</a></li>
-	<li><a href="#synopsis">SYNOPSIS</a></li>
-	<li><a href="#description">DESCRIPTION</a></li>
-	<li><a href="#options">OPTIONS</a></li>
-	<li><a href="#concepts">CONCEPTS</a></li>
-	<ul>
-
-		<li><a href="#tags">TAGS</a></li>
-		<li><a href="#previews">PREVIEWS</a></li>
-		<li><a href="#selection">SELECTION</a></li>
-		<li><a href="#macros">MACROS</a></li>
-		<li><a href="#bookmarks">BOOKMARKS</a></li>
-		<li><a href="#flags">FLAGS</a></li>
-		<li><a href="#modes">MODES</a></li>
-	</ul>
-
-	<li><a href="#key_bindings">KEY BINDINGS</a></li>
-	<ul>
-
-		<li><a href="#main_bindings">MAIN BINDINGS</a></li>
-		<li><a href="#midnight_commander_like_bindings">MIDNIGHT COMMANDER-LIKE BINDINGS</a></li>
-		<li><a href="#readline_like_bindings_in_the_console">READLINE-LIKE BINDINGS IN THE CONSOLE</a></li>
-	</ul>
-
-	<li><a href="#mouse_buttons">MOUSE BUTTONS</a></li>
-	<li><a href="#settings">SETTINGS</a></li>
-	<li><a href="#commands">COMMANDS</a></li>
-	<li><a href="#files">FILES</a></li>
-	<ul>
-
-		<li><a href="#configuration">CONFIGURATION</a></li>
-		<li><a href="#storage">STORAGE</a></li>
-	</ul>
-
-	<li><a href="#environment">ENVIRONMENT</a></li>
-	<li><a href="#examples">EXAMPLES</a></li>
-	<ul>
-
-		<li><a href="#bash__display_that_the_shell_spawned_from_ranger_">BASH: Display that the shell spawned from ranger:</a></li>
-		<li><a href="#vim__file_chooser">VIM: File Chooser</a></li>
-		<li><a href="#bash__cd_to_last_path_after_exit">Bash: cd to last path after exit</a></li>
-	</ul>
-
-	<li><a href="#license">LICENSE</a></li>
-	<li><a href="#links">LINKS</a></li>
-	<li><a href="#bugs">BUGS</a></li>
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#OPTIONS">OPTIONS</a></li>
+  <li><a href="#CONCEPTS">CONCEPTS</a>
+    <ul>
+      <li><a href="#TAGS">TAGS</a></li>
+      <li><a href="#PREVIEWS">PREVIEWS</a></li>
+      <li><a href="#SELECTION">SELECTION</a></li>
+      <li><a href="#MACROS">MACROS</a></li>
+      <li><a href="#BOOKMARKS">BOOKMARKS</a></li>
+      <li><a href="#RIFLE">RIFLE</a></li>
+      <li><a href="#FLAGS">FLAGS</a></li>
+      <li><a href="#PLUGINS">PLUGINS</a></li>
+    </ul>
+  </li>
+  <li><a href="#KEY-BINDINGS">KEY BINDINGS</a>
+    <ul>
+      <li><a href="#MAIN-BINDINGS">MAIN BINDINGS</a></li>
+      <li><a href="#READLINE-LIKE-BINDINGS-IN-THE-CONSOLE">READLINE-LIKE BINDINGS IN THE CONSOLE</a></li>
+    </ul>
+  </li>
+  <li><a href="#MOUSE-BUTTONS">MOUSE BUTTONS</a></li>
+  <li><a href="#SETTINGS">SETTINGS</a></li>
+  <li><a href="#COMMANDS">COMMANDS</a></li>
+  <li><a href="#FILES">FILES</a>
+    <ul>
+      <li><a href="#CONFIGURATION">CONFIGURATION</a></li>
+      <li><a href="#STORAGE">STORAGE</a></li>
+    </ul>
+  </li>
+  <li><a href="#ENVIRONMENT">ENVIRONMENT</a></li>
+  <li><a href="#EXAMPLES">EXAMPLES</a></li>
+  <li><a href="#LICENSE">LICENSE</a></li>
+  <li><a href="#LINKS">LINKS</a></li>
+  <li><a href="#SEE-ALSO">SEE ALSO</a></li>
+  <li><a href="#BUGS">BUGS</a></li>
 </ul>
 
-<hr name="index" />
-</div>
-<!-- INDEX END -->
+<h1 id="NAME">NAME</h1>
 
-<p>
-</p>
-<h1><a name="name">NAME</a></h1>
 <p>ranger - visual file manager</p>
-<p>
-</p>
-<hr />
-<h1><a name="synopsis">SYNOPSIS</a></h1>
-<p><strong>ranger</strong> [<strong>--help</strong>] [<strong>--version</strong>] [<strong>--debug</strong>] [<strong>--clean</strong>]
-[<strong>--list-unused-keys</strong>] [<strong>--fail-unless-cd</strong>] [<strong>--choosedir</strong>=<em>targetfile</em>]
-[<strong>--choosefile</strong>=<em>targetfile</em>] [<strong>--copy-config</strong>=<em>file</em>] [<strong>--mode</strong>=<em>mode</em>]
-[<strong>--flags</strong>=<em>flags</em>] [<em>path/filename</em>]</p>
-<p>
-</p>
-<hr />
-<h1><a name="description">DESCRIPTION</a></h1>
-<p>ranger is a console file manager with VI key bindings.  It provides a
-minimalistic and nice curses interface with a view on the directory hierarchy.
-The secondary task of ranger is to figure out which program you want to use to
-open your files with.</p>
-<p>This manual mainly contains information on the usage of ranger.  Refer to the
-<em class="file">README</em> for install instructions and to <em class="file">doc/HACKING</em> for development
-specific information.  For configuration, see the files in <em class="file">ranger/defaults</em>.
-They are usually installed to <em class="file">/usr/lib/python*/site-packages/ranger/defaults</em>
-and can be obtained with ranger's --copy-config option.</p>
-<p>Inside ranger, you can press <em>1?</em> for a list of key bindings, <em>2?</em> for a list
-of commands and <em>3?</em> for a list of settings.</p>
-<p>
-</p>
-<hr />
-<h1><a name="options">OPTIONS</a></h1>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+<p><b>ranger</b> [<b>--version</b>] [<b>--help</b>] [<b>--debug</b>] [<b>--clean</b>] [<b>--confdir</b>=<i>directory</i>] [<b>--copy-config</b>=<i>which</i>] [<b>--choosefile</b>=<i>target</i>] [<b>--choosefiles</b>=<i>target</i>] [<b>--choosedir</b>=<i>target</i>] [<b>--selectfile</b>=<i>filepath</i>] [<b>--list-unused-keys</b>] [<b>--list-tagged-files</b>=<i>tag</i>] [<b>--profile</b>] [<b>--cmd</b>=<i>command</i>] [<i>path</i>]</p>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>ranger is a console file manager with VI key bindings. It provides a minimalistic and nice curses interface with a view on the directory hierarchy. The secondary task of ranger is to figure out which program you want to use to open your files with.</p>
+
+<p>This manual mainly contains information on the usage of ranger. Refer to the <i>README</i> for install instructions and to <i>doc/HACKING</i> for development specific information. For configuration, see the files in <i>ranger/config</i>. They are usually installed to <i>/usr/lib/python*/site-packages/ranger/config</i> and can be obtained with ranger&#39;s --copy-config option.</p>
+
+<p>Inside ranger, you can press <i>1?</i> for a list of key bindings, <i>2?</i> for a list of commands and <i>3?</i> for a list of settings.</p>
+
+<h1 id="OPTIONS">OPTIONS</h1>
+
 <dl>
-<dt><strong><a name="d_debug" class="item"><strong>-d</strong>, <strong>--debug</strong></a></strong></dt>
 
+<dt id="d---debug"><b>-d</b>, <b>--debug</b></dt>
 <dd>
-<p>Activate the debug mode: Whenever an error occurs, ranger will exit and print a
-full traceback.  The default behavior is to merely print the name of the
-exception in the statusbar/log and try to keep running.</p>
+
+<p>Activate the debug mode: Whenever an error occurs, ranger will exit and print a full traceback. The default behavior is to merely print the name of the exception in the statusbar/log and try to keep running.</p>
+
 </dd>
-<dt><strong><a name="c_clean" class="item"><strong>-c</strong>, <strong>--clean</strong></a></strong></dt>
-
+<dt id="c---clean"><b>-c</b>, <b>--clean</b></dt>
 <dd>
-<p>Activate the clean mode:  ranger will not access or create any configuration
-files nor will it leave any traces on your system.  This is useful when your
-configuration is broken, when you want to avoid clutter, etc.</p>
+
+<p>Activate the clean mode: ranger will not access or create any configuration files nor will it leave any traces on your system. This is useful when your configuration is broken, when you want to avoid clutter, etc.</p>
+
 </dd>
-<dt><strong><a name="choosefile_targetfile" class="item"><strong>--choosefile</strong>=<em>targetfile</em></a></strong></dt>
-
+<dt id="r-dir---confdir-dir"><b>-r</b> <i>dir</i>, <b>--confdir</b>=<i>dir</i></dt>
 <dd>
-<p>Allows you to pick a file with ranger.  This changes the behavior so that when
-you open a file, ranger will exit and write the absolute path of that file into
-<em>targetfile</em>.</p>
+
+<p>Change the configuration directory of ranger from ~/.config/ranger to &quot;dir&quot;.</p>
+
 </dd>
-<dt><strong><a name="choosefiles_targetfile" class="item"><strong>--choosefiles</strong>=<em>targetfile</em></a></strong></dt>
-
+<dt id="copy-config-file"><b>--copy-config</b>=<i>file</i></dt>
 <dd>
-<p>Allows you to pick multiple files with ranger.  This changes the behavior so
-that when you open a file, ranger will exit and write the absolute paths of all
-selected files into <em>targetfile</em>, adding one newline after each filename.</p>
+
+<p>Create copies of the default configuration files in your local configuration directory. Existing ones will not be overwritten. Possible values: <i>all</i>, <i>rc</i>, <i>commands</i>, <i>scope</i>.</p>
+
 </dd>
-<dt><strong><a name="choosedir_targetfile" class="item"><strong>--choosedir</strong>=<em>targetfile</em></a></strong></dt>
-
+<dt id="choosefile-targetfile"><b>--choosefile</b>=<i>targetfile</i></dt>
 <dd>
-<p>Allows you to pick a directory with ranger.  When you exit ranger, it will
-write the last visited directory into <em>targetfile</em>.</p>
+
+<p>Allows you to pick a file with ranger. This changes the behavior so that when you open a file, ranger will exit and write the absolute path of that file into <i>targetfile</i>.</p>
+
 </dd>
-<dt><strong><a name="selectfile_targetfile" class="item"><strong>--selectfile</strong>=<em>targetfile</em></a></strong></dt>
-
+<dt id="choosefiles-targetfile"><b>--choosefiles</b>=<i>targetfile</i></dt>
 <dd>
-<p>Open ranger with <em>targetfile</em> selected.</p>
+
+<p>Allows you to pick multiple files with ranger. This changes the behavior so that when you open a file, ranger will exit and write the absolute paths of all selected files into <i>targetfile</i>, adding one newline after each filename.</p>
+
 </dd>
-<dt><strong><a name="copy_config_file" class="item"><strong>--copy-config</strong>=<em>file</em></a></strong></dt>
-
+<dt id="choosedir-targetfile"><b>--choosedir</b>=<i>targetfile</i></dt>
 <dd>
-<p>Create copies of the default configuration files in your local configuration
-directory.  Existing ones will not be overwritten.  Possible values: <em>all</em>,
-<em>rc</em>, <em>apps</em>, <em>commands</em>, <em>options</em>, <em>scope</em>.</p>
+
+<p>Allows you to pick a directory with ranger. When you exit ranger, it will write the last visited directory into <i>targetfile</i>.</p>
+
 </dd>
-<dt><strong><a name="list_unused_keys" class="item"><strong>--list-unused-keys</strong></a></strong></dt>
-
+<dt id="selectfile-targetfile"><b>--selectfile</b>=<i>targetfile</i></dt>
 <dd>
-<p>List common keys which are not bound to any action in the &quot;browser&quot; context.
-This list is not complete, you can bind any key that is supported by curses:
-use the key code returned by <code>getch()</code>.</p>
+
+<p>Open ranger with <i>targetfile</i> selected.</p>
+
 </dd>
-<dt><strong><a name="list_tagged_files_tag" class="item"><strong>--list-tagged-files</strong>=<em>tag</em></a></strong></dt>
-
+<dt id="list-unused-keys"><b>--list-unused-keys</b></dt>
 <dd>
-<p>List all files which are tagged with the given tag.  Note: Tags are single
-characters.  The default tag is &quot;*&quot;</p>
+
+<p>List common keys which are not bound to any action in the &quot;browser&quot; context. This list is not complete, you can bind any key that is supported by curses: use the key code returned by <code>getch()</code>.</p>
+
 </dd>
-<dt><strong><a name="fail_unless_cd" class="item"><strong>--fail-unless-cd</strong></a></strong></dt>
-
+<dt id="list-tagged-files-tag"><b>--list-tagged-files</b>=<i>tag</i></dt>
 <dd>
-<p>Return the exit code 1 if ranger is used to run a file instead of used for file
-browsing. (For example, &quot;ranger --fail-unless-cd test.txt&quot; returns 1.)</p>
+
+<p>List all files which are tagged with the given tag. Note: Tags are single characters. The default tag is &quot;*&quot;</p>
+
 </dd>
-<dt><strong><a name="m_n_mode_n" class="item"><strong>-m</strong> <em>n</em>, <strong>--mode</strong>=<em>n</em></a></strong></dt>
-
+<dt id="profile"><b>--profile</b></dt>
 <dd>
-<p>When a filename is supplied, run it in mode <em>n</em>.  This has no effect unless
-the execution of this file type is explicitly handled in the configuration.</p>
+
+<p>Print statistics of CPU usage on exit.</p>
+
 </dd>
-<dt><strong><a name="f_flags_flags_flags" class="item"><strong>-f</strong> <em>flags</em>, <strong>--flags</strong>=<em>flags</em></a></strong></dt>
-
+<dt id="cmd-command"><b>--cmd</b>=<i>command</i></dt>
 <dd>
-<p>When a filename is supplied, run it with the given <em>flags</em> to modify
-behavior.  The execution of this file type is explicitly handled in the
-configuration.</p>
+
+<p>Execute the command after the configuration has been read. Use this option multiple times to run multiple commands.</p>
+
 </dd>
-<dt><strong><a name="cmd_command" class="item"><strong>--cmd</strong>=<em>command</em></a></strong></dt>
-
+<dt id="version"><b>--version</b></dt>
 <dd>
-<p>Execute the command after the configuration has been read.  Use this option
-multiple times to run multiple commands.</p>
-</dd>
-<dt><strong><a name="version" class="item"><strong>--version</strong></a></strong></dt>
 
-<dd>
 <p>Print the version and exit.</p>
-</dd>
-<dt><strong><a name="h_help" class="item"><strong>-h</strong>, <strong>--help</strong></a></strong></dt>
 
+</dd>
+<dt id="h---help"><b>-h</b>, <b>--help</b></dt>
 <dd>
+
 <p>Print a list of options and exit.</p>
+
 </dd>
 </dl>
-<p>
-</p>
-<hr />
-<h1><a name="concepts">CONCEPTS</a></h1>
-<p>
-</p>
-<h2><a name="tags">TAGS</a></h2>
-<p>Tags are single characters which are displayed left of a filename.  You can use
-tags however you want.  Press &quot;t&quot; to toggle tags and &quot;T&quot; to remove any tags of
-the selection. The default tag is an Asterisk (&quot;*&quot;), but you can use any tag by
-typing <em>&quot;&lt;tagname&gt;</em>.</p>
-<p>
-</p>
-<h2><a name="previews">PREVIEWS</a></h2>
-<p>By default, only text files are previewed, but you can enable external preview
-scripts by setting the option <code>use_preview_script</code> and <code>preview_files</code> to True.</p>
-<p>This default script is <em class="file">~/.config/ranger/scope.sh</em>. It contains more
-documentation and calls to the programs <em>lynx</em> and <em>elinks</em> for html,
-<em>highlight</em> for text/code, <em>img2txt</em> for images, <em>atool</em> for archives,
-<em>pdftotext</em> for PDFs and <em>mediainfo</em> for video and audio files.</p>
-<p>Install these programs (just the ones you need) and scope.sh will automatically
-use them.</p>
-<p>
-</p>
-<h2><a name="selection">SELECTION</a></h2>
-<p>The <em>selection</em> is defined as &quot;All marked files IF THERE ARE ANY, otherwise
-the current file.&quot;  Be aware of this when using the :delete command, which
-deletes all files in the selection.</p>
-<p>You can mark files by pressing &lt;Space&gt;, v, etc.  A yellow <strong>Mrk</strong> symbol at the
-bottom right indicates that there are marked files in this directory.</p>
-<p>
-</p>
-<h2><a name="macros">MACROS</a></h2>
+
+<h1 id="CONCEPTS">CONCEPTS</h1>
+
+<p>This part explains how certain parts of ranger work and how they can be used efficiently.</p>
+
+<h2 id="TAGS">TAGS</h2>
+
+<p>Tags are single characters which are displayed left of a filename. You can use tags however you want. Press &quot;t&quot; to toggle tags and &quot;T&quot; to remove any tags of the selection. The default tag is an Asterisk (&quot;*&quot;), but you can use any tag by typing <i>&quot;&lt;tagname&gt;</i>.</p>
+
+<h2 id="PREVIEWS">PREVIEWS</h2>
+
+<p>By default, only text files are previewed, but you can enable external preview scripts by setting the option <code>use_preview_script</code> and <code>preview_files</code> to true.</p>
+
+<p>This default script is <i>~/.config/ranger/scope.sh</i>. It contains more documentation and calls to the programs <i>lynx</i> and <i>elinks</i> for html, <i>highlight</i> for text/code, <i>img2txt</i> for images, <i>atool</i> for archives, <i>pdftotext</i> for PDFs and <i>mediainfo</i> for video and audio files.</p>
+
+<p>Install these programs (just the ones you need) and scope.sh will automatically use them.</p>
+
+<p>Independently of the preview script, there is a feature to preview images by drawing them directly into the terminal. This does not work over ssh, requires certain terminals (tested on &quot;xterm&quot; and &quot;urxvt&quot;) and is incompatible with tmux, although it works with screen.</p>
+
+<p>To enable this feature, install the program &quot;w3m&quot; and set the option <code>preview_images</code> to true.</p>
+
+<h2 id="SELECTION">SELECTION</h2>
+
+<p>The <i>selection</i> is defined as &quot;All marked files IF THERE ARE ANY, otherwise the current file.&quot; Be aware of this when using the :delete command, which deletes all files in the selection.</p>
+
+<p>You can mark files by pressing &lt;Space&gt;, v, etc. A yellow <b>Mrk</b> symbol at the bottom right indicates that there are marked files in this directory.</p>
+
+<h2 id="MACROS">MACROS</h2>
+
 <p>Macros can be used in commands to abbreviate things.</p>
-<pre>
- %f   the highlighted file
+
+<pre><code> %f   the highlighted file
  %d   the path of the current directory
  %s   the selected files in the current directory.
  %t   all tagged files in the current directory
- %c   the full paths of the currently copied/cut files</pre>
-<p>The macros %f, %d and %s also have upper case variants, %F, %D and %S,
-which refer to the next tab.  To refer to specific tabs, add a number in
-between.  (%7s = selection of the seventh tab.)</p>
-<p>%c is the only macro which ranges out of the current directory. So you may
-&quot;abuse&quot; the copying function for other purposes, like diffing two files which
-are in different directories:</p>
-<pre>
- Yank the file A (type yy), move to the file B, then type
- @diff %c %f</pre>
-<p>Macros for file paths are generally shell-escaped so they can be used in the
-:shell command.</p>
-<p>
-</p>
-<h2><a name="bookmarks">BOOKMARKS</a></h2>
-<p>Type <strong>m&lt;key&gt;</strong> to bookmark the current directory. You can re-enter this
-directory by typing <strong>`&lt;key&gt;</strong>. &lt;key&gt; can be any letter or digit.  Unlike vim,
-both lowercase and uppercase bookmarks are persistent.</p>
-<p>Each time you jump to a bookmark, the special bookmark at key ` will be set
-to the last directory. So typing &quot;``&quot; gets you back to where you were before.</p>
+ %c   the full paths of the currently copied/cut files</code></pre>
+
+<p>The macros %f, %d and %s also have upper case variants, %F, %D and %S, which refer to the next tab. To refer to specific tabs, add a number in between. (%7s = selection of the seventh tab.)</p>
+
+<p>%c is the only macro which ranges out of the current directory. So you may &quot;abuse&quot; the copying function for other purposes, like diffing two files which are in different directories:</p>
+
+<pre><code> Yank the file A (type yy), move to the file B, then type
+ @diff %c %f</code></pre>
+
+<p>Macros for file paths are generally shell-escaped so they can be used in the <code>shell</code> command.</p>
+
+<p>Additionally, if you create a key binding that uses &lt;any&gt;, a special statement which accepts any key, then the macro %any (or %any0, %any1, %any2, ...) can be used in the command to get the key that was pressed.</p>
+
+<h2 id="BOOKMARKS">BOOKMARKS</h2>
+
+<p>Type <b>m&lt;key&gt;</b> to bookmark the current directory. You can re-enter this directory by typing <b>`&lt;key&gt;</b>. &lt;key&gt; can be any letter or digit. Unlike vim, both lowercase and uppercase bookmarks are persistent.</p>
+
+<p>Each time you jump to a bookmark, the special bookmark at key ` will be set to the last directory. So typing &quot;``&quot; gets you back to where you were before.</p>
+
 <p>Bookmarks are selectable when tabbing in the :cd command.</p>
-<p>Note: The bookmarks ' (Apostrophe) and ` (Backtick) are the same.</p>
-<p>
-</p>
-<h2><a name="flags">FLAGS</a></h2>
-<p>Flags give you a way to modify the behavior of the spawned process.  They are
-used in the commands :open_with (key &quot;r&quot;) and :shell (key &quot;!&quot;).</p>
-<pre>
- s   Silent mode.  Output will be discarded.
- d   Detach the process.  (Run in background)
- p   Redirect output to the pager
- w   Wait for an Enter-press when the process is done
+
+<p>Note: The bookmarks &#39; (Apostrophe) and ` (Backtick) are the same.</p>
+
+<h2 id="RIFLE">RIFLE</h2>
+
+<p>Rifle is the file opener of ranger. It can be used as a standalone program or a python module. It is located at <i>ranger/ext/rifle.py</i>. In contrast to other, more simple file openers, rifle can automatically find installed programs so it can be used effectively out of the box on a variety of systems.</p>
+
+<p>It&#39;s configured in <i>rifle.conf</i> through a list of conditions and commands. For each line the conditions are checked and if they are met, the respective command is taken into consideration. By default, simply the first matching rule is used. In ranger, you can list and choose rules by typing &quot;r&quot; or simply by typing &quot;&lt;rulenumber&gt;&lt;enter&gt;&quot;. If you use rifle standalone, you can list all rules with the &quot;-l&quot; option and pick a rule with &quot;-p &lt;number&gt;&quot;.</p>
+
+<p>The rules, along with further documentation, are contained in <i>ranger/config/rifle.conf</i>.</p>
+
+<h2 id="FLAGS">FLAGS</h2>
+
+<p>Flags give you a way to modify the behavior of the spawned process. They are used in the commands <code>:open_with</code> (key &quot;r&quot;) and <code>:shell</code> (key &quot;!&quot;).</p>
+
+<pre><code> f   Fork the process.  (Run in background)
  c   Run the current file only, instead of the selection
  r   Run application with root privilege (requires sudo)
- t   Run application in a new terminal window</pre>
-<p>By default, all the flags are off unless specified otherwise in the <em class="file">apps.py</em>
-configuration file.  You can specify as many flags as you want.  An uppercase
-flag negates the effect: &quot;ddcccDs&quot; is equivalent to &quot;cs&quot;.</p>
-<p>The &quot;t&quot; flag looks for the environment variable TERMCMD, and uses it as the
-terminal command, if it's not set it'll use xterm.</p>
-<p>Examples: <code>:open_with p</code> will pipe the output of that process into
-the pager.  <code>:shell -w df</code> will run &quot;df&quot; and wait for you to press Enter before
-switching back to ranger.</p>
-<p>
-</p>
-<h2><a name="modes">MODES</a></h2>
-<p>By specifying a mode (a positive integer), you can tell ranger what to do with
-a file when running it. You can specify which mode to use by typing &lt;mode&gt;l or
-&lt;mode&gt;&lt;Enter&gt; or :open_with &lt;mode&gt;.  The default mode is 0.</p>
-<p>Examples: <code>l</code> (mode zero) to list the contents of an archive, <code>1l</code> (mode one)
-to extract an archive.  See the <em class="file">apps.py</em> configuration file for all programs
-and modes.</p>
-<p>
-</p>
-<hr />
-<h1><a name="key_bindings">KEY BINDINGS</a></h1>
-<p>Key bindings are defined in the file <em class="file">ranger/defaults/rc.conf</em>.  Check this
-file for a list of all key bindings.  You can copy it to your local
-configuration directory with the --copy-config=rc option.</p>
-<p>Many key bindings take an additional numeric argument.  Type <em>5j</em> to move
-down 5 lines, <em>2l</em> to open a file in mode 2, <em>10&lt;Space&gt;</em> to mark 10 files.</p>
+ t   Run application in a new terminal window</code></pre>
+
+<p>There are some additional flags that can currently be used only in the <code>shell</code> command: (for example <code>:shell -w df</code>)</p>
+
+<pre><code> p   Redirect output to the pager
+ s   Silent mode.  Output will be discarded.
+ w   Wait for an Enter-press when the process is done</code></pre>
+
+<p>By default, all the flags are off unless specified otherwise in the <i>rifle.conf</i> configuration file. You can specify as many flags as you want. An uppercase flag negates the effect: &quot;ffcccFsf&quot; is equivalent to &quot;cs&quot;.</p>
+
+<p>The terminal program name for the &quot;t&quot; flag is taken from the environment variable $TERMCMD. If it doesn&#39;t exist, it tries to extract it from $TERM and uses &quot;xterm&quot; as a fallback if that fails.</p>
+
+<p>Examples: <code>:open_with c</code> will open the file that you currently point at, even if you have selected other files. <code>:shell -w df</code> will run &quot;df&quot; and wait for you to press Enter before switching back to ranger.</p>
+
+<h2 id="PLUGINS">PLUGINS</h2>
+
+<p>ranger&#39;s plugin system consists of python files which are located in <i>~/.config/ranger/plugins/</i> and are imported in alphabetical order when starting ranger. A plugin changes rangers behavior by overwriting or extending a function that ranger uses. This allows you to change pretty much every part of ranger, but there is no guarantee that things will continue to work in future versions as the source code evolves.</p>
+
+<p>There are some hooks that are specifically made for the use in plugins. They are functions that start with hook_ and can be found throughout the code.</p>
+
+<pre><code> grep &#39;def hook_&#39; -r /path/to/rangers/source</code></pre>
+
+<p>Also try:</p>
+
+<pre><code> pydoc ranger.api</code></pre>
+
+<p>Note that you should NOT simply overwrite a function unless you know what you&#39;re doing. Instead, save the existing function and call it from your new one. This way, multiple plugins can use the same hook. There are several sample plugins in the <i>examples/</i> directory, including a hello-world plugin that describes this procedure.</p>
+
+<h1 id="KEY-BINDINGS">KEY BINDINGS</h1>
+
+<p>Key bindings are defined in the file <i>ranger/config/rc.conf</i>. Check this file for a list of all key bindings. You can copy it to your local configuration directory with the --copy-config=rc option.</p>
+
+<p>Many key bindings take an additional numeric argument. Type <i>5j</i> to move down 5 lines, <i>2l</i> to open a file in mode 2, <i>10&lt;Space&gt;</i> to mark 10 files.</p>
+
 <p>This list contains the most useful bindings:</p>
-<p>
-</p>
-<h2><a name="main_bindings">MAIN BINDINGS</a></h2>
-<dl>
-<dt><strong><a name="h_j_k_l" class="item">h, j, k, l</a></strong></dt>
 
+<h2 id="MAIN-BINDINGS">MAIN BINDINGS</h2>
+
+<dl>
+
+<dt id="h-j-k-l">h, j, k, l</dt>
 <dd>
+
 <p>Move left, down, up or right</p>
-</dd>
-<dt><strong><a name="d_or_j_u_or_k" class="item">^D or J, ^U or K</a></strong></dt>
 
+</dd>
+<dt id="D-or-J-U-or-K">^D or J, ^U or K</dt>
 <dd>
+
 <p>Move a half page down, up</p>
-</dd>
-<dt><strong><a name="h_l" class="item">H, L</a></strong></dt>
 
+</dd>
+<dt id="H-L">H, L</dt>
 <dd>
+
 <p>Move back and forward in the history</p>
-</dd>
-<dt><strong><a name="gg" class="item">gg</a></strong></dt>
 
+</dd>
+<dt id="gg">gg</dt>
 <dd>
+
 <p>Move to the top</p>
-</dd>
-<dt><strong><a name="g" class="item">G</a></strong></dt>
 
+</dd>
+<dt id="G">G</dt>
 <dd>
+
 <p>Move to the bottom</p>
-</dd>
-<dt><strong><a name="r" class="item">^R</a></strong></dt>
 
+</dd>
+<dt id="R">^R</dt>
 <dd>
+
 <p>Reload everything</p>
-</dd>
-<dt><strong><a name="l" class="item">^L</a></strong></dt>
 
+</dd>
+<dt id="L">^L</dt>
 <dd>
+
 <p>Redraw the screen</p>
-</dd>
-<dt><strong><a name="s" class="item">S</a></strong></dt>
 
+</dd>
+<dt id="i">i</dt>
 <dd>
+
+<p>Display the current file in a bigger window.</p>
+
+</dd>
+<dt id="E">E</dt>
+<dd>
+
+<p>Edit the current file in $EDITOR (&quot;nano&quot; by default)</p>
+
+</dd>
+<dt id="S">S</dt>
+<dd>
+
 <p>Open a shell in the current directory</p>
-</dd>
-<dt><strong><a name="" class="item">?</a></strong></dt>
 
+</dd>
+<dt id="pod-">?</dt>
 <dd>
+
 <p>Opens this man page</p>
-</dd>
-<dt><strong><a name="yy" class="item">yy</a></strong></dt>
 
-<dd>
-<p>Yank the selection to the &quot;copy&quot; buffer and mark them as to be copied</p>
 </dd>
-<dt><strong><a name="dd" class="item">dd</a></strong></dt>
-
+<dt id="octal-whowhat--whowhat">&lt;octal&gt;=, +&lt;who&gt;&lt;what&gt;, -&lt;who&gt;&lt;what&gt;</dt>
 <dd>
-<p>Cut the selection to the &quot;copy&quot; buffer and mark them as to be moved</p>
+
+<p>Change the permissions of the selection. For example, <code>777=</code> is equivalent to <code>chmod 777 %s</code>, <code>+ar</code> does <code>chmod a+r %s</code>, <code>-ow</code> does <code>chmod o-w %s</code> etc.</p>
+
 </dd>
-<dt><strong><a name="pp" class="item">pp</a></strong></dt>
-
+<dt id="yy">yy</dt>
 <dd>
-<p>Paste the files from the &quot;copy&quot; buffer here (by moving or copying, depending on
-how they are marked.) By default, this will not overwrite existing files.  To
-overwrite them, use <em>po</em>.</p>
+
+<p>Copy (yank) the selection, like pressing Ctrl+C in modern GUI programs.</p>
+
 </dd>
-<dt><strong><a name="mx" class="item">m<em>X</em></a></strong></dt>
-
+<dt id="dd">dd</dt>
 <dd>
-<p>Create a bookmark with the name <em>X</em></p>
+
+<p>Cut the selection, like pressing Ctrl+X in modern GUI programs.</p>
+
 </dd>
-<dt><strong><a name="x" class="item">`<em>X</em></a></strong></dt>
-
+<dt id="pp">pp</dt>
 <dd>
-<p>Move to the bookmark with the name <em>X</em></p>
+
+<p>Paste the files which were previously copied or cut, like pressing Ctrl+V in modern GUI programs.</p>
+
 </dd>
-<dt><strong><a name="n_n" class="item">n, N</a></strong></dt>
-
+<dt id="po">po</dt>
 <dd>
-<p>Find the next file.  By default, this gets you to the newest file in the
-directory, but if you search something using the keys /, cm, ct, ..., it will
-get you to the next found entry.</p>
+
+<p>Paste the copied/cut files, overwriting existing files.</p>
+
 </dd>
-<dt><strong><a name="n" class="item">N</a></strong></dt>
-
+<dt id="mX">m<i>X</i></dt>
 <dd>
+
+<p>Create a bookmark with the name <i>X</i></p>
+
+</dd>
+<dt id="X">`<i>X</i></dt>
+<dd>
+
+<p>Move to the bookmark with the name <i>X</i></p>
+
+</dd>
+<dt id="n">n</dt>
+<dd>
+
+<p>Find the next file. By default, this gets you to the newest file in the directory, but if you search something using the keys /, cm, ct, ..., it will get you to the next found entry.</p>
+
+</dd>
+<dt id="N">N</dt>
+<dd>
+
 <p>Find the previous file.</p>
-</dd>
-<dt><strong><a name="ox" class="item">o<em>X</em></a></strong></dt>
 
+</dd>
+<dt id="oX">o<i>X</i></dt>
 <dd>
+
 <p>Change the sort method (like in mutt)</p>
-</dd>
-<dt><strong><a name="zx" class="item">z<em>X</em></a></strong></dt>
 
-<dd>
-<p>Change settings.  See the settings section for a list of settings and their
-hotkey.</p>
 </dd>
-<dt><strong><a name="f" class="item">f</a></strong></dt>
-
+<dt id="zX">z<i>X</i></dt>
 <dd>
+
+<p>Change settings. See the settings section for a list of settings and their hotkey.</p>
+
+</dd>
+<dt id="u-">u<i>?</i></dt>
+<dd>
+
+<p>Universal undo-key. Depending on the key that you press after &quot;u&quot;, it either restores closed tabs (uq), removes tags (ut), clears the copy/cut buffer (ud), starts the reversed visual mode (uV) or clears the selection (uv).</p>
+
+</dd>
+<dt id="f">f</dt>
+<dd>
+
 <p>Quickly navigate by entering a part of the filename.</p>
-</dd>
-<dt><strong><a name="space" class="item">Space</a></strong></dt>
 
+</dd>
+<dt id="Space">Space</dt>
 <dd>
+
 <p>Mark a file.</p>
-</dd>
-<dt><strong><a name="v" class="item">v</a></strong></dt>
 
-<dd>
-<p>Toggle the mark-status of all files, unmark all files.</p>
 </dd>
-<dt><strong><a name="v_uv" class="item">V, uv</a></strong></dt>
-
+<dt id="v">v</dt>
 <dd>
-<p>Unmark all files</p>
+
+<p>Toggle the mark-status of all files</p>
+
 </dd>
-<dt><strong><a name="_" class="item">/</a></strong></dt>
-
+<dt id="V">V</dt>
 <dd>
+
+<p>Starts the visual mode, which selects all files between the starting point and the cursor until you press ESC. To unselect files in the same way, use &quot;uV&quot;.</p>
+
+</dd>
+<dt id="pod-1">/</dt>
+<dd>
+
 <p>Search for files in the current directory.</p>
-</dd>
-<dt><strong><a name="_" class="item">:</a></strong></dt>
 
+</dd>
+<dt id="pod:">:</dt>
 <dd>
+
 <p>Open the console.</p>
-</dd>
-<dt><strong><a name="alt_n" class="item">Alt-<em>N</em></a></strong></dt>
 
-<dd>
-<p>Open a tab. N has to be a number from 0 to 9. If the tab doesn't exist yet, it
-will be created.</p>
 </dd>
-<dt><strong><a name="gn_n" class="item">gn, ^N</a></strong></dt>
-
+<dt id="Alt-N">Alt-<i>N</i></dt>
 <dd>
+
+<p>Open a tab. N has to be a number from 0 to 9. If the tab doesn&#39;t exist yet, it will be created.</p>
+
+</dd>
+<dt id="gn-N">gn, ^N</dt>
+<dd>
+
 <p>Create a new tab.</p>
-</dd>
-<dt><strong><a name="gt_gt" class="item">gt, gT</a></strong></dt>
 
+</dd>
+<dt id="gt-gT">gt, gT</dt>
 <dd>
+
 <p>Go to the next or previous tab. You can also use TAB and SHIFT+TAB instead.</p>
-</dd>
-<dt><strong><a name="gc_w" class="item">gc, ^W</a></strong></dt>
 
-<dd>
-<p>Close the current tab.  The last tab cannot be closed this way.</p>
 </dd>
-</dl>
-<p>
-</p>
-<h2><a name="midnight_commander_like_bindings">MIDNIGHT COMMANDER-LIKE BINDINGS</a></h2>
-<dl>
-<dt><strong><a name="f1" class="item">&lt;F1&gt;</a></strong></dt>
-
+<dt id="gc-W">gc, ^W</dt>
 <dd>
-<p>Display Help.</p>
-</dd>
-<dt><strong><a name="f3" class="item">&lt;F3&gt;</a></strong></dt>
 
-<dd>
-<p>Display the file.</p>
-</dd>
-<dt><strong><a name="f4" class="item">&lt;F4&gt;</a></strong></dt>
+<p>Close the current tab. The last tab cannot be closed this way.</p>
 
-<dd>
-<p>Edit the file.</p>
-</dd>
-<dt><strong><a name="f5" class="item">&lt;F5&gt;</a></strong></dt>
-
-<dd>
-<p>Copy the file.</p>
-</dd>
-<dt><strong><a name="f6" class="item">&lt;F6&gt;</a></strong></dt>
-
-<dd>
-<p>Cut the file.</p>
-</dd>
-<dt><strong><a name="f7" class="item">&lt;F7&gt;</a></strong></dt>
-
-<dd>
-<p>Open the console with &quot;:mkdir &quot;.</p>
-</dd>
-<dt><strong><a name="f8" class="item">&lt;F8&gt;</a></strong></dt>
-
-<dd>
-<p>Prompt for deletion of the selected files.</p>
-</dd>
-<dt><strong><a name="f10" class="item">&lt;F10&gt;</a></strong></dt>
-
-<dd>
-<p>Exit ranger.</p>
 </dd>
 </dl>
-<p>
-</p>
-<h2><a name="readline_like_bindings_in_the_console">READLINE-LIKE BINDINGS IN THE CONSOLE</a></h2>
-<dl>
-<dt><strong><a name="b_f" class="item">^B, ^F</a></strong></dt>
 
+<h2 id="READLINE-LIKE-BINDINGS-IN-THE-CONSOLE">READLINE-LIKE BINDINGS IN THE CONSOLE</h2>
+
+<dl>
+
+<dt id="B-F">^B, ^F</dt>
 <dd>
+
 <p>Move left and right (B for back, F for forward)</p>
-</dd>
-<dt><strong><a name="p_n" class="item">^P, ^N</a></strong></dt>
 
+</dd>
+<dt id="P-N">^P, ^N</dt>
 <dd>
+
 <p>Move up and down (P for previous, N for Next)</p>
-</dd>
-<dt><strong><a name="a_e" class="item">^A, ^E</a></strong></dt>
 
+</dd>
+<dt id="A-E">^A, ^E</dt>
 <dd>
+
 <p>Move to the start or to the end</p>
-</dd>
-<dt><strong><a name="d" class="item">^D</a></strong></dt>
 
+</dd>
+<dt id="D">^D</dt>
 <dd>
+
 <p>Delete the current character.</p>
-</dd>
-<dt><strong><a name="h" class="item">^H</a></strong></dt>
 
+</dd>
+<dt id="H">^H</dt>
 <dd>
+
 <p>Backspace.</p>
+
 </dd>
 </dl>
-<p>
-</p>
-<hr />
-<h1><a name="mouse_buttons">MOUSE BUTTONS</a></h1>
+
+<h1 id="MOUSE-BUTTONS">MOUSE BUTTONS</h1>
+
 <dl>
-<dt><strong><a name="left_mouse_button" class="item">Left Mouse Button</a></strong></dt>
 
+<dt id="Left-Mouse-Button">Left Mouse Button</dt>
 <dd>
-<p>Click on something and you'll move there.  To run a file, &quot;enter&quot; it, like a
-directory, by clicking on the preview.</p>
+
+<p>Click on something and you&#39;ll move there. To run a file, &quot;enter&quot; it, like a directory, by clicking on the preview.</p>
+
 </dd>
-<dt><strong><a name="right_mouse_button" class="item">Right Mouse Button</a></strong></dt>
-
+<dt id="Right-Mouse-Button">Right Mouse Button</dt>
 <dd>
+
 <p>Enter a directory or run a file.</p>
-</dd>
-<dt><strong><a name="scroll_wheel" class="item">Scroll Wheel</a></strong></dt>
 
+</dd>
+<dt id="Scroll-Wheel">Scroll Wheel</dt>
 <dd>
-<p>Scrolls up or down.  You can point at the column of the parent directory to
-switch directories.</p>
+
+<p>Scrolls up or down. You can point at the column of the parent directory while scrolling to switch directories.</p>
+
 </dd>
 </dl>
-<p>
-</p>
-<hr />
-<h1><a name="settings">SETTINGS</a></h1>
-<p>This section lists all built-in settings of ranger.  The valid types for the
-value are in [brackets].  The hotkey to toggle the setting is in &lt;brokets&gt;, if
-a hotkey exists.</p>
-<p>Settings can be changed in the file <em class="file">~/.config/ranger/options.py</em> or on the
-fly with the command <strong>:set option value</strong>.  Examples:
- :set column_ratios (1,2,3)
- :set show_hidden=True</p>
+
+<h1 id="SETTINGS">SETTINGS</h1>
+
+<p>This section lists all built-in settings of ranger. The valid types for the value are in [brackets]. The hotkey to toggle the setting is in &lt;brokets&gt;, if a hotkey exists.</p>
+
+<p>Settings can be changed in the file <i>~/.config/ranger/rc.conf</i> or on the fly with the command <b>:set option value</b>. Examples:</p>
+
+<pre><code> set column_ratios 1,2,3
+ set show_hidden true</code></pre>
+
+<p>The different types of settings and an example for each type:</p>
+
+<pre><code> setting type   | example values
+ ---------------+----------------------------
+ bool           | true, false
+ integer        | 1, 23, 1337
+ string         | foo, hello world
+ list           | 1,2,3,4
+ none           | none</code></pre>
+
+<p>You can view a list of all settings and their current values by pressing &quot;3?&quot; in ranger.</p>
+
 <dl>
-<dt><strong><a name="autosave_bookmarks_bool" class="item">autosave_bookmarks [bool]</a></strong></dt>
 
+<dt id="autosave_bookmarks-bool-">autosave_bookmarks [bool]</dt>
 <dd>
-<p>Save bookmarks (used with mX and `X) instantly?  This helps to synchronize
-bookmarks between multiple ranger instances but leads to *slight* performance
-loss.  When false, bookmarks are saved when ranger is exited.</p>
+
+<p>Save bookmarks (used with mX and `X) instantly? This helps to synchronize bookmarks between multiple ranger instances but leads to *slight* performance loss. When false, bookmarks are saved when ranger is exited.</p>
+
 </dd>
-<dt><strong><a name="collapse_preview_bool_zc" class="item">collapse_preview [bool] &lt;zc&gt;</a></strong></dt>
-
+<dt id="autoupdate_cumulative_size-bool-">autoupdate_cumulative_size [bool]</dt>
 <dd>
-<p>When no preview is visible, should the last column be squeezed to make use of
-the whitespace?</p>
+
+<p>You can display the &quot;real&quot; cumulative size of directories by using the command :get_cumulative_size or typing &quot;dc&quot;. The size is expensive to calculate and will not be updated automatically. You can choose to update it automatically though by turning on this option.</p>
+
 </dd>
-<dt><strong><a name="colorscheme_overlay_function_none" class="item">colorscheme_overlay [function, None]</a></strong></dt>
-
+<dt id="collapse_preview-bool-zc">collapse_preview [bool] &lt;zc&gt;</dt>
 <dd>
-<p>An overlay function for colorschemes.  See the default options.py for an
-explanation and an example.</p>
+
+<p>When no preview is visible, should the last column be squeezed to make use of the whitespace?</p>
+
 </dd>
-<dt><strong><a name="colorscheme_string" class="item">colorscheme [string]</a></strong></dt>
-
+<dt id="colorscheme-string-">colorscheme [string]</dt>
 <dd>
-<p>Which colorscheme to use?  These colorschemes are available by default:
-<strong>default</strong>, <strong>default88</strong>, <strong>texas</strong>, <strong>jungle</strong>, <strong>snow</strong>. Snow is monochrome,
-texas and default88 use 88 colors.</p>
+
+<p>Which colorscheme to use? These colorschemes are available by default: <b>default</b>, <b>jungle</b>, <b>snow</b>. Snow is a monochrome scheme, jungle replaces blue directories with green ones for better visibility on certain terminals.</p>
+
 </dd>
-<dt><strong><a name="column_ratios_tuple_list" class="item">column_ratios [tuple, list]</a></strong></dt>
-
+<dt id="column_ratios-list-">column_ratios [list]</dt>
 <dd>
-<p>How many columns are there, and what are their relative widths?  For example, a
-value of (1, 1, 1) would mean 3 even sized columns. (1, 1, 1, 1, 4) means 5 columns
-with the preview column being as large as the other columns combined.</p>
+
+<p>How many columns are there, and what are their relative widths? For example, a value of 1,1,1 would mean 3 evenly sized columns. 1,1,1,1,4 means 5 columns with the preview column being as large as the other columns combined.</p>
+
 </dd>
-<dt><strong><a name="dirname_in_tabs_bool" class="item">dirname_in_tabs [bool]</a></strong></dt>
-
+<dt id="confirm_on_delete-string-">confirm_on_delete [string]</dt>
 <dd>
+
+<p>Ask for a confirmation when running the &quot;delete&quot; command? Valid values are &quot;always&quot; (default), &quot;never&quot;, &quot;multiple&quot;. With &quot;multiple&quot;, ranger will ask only if you delete multiple files at once.</p>
+
+</dd>
+<dt id="dirname_in_tabs-bool-">dirname_in_tabs [bool]</dt>
+<dd>
+
 <p>Display the directory name in tabs?</p>
-</dd>
-<dt><strong><a name="display_size_in_main_column_bool" class="item">display_size_in_main_column [bool]</a></strong></dt>
 
+</dd>
+<dt id="display_size_in_main_column-bool-">display_size_in_main_column [bool]</dt>
 <dd>
+
 <p>Display the file size in the main column?</p>
-</dd>
-<dt><strong><a name="display_size_in_status_bar_bool" class="item">display_size_in_status_bar [bool]</a></strong></dt>
 
+</dd>
+<dt id="display_size_in_status_bar-bool-">display_size_in_status_bar [bool]</dt>
 <dd>
+
 <p>Display the file size in the status bar?</p>
-</dd>
-<dt><strong><a name="display_tags_in_all_columns_bool" class="item">display_tags_in_all_columns [bool]</a></strong></dt>
 
+</dd>
+<dt id="display_tags_in_all_columns-bool-">display_tags_in_all_columns [bool]</dt>
 <dd>
+
 <p>Display tags in all columns?</p>
-</dd>
-<dt><strong><a name="draw_bookmark_borders_bool" class="item">draw_bookmark_borders [bool]</a></strong></dt>
 
-<dd>
-<p>Draw borders around the bookmark window?</p>
 </dd>
-<dt><strong><a name="draw_borders_bool" class="item">draw_borders [bool]</a></strong></dt>
-
+<dt id="draw_borders-bool-">draw_borders [bool]</dt>
 <dd>
+
 <p>Draw borders around columns?</p>
-</dd>
-<dt><strong><a name="flushinput_bool_zi" class="item">flushinput [bool] &lt;zi&gt;</a></strong></dt>
 
-<dd>
-<p>Flush the input after each key hit?  One advantage is that when scrolling down
-with &quot;j&quot;, ranger stops scrolling instantly when you release the key.  One
-disadvantage is that when you type commands blindly, some keys might get lost.</p>
 </dd>
-<dt><strong><a name="hidden_filter_regexp" class="item">hidden_filter [regexp]</a></strong></dt>
-
+<dt id="draw_progress_bar_in_statusbar-bool-">draw_progress_bar_in_statusbar [bool]</dt>
 <dd>
-<p>A regular expression pattern for files which should be hidden.</p>
+
+<p>Draw a progress bar in the status bar which displays the average state of all currently running tasks which support progress bars?</p>
+
 </dd>
-<dt><strong><a name="max_console_history_size_integer_none" class="item">max_console_history_size [integer, None]</a></strong></dt>
-
+<dt id="flushinput-bool-zi">flushinput [bool] &lt;zi&gt;</dt>
 <dd>
-<p>How many console commands should be kept in history?</p>
+
+<p>Flush the input after each key hit? One advantage is that when scrolling down with &quot;j&quot;, ranger stops scrolling instantly when you release the key. One disadvantage is that when you type commands blindly, some keys might get lost.</p>
+
 </dd>
-<dt><strong><a name="max_history_size_integer_none" class="item">max_history_size [integer, None]</a></strong></dt>
-
+<dt id="hidden_filter-string-">hidden_filter [string]</dt>
 <dd>
+
+<p>A regular expression pattern for files which should be hidden. For example, this pattern will hide all files that start with a dot or end with a tilde.</p>
+
+<pre><code> set hidden_filter ^\.|~$</code></pre>
+
+</dd>
+<dt id="max_console_history_size-integer-none-">max_console_history_size [integer, none]</dt>
+<dd>
+
+<p>How many console commands should be kept in history? &quot;none&quot; will disable the limit.</p>
+
+</dd>
+<dt id="max_history_size-integer-none-">max_history_size [integer, none]</dt>
+<dd>
+
 <p>How many directory changes should be kept in history?</p>
-</dd>
-<dt><strong><a name="mouse_enabled_bool_zm" class="item">mouse_enabled [bool] &lt;zm&gt;</a></strong></dt>
 
+</dd>
+<dt id="mouse_enabled-bool-zm">mouse_enabled [bool] &lt;zm&gt;</dt>
 <dd>
+
 <p>Enable mouse input?</p>
-</dd>
-<dt><strong><a name="padding_right_bool" class="item">padding_right [bool]</a></strong></dt>
 
-<dd>
-<p>When collapse_preview is on and there is no preview, should there remain a
-little padding on the right?  This allows you to click into that space to run
-the file.</p>
 </dd>
-<dt><strong><a name="preview_directories_bool_zp" class="item">preview_directories [bool] &lt;zP&gt;</a></strong></dt>
-
+<dt id="padding_right-bool-">padding_right [bool]</dt>
 <dd>
+
+<p>When collapse_preview is on and there is no preview, should there remain a little padding on the right? This allows you to click into that space to run the file.</p>
+
+</dd>
+<dt id="preview_directories-bool-zP">preview_directories [bool] &lt;zP&gt;</dt>
+<dd>
+
 <p>Preview directories in the preview column?</p>
-</dd>
-<dt><strong><a name="preview_files_bool_zp" class="item">preview_files [bool] &lt;zp&gt;</a></strong></dt>
 
+</dd>
+<dt id="preview_files-bool-zp">preview_files [bool] &lt;zp&gt;</dt>
 <dd>
+
 <p>Preview files in the preview column?</p>
-</dd>
-<dt><strong><a name="preview_script_string_none" class="item">preview_script [string, None]</a></strong></dt>
 
-<dd>
-<p>Which script should handle generating previews?  If the file doesn't exist, or
-use_preview_script is off, ranger will handle previews itself by just printing
-the content.</p>
 </dd>
-<dt><strong><a name="save_console_history_bool" class="item">save_console_history [bool]</a></strong></dt>
-
+<dt id="preview_images-bool-">preview_images [bool]</dt>
 <dd>
-<p>Should the console history be saved on exit?  If disabled, the console history
-is reset when you restart ranger.</p>
+
+<p>Draw images inside the console with the external program w3mimgpreview?</p>
+
 </dd>
-<dt><strong><a name="scroll_offset_integer" class="item">scroll_offset [integer]</a></strong></dt>
-
+<dt id="preview_script-string-none-">preview_script [string, none]</dt>
 <dd>
+
+<p>Which script should handle generating previews? If the file doesn&#39;t exist, or use_preview_script is off, ranger will handle previews itself by just printing the content.</p>
+
+</dd>
+<dt id="save_console_history-bool-">save_console_history [bool]</dt>
+<dd>
+
+<p>Should the console history be saved on exit? If disabled, the console history is reset when you restart ranger.</p>
+
+</dd>
+<dt id="scroll_offset-integer-">scroll_offset [integer]</dt>
+<dd>
+
 <p>Try to keep this much space between the top/bottom border when scrolling.</p>
-</dd>
-<dt><strong><a name="shorten_title_integer_bool" class="item">shorten_title [integer, bool]</a></strong></dt>
 
-<dd>
-<p>Trim the title of the window if it gets long?  The number defines how many
-directories are displayed at once, False turns off this feature.</p>
 </dd>
-<dt><strong><a name="show_cursor_bool" class="item">show_cursor [bool]</a></strong></dt>
-
+<dt id="shorten_title-integer-bool-">shorten_title [integer, bool]</dt>
 <dd>
+
+<p>Trim the title of the window if it gets long? The number defines how many directories are displayed at once, False turns off this feature.</p>
+
+</dd>
+<dt id="show_cursor-bool-">show_cursor [bool]</dt>
+<dd>
+
 <p>Always show the terminal cursor?</p>
-</dd>
-<dt><strong><a name="show_hidden_bookmarks_bool" class="item">show_hidden_bookmarks [bool]</a></strong></dt>
 
-<dd>
-<p>Show dotfiles in the bookmark preview window? (Type ')</p>
 </dd>
-<dt><strong><a name="show_hidden_bool_zh_h" class="item">show_hidden [bool] &lt;zh&gt;, &lt;^H&gt;</a></strong></dt>
-
+<dt id="show_hidden_bookmarks-bool-">show_hidden_bookmarks [bool]</dt>
 <dd>
+
+<p>Show dotfiles in the bookmark preview window? (Type &#39;)</p>
+
+</dd>
+<dt id="show_hidden-bool-zh-H">show_hidden [bool] &lt;zh&gt;, &lt;^H&gt;</dt>
+<dd>
+
 <p>Show hidden files?</p>
-</dd>
-<dt><strong><a name="sort_case_insensitive_bool_zc" class="item">sort_case_insensitive [bool] &lt;zc&gt;</a></strong></dt>
 
-<dd>
-<p>Sort case-insensitively?  If true, &quot;a&quot; will be listed before &quot;B&quot; even though
-its ASCII value is higher.</p>
 </dd>
-<dt><strong><a name="sort_directories_first_bool_zd" class="item">sort_directories_first [bool] &lt;zd&gt;</a></strong></dt>
-
+<dt id="sort_case_insensitive-bool-zc">sort_case_insensitive [bool] &lt;zc&gt;</dt>
 <dd>
+
+<p>Sort case-insensitively? If true, &quot;a&quot; will be listed before &quot;B&quot; even though its ASCII value is higher.</p>
+
+</dd>
+<dt id="sort_directories_first-bool-zd">sort_directories_first [bool] &lt;zd&gt;</dt>
+<dd>
+
 <p>Sort directories first?</p>
-</dd>
-<dt><strong><a name="sort_reverse_bool_or" class="item">sort_reverse [bool] &lt;or&gt;</a></strong></dt>
 
-<dd>
-<p>Sort reversed?</p>
 </dd>
-<dt><strong><a name="sort_string_oa_ob_oc_om_on_ot_os" class="item">sort [string] &lt;oa&gt;, &lt;ob&gt;, &lt;oc&gt;, &lt;om&gt;, &lt;on&gt;, &lt;ot&gt;, &lt;os&gt;</a></strong></dt>
-
+<dt id="sort_reverse-bool-or">sort_reverse [bool] &lt;or&gt;</dt>
 <dd>
-<p>Which sorting mechanism should be used?  Choose one of <strong>atime</strong>, <strong>basename</strong>,
-<strong>ctime</strong>, <strong>mtime</strong>, <strong>natural</strong>, <strong>type</strong>, <strong>size</strong></p>
-<p>Note: You can reverse the order by using an uppercase O in the key combination.</p>
+
+<p>Reverse the order of files?</p>
+
 </dd>
-<dt><strong><a name="tilde_in_titlebar_bool" class="item">tilde_in_titlebar [bool]</a></strong></dt>
-
+<dt id="sort-string-oa-ob-oc-om-on-ot-os">sort [string] &lt;oa&gt;, &lt;ob&gt;, &lt;oc&gt;, &lt;om&gt;, &lt;on&gt;, &lt;ot&gt;, &lt;os&gt;</dt>
 <dd>
+
+<p>Which sorting mechanism should be used? Choose one of <b>atime</b>, <b>basename</b>, <b>ctime</b>, <b>mtime</b>, <b>natural</b>, <b>type</b>, <b>size</b></p>
+
+<p>Note: You can reverse the order by typing an uppercase second letter in the key combination, e.g. &quot;oN&quot; to sort from Z to A.</p>
+
+</dd>
+<dt id="status_bar_on_top-bool-">status_bar_on_top [bool]</dt>
+<dd>
+
+<p>Put the status bar at the top of the window?</p>
+
+</dd>
+<dt id="tilde_in_titlebar-bool-">tilde_in_titlebar [bool]</dt>
+<dd>
+
 <p>Abbreviate $HOME with ~ in the title bar (first line) of ranger?</p>
-</dd>
-<dt><strong><a name="unicode_ellipsis_bool" class="item">unicode_ellipsis [bool]</a></strong></dt>
 
+</dd>
+<dt id="unicode_ellipsis-bool-">unicode_ellipsis [bool]</dt>
 <dd>
+
 <p>Use a unicode &quot;...&quot; character instead of &quot;~&quot; to mark cut-off filenames?</p>
-</dd>
-<dt><strong><a name="update_title_bool" class="item">update_title [bool]</a></strong></dt>
 
+</dd>
+<dt id="update_title-bool-">update_title [bool]</dt>
 <dd>
+
 <p>Set a window title?</p>
-</dd>
-<dt><strong><a name="use_preview_script_bool_zv" class="item">use_preview_script [bool] &lt;zv&gt;</a></strong></dt>
 
-<dd>
-<p>Use the preview script defined in the setting <em>preview_script</em>?</p>
 </dd>
-<dt><strong><a name="xterm_alt_key_bool" class="item">xterm_alt_key [bool]</a></strong></dt>
-
+<dt id="update_tmux_title-bool-">update_tmux_title [bool]</dt>
 <dd>
-<p>Enable this if key combinations with the Alt Key don't work for you.
-(Especially on xterm)</p>
+
+<p>Set the title to &quot;ranger&quot; in the tmux program?</p>
+
+</dd>
+<dt id="use_preview_script-bool-zv">use_preview_script [bool] &lt;zv&gt;</dt>
+<dd>
+
+<p>Use the preview script defined in the setting <i>preview_script</i>?</p>
+
+</dd>
+<dt id="xterm_alt_key-bool-">xterm_alt_key [bool]</dt>
+<dd>
+
+<p>Enable this if key combinations with the Alt Key don&#39;t work for you. (Especially on xterm)</p>
+
 </dd>
 </dl>
-<p>
-</p>
-<hr />
-<h1><a name="commands">COMMANDS</a></h1>
+
+<h1 id="COMMANDS">COMMANDS</h1>
+
 <p>You can enter the commands in the console which is opened by pressing &quot;:&quot;.</p>
-<p>There are additional commands which are directly translated to python
-functions, one for every method in the ranger.core.actions.Actions class.
-They are not documented here, since they are mostly for key bindings, not to be
-typed in by a user.  Read the source if you are interested in them.</p>
+
+<p>You can always get a list of the currently existing commands by typing &quot;2?&quot; in ranger. For your convenience, this is a list of the &quot;public&quot; commands including their parameters, excluding descriptions:</p>
+
+<pre><code> alias [newcommand] [oldcommand]
+ bulkrename
+ cd [directory]
+ chain command1[; command2[; command3...]]
+ chmod octal_number
+ cmap key command
+ console [-pSTARTPOSITION] command
+ copycmap key newkey [newkey2...]
+ copymap key newkey [newkey2...]
+ copypmap key newkey [newkey2...]
+ copytmap key newkey [newkey2...]
+ cunmap keys...
+ delete
+ edit [filename]
+ eval [-q] python_code
+ filter [string]
+ find pattern
+ grep pattern
+ load_copy_buffer
+ map key command
+ mark pattern
+ mark_tag [tags]
+ mkdir dirname
+ open_with [application] [flags] [mode]
+ pmap key command
+ punmap keys...
+ quit
+ quit!
+ relink newpath
+ rename newname
+ save_copy_buffer
+ search pattern
+ search_inc pattern
+ set option value
+ setlocal [path=&lt;path&gt;] option value
+ shell [-FLAGS] command
+ terminal
+ tmap key command
+ touch filename
+ travel pattern
+ tunmap keys...
+ unmap keys...
+ unmark pattern
+ unmark_tag [tags]</code></pre>
+
+<p>There are additional commands which are directly translated to python functions, one for every method in the ranger.core.actions.Actions class. They are not documented here, since they are mostly for key bindings, not to be typed in by a user. Read the source if you are interested in them.</p>
+
+<p>These are the public commands including their descriptions:</p>
+
 <dl>
-<dt><strong><a name="bulkrename" class="item">bulkrename</a></strong></dt>
 
+<dt id="alias-newcommand-oldcommand-">alias [<i>newcommand</i>] [<i>oldcommand</i>]</dt>
 <dd>
-<p>This command opens a list of selected files in an external editor.  After you
-edit and save the file, it will generate a shell script which does bulk
-renaming according to the changes you did in the file.</p>
-<p>This shell script is opened in an editor for you to review.  After you close
-it, it will be executed.</p>
+
+<p>Copies the oldcommand as newcommand.</p>
+
 </dd>
-<dt><strong><a name="cd_directory" class="item">cd [<em>directory</em>]</a></strong></dt>
-
+<dt id="bulkrename">bulkrename</dt>
 <dd>
-<p>The cd command changes the directory.  The command <code>:cd -</code> is equivalent to
-typing ``.</p>
+
+<p>This command opens a list of selected files in an external editor. After you edit and save the file, it will generate a shell script which does bulk renaming according to the changes you did in the file.</p>
+
+<p>This shell script is opened in an editor for you to review. After you close it, it will be executed.</p>
+
 </dd>
-<dt><strong><a name="chain_command1_command2_command3" class="item">chain <em>command1</em>[; <em>command2</em>[; <em>command3</em>...]]</a></strong></dt>
-
+<dt id="cd-directory-">cd [<i>directory</i>]</dt>
 <dd>
-<p>Combines multiple commands into one, separated by columns.</p>
+
+<p>The cd command changes the directory. The command <code>:cd -</code> is equivalent to typing ``.</p>
+
 </dd>
-<dt><strong><a name="chmod_octal_number" class="item">chmod <em>octal_number</em></a></strong></dt>
-
+<dt id="chain-command1-command2-command3...-">chain <i>command1</i>[; <i>command2</i>[; <i>command3</i>...]]</dt>
 <dd>
+
+<p>Combines multiple commands into one, separated by semicolons.</p>
+
+</dd>
+<dt id="chmod-octal_number">chmod <i>octal_number</i></dt>
+<dd>
+
 <p>Sets the permissions of the selection to the octal number.</p>
-<p>The octal number is between 000 and 777. The digits specify the permissions for
-the user, the group and others.  A 1 permits execution, a 2 permits writing, a
-4 permits reading.  Add those numbers to combine them. So a 7 permits
-everything.</p>
-<p>Key bindings in the form of [-+]&lt;who&gt;&lt;what&gt; and =&lt;octal&gt; also exist.  For
-example, <strong>+ar</strong> allows reading for everyone, -ow forbids others to write and
-=777 allows everything.</p>
+
+<p>The octal number is between 000 and 777. The digits specify the permissions for the user, the group and others. A 1 permits execution, a 2 permits writing, a 4 permits reading. Add those numbers to combine them. So a 7 permits everything.</p>
+
+<p>Key bindings in the form of [-+]&lt;who&gt;&lt;what&gt; and &lt;octal&gt;= also exist. For example, <b>+ar</b> allows reading for everyone, -ow forbids others to write and 777= allows everything.</p>
+
 <p>See also: man 1 chmod</p>
-</dd>
-<dt><strong><a name="cmap_key_command" class="item">cmap <em>key</em> <em>command</em></a></strong></dt>
 
+</dd>
+<dt id="cmap-key-command">cmap <i>key</i> <i>command</i></dt>
 <dd>
+
 <p>Binds keys for the console. Works like the <code>map</code> command.</p>
-</dd>
-<dt><strong><a name="console_pn_command" class="item">console [-p<em>N</em>] <em>command</em></a></strong></dt>
 
-<dd>
-<p>Opens the console with the command already typed in.  The cursor is placed at
-<em>N</em>.</p>
 </dd>
-<dt><strong><a name="copycmap_key_newkey_newkey2" class="item">copycmap <em>key</em> <em>newkey</em> [<em>newkey2</em> ...]</a></strong></dt>
-
+<dt id="console--pN-command">console [-p<i>N</i>] <i>command</i></dt>
 <dd>
+
+<p>Opens the console with the command already typed in. The cursor is placed at <i>N</i>.</p>
+
+</dd>
+<dt id="copycmap-key-newkey-newkey2-...-">copycmap <i>key</i> <i>newkey</i> [<i>newkey2</i> ...]</dt>
+<dd>
+
 <p>See <code>copymap</code></p>
-</dd>
-<dt><strong><a name="copymap_key_newkey_newkey2" class="item">copymap <em>key</em> <em>newkey</em> [<em>newkey2</em> ...]</a></strong></dt>
 
-<dd>
-<p>Copies the keybinding <em>key</em> to <em>newkey</em> in the &quot;browser&quot; context.  This is a
-deep copy, so if you change the new binding (or parts of it) later, the old one
-is not modified.</p>
-<p>To copy key bindings of the console, taskview, or pager use &quot;copycmap&quot;,
-&quot;copytmap&quot; or &quot;copypmap&quot;.</p>
 </dd>
-<dt><strong><a name="copypmap_key_newkey_newkey2" class="item">copypmap <em>key</em> <em>newkey</em> [<em>newkey2</em> ...]</a></strong></dt>
-
+<dt id="copymap-key-newkey-newkey2-...-">copymap <i>key</i> <i>newkey</i> [<i>newkey2</i> ...]</dt>
 <dd>
+
+<p>Copies the keybinding <i>key</i> to <i>newkey</i> in the &quot;browser&quot; context. This is a deep copy, so if you change the new binding (or parts of it) later, the old one is not modified.</p>
+
+<p>To copy key bindings of the console, taskview, or pager use &quot;copycmap&quot;, &quot;copytmap&quot; or &quot;copypmap&quot;.</p>
+
+</dd>
+<dt id="copypmap-key-newkey-newkey2-...-">copypmap <i>key</i> <i>newkey</i> [<i>newkey2</i> ...]</dt>
+<dd>
+
 <p>See <code>copymap</code></p>
-</dd>
-<dt><strong><a name="copytmap_key_newkey_newkey2" class="item">copytmap <em>key</em> <em>newkey</em> [<em>newkey2</em> ...]</a></strong></dt>
 
+</dd>
+<dt id="copytmap-key-newkey-newkey2-...-">copytmap <i>key</i> <i>newkey</i> [<i>newkey2</i> ...]</dt>
 <dd>
+
 <p>See <code>copymap</code></p>
-</dd>
-<dt><strong><a name="cunmap_key_command" class="item">cunmap <em>key</em> <em>command</em></a></strong></dt>
 
+</dd>
+<dt id="cunmap-keys...-">cunmap [<i>keys...</i>]</dt>
 <dd>
+
 <p>Removes key mappings of the console. Works like the <code>unmap</code> command.</p>
-</dd>
-<dt><strong><a name="delete_confirmation" class="item">delete [<em>confirmation</em>]</a></strong></dt>
 
-<dd>
-<p>Destroy all files in the selection with a roundhouse kick.  ranger will ask for
-a confirmation if you attempt to delete multiple (marked) files or non-empty
-directories.</p>
-<p>When asking for confirmation, this command will only proceed if the last given
-word starts with a `y'.</p>
 </dd>
-<dt><strong><a name="edit_filename" class="item">edit [<em>filename</em>]</a></strong></dt>
-
+<dt id="delete">delete</dt>
 <dd>
+
+<p>Destroy all files in the selection with a roundhouse kick. ranger will ask for a confirmation if you attempt to delete multiple (marked) files or non-empty directories. This can be changed by modifying the setting &quot;confirm_on_delete&quot;.</p>
+
+</dd>
+<dt id="edit-filename-">edit [<i>filename</i>]</dt>
+<dd>
+
 <p>Edit the current file or the file in the argument.</p>
-</dd>
-<dt><strong><a name="eval_q_python_code" class="item">eval [<em>-q</em>] <em>python_code</em></a></strong></dt>
 
-<dd>
-<p>Evaluates the python code.  `fm' is a reference to the FM instance.  To display
-text, use the function `p'.  The result is displayed on the screen unless you
-use the &quot;-q&quot; option.</p>
-<p>Examples:
- :eval fm
- :eval len(fm.env.directories)
- :eval p(&quot;Hello World!&quot;)</p>
 </dd>
-<dt><strong><a name="filter_string" class="item">filter [<em>string</em>]</a></strong></dt>
-
+<dt id="eval--q-python_code">eval [<i>-q</i>] <i>python_code</i></dt>
 <dd>
-<p>Displays only the files which contain the <em>string</em> in their basename.</p>
+
+<p>Evaluates the python code. `fm&#39; is a reference to the FM instance. To display text, use the function `p&#39;. The result is displayed on the screen unless you use the &quot;-q&quot; option.</p>
+
+<p>Examples: :eval fm :eval len(fm.env.directories) :eval p(&quot;Hello World!&quot;)</p>
+
 </dd>
-<dt><strong><a name="find_pattern" class="item">find <em>pattern</em></a></strong></dt>
-
+<dt id="filter-string-">filter [<i>string</i>]</dt>
 <dd>
-<p>Search files in the current directory that match the given (case-insensitive)
-regular expression pattern as you type.  Once there is an unambiguous result,
-it will be run immediately. (Or entered, if it's a directory.)</p>
+
+<p>Displays only the files which contain the <i>string</i> in their basename. Running this command without any parameter will reset the fitler.</p>
+
 </dd>
-<dt><strong><a name="grep_pattern" class="item">grep <em>pattern</em></a></strong></dt>
-
+<dt id="find-pattern">find <i>pattern</i></dt>
 <dd>
+
+<p>Search files in the current directory that contain the given (case-insensitive) string in their name as you type. Once there is an unambiguous result, it will be run immediately. (Or entered, if it&#39;s a directory.)</p>
+
+</dd>
+<dt id="grep-pattern">grep <i>pattern</i></dt>
+<dd>
+
 <p>Looks for a string in all marked files or directories.</p>
-</dd>
-<dt><strong><a name="load_copy_buffer" class="item">load_copy_buffer</a></strong></dt>
 
-<dd>
-<p>Load the copy buffer from <em class="file">~/.config/ranger/copy_buffer</em>.  This can be used to
-pass the list of copied files to another ranger instance.</p>
 </dd>
-<dt><strong><a name="map_key_command" class="item">map <em>key</em> <em>command</em></a></strong></dt>
-
+<dt id="load_copy_buffer">load_copy_buffer</dt>
 <dd>
-<p>Assign the key combination to the given command.  Whenever you type the
-key/keys, the command will be executed.  Additionally, if you use a quantifier
-when typing the key, like 5j, it will be passed to the command as the attribute
-&quot;self.quantifier&quot;.</p>
-<p>The keys you bind with this command are accessible in the file browser only,
-not in the console, task view or pager.  To bind keys there, use the commands
-&quot;cmap&quot;, &quot;tmap&quot; or &quot;pmap&quot;.</p>
+
+<p>Load the copy buffer from <i>~/.config/ranger/copy_buffer</i>. This can be used to pass the list of copied files to another ranger instance.</p>
+
 </dd>
-<dt><strong><a name="mark_pattern" class="item">mark <em>pattern</em></a></strong></dt>
-
+<dt id="map-key-command">map <i>key</i> <i>command</i></dt>
 <dd>
+
+<p>Assign the key combination to the given command. Whenever you type the key/keys, the command will be executed. Additionally, if you use a quantifier when typing the key, like 5j, it will be passed to the command as the attribute &quot;self.quantifier&quot;.</p>
+
+<p>The keys you bind with this command are accessible in the file browser only, not in the console, task view or pager. To bind keys there, use the commands &quot;cmap&quot;, &quot;tmap&quot; or &quot;pmap&quot;.</p>
+
+</dd>
+<dt id="mark-pattern">mark <i>pattern</i></dt>
+<dd>
+
 <p>Mark all files matching the regular expression pattern.</p>
-</dd>
-<dt><strong><a name="mkdir_dirname" class="item">mkdir <em>dirname</em></a></strong></dt>
 
-<dd>
-<p>Creates a directory with the name <em>dirname</em>.</p>
 </dd>
-<dt><strong><a name="open_with_application_flags_mode" class="item">open_with [<em>application</em>] [<em>flags</em>] [<em>mode</em>]</a></strong></dt>
-
+<dt id="mark_tag-tags-">mark_tag [<i>tags</i>]</dt>
 <dd>
-<p>Open the selected files with the given application, unless it is omitted, in
-which case the default application is used.  <em>flags</em> are characters out of
-&quot;sdpcwSDPCW&quot; and <em>mode</em> is any positive integer. Their meanings are discussed
-in their own sections.</p>
+
+<p>Mark all tags that are tagged with either of the given tags. When leaving out the tag argument, all tagged files are marked.</p>
+
 </dd>
-<dt><strong><a name="pmap_key_command" class="item">pmap <em>key</em> <em>command</em></a></strong></dt>
-
+<dt id="mkdir-dirname">mkdir <i>dirname</i></dt>
 <dd>
+
+<p>Creates a directory with the name <i>dirname</i>.</p>
+
+</dd>
+<dt id="open_with-application-flags-mode-">open_with [<i>application</i>] [<i>flags</i>] [<i>mode</i>]</dt>
+<dd>
+
+<p>Open the selected files with the given application, unless it is omitted, in which case the default application is used. <i>flags</i> and <i>mode</i> have their own section in the man page.</p>
+
+</dd>
+<dt id="pmap-key-command">pmap <i>key</i> <i>command</i></dt>
+<dd>
+
 <p>Binds keys for the pager. Works like the <code>map</code> command.</p>
-</dd>
-<dt><strong><a name="punmap_key_command" class="item">punmap <em>key</em> <em>command</em></a></strong></dt>
 
+</dd>
+<dt id="punmap-keys-...-">punmap [<i>keys ...</i>]</dt>
 <dd>
+
 <p>Removes key mappings of the pager. Works like the <code>unmap</code> command.</p>
-</dd>
-<dt><strong><a name="quit" class="item">quit</a></strong></dt>
 
+</dd>
+<dt id="quit">quit</dt>
 <dd>
+
 <p>Like quit!, but closes only this tab if multiple tabs are open.</p>
-</dd>
-<dt><strong>quit!</strong></dt>
 
-<dd>
-<p>Quit ranger.  The current directory will be bookmarked as ' so you can re-enter
-it by typing `` or '' the next time you start ranger.</p>
 </dd>
-<dt><strong><a name="rename_newname" class="item">rename <em>newname</em></a></strong></dt>
-
+<dt id="quit-">quit!</dt>
 <dd>
-<p>Rename the current file.  If a file with that name already exists, the renaming
-will fail.  Also try the key binding A for appending something to a file name.</p>
+
+<p>Quit ranger. The current directory will be bookmarked as &#39; so you can re-enter it by typing `` or &#39;&#39; the next time you start ranger.</p>
+
 </dd>
-<dt><strong><a name="relink_newpath" class="item">relink <em>newpath</em></a></strong></dt>
-
+<dt id="relink-newpath">relink <i>newpath</i></dt>
 <dd>
+
 <p>Change the link destination of the current symlink file to &lt;newpath&gt;. First &lt;tab&gt; will load the original link.</p>
-</dd>
-<dt><strong><a name="save_copy_buffer" class="item">save_copy_buffer</a></strong></dt>
 
-<dd>
-<p>Save the copy buffer from <em>~/.config/ranger/copy_buffer</em>.  This can be used to
-pass the list of copied files to another ranger instance.</p>
 </dd>
-<dt><strong><a name="search_pattern" class="item">search <em>pattern</em></a></strong></dt>
-
+<dt id="rename-newname">rename <i>newname</i></dt>
 <dd>
-<p>Search files in the current directory that match the given (case insensitive)
-regular expression pattern.</p>
+
+<p>Rename the current file. If a file with that name already exists, the renaming will fail. Also try the key binding A for appending something to a file name.</p>
+
 </dd>
-<dt><strong><a name="search_inc_pattern" class="item">search_inc <em>pattern</em></a></strong></dt>
-
+<dt id="save_copy_buffer">save_copy_buffer</dt>
 <dd>
-<p>Search files in the current directory that match the given (case insensitive)
-regular expression pattern.  This command gets you to matching files as you
-type.</p>
+
+<p>Save the copy buffer to <i>~/.config/ranger/copy_buffer</i>. This can be used to pass the list of copied files to another ranger instance.</p>
+
 </dd>
-<dt><strong><a name="set_option_value" class="item">set <em>option</em>=<em>value</em></a></strong></dt>
-
+<dt id="search-pattern">search <i>pattern</i></dt>
 <dd>
-<p>Assigns a new value to an option.  Valid options are listed in the settings
-section.  Use tab completion to get the current value of an option, though this
-doesn't work for functions and regular expressions. Valid values are:</p>
-<pre>
- None           None
- bool           True or False
- integer        0 or 1 or -1 or 2 etc.
- list           [1, 2, 3]
- tuple          1, 2, 3 or (1, 2, 3)
- function       lambda &lt;arguments&gt;: &lt;expression&gt;
- regexp         regexp('&lt;pattern&gt;')
- string         Anything</pre>
+
+<p>Search files in the current directory that match the given (case insensitive) regular expression pattern.</p>
+
 </dd>
-<dt><strong><a name="shell_flags_command" class="item">shell [-<em>flags</em>] <em>command</em></a></strong></dt>
-
+<dt id="search_inc-pattern">search_inc <i>pattern</i></dt>
 <dd>
-<p>Run a shell command.  <em>flags</em> are discussed in their own section.</p>
+
+<p>Search files in the current directory that match the given (case insensitive) regular expression pattern. This command gets you to matching files as you type.</p>
+
 </dd>
-<dt><strong><a name="terminal" class="item">terminal</a></strong></dt>
-
+<dt id="set-option-value">set <i>option</i> <i>value</i></dt>
 <dd>
-<p>Spawns the <em>x-terminal-emulator</em> starting in the current directory.</p>
+
+<p>Assigns a new value to an option. Valid options are listed in the settings section. Use tab completion to get the current value of an option, though this doesn&#39;t work for functions and regular expressions. Valid values are:</p>
+
+<pre><code> setting type   | example values
+ ---------------+----------------------------
+ bool           | true, false
+ integer        | 1, 23, 1337
+ string         | foo, hello world
+ list           | 1,2,3,4
+ none           | none</code></pre>
+
 </dd>
-<dt><strong><a name="touch_filename" class="item">touch <em>filename</em></a></strong></dt>
-
+<dt id="setlocal-path-path-option-value">setlocal [path=<i>path</i>] <i>option</i> <i>value</i></dt>
 <dd>
-<p>Creates an empty file with the name <em>filename</em>, unless it already exists.</p>
+
+<p>Assigns a new value to an option, but locally for the directory given by <i>path</i>. This means, that this option only takes effect when visiting that directory. If no path is given, uses the current directory.</p>
+
 </dd>
-<dt><strong><a name="tmap_key_command" class="item">tmap <em>key</em> <em>command</em></a></strong></dt>
-
+<dt id="shell--flags-command">shell [-<i>flags</i>] <i>command</i></dt>
 <dd>
+
+<p>Run a shell command. <i>flags</i> are discussed in their own section.</p>
+
+</dd>
+<dt id="terminal">terminal</dt>
+<dd>
+
+<p>Spawns the <i>x-terminal-emulator</i> starting in the current directory.</p>
+
+</dd>
+<dt id="tmap-key-command">tmap <i>key</i> <i>command</i></dt>
+<dd>
+
 <p>Binds keys for the taskview. Works like the <code>map</code> command.</p>
-</dd>
-<dt><strong><a name="tunmap_key_command" class="item">tunmap <em>key</em> <em>command</em></a></strong></dt>
 
+</dd>
+<dt id="touch-filename">touch <i>filename</i></dt>
 <dd>
+
+<p>Creates an empty file with the name <i>filename</i>, unless it already exists.</p>
+
+</dd>
+<dt id="travel-pattern">travel <i>pattern</i></dt>
+<dd>
+
+<p>Filters the current directory for files containing the letters in the string, possibly with other letters in between. The filter is applied as you type. When only one directory is left, it is entered and the console is automatically reopened, allowing for fast travel. To close the console, press ESC or execute a file.</p>
+
+</dd>
+<dt id="tunmap-keys-...-">tunmap [<i>keys ...</i>]</dt>
+<dd>
+
 <p>Removes key mappings of the taskview. Works like the <code>unmap</code> command.</p>
-</dd>
-<dt><strong><a name="unmap_keys" class="item">unmap [<em>keys</em> ...]</a></strong></dt>
 
-<dd>
-<p>Removes the given key mappings in the &quot;browser&quot; context.  To unmap key bindings
-in the console, taskview, or pager use &quot;cunmap&quot;, &quot;tunmap&quot; or &quot;punmap&quot;.</p>
 </dd>
-<dt><strong><a name="unmark_pattern" class="item">unmark <em>pattern</em></a></strong></dt>
-
+<dt id="unmap-keys-...-">unmap [<i>keys</i> ...]</dt>
 <dd>
+
+<p>Removes the given key mappings in the &quot;browser&quot; context. To unmap key bindings in the console, taskview, or pager use &quot;cunmap&quot;, &quot;tunmap&quot; or &quot;punmap&quot;.</p>
+
+</dd>
+<dt id="unmark-pattern">unmark <i>pattern</i></dt>
+<dd>
+
 <p>Unmark all files matching a regular expression pattern.</p>
+
+</dd>
+<dt id="unmark_tag-tags-">unmark_tag [<i>tags</i>]</dt>
+<dd>
+
+<p>Unmark all tags that are tagged with either of the given tags. When leaving out the tag argument, all tagged files are unmarked.</p>
+
 </dd>
 </dl>
-<p>
-</p>
-<hr />
-<h1><a name="files">FILES</a></h1>
-<p>ranger reads several configuration files which are located in
-<em class="file">$HOME/.config/ranger</em> or <em class="file">$XDG_CONFIG_HOME/ranger</em> if $XDG_CONFIG_HOME is
-defined.  The configuration is done mostly in python.  When removing a
-configuration file, remove its compiled version too.  (Python automatically
-compiles modules.  Since python3 they are saved in the __pycache__ directory,
-earlier versions store them with the .pyc extension in the same directory.)</p>
-<p>Use the --copy-config option to obtain the default configuration files.  They
-include further documentation and it's too much to put here.</p>
-<p>You don't need to copy the whole file though, most configuration files are
-overlaid on top of the defaults (<em class="file">options.py</em>, <em class="file">command.py</em>, <em class="file">rc.conf</em>) or
-can be sub-classed (<em class="file">apps.py</em>, <em class="file">colorschemes</em>).</p>
-<p>When starting ranger with the <strong>--clean</strong> option, it will not access or create
-any of these files.</p>
-<p>
-</p>
-<h2><a name="configuration">CONFIGURATION</a></h2>
+
+<h1 id="FILES">FILES</h1>
+
+<p>ranger reads several configuration files which are located in <i>$HOME/.config/ranger</i> or <i>$XDG_CONFIG_HOME/ranger</i> if $XDG_CONFIG_HOME is defined. You can use the --copy-config option to obtain the default configuration files. Each of the files contains further documentation.</p>
+
+<p>You don&#39;t need to copy the whole file though, most configuration files are overlaid on top of the defaults (<i>commands.py</i>, <i>rc.conf</i>) or can be sub-classed (<i>colorschemes</i>).</p>
+
+<p>When starting ranger with the <b>--clean</b> option, it will not access or create any of these files.</p>
+
+<h2 id="CONFIGURATION">CONFIGURATION</h2>
+
 <dl>
-<dt><strong><a name="apps_py" class="item">apps.py</a></strong></dt>
 
+<dt id="rc.conf">rc.conf</dt>
 <dd>
-<p>Controls which applications are used to open files.</p>
+
+<p>Contains a list of commands which are executed on startup. Mostly key bindings and settings are defined here.</p>
+
 </dd>
-<dt><strong><a name="commands_py" class="item">commands.py</a></strong></dt>
-
+<dt id="commands.py">commands.py</dt>
 <dd>
-<p>Defines commands which can be used by typing &quot;:&quot;.</p>
+
+<p>A python module that defines commands which can be used in ranger&#39;s console by typing &quot;:&quot; or in the rc.conf file.</p>
+
 </dd>
-<dt><strong><a name="rc_conf" class="item">rc.conf</a></strong></dt>
-
+<dt id="rifle.conf">rifle.conf</dt>
 <dd>
-<p>Contains a list of commands which are executed on startup.  Mostly key bindings
-are defined here.</p>
+
+<p>This is the configuration file for the built-in file launcher called &quot;rifle&quot;.</p>
+
 </dd>
-<dt><strong><a name="options_py" class="item">options.py</a></strong></dt>
-
+<dt id="scope.sh">scope.sh</dt>
 <dd>
-<p>Sets a handful of basic options.</p>
+
+<p>This is a script that handles file previews. When the options <i>use_preview_script</i> and <i>preview_files</i> are set, the program specified in the option <i>preview_script</i> is run and its output and/or exit code determines rangers reaction.</p>
+
 </dd>
-<dt><strong><a name="scope_sh" class="item">scope.sh</a></strong></dt>
-
+<dt id="colorschemes-">colorschemes/</dt>
 <dd>
-<p>This is a script that handles file previews.  When the options
-<em>use_preview_script</em> and <em>preview_files</em> or, respectively,
-<em>preview_directories</em> are set, the program specified in the option
-<em>preview_script</em> is run and its output and/or exit code determines rangers
-reaction.</p>
-</dd>
-<dt><strong><a name="colorschemes" class="item">colorschemes/</a></strong></dt>
 
-<dd>
 <p>Colorschemes can be placed here.</p>
+
+</dd>
+<dt id="plugins-">plugins/</dt>
+<dd>
+
+<p>Plugins can be placed here.</p>
+
 </dd>
 </dl>
-<p>
-</p>
-<h2><a name="storage">STORAGE</a></h2>
+
+<h2 id="STORAGE">STORAGE</h2>
+
 <dl>
-<dt><strong><a name="bookmarks" class="item">bookmarks</a></strong></dt>
 
+<dt id="bookmarks">bookmarks</dt>
 <dd>
-<p>This file contains a list of bookmarks.  The syntax is /^(.):(.*)$/. The first
-character is the bookmark key and the rest after the colon is the path to the
-file.  In ranger, bookmarks can be set by typing m&lt;key&gt;, accessed by typing
-'&lt;key&gt; and deleted by typing um&lt;key&gt;.</p>
+
+<p>This file contains a list of bookmarks. The syntax is /^(.):(.*)$/. The first character is the bookmark key and the rest after the colon is the path to the file. In ranger, bookmarks can be set by typing m&lt;key&gt;, accessed by typing &#39;&lt;key&gt; and deleted by typing um&lt;key&gt;.</p>
+
 </dd>
-<dt><strong><a name="copy_buffer" class="item">copy_buffer</a></strong></dt>
-
+<dt id="copy_buffer">copy_buffer</dt>
 <dd>
-<p>When running the command :save_copy_buffer, the paths of all currently copied
-files are saved in this file.  You can later run :load_copy_buffer to copy the
-same files again, pass them to another ranger instance or process them in a
-script.</p>
+
+<p>When running the command :save_copy_buffer, the paths of all currently copied files are saved in this file. You can later run :load_copy_buffer to copy the same files again, pass them to another ranger instance or process them in a script.</p>
+
 </dd>
-<dt><strong><a name="history" class="item">history</a></strong></dt>
-
+<dt id="history">history</dt>
 <dd>
+
 <p>Contains a list of commands that have been previously typed in.</p>
-</dd>
-<dt><strong><a name="tagged" class="item">tagged</a></strong></dt>
 
+</dd>
+<dt id="tagged">tagged</dt>
 <dd>
-<p>Contains a list of tagged files. The syntax is /^(.:)?(.*)$/ where the first
-letter is the optional name of the tag and the rest after the optional colon is
-the path to the file.  In ranger, tags can be set by pressing t and removed
-with T.  To assign a named tag, type &quot;&lt;tagname&gt;.</p>
+
+<p>Contains a list of tagged files. The syntax is /^(.:)?(.*)$/ where the first letter is the optional name of the tag and the rest after the optional colon is the path to the file. In ranger, tags can be set by pressing t and removed with T. To assign a named tag, type &quot;&lt;tagname&gt;.</p>
+
 </dd>
 </dl>
-<p>
-</p>
-<hr />
-<h1><a name="environment">ENVIRONMENT</a></h1>
+
+<h1 id="ENVIRONMENT">ENVIRONMENT</h1>
+
 <p>These environment variables have an effect on ranger:</p>
+
 <dl>
-<dt><strong><a name="ranger_level" class="item">RANGER_LEVEL</a></strong></dt>
 
+<dt id="RANGER_LEVEL">RANGER_LEVEL</dt>
 <dd>
-<p>Ranger sets this environment variable to &quot;1&quot; or increments it if it already
-exists.  External programs can determine whether they were spawned from ranger
-by checking for this variable.</p>
+
+<p>ranger sets this environment variable to &quot;1&quot; or increments it if it already exists. External programs can determine whether they were spawned from ranger by checking for this variable.</p>
+
 </dd>
-<dt><strong><a name="editor" class="item">EDITOR</a></strong></dt>
-
+<dt id="RANGER_LOAD_DEFAULT_RC">RANGER_LOAD_DEFAULT_RC</dt>
 <dd>
-<p>Defines the editor to be used for the &quot;E&quot; key.  Defaults to the first installed
-program out of &quot;vim&quot;, &quot;emacs&quot; and &quot;nano&quot;.</p>
+
+<p>If this variable is set to FALSE, ranger will not load the default rc.conf. This can save time if you copied the whole rc.conf to ~/.config/ranger/ and don&#39;t need the default one at all.</p>
+
 </dd>
-<dt><strong><a name="shell" class="item">SHELL</a></strong></dt>
-
+<dt id="EDITOR">EDITOR</dt>
 <dd>
-<p>Defines the shell that ranger is going to use with the :shell command and
-the &quot;S&quot; key.  Defaults to &quot;bash&quot;.</p>
+
+<p>Defines the editor to be used for the &quot;E&quot; key. Defaults to &quot;nano&quot;.</p>
+
 </dd>
-<dt><strong><a name="termcmd" class="item">TERMCMD</a></strong></dt>
-
+<dt id="SHELL">SHELL</dt>
 <dd>
-<p>Defines the terminal emulator command that ranger is going to use with the
-:terminal command and the &quot;t&quot; run flag.  Defaults to &quot;x-terminal-emulator&quot; or
-&quot;xterm&quot;</p>
+
+<p>Defines the shell that ranger is going to use with the :shell command and the &quot;S&quot; key. Defaults to &quot;/bin/sh&quot;.</p>
+
 </dd>
-<dt><strong><a name="xdg_config_home" class="item">XDG_CONFIG_HOME</a></strong></dt>
-
+<dt id="TERMCMD">TERMCMD</dt>
 <dd>
-<p>Specifies the directory for configuration files. Defaults to <em class="file">$HOME/.config</em>.</p>
+
+<p>Defines the terminal emulator command that ranger is going to use with the :terminal command and the &quot;t&quot; run flag. Defaults to &quot;xterm&quot;.</p>
+
 </dd>
-<dt><strong><a name="pythonoptimize" class="item">PYTHONOPTIMIZE</a></strong></dt>
-
+<dt id="XDG_CONFIG_HOME">XDG_CONFIG_HOME</dt>
 <dd>
+
+<p>Specifies the directory for configuration files. Defaults to <i>$HOME/.config</i>.</p>
+
+</dd>
+<dt id="PYTHONOPTIMIZE">PYTHONOPTIMIZE</dt>
+<dd>
+
 <p>This variable determines the optimize level of python.</p>
-<p>Using PYTHONOPTIMIZE=1 (like python -O) will make python discard assertion
-statements.  You will gain efficiency at the cost of losing some debug info.</p>
-<p>Using PYTHONOPTIMIZE=2 (like python -OO) will additionally discard any
-docstrings.  Using this will disable the &lt;F1&gt; key on commands.</p>
+
+<p>Using PYTHONOPTIMIZE=1 (like python -O) will make python discard assertion statements. You will gain efficiency at the cost of losing some debug info.</p>
+
+<p>Using PYTHONOPTIMIZE=2 (like python -OO) will additionally discard any docstrings. Using this will disable the &lt;F1&gt; key on commands.</p>
+
 </dd>
 </dl>
-<p>
-</p>
-<hr />
-<h1><a name="examples">EXAMPLES</a></h1>
-<p>
-</p>
-<h2><a name="bash__display_that_the_shell_spawned_from_ranger_">BASH: Display that the shell spawned from ranger:</a></h2>
-<p>By putting this in ~/.bashrc, &quot;(in ranger) &quot; will be displayed next to your
-prompt to notify you that the shell spawned from ranger.</p>
-<pre>
- [ -n &quot;$RANGER_LEVEL&quot; ] &amp;&amp; PS1=&quot;$PS1&quot;'(in ranger) '</pre>
-<p>
-</p>
-<h2><a name="vim__file_chooser">VIM: File Chooser</a></h2>
-<p>This is a vim function which allows you to use ranger to select a file for
-opening in your current vim session.</p>
-<pre>
- fun! RangerChooser()
-   exec &quot;silent !ranger --choosefile=/tmp/chosenfile &quot; . expand(&quot;%:p:h&quot;)
-   if filereadable('/tmp/chosenfile')
-     exec 'edit ' . system('cat /tmp/chosenfile')
-     call system('rm /tmp/chosenfile')
-   endif
-   redraw!
- endfun
- map ,r :call RangerChooser()&lt;CR&gt;</pre>
-<p>
-</p>
-<h2><a name="bash__cd_to_last_path_after_exit">Bash: cd to last path after exit</a></h2>
-<p>This is a bash function (for <em class="file">~/.bashrc</em>) to change the directory to the last
-visited one after ranger quits.  You can always type <code>cd -</code> to go back to the
-original one.</p>
-<pre>
- function ranger-cd {
-   tempfile='/tmp/chosendir'
-   /usr/bin/ranger --choosedir=&quot;$tempfile&quot; &quot;${@:-$(pwd)}&quot;
-   test -f &quot;$tempfile&quot; &amp;&amp;
-   if [ &quot;$(cat -- &quot;$tempfile&quot;)&quot; != &quot;$(echo -n `pwd`)&quot; ]; then
-     cd -- &quot;$(cat &quot;$tempfile&quot;)&quot;
-   fi
-   rm -f -- &quot;$tempfile&quot;
- }</pre>
-<pre>
- # This binds Ctrl-O to ranger-cd:
- bind '&quot;\C-o&quot;:&quot;ranger-cd\C-m&quot;'</pre>
-<p>
-</p>
-<hr />
-<h1><a name="license">LICENSE</a></h1>
+
+<h1 id="EXAMPLES">EXAMPLES</h1>
+
+<p>There are various examples on how to extend ranger with plugins or combine ranger with other programs. These can be found in the <i>examples/</i> directory that is provided along with the source code.</p>
+
+<h1 id="LICENSE">LICENSE</h1>
+
 <p>GNU General Public License 3 or (at your option) any later version.</p>
-<p>
-</p>
-<hr />
-<h1><a name="links">LINKS</a></h1>
+
+<h1 id="LINKS">LINKS</h1>
+
 <dl>
-<dt><strong><a name="download_http_ranger_nongnu_org_ranger_stable_tar_gz" class="item">Download: <a href="http://ranger.nongnu.org/ranger-stable.tar.gz">http://ranger.nongnu.org/ranger-stable.tar.gz</a></a></strong></dt>
 
-<dt><strong><a name="the_project_page_http_ranger_nongnu_org" class="item">The project page: <a href="http://ranger.nongnu.org/">http://ranger.nongnu.org/</a></a></strong></dt>
+<dt id="Download:-http:-ranger.nongnu.org-ranger-stable.tar.gz">Download: <a href="http://ranger.nongnu.org/ranger-stable.tar.gz">http://ranger.nongnu.org/ranger-stable.tar.gz</a></dt>
+<dd>
 
-<dt><strong><a name="the_mailing_list_http_savannah_nongnu_org_mail_group_ranger" class="item">The mailing list: <a href="http://savannah.nongnu.org/mail/?group=ranger">http://savannah.nongnu.org/mail/</a></a></strong></dt>
+</dd>
+<dt id="The-project-page:-http:-ranger.nongnu.org-">The project page: <a href="http://ranger.nongnu.org/">http://ranger.nongnu.org/</a></dt>
+<dd>
 
+</dd>
+<dt id="The-mailing-list:-http:-savannah.nongnu.org-mail-group-ranger">The mailing list: <a href="http://savannah.nongnu.org/mail/?group=ranger">http://savannah.nongnu.org/mail/?group=ranger</a></dt>
+<dd>
+
+</dd>
 </dl>
-<p>ranger is maintained with the git version control system.  To fetch a fresh
-copy, run:</p>
-<pre>
- git clone git://git.savannah.nongnu.org/ranger.git</pre>
-<p>
-</p>
-<hr />
-<h1><a name="bugs">BUGS</a></h1>
-<p>Report bugs here: <a href="http://savannah.nongnu.org/bugs/?group=ranger">http://savannah.nongnu.org/bugs/</a></p>
-<p>Please include as much relevant information as possible.  For the most
-diagnostic output, run ranger like this: <code>PYTHONOPTIMIZE= ranger --debug</code></p>
+
+<p>ranger is maintained with the git version control system. To fetch a fresh copy, run:</p>
+
+<pre><code> git clone git://git.savannah.nongnu.org/ranger.git</code></pre>
+
+<h1 id="SEE-ALSO">SEE ALSO</h1>
+
+<p>rifle(1)</p>
+
+<h1 id="BUGS">BUGS</h1>
+
+<p>Report bugs here: <a href="http://savannah.nongnu.org/bugs/?group=ranger">http://savannah.nongnu.org/bugs/?group=ranger</a></p>
+
+<p>Please include as much relevant information as possible. For the most diagnostic output, run ranger like this: <code>PYTHONOPTIMIZE= ranger --debug</code></p>
+
 
 </body>
 
 </html>
+
+
