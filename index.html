@@ -12,7 +12,7 @@
   <a href="download.html">Download</a>
   <a href="documentation.html">Documentation</a>
   <a href="contact.html">Contact</a>
-  <a href="http://ourproject.org/moin/projects/ranger">Wiki</a>
+  <!--<a href="http://ourproject.org/moin/projects/ranger">Wiki</a>-->
 </div>
 <!--/head-->
 
@@ -45,7 +45,7 @@
 
 <h3>Dependencies</h3>
 <ul>
-<li><a href="http://python.org">Python</a> (tested with version 2.6, 2.7, 3.1, 3.2) with support for ncurses and (optionally) wide-unicode.</li>
+<li><a href="http://python.org">Python</a> (tested with version 2.7, 3.1, 3.2, 3.3) with support for ncurses and (optionally) wide-unicode.</li>
 <li>A pager (<a href="http://www.gnu.org/software/less/">less</a> by default)</li>
 </ul>
 
@@ -56,13 +56,14 @@
 <li><a href="http://www.darwinsys.com/file/">file</a> for determining file types</li>
 <li>The python module <a href="http://pypi.python.org/pypi/chardet">chardet</a>, in case of encoding detection problems</li>
 <li>"sudo" to use the "run as root"-feature</li>
+<li><a href="http://w3m.sourceforge.net/">w3m</a> for <a href="screenshots/w3mimgpreview.png">previewing images in "true color"</a>.</li>
 </ul>
 
 <p>
   Optional, for enhanced file previews (with "scope.sh"):
 </p>
 <ul>
-<li>img2txt (from <a href="http://caca.zoy.org/wiki/libcaca">caca-utils</a>) for previewing images</li>
+<li>img2txt (from <a href="http://caca.zoy.org/wiki/libcaca">caca-utils</a>) for previewing images in <a href="screenshots/ranger-screenshot_large-image-preview.png">ASCII-art</a></li>
 <li><a href="http://www.andre-simon.de/doku/highlight/en/highlight.html">highlight</a> for syntax highlighting of code</li>
 <li><a href="http://www.nongnu.org/atool/">atool</a> for previews of archives</li>
 <li><a href="http://lynx.browser.org">lynx</a>, <a href="http://w3m.sourceforge.net/">w3m</a> or <a href="http://elinks.or.cz/">elinks</a> for previews of html pages</li>
@@ -70,6 +71,12 @@
 <li><a href="http://www.transmissionbt.com/">transmission-show</a> for viewing bit-torrent information</li>
 <li><a href="http://mediainfo.sourceforge.net/en">mediainfo</a> or exiftool for viewing information about media files</li>
 </ul>
+
+<p>
+Note: <a href="screenshots/w3mimgpreview.png">previewing images in "true color"</a> is disabled by default.  To enable it, first make sure you have w3m installed, then check that your terminal supports it.  It was successfully tested with <b>urxvt</b> and <b>xterm</b>, while it did not work with <b>gnome-terminal</b> and <b>st</b>.  Currently it does not work with <b>tmux</b> but with <b>screen</b>.  Finally, add this line to your ~/.config/ranger/rc.conf and restart ranger:
+</p>
+
+<div class="code">set preview_images true</div>
 
 <p>
   Note: to use custom file previews, you need ranger 1.3.1 or later, and a script that creates previews. Use the default script by typing:
