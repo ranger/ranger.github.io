@@ -1,0 +1,629 @@
+<?xml version="1.0" encoding="iso-8859-15"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Minirc Comparison</title>
+<style type="text/css">
+body { color: black; background-color: white;  max-width: 1080px; margin-left: 0; margin-right: auto; padding-left: 15px; padding-right: 15px }
+hr { background-color: #aaaaaa; border: 0px; }
+pre { background-color: #e0e0e0; padding: 0.4cm; overflow: auto; }
+.grey { color: #8f8f8f; font-size: 100%; font-style:italic; }
+.author { color: #8f8f8f; font-size: 100%; font-style:italic; }
+.links { padding-bottom: 0.2cm; }
+.syndicate { color: #8f8f8f; font-size: 100%; font-style:italic; }
+.archive { color: #8f8f8f; font-size: 100%; font-style:italic; }
+.date { font-size: 80%; color: #aaaaaa; font-family: sans-serif; margin: 0px; }
+li { margin-top:.5em; margin-bottom:.5em }
+dd { margin-top:.5em; margin-bottom:.5em }
+.subtext { font-family: 'Trykker' }
+</style>
+<link rel="alternate" type="application/rss+xml" title="Wunschkonzert, Ponyhof und Abenteuerspielplatz RSS Feed" href="/blog/index.rss2"/>
+<link href='http://fonts.googleapis.com/css?family=Trykker' rel='stylesheet' type='text/css'/>
+</head>
+<body>
+<h3>Why minirc?</h3>
+
+<h4>General Features</h4>
+
+<table border="1">
+<tr>
+<th></th>
+<th>sysvinit</th>
+<th>Upstart</th>
+<th>systemd</th>
+<th>minirc</th>
+</tr>
+
+<tr>
+<td>Interfacing via D-Bus</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #7fff7f">no</td>
+</tr>
+
+<tr>
+<td>Shell-free bootup</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #7fff7f">no</td>
+</tr>
+
+<tr>
+<td>Modular C coded early boot services included</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #7fff7f">no</td>
+</tr>
+
+<tr>
+<td>Read-Ahead</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #7fff7f">no</td>
+</tr>
+
+<tr>
+<td>Socket-based Activation</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #7fff7f">no</td>
+</tr>
+
+<tr>
+<td>Socket-based Activation: inetd compatibility</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #7fff7f">no</td>
+</tr>
+
+<tr>
+<td>Bus-based Activation</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #7fff7f">no</td>
+</tr>
+
+<tr>
+<td>Device-based Activation</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #7fff7f">no</td>
+</tr>
+
+<tr>
+<td>Configuration of device dependencies with udev rules</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #7fff7f">no</td>
+</tr>
+
+<tr>
+<td>Path-based Activation (inotify)</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #7fff7f">no</td>
+</tr>
+
+<tr>
+<td>Timer-based Activation</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #7fff7f">no</td>
+</tr>
+
+<tr>
+<td>Mount handling</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #7fff7f">no</td>
+</tr>
+
+<tr>
+<td>fsck handling</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #7fff7f">no</td>
+</tr>
+
+<tr>
+<td>Quota handling</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #7fff7f">no</td>
+</tr>
+
+<tr>
+<td>Automount handling</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #7fff7f">no</td>
+</tr>
+
+<tr>
+<td>Swap handling</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #7fff7f">no</td>
+</tr>
+
+<tr>
+<td>Snapshotting of system state</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #7fff7f">no</td>
+</tr>
+
+<tr>
+<td>XDG_RUNTIME_DIR Support</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #7fff7f">no</td>
+</tr>
+
+<tr>
+<td>Optionally kills remaining processes of users logging out</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #7fff7f">no</td>
+</tr>
+
+<tr>
+<td>Linux Control Groups Integration</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #7fff7f">no</td>
+</tr>
+
+<tr>
+<td>Audit record generation for started services</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #7fff7f">no</td>
+</tr>
+
+<tr>
+<td>SELinux integration</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #7fff7f">no</td>
+</tr>
+
+<tr>
+<td>PAM integration</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #7fff7f">no</td>
+</tr>
+
+<tr>
+<td>Encrypted hard disk handling (LUKS)</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #7fff7f">no</td>
+</tr>
+
+<tr>
+<td>SSL Certificate/LUKS Password handling, including Plymouth, Console, wall(1), TTY and GNOME agents</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #7fff7f">no</td>
+</tr>
+
+<tr>
+<td>Network Loopback device handling</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #7fff7f">no</td>
+</tr>
+
+<tr>
+<td>binfmt_misc handling</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #7fff7f">no</td>
+</tr>
+
+<tr>
+<td>System-wide locale handling</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #7fff7f">no</td>
+</tr>
+
+<tr>
+<td>Console and keyboard setup</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #7fff7f">no</td>
+</tr>
+
+<tr>
+<td>Infrastructure for creating, removing, cleaning up of temporary and volatile files</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #7fff7f">no</td>
+</tr>
+
+<tr>
+<td>Handling for <tt>/proc/sys</tt> sysctl</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #7fff7f">no</td>
+</tr>
+
+<tr>
+<td>Plymouth integration</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #7fff7f">no</td>
+</tr>
+
+<tr>
+<td>Save/restore random seed</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #7fff7f">no</td>
+</tr>
+
+<tr>
+<td>Static loading of kernel modules</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #7fff7f">no</td>
+</tr>
+
+<tr>
+<td>Automatic serial console handling</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #7fff7f">no</td>
+</tr>
+
+<tr>
+<td>Unique Machine ID handling</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #7fff7f">no</td>
+</tr>
+
+<tr>
+<td>Dynamic host name and machine meta data handling</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #7fff7f">no</td>
+</tr>
+
+<tr>
+<td>Reliable termination of services</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #7fff7f">no</td>
+</tr>
+
+<tr>
+<td>Early boot /dev/log logging</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #7fff7f">no</td>
+</tr>
+
+<tr>
+<td>Minimal kmsg-based syslog daemon for embedded use</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #7fff7f">no</td>
+</tr>
+
+<tr>
+<td>Respawning on service crash without losing connectivity</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #7fff7f">no</td>
+</tr>
+
+<tr>
+<td>Gapless service upgrades</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #7fff7f">no</td>
+</tr>
+
+<tr>
+<td>Graphical UI</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #7fff7f">no</td>
+</tr>
+
+<tr>
+<td>Built-In Profiling and Tools</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #7fff7f">no</td>
+</tr>
+
+<tr>
+<td>Instantiated services</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #7fff7f">no</td>
+</tr>
+
+<tr>
+<td>PolicyKit integration</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #7fff7f">no</td>
+</tr>
+
+<tr>
+<td>Remote access/Cluster support built into client tools</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #7fff7f">no</td>
+</tr>
+
+<tr>
+<td>Can list all processes of a service</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #7fff7f">no</td>
+</tr>
+
+<tr>
+<td>Can identify service of a process</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #7fff7f">no</td>
+</tr>
+
+<tr>
+<td>Automatic per-service CPU cgroups to even out CPU usage between them</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #7fff7f">no</td>
+</tr>
+
+<tr>
+<td>Automatic per-user cgroups</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #7fff7f">no</td>
+</tr>
+
+<tr>
+<td>SysV compatibility</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #7fff7f">no</td>
+</tr>
+
+<tr>
+<td>SysV services controllable like native services</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #7fff7f">no</td>
+</tr>
+
+<tr>
+<td>SysV-compatible /dev/initctl</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #7fff7f">no</td>
+</tr>
+
+<tr>
+<td>Reexecution with full serialization of state</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #7fff7f">no</td>
+</tr>
+
+<tr>
+<td>Interactive boot-up</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #7fff7f">no</td>
+</tr>
+
+<tr>
+<td>Container support (as advanced chroot() replacement)</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #7fff7f">no</td>
+</tr>
+
+<tr>
+<td>Dependency-based bootup</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #7fff7f">no</td>
+</tr>
+
+<tr>
+<td>Disabling of services without editing files</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #7fff7f">no</td>
+</tr>
+
+<tr>
+<td>Masking of services without editing files</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #7fff7f">no</td>
+</tr>
+
+<tr>
+<td>Robust system shutdown within PID 1</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #7fff7f">no</td>
+</tr>
+
+<tr>
+<td>Built-in kexec support</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #7fff7f">no</td>
+</tr>
+
+<tr>
+<td>Dynamic service generation</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #7fff7f">no</td>
+</tr>
+
+<tr>
+<td>Upstream support in various other OS components</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #7fff7f">no</td>
+</tr>
+
+<tr>
+<td>Service files compatible between distributions</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #7fff7f">no</td>
+</tr>
+
+<tr>
+<td>Signal delivery to services</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #7fff7f">no</td>
+</tr>
+
+<tr>
+<td>Reliable termination of user sessions before shutdown</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #7fff7f">no</td>
+</tr>
+
+<tr>
+<td>utmp/wtmp support</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #7fff7f">no</td>
+</tr>
+
+<tr>
+<td>Easily writable, extensible and parseable service files, suitable for manipulation with enterprise management tools</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #7fff7f">no</td>
+<td style="background-color: #ff7f7f">yes</td>
+<td style="background-color: #7fff7f">no</td>
+</tr>
+
+<tr>
+<td>Is the parent of all processes</td>
+<td style="background-color: #7fff7f">yes</td>
+<td style="background-color: #7fff7f">yes</td>
+<td style="background-color: #7fff7f">yes</td>
+<td style="background-color: #7fff7f">yes</td>
+</tr>
+
+<tr>
+<td>Run scripts on boot and shutdown</td>
+<td style="background-color: #7fff7f">yes</td>
+<td style="background-color: #7fff7f">yes</td>
+<td style="background-color: #7fff7f">yes<sup>[1]</sup></td>
+<td style="background-color: #7fff7f">yes</td>
+</tr>
+
+<p><small><sup>[1]</sup> Though it is impossible to find out how</small></p>
+
+<tr>
+<td>Know everything about the boot process and how exactly daemons are started by reading one single short shell script</td>
+<td style="background-color: #ff7f7f">no</td>
+<td style="background-color: #ff7f7f">no</td>
+<td style="background-color: #ff7f7f">no</td>
+<td style="background-color: #7fff7f">yes</td>
+</tr>
+</table>
+
+<h4>Summary</h4>
+
+<p>As the table above hopefully shows in all clarity, most init systems make it enormously difficult for you to figure out what the heck it is doing, since they try to exceed their area of responsibility by far.  The tasks of an init system are well defined as:</p>
+
+<ol>
+    <li>Be the parent of all processes</li>
+    <li>Run scripts on boot and on shutdown</li>
+</ol>
+
+<p>And minirc with busybox-init do just that.</p>
+
+<hr/>
+</body>
+</html>
