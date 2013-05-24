@@ -4,7 +4,7 @@
 <head>
 <title></title>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link rev="made" href="mailto:kevin@archlinux.org" />
+<link rev="made" href="mailto:" />
 </head>
 
 <body style="background-color: white">
@@ -15,6 +15,7 @@
   <li><a href="#NAME">NAME</a></li>
   <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
   <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#RESOURCES">RESOURCES</a></li>
   <li><a href="#OPTIONS">OPTIONS</a></li>
   <li><a href="#CONCEPTS">CONCEPTS</a>
     <ul>
@@ -61,11 +62,23 @@
 
 <h1 id="DESCRIPTION">DESCRIPTION</h1>
 
-<p>ranger is a console file manager with VI key bindings. It provides a minimalistic and nice curses interface with a view on the directory hierarchy. The secondary task of ranger is to figure out which program you want to use to open your files with.</p>
+<p>ranger is a console file manager with VI key bindings.</p>
 
-<p>This manual mainly contains information on the usage of ranger. Refer to the <i>README</i> for install instructions and to <i>doc/HACKING</i> for development specific information. For configuration, see the files in <i>ranger/config</i>. They are usually installed to <i>/usr/lib/python*/site-packages/ranger/config</i> and can be obtained with ranger&#39;s --copy-config option.</p>
+<h1 id="RESOURCES">RESOURCES</h1>
 
-<p>Inside ranger, you can press <i>1?</i> for a list of key bindings, <i>2?</i> for a list of commands and <i>3?</i> for a list of settings.</p>
+<p><i>This manual</i> contains instructions on how to use and configure ranger.</p>
+
+<p><i>Inside ranger</i>, you can press <i>1?</i> for a list of key bindings, <i>2?</i> for commands and <i>3?</i> for settings.</p>
+
+<p>The <i>README</i> contains install instructions.</p>
+
+<p>The file <i>doc/HACKING</i> contains guidelines for code modification.</p>
+
+<p>The directory <i>doc/configs</i> contains configuration files. They are usually installed to <i>/usr/lib/python*/site-packages/ranger/config</i> and can be obtained with ranger&#39;s --copy-config option.</p>
+
+<p>The man page of rifle(1) describes the functions of the file opener</p>
+
+<p>The section <i>LINKS</i> of this man page contains further resources.</p>
 
 <h1 id="OPTIONS">OPTIONS</h1>
 
@@ -92,7 +105,7 @@
 <dt id="copy-config-file"><b>--copy-config</b>=<i>file</i></dt>
 <dd>
 
-<p>Create copies of the default configuration files in your local configuration directory. Existing ones will not be overwritten. Possible values: <i>all</i>, <i>rc</i>, <i>commands</i>, <i>scope</i>.</p>
+<p>Create copies of the default configuration files in your local configuration directory. Existing ones will not be overwritten. Possible values: <i>all</i>, <i>commands</i>, <i>rc</i>, <i>rifle</i>, <i>scope</i>.</p>
 
 </dd>
 <dt id="choosefile-targetfile"><b>--choosefile</b>=<i>targetfile</i></dt>
@@ -255,7 +268,7 @@
 
 <pre><code> pydoc ranger.api</code></pre>
 
-<p>Note that you should NOT simply overwrite a function unless you know what you&#39;re doing. Instead, save the existing function and call it from your new one. This way, multiple plugins can use the same hook. There are several sample plugins in the <i>examples/</i> directory, including a hello-world plugin that describes this procedure.</p>
+<p>Note that you should NOT simply overwrite a function unless you know what you&#39;re doing. Instead, save the existing function and call it from your new one. This way, multiple plugins can use the same hook. There are several sample plugins in the <i>/usr/share/doc/ranger/examples/</i> directory, including a hello-world plugin that describes this procedure.</p>
 
 <h1 id="KEY-BINDINGS">KEY BINDINGS</h1>
 
@@ -698,10 +711,10 @@
 <p>Try to keep this much space between the top/bottom border when scrolling.</p>
 
 </dd>
-<dt id="shorten_title-integer-bool-">shorten_title [integer, bool]</dt>
+<dt id="shorten_title-integer-">shorten_title [integer]</dt>
 <dd>
 
-<p>Trim the title of the window if it gets long? The number defines how many directories are displayed at once, False turns off this feature.</p>
+<p>Trim the title of the window if it gets long? The number defines how many directories are displayed at once. A value of 0 turns off this feature.</p>
 
 </dd>
 <dt id="show_cursor-bool-">show_cursor [bool]</dt>
@@ -784,6 +797,22 @@
 <p>Use the preview script defined in the setting <i>preview_script</i>?</p>
 
 </dd>
+<dt id="vcs_aware-bool-">vcs_aware [bool]</dt>
+<dd>
+
+<p>Gather and display data about version control systems. Supported vcs: git, hg.</p>
+
+</dd>
+<dt id="vcs_backend_git-vcs_backend_hg-vcs_backend_bzr-string-">vcs_backend_git, vcs_backend_hg, vcs_backend_bzr [string]</dt>
+<dd>
+
+<p>Sets the state for the version control backend. The possible values are:</p>
+
+<pre><code> disabled   don&#39;t display any information.
+ local      display only local state.
+ enabled    display both, local and remote state. May be slow for hg and bzr.</code></pre>
+
+</dd>
 <dt id="xterm_alt_key-bool-">xterm_alt_key [bool]</dt>
 <dd>
 
@@ -829,6 +858,7 @@
  relink newpath
  rename newname
  save_copy_buffer
+ scout [-FLAGS] pattern
  search pattern
  search_inc pattern
  set option value
@@ -948,7 +978,7 @@
 
 <p>Evaluates the python code. `fm&#39; is a reference to the FM instance. To display text, use the function `p&#39;. The result is displayed on the screen unless you use the &quot;-q&quot; option.</p>
 
-<p>Examples: :eval fm :eval len(fm.env.directories) :eval p(&quot;Hello World!&quot;)</p>
+<p>Examples: :eval fm :eval len(fm.tabs) :eval p(&quot;Hello World!&quot;)</p>
 
 </dd>
 <dt id="filter-string-">filter [<i>string</i>]</dt>
@@ -1047,6 +1077,28 @@
 <dd>
 
 <p>Save the copy buffer to <i>~/.config/ranger/copy_buffer</i>. This can be used to pass the list of copied files to another ranger instance.</p>
+
+</dd>
+<dt id="scout--flags...----pattern">scout [-<i>flags</i>...] [--] <i>pattern</i></dt>
+<dd>
+
+<p>Swiss army knife command for searching, traveling and filtering files. The command takes various flags as arguments which can be used to influence its behaviour:</p>
+
+<pre><code> -a = automatically open a file on unambiguous match
+ -e = open the selected file when pressing enter
+ -f = filter files that match the current search pattern
+ -g = interpret pattern as a glob pattern
+ -i = ignore the letter case of the files
+ -k = keep the console open when changing a directory with the command
+ -l = letter skipping; e.g. allow &quot;rdme&quot; to match the file &quot;readme&quot;
+ -m = mark the matching files after pressing enter
+ -M = unmark the matching files after pressing enter
+ -p = permanent filter: hide non-matching files after pressing enter
+ -s = smart case; like -i unless pattern contains upper case letters
+ -t = apply filter and search pattern as you type
+ -v = inverts the match</code></pre>
+
+<p>Multiple flags can be combined. For example, &quot;:scout -gpt&quot; would create a :filter-like command using globbing.</p>
 
 </dd>
 <dt id="search-pattern">search <i>pattern</i></dt>
@@ -1269,11 +1321,17 @@
 <p>Using PYTHONOPTIMIZE=2 (like python -OO) will additionally discard any docstrings. Using this will disable the &lt;F1&gt; key on commands.</p>
 
 </dd>
+<dt id="W3MIMGDISPLAY_PATH">W3MIMGDISPLAY_PATH</dt>
+<dd>
+
+<p>By changing this variable, you can change the path of the executable file for image previews. By default, it is set to <i>/usr/lib/w3m/w3mimgdisplay</i>.</p>
+
+</dd>
 </dl>
 
 <h1 id="EXAMPLES">EXAMPLES</h1>
 
-<p>There are various examples on how to extend ranger with plugins or combine ranger with other programs. These can be found in the <i>examples/</i> directory that is provided along with the source code.</p>
+<p>There are various examples on how to extend ranger with plugins or combine ranger with other programs. These can be found in the <i>/usr/share/doc/ranger/examples/</i> directory, or the <i>doc/ranger/</i> that is provided along with the source code.</p>
 
 <h1 id="LICENSE">LICENSE</h1>
 
