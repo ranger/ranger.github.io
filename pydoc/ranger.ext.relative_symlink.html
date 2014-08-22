@@ -1,6 +1,6 @@
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html><head><title>Python: module ranger.ext.relative_symlink</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head><body bgcolor="#f0f0f8">
 
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
@@ -9,20 +9,8 @@
 <font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong><a href="ranger.html"><font color="#ffffff">ranger</font></a>.<a href="ranger.ext.html"><font color="#ffffff">ext</font></a>.relative_symlink</strong></big></big></font></td
 ><td align=right valign=bottom
 ><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:../../ranger/ext/relative_symlink.py">../../ranger/ext/relative_symlink.py</a></font></td></tr></table>
-    <p><tt>#&nbsp;Copyright&nbsp;(C)&nbsp;2009,&nbsp;2010,&nbsp;2011&nbsp;&nbsp;Roman&nbsp;Zimbelmann&nbsp;&lt;romanz@lavabit.com&gt;<br>
-#<br>
-#&nbsp;This&nbsp;program&nbsp;is&nbsp;free&nbsp;software:&nbsp;you&nbsp;can&nbsp;redistribute&nbsp;it&nbsp;and/or&nbsp;modify<br>
-#&nbsp;it&nbsp;under&nbsp;the&nbsp;terms&nbsp;of&nbsp;the&nbsp;GNU&nbsp;General&nbsp;Public&nbsp;License&nbsp;as&nbsp;published&nbsp;by<br>
-#&nbsp;the&nbsp;Free&nbsp;Software&nbsp;Foundation,&nbsp;either&nbsp;version&nbsp;3&nbsp;of&nbsp;the&nbsp;License,&nbsp;or<br>
-#&nbsp;(at&nbsp;your&nbsp;option)&nbsp;any&nbsp;later&nbsp;version.<br>
-#<br>
-#&nbsp;This&nbsp;program&nbsp;is&nbsp;distributed&nbsp;in&nbsp;the&nbsp;hope&nbsp;that&nbsp;it&nbsp;will&nbsp;be&nbsp;useful,<br>
-#&nbsp;but&nbsp;WITHOUT&nbsp;ANY&nbsp;WARRANTY;&nbsp;without&nbsp;even&nbsp;the&nbsp;implied&nbsp;warranty&nbsp;of<br>
-#&nbsp;MERCHANTABILITY&nbsp;or&nbsp;FITNESS&nbsp;FOR&nbsp;A&nbsp;PARTICULAR&nbsp;PURPOSE.&nbsp;&nbsp;See&nbsp;the<br>
-#&nbsp;GNU&nbsp;General&nbsp;Public&nbsp;License&nbsp;for&nbsp;more&nbsp;details.<br>
-#<br>
-#&nbsp;You&nbsp;should&nbsp;have&nbsp;received&nbsp;a&nbsp;copy&nbsp;of&nbsp;the&nbsp;GNU&nbsp;General&nbsp;Public&nbsp;License<br>
-#&nbsp;along&nbsp;with&nbsp;this&nbsp;program.&nbsp;&nbsp;If&nbsp;not,&nbsp;see&nbsp;&lt;<a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>&gt;.</tt></p>
+    <p><tt>#&nbsp;Copyright&nbsp;(C)&nbsp;2009-2013&nbsp;&nbsp;Roman&nbsp;Zimbelmann&nbsp;&lt;hut@lavabit.com&gt;<br>
+#&nbsp;This&nbsp;software&nbsp;is&nbsp;distributed&nbsp;under&nbsp;the&nbsp;terms&nbsp;of&nbsp;the&nbsp;GNU&nbsp;GPL&nbsp;version&nbsp;3.</tt></p>
 <p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#eeaa77">
@@ -33,9 +21,19 @@
 <td width="100%"><dl><dt><a name="-get_common_base"><strong>get_common_base</strong></a>(src, dst)</dt></dl>
  <dl><dt><a name="-get_relative_source_file"><strong>get_relative_source_file</strong></a>(src, dst, common_base<font color="#909090">=None</font>)</dt></dl>
  <dl><dt><a name="-relative_symlink"><strong>relative_symlink</strong></a>(src, dst)</dt></dl>
- <dl><dt><a name="-symlink"><strong>symlink</strong></a>(...)</dt><dd><tt><a href="#-symlink">symlink</a>(src,&nbsp;dst)<br>
+ <dl><dt><a name="-symlink"><strong>symlink</strong></a>(...)</dt><dd><tt><a href="#-symlink">symlink</a>(src,&nbsp;dst,&nbsp;target_is_directory=False,&nbsp;*,&nbsp;dir_fd=None)<br>
 &nbsp;<br>
-Create&nbsp;a&nbsp;symbolic&nbsp;link&nbsp;pointing&nbsp;to&nbsp;src&nbsp;named&nbsp;dst.</tt></dd></dl>
+Create&nbsp;a&nbsp;symbolic&nbsp;link&nbsp;pointing&nbsp;to&nbsp;src&nbsp;named&nbsp;dst.<br>
+&nbsp;<br>
+target_is_directory&nbsp;is&nbsp;required&nbsp;on&nbsp;Windows&nbsp;if&nbsp;the&nbsp;target&nbsp;is&nbsp;to&nbsp;be<br>
+&nbsp;&nbsp;interpreted&nbsp;as&nbsp;a&nbsp;directory.&nbsp;&nbsp;(On&nbsp;Windows,&nbsp;symlink&nbsp;requires<br>
+&nbsp;&nbsp;Windows&nbsp;6.0&nbsp;or&nbsp;greater,&nbsp;and&nbsp;raises&nbsp;a&nbsp;NotImplementedError&nbsp;otherwise.)<br>
+&nbsp;&nbsp;target_is_directory&nbsp;is&nbsp;ignored&nbsp;on&nbsp;non-Windows&nbsp;platforms.<br>
+&nbsp;<br>
+If&nbsp;dir_fd&nbsp;is&nbsp;not&nbsp;None,&nbsp;it&nbsp;should&nbsp;be&nbsp;a&nbsp;file&nbsp;descriptor&nbsp;open&nbsp;to&nbsp;a&nbsp;directory,<br>
+&nbsp;&nbsp;and&nbsp;path&nbsp;should&nbsp;be&nbsp;relative;&nbsp;path&nbsp;will&nbsp;then&nbsp;be&nbsp;relative&nbsp;to&nbsp;that&nbsp;directory.<br>
+dir_fd&nbsp;may&nbsp;not&nbsp;be&nbsp;implemented&nbsp;on&nbsp;your&nbsp;platform.<br>
+&nbsp;&nbsp;If&nbsp;it&nbsp;is&nbsp;unavailable,&nbsp;using&nbsp;it&nbsp;will&nbsp;raise&nbsp;a&nbsp;NotImplementedError.</tt></dd></dl>
 </td></tr></table><p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#55aa55">

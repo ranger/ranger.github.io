@@ -1,6 +1,6 @@
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html><head><title>Python: module ranger.core.runner</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head><body bgcolor="#f0f0f8">
 
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
@@ -21,7 +21,7 @@ run()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nb
 &nbsp;<br>
 List&nbsp;of&nbsp;allowed&nbsp;flags:<br>
 s:&nbsp;silent&nbsp;mode.&nbsp;output&nbsp;will&nbsp;be&nbsp;discarded.<br>
-d:&nbsp;detach&nbsp;the&nbsp;process.<br>
+f:&nbsp;fork&nbsp;the&nbsp;process.<br>
 p:&nbsp;redirect&nbsp;output&nbsp;to&nbsp;the&nbsp;pager<br>
 c:&nbsp;run&nbsp;only&nbsp;the&nbsp;current&nbsp;file&nbsp;(not&nbsp;handled&nbsp;here)<br>
 w:&nbsp;wait&nbsp;for&nbsp;enter-press&nbsp;afterwards<br>
@@ -45,7 +45,7 @@ t:&nbsp;run&nbsp;application&nbsp;in&nbsp;a&nbsp;new&nbsp;terminal&nbsp;window<b
     
 <tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
 <td width="100%"><dl>
-<dt><font face="helvetica, arial"><a href="__builtin__.html#object">__builtin__.object</a>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
 </font></dt><dd>
 <dl>
 <dt><font face="helvetica, arial"><a href="ranger.core.runner.html#Context">Context</a>
@@ -57,16 +57,16 @@ t:&nbsp;run&nbsp;application&nbsp;in&nbsp;a&nbsp;new&nbsp;terminal&nbsp;window<b
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#ffc8d8">
 <td colspan=3 valign=bottom>&nbsp;<br>
-<font color="#000000" face="helvetica, arial"><a name="Context">class <strong>Context</strong></a>(<a href="__builtin__.html#object">__builtin__.object</a>)</font></td></tr>
+<font color="#000000" face="helvetica, arial"><a name="Context">class <strong>Context</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
     
 <tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
-<td colspan=2><tt>A&nbsp;context&nbsp;<a href="__builtin__.html#object">object</a>&nbsp;contains&nbsp;data&nbsp;on&nbsp;how&nbsp;to&nbsp;run&nbsp;a&nbsp;process.<br>
+<td colspan=2><tt>A&nbsp;context&nbsp;<a href="builtins.html#object">object</a>&nbsp;contains&nbsp;data&nbsp;on&nbsp;how&nbsp;to&nbsp;run&nbsp;a&nbsp;process.<br>
 &nbsp;<br>
 The&nbsp;attributes&nbsp;are:<br>
 action&nbsp;--&nbsp;a&nbsp;string&nbsp;with&nbsp;a&nbsp;command&nbsp;or&nbsp;a&nbsp;list&nbsp;of&nbsp;arguments&nbsp;for<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;Popen&nbsp;call.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;Popen&nbsp;call.<br>
 app&nbsp;--&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;app&nbsp;function.&nbsp;("vim"&nbsp;for&nbsp;app_vim.)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app&nbsp;is&nbsp;used&nbsp;to&nbsp;get&nbsp;an&nbsp;action&nbsp;if&nbsp;the&nbsp;user&nbsp;didn't&nbsp;specify&nbsp;one.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;app&nbsp;is&nbsp;used&nbsp;to&nbsp;get&nbsp;an&nbsp;action&nbsp;if&nbsp;the&nbsp;user&nbsp;didn't&nbsp;specify&nbsp;one.<br>
 mode&nbsp;--&nbsp;a&nbsp;number,&nbsp;mainly&nbsp;used&nbsp;in&nbsp;determining&nbsp;the&nbsp;action&nbsp;in&nbsp;app_xyz()<br>
 flags&nbsp;--&nbsp;a&nbsp;string&nbsp;with&nbsp;flags&nbsp;which&nbsp;change&nbsp;the&nbsp;way&nbsp;programs&nbsp;are&nbsp;run<br>
 files&nbsp;--&nbsp;a&nbsp;list&nbsp;containing&nbsp;files,&nbsp;mainly&nbsp;used&nbsp;in&nbsp;app_xyz<br>
@@ -96,18 +96,18 @@ Data descriptors defined here:<br>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#ffc8d8">
 <td colspan=3 valign=bottom>&nbsp;<br>
-<font color="#000000" face="helvetica, arial"><a name="Runner">class <strong>Runner</strong></a>(<a href="__builtin__.html#object">__builtin__.object</a>)</font></td></tr>
+<font color="#000000" face="helvetica, arial"><a name="Runner">class <strong>Runner</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
     
 <tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
 <td width="100%">Methods defined here:<br>
 <dl><dt><a name="Runner-__call__"><strong>__call__</strong></a>(self, action<font color="#909090">=None</font>, try_app_first<font color="#909090">=False</font>, app<font color="#909090">='default'</font>, files<font color="#909090">=None</font>, mode<font color="#909090">=0</font>, flags<font color="#909090">=''</font>, wait<font color="#909090">=True</font>, **popen_kws)</dt><dd><tt>Run&nbsp;the&nbsp;application&nbsp;in&nbsp;the&nbsp;way&nbsp;specified&nbsp;by&nbsp;the&nbsp;options.<br>
 &nbsp;<br>
 Returns&nbsp;False&nbsp;if&nbsp;nothing&nbsp;can&nbsp;be&nbsp;done,&nbsp;None&nbsp;if&nbsp;there&nbsp;was&nbsp;an&nbsp;error,<br>
-otherwise&nbsp;the&nbsp;process&nbsp;<a href="__builtin__.html#object">object</a>&nbsp;returned&nbsp;by&nbsp;Popen().<br>
+otherwise&nbsp;the&nbsp;process&nbsp;<a href="builtins.html#object">object</a>&nbsp;returned&nbsp;by&nbsp;Popen().<br>
 &nbsp;<br>
 This&nbsp;function&nbsp;tries&nbsp;to&nbsp;find&nbsp;an&nbsp;action&nbsp;if&nbsp;none&nbsp;is&nbsp;defined.</tt></dd></dl>
 
-<dl><dt><a name="Runner-__init__"><strong>__init__</strong></a>(self, ui<font color="#909090">=None</font>, logfunc<font color="#909090">=None</font>, apps<font color="#909090">=None</font>, fm<font color="#909090">=None</font>)</dt></dl>
+<dl><dt><a name="Runner-__init__"><strong>__init__</strong></a>(self, ui<font color="#909090">=None</font>, logfunc<font color="#909090">=None</font>, fm<font color="#909090">=None</font>)</dt></dl>
 
 <hr>
 Data descriptors defined here:<br>
@@ -132,6 +132,6 @@ Data descriptors defined here:<br>
 <font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
     
 <tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><strong>ALLOWED_FLAGS</strong> = 'sdpwcrtSDPWCRT'<br>
+<td width="100%"><strong>ALLOWED_FLAGS</strong> = 'cfrtCFRT'<br>
 <strong>PIPE</strong> = -1</td></tr></table>
 </body></html>

@@ -1,6 +1,6 @@
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html><head><title>Python: module ranger.gui.ui</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head><body bgcolor="#f0f0f8">
 
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
@@ -9,20 +9,8 @@
 <font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong><a href="ranger.html"><font color="#ffffff">ranger</font></a>.<a href="ranger.gui.html"><font color="#ffffff">gui</font></a>.ui</strong></big></big></font></td
 ><td align=right valign=bottom
 ><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:../../ranger/gui/ui.py">../../ranger/gui/ui.py</a></font></td></tr></table>
-    <p><tt>#&nbsp;Copyright&nbsp;(C)&nbsp;2009,&nbsp;2010,&nbsp;2011&nbsp;&nbsp;Roman&nbsp;Zimbelmann&nbsp;&lt;romanz@lavabit.com&gt;<br>
-#<br>
-#&nbsp;This&nbsp;program&nbsp;is&nbsp;free&nbsp;software:&nbsp;you&nbsp;can&nbsp;redistribute&nbsp;it&nbsp;and/or&nbsp;modify<br>
-#&nbsp;it&nbsp;under&nbsp;the&nbsp;terms&nbsp;of&nbsp;the&nbsp;GNU&nbsp;General&nbsp;Public&nbsp;License&nbsp;as&nbsp;published&nbsp;by<br>
-#&nbsp;the&nbsp;Free&nbsp;Software&nbsp;Foundation,&nbsp;either&nbsp;version&nbsp;3&nbsp;of&nbsp;the&nbsp;License,&nbsp;or<br>
-#&nbsp;(at&nbsp;your&nbsp;option)&nbsp;any&nbsp;later&nbsp;version.<br>
-#<br>
-#&nbsp;This&nbsp;program&nbsp;is&nbsp;distributed&nbsp;in&nbsp;the&nbsp;hope&nbsp;that&nbsp;it&nbsp;will&nbsp;be&nbsp;useful,<br>
-#&nbsp;but&nbsp;WITHOUT&nbsp;ANY&nbsp;WARRANTY;&nbsp;without&nbsp;even&nbsp;the&nbsp;implied&nbsp;warranty&nbsp;of<br>
-#&nbsp;MERCHANTABILITY&nbsp;or&nbsp;FITNESS&nbsp;FOR&nbsp;A&nbsp;PARTICULAR&nbsp;PURPOSE.&nbsp;&nbsp;See&nbsp;the<br>
-#&nbsp;GNU&nbsp;General&nbsp;Public&nbsp;License&nbsp;for&nbsp;more&nbsp;details.<br>
-#<br>
-#&nbsp;You&nbsp;should&nbsp;have&nbsp;received&nbsp;a&nbsp;copy&nbsp;of&nbsp;the&nbsp;GNU&nbsp;General&nbsp;Public&nbsp;License<br>
-#&nbsp;along&nbsp;with&nbsp;this&nbsp;program.&nbsp;&nbsp;If&nbsp;not,&nbsp;see&nbsp;&lt;<a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>&gt;.</tt></p>
+    <p><tt>#&nbsp;Copyright&nbsp;(C)&nbsp;2009-2013&nbsp;&nbsp;Roman&nbsp;Zimbelmann&nbsp;&lt;hut@lavabit.com&gt;<br>
+#&nbsp;This&nbsp;software&nbsp;is&nbsp;distributed&nbsp;under&nbsp;the&nbsp;terms&nbsp;of&nbsp;the&nbsp;GNU&nbsp;GPL&nbsp;version&nbsp;3.</tt></p>
 <p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#aa55cc">
@@ -67,8 +55,7 @@
 <dd><a href="ranger.core.shared.html#FileManagerAware">ranger.core.shared.FileManagerAware</a></dd>
 <dd><a href="ranger.gui.curses_shortcuts.html#CursesShortcuts">ranger.gui.curses_shortcuts.CursesShortcuts</a></dd>
 <dd><a href="ranger.core.shared.html#SettingsAware">ranger.core.shared.SettingsAware</a></dd>
-<dd><a href="ranger.core.shared.html#Awareness">ranger.core.shared.Awareness</a></dd>
-<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
 </dl>
 <hr>
 Methods defined here:<br>
@@ -120,6 +107,8 @@ Methods defined here:<br>
 
 <dl><dt><a name="UI-setup"><strong>setup</strong></a>(self)</dt><dd><tt>Build&nbsp;up&nbsp;the&nbsp;<a href="#UI">UI</a>&nbsp;by&nbsp;initializing&nbsp;widgets.</tt></dd></dl>
 
+<dl><dt><a name="UI-setup_curses"><strong>setup_curses</strong></a>(self)</dt></dl>
+
 <dl><dt><a name="UI-suspend"><strong>suspend</strong></a>(self)</dt><dd><tt>Turn&nbsp;off&nbsp;curses</tt></dd></dl>
 
 <dl><dt><a name="UI-throbber"><strong>throbber</strong></a>(self, string<font color="#909090">='.'</font>, remove<font color="#909090">=False</font>)</dt></dl>
@@ -133,6 +122,8 @@ Data and other attributes defined here:<br>
 <dl><dt><strong>is_set_up</strong> = False</dl>
 
 <dl><dt><strong>load_mode</strong> = False</dl>
+
+<dl><dt><strong>termsize</strong> = None</dl>
 
 <hr>
 Methods inherited from <a href="ranger.gui.displayable.html#DisplayableContainer">ranger.gui.displayable.DisplayableContainer</a>:<br>
@@ -148,15 +139,17 @@ Methods inherited from <a href="ranger.gui.displayable.html#DisplayableContainer
 Methods inherited from <a href="ranger.gui.displayable.html#Displayable">ranger.gui.displayable.Displayable</a>:<br>
 <dl><dt><a name="UI-__bool__"><strong>__bool__</strong></a> = __nonzero__(self)</dt><dd><tt>Always&nbsp;True</tt></dd></dl>
 
-<dl><dt><a name="UI-__contains__"><strong>__contains__</strong></a>(self, item)</dt><dd><tt>Is&nbsp;item&nbsp;inside&nbsp;the&nbsp;boundaries?<br>
+<dl><dt><a name="UI-__contains__"><strong>__contains__</strong></a>(self, item)</dt><dd><tt>Checks&nbsp;if&nbsp;item&nbsp;is&nbsp;inside&nbsp;the&nbsp;boundaries.<br>
+&nbsp;<br>
 item&nbsp;can&nbsp;be&nbsp;an&nbsp;iterable&nbsp;like&nbsp;[y,&nbsp;x]&nbsp;or&nbsp;an&nbsp;object&nbsp;with&nbsp;x&nbsp;and&nbsp;y&nbsp;methods.</tt></dd></dl>
 
 <dl><dt><a name="UI-__nonzero__"><strong>__nonzero__</strong></a>(self)</dt><dd><tt>Always&nbsp;True</tt></dd></dl>
 
 <dl><dt><a name="UI-__str__"><strong>__str__</strong></a>(self)</dt></dl>
 
-<dl><dt><a name="UI-contains_point"><strong>contains_point</strong></a>(self, y, x)</dt><dd><tt>Test&nbsp;whether&nbsp;the&nbsp;point&nbsp;(with&nbsp;absolute&nbsp;coordinates)&nbsp;lies<br>
-within&nbsp;the&nbsp;boundaries&nbsp;of&nbsp;this&nbsp;object.</tt></dd></dl>
+<dl><dt><a name="UI-contains_point"><strong>contains_point</strong></a>(self, y, x)</dt><dd><tt>Test&nbsp;whether&nbsp;the&nbsp;point&nbsp;lies&nbsp;inside&nbsp;this&nbsp;object.<br>
+&nbsp;<br>
+x&nbsp;and&nbsp;y&nbsp;should&nbsp;be&nbsp;absolute&nbsp;coordinates.</tt></dd></dl>
 
 <dl><dt><a name="UI-resize"><strong>resize</strong></a>(self, y, x, hei<font color="#909090">=None</font>, wid<font color="#909090">=None</font>)</dt><dd><tt>Resize&nbsp;the&nbsp;widget</tt></dd></dl>
 
@@ -164,8 +157,13 @@ within&nbsp;the&nbsp;boundaries&nbsp;of&nbsp;this&nbsp;object.</tt></dd></dl>
 Methods inherited from <a href="ranger.core.shared.html#EnvironmentAware">ranger.core.shared.EnvironmentAware</a>:<br>
 <strong>env</strong> = None
 <hr>
-Methods inherited from <a href="ranger.core.shared.html#FileManagerAware">ranger.core.shared.FileManagerAware</a>:<br>
-<strong>fm</strong> = None
+Data descriptors inherited from <a href="ranger.core.shared.html#EnvironmentAware">ranger.core.shared.EnvironmentAware</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
 <hr>
 Methods inherited from <a href="ranger.gui.curses_shortcuts.html#CursesShortcuts">ranger.gui.curses_shortcuts.CursesShortcuts</a>:<br>
 <dl><dt><a name="UI-addch"><strong>addch</strong></a>(self, *args)</dt></dl>
@@ -182,17 +180,6 @@ Methods inherited from <a href="ranger.gui.curses_shortcuts.html#CursesShortcuts
 
 <dl><dt><a name="UI-set_fg_bg_attr"><strong>set_fg_bg_attr</strong></a>(self, fg, bg, attr)</dt></dl>
 
-<hr>
-Methods inherited from <a href="ranger.core.shared.html#SettingsAware">ranger.core.shared.SettingsAware</a>:<br>
-<strong>settings</strong> = None
-<hr>
-Data descriptors inherited from <a href="ranger.core.shared.html#Awareness">ranger.core.shared.Awareness</a>:<br>
-<dl><dt><strong>__dict__</strong></dt>
-<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
-</dl>
-<dl><dt><strong>__weakref__</strong></dt>
-<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
-</dl>
 </td></tr></table></td></tr></table><p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#eeaa77">
@@ -209,6 +196,5 @@ Data descriptors inherited from <a href="ranger.core.shared.html#Awareness">rang
     
 <tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
 <td width="100%"><strong>ALT_KEY</strong> = 9003<br>
-<strong>MOUSEMASK</strong> = 268435455<br>
-<strong>TERMINALS_WITH_TITLE</strong> = ('xterm', 'xterm-256color', 'rxvt', 'rxvt-256color', 'rxvt-unicode', 'rxvt-unicode-256color', 'aterm', 'Eterm', 'screen', 'screen-256color')</td></tr></table>
+<strong>MOUSEMASK</strong> = 268435455</td></tr></table>
 </body></html>

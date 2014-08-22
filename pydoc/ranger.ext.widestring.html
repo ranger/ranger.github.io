@@ -1,6 +1,6 @@
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html><head><title>Python: module ranger.ext.widestring</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head><body bgcolor="#f0f0f8">
 
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
@@ -10,20 +10,8 @@
 ><td align=right valign=bottom
 ><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:../../ranger/ext/widestring.py">../../ranger/ext/widestring.py</a></font></td></tr></table>
     <p><tt>#&nbsp;-*-&nbsp;encoding:&nbsp;utf8&nbsp;-*-<br>
-#&nbsp;Copyright&nbsp;(C)&nbsp;2009,&nbsp;2010,&nbsp;2011&nbsp;&nbsp;Roman&nbsp;Zimbelmann&nbsp;&lt;romanz@lavabit.com&gt;<br>
-#<br>
-#&nbsp;This&nbsp;program&nbsp;is&nbsp;free&nbsp;software:&nbsp;you&nbsp;can&nbsp;redistribute&nbsp;it&nbsp;and/or&nbsp;modify<br>
-#&nbsp;it&nbsp;under&nbsp;the&nbsp;terms&nbsp;of&nbsp;the&nbsp;GNU&nbsp;General&nbsp;Public&nbsp;License&nbsp;as&nbsp;published&nbsp;by<br>
-#&nbsp;the&nbsp;Free&nbsp;Software&nbsp;Foundation,&nbsp;either&nbsp;version&nbsp;3&nbsp;of&nbsp;the&nbsp;License,&nbsp;or<br>
-#&nbsp;(at&nbsp;your&nbsp;option)&nbsp;any&nbsp;later&nbsp;version.<br>
-#<br>
-#&nbsp;This&nbsp;program&nbsp;is&nbsp;distributed&nbsp;in&nbsp;the&nbsp;hope&nbsp;that&nbsp;it&nbsp;will&nbsp;be&nbsp;useful,<br>
-#&nbsp;but&nbsp;WITHOUT&nbsp;ANY&nbsp;WARRANTY;&nbsp;without&nbsp;even&nbsp;the&nbsp;implied&nbsp;warranty&nbsp;of<br>
-#&nbsp;MERCHANTABILITY&nbsp;or&nbsp;FITNESS&nbsp;FOR&nbsp;A&nbsp;PARTICULAR&nbsp;PURPOSE.&nbsp;&nbsp;See&nbsp;the<br>
-#&nbsp;GNU&nbsp;General&nbsp;Public&nbsp;License&nbsp;for&nbsp;more&nbsp;details.<br>
-#<br>
-#&nbsp;You&nbsp;should&nbsp;have&nbsp;received&nbsp;a&nbsp;copy&nbsp;of&nbsp;the&nbsp;GNU&nbsp;General&nbsp;Public&nbsp;License<br>
-#&nbsp;along&nbsp;with&nbsp;this&nbsp;program.&nbsp;&nbsp;If&nbsp;not,&nbsp;see&nbsp;&lt;<a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>&gt;.</tt></p>
+#&nbsp;Copyright&nbsp;(C)&nbsp;2009-2013&nbsp;&nbsp;Roman&nbsp;Zimbelmann&nbsp;&lt;hut@lavabit.com&gt;<br>
+#&nbsp;This&nbsp;software&nbsp;is&nbsp;distributed&nbsp;under&nbsp;the&nbsp;terms&nbsp;of&nbsp;the&nbsp;GNU&nbsp;GPL&nbsp;version&nbsp;3.</tt></p>
 <p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#aa55cc">
@@ -40,7 +28,7 @@
     
 <tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
 <td width="100%"><dl>
-<dt><font face="helvetica, arial"><a href="__builtin__.html#object">__builtin__.object</a>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
 </font></dt><dd>
 <dl>
 <dt><font face="helvetica, arial"><a href="ranger.ext.widestring.html#WideString">WideString</a>
@@ -51,7 +39,7 @@
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#ffc8d8">
 <td colspan=3 valign=bottom>&nbsp;<br>
-<font color="#000000" face="helvetica, arial"><a name="WideString">class <strong>WideString</strong></a>(<a href="__builtin__.html#object">__builtin__.object</a>)</font></td></tr>
+<font color="#000000" face="helvetica, arial"><a name="WideString">class <strong>WideString</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
     
 <tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
 <td width="100%">Methods defined here:<br>
@@ -71,6 +59,8 @@
 
 <dl><dt><a name="WideString-__getslice__"><strong>__getslice__</strong></a>(self, a, z)</dt><dd><tt>&gt;&gt;&gt;&nbsp;<a href="#WideString">WideString</a>("asdf")[1:3]<br>
 &lt;<a href="#WideString">WideString</a>&nbsp;'sd'&gt;<br>
+&gt;&gt;&gt;&nbsp;<a href="#WideString">WideString</a>("asdf")[1:-100]<br>
+&lt;<a href="#WideString">WideString</a>&nbsp;''&gt;<br>
 &gt;&gt;&gt;&nbsp;<a href="#WideString">WideString</a>("モヒカン")[2:4]<br>
 &lt;<a href="#WideString">WideString</a>&nbsp;'ヒ'&gt;<br>
 &gt;&gt;&gt;&nbsp;<a href="#WideString">WideString</a>("モヒカン")[2:5]<br>
@@ -133,7 +123,7 @@ unichr&nbsp;as&nbsp;string.</tt></dd></dl>
 <tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
 <td width="100%"><strong>ASCIIONLY</strong> = set(['<font color="#c040c0">\x01</font>', '<font color="#c040c0">\x02</font>', '<font color="#c040c0">\x03</font>', '<font color="#c040c0">\x04</font>', '<font color="#c040c0">\x05</font>', '<font color="#c040c0">\x06</font>', ...])<br>
 <strong>NARROW</strong> = 1<br>
-<strong>PY3</strong> = False<br>
+<strong>PY3</strong> = True<br>
 <strong>WIDE</strong> = 2<br>
 <strong>WIDE_SYMBOLS</strong> = set(['F', 'W'])</td></tr></table>
 </body></html>

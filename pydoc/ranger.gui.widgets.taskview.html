@@ -1,6 +1,6 @@
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html><head><title>Python: module ranger.gui.widgets.taskview</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head><body bgcolor="#f0f0f8">
 
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
@@ -18,7 +18,7 @@
     
 <tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
 <td width="100%"><dl>
-<dt><font face="helvetica, arial"><a href="ranger.ext.accumulator.html#Accumulator">ranger.ext.accumulator.Accumulator</a>(<a href="__builtin__.html#object">__builtin__.object</a>)
+<dt><font face="helvetica, arial"><a href="ranger.ext.accumulator.html#Accumulator">ranger.ext.accumulator.Accumulator</a>(<a href="builtins.html#object">builtins.object</a>)
 </font></dt><dd>
 <dl>
 <dt><font face="helvetica, arial"><a href="ranger.gui.widgets.taskview.html#TaskView">TaskView</a>(<a href="ranger.gui.widgets.html#Widget">ranger.gui.widgets.Widget</a>, <a href="ranger.ext.accumulator.html#Accumulator">ranger.ext.accumulator.Accumulator</a>)
@@ -46,9 +46,8 @@
 <dd><a href="ranger.core.shared.html#FileManagerAware">ranger.core.shared.FileManagerAware</a></dd>
 <dd><a href="ranger.gui.curses_shortcuts.html#CursesShortcuts">ranger.gui.curses_shortcuts.CursesShortcuts</a></dd>
 <dd><a href="ranger.core.shared.html#SettingsAware">ranger.core.shared.SettingsAware</a></dd>
-<dd><a href="ranger.core.shared.html#Awareness">ranger.core.shared.Awareness</a></dd>
 <dd><a href="ranger.ext.accumulator.html#Accumulator">ranger.ext.accumulator.Accumulator</a></dd>
-<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
 </dl>
 <hr>
 Methods defined here:<br>
@@ -71,10 +70,17 @@ Data and other attributes defined here:<br>
 <dl><dt><strong>old_lst</strong> = None</dl>
 
 <hr>
+Data and other attributes inherited from <a href="ranger.gui.widgets.html#Widget">ranger.gui.widgets.Widget</a>:<br>
+<dl><dt><strong>vcsfilestatus_symb</strong> = {'changed': ('*', ['vcschanged']), 'conflict': ('X', ['vcsconflict']), 'deleted': ('-', ['vcschanged']), 'ignored': ('·', ['vcsignored']), 'none': (' ', []), 'staged': ('*', ['vcsstaged']), 'sync': ('√', ['vcssync']), 'unknown': ('?', ['vcsunknown']), 'untracked': ('+', ['vcschanged'])}</dl>
+
+<dl><dt><strong>vcsremotestatus_symb</strong> = {'ahead': ('&gt;', ['vcsahead']), 'behind': ('&lt;', ['vcsbehind']), 'diverged': ('Y', ['vcsdiverged']), 'none': (' ', []), 'sync': ('=', ['vcssync']), 'unknown': ('?', ['vcsunknown'])}</dl>
+
+<hr>
 Methods inherited from <a href="ranger.gui.displayable.html#Displayable">ranger.gui.displayable.Displayable</a>:<br>
 <dl><dt><a name="TaskView-__bool__"><strong>__bool__</strong></a> = __nonzero__(self)</dt><dd><tt>Always&nbsp;True</tt></dd></dl>
 
-<dl><dt><a name="TaskView-__contains__"><strong>__contains__</strong></a>(self, item)</dt><dd><tt>Is&nbsp;item&nbsp;inside&nbsp;the&nbsp;boundaries?<br>
+<dl><dt><a name="TaskView-__contains__"><strong>__contains__</strong></a>(self, item)</dt><dd><tt>Checks&nbsp;if&nbsp;item&nbsp;is&nbsp;inside&nbsp;the&nbsp;boundaries.<br>
+&nbsp;<br>
 item&nbsp;can&nbsp;be&nbsp;an&nbsp;iterable&nbsp;like&nbsp;[y,&nbsp;x]&nbsp;or&nbsp;an&nbsp;object&nbsp;with&nbsp;x&nbsp;and&nbsp;y&nbsp;methods.</tt></dd></dl>
 
 <dl><dt><a name="TaskView-__nonzero__"><strong>__nonzero__</strong></a>(self)</dt><dd><tt>Always&nbsp;True</tt></dd></dl>
@@ -82,12 +88,15 @@ item&nbsp;can&nbsp;be&nbsp;an&nbsp;iterable&nbsp;like&nbsp;[y,&nbsp;x]&nbsp;or&n
 <dl><dt><a name="TaskView-__str__"><strong>__str__</strong></a>(self)</dt></dl>
 
 <dl><dt><a name="TaskView-click"><strong>click</strong></a>(self, event)</dt><dd><tt>Called&nbsp;when&nbsp;a&nbsp;mouse&nbsp;key&nbsp;is&nbsp;pressed&nbsp;and&nbsp;self.<strong>focused</strong>&nbsp;is&nbsp;True.<br>
+&nbsp;<br>
 Override&nbsp;this!</tt></dd></dl>
 
-<dl><dt><a name="TaskView-contains_point"><strong>contains_point</strong></a>(self, y, x)</dt><dd><tt>Test&nbsp;whether&nbsp;the&nbsp;point&nbsp;(with&nbsp;absolute&nbsp;coordinates)&nbsp;lies<br>
-within&nbsp;the&nbsp;boundaries&nbsp;of&nbsp;this&nbsp;object.</tt></dd></dl>
+<dl><dt><a name="TaskView-contains_point"><strong>contains_point</strong></a>(self, y, x)</dt><dd><tt>Test&nbsp;whether&nbsp;the&nbsp;point&nbsp;lies&nbsp;inside&nbsp;this&nbsp;object.<br>
+&nbsp;<br>
+x&nbsp;and&nbsp;y&nbsp;should&nbsp;be&nbsp;absolute&nbsp;coordinates.</tt></dd></dl>
 
 <dl><dt><a name="TaskView-destroy"><strong>destroy</strong></a>(self)</dt><dd><tt>Called&nbsp;when&nbsp;the&nbsp;object&nbsp;is&nbsp;destroyed.<br>
+&nbsp;<br>
 Override&nbsp;this!</tt></dd></dl>
 
 <dl><dt><a name="TaskView-poke"><strong>poke</strong></a>(self)</dt><dd><tt>Called&nbsp;before&nbsp;drawing,&nbsp;even&nbsp;if&nbsp;invisible</tt></dd></dl>
@@ -98,8 +107,13 @@ Override&nbsp;this!</tt></dd></dl>
 Methods inherited from <a href="ranger.core.shared.html#EnvironmentAware">ranger.core.shared.EnvironmentAware</a>:<br>
 <strong>env</strong> = None
 <hr>
-Methods inherited from <a href="ranger.core.shared.html#FileManagerAware">ranger.core.shared.FileManagerAware</a>:<br>
-<strong>fm</strong> = None
+Data descriptors inherited from <a href="ranger.core.shared.html#EnvironmentAware">ranger.core.shared.EnvironmentAware</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
 <hr>
 Methods inherited from <a href="ranger.gui.curses_shortcuts.html#CursesShortcuts">ranger.gui.curses_shortcuts.CursesShortcuts</a>:<br>
 <dl><dt><a name="TaskView-addch"><strong>addch</strong></a>(self, *args)</dt></dl>
@@ -116,17 +130,6 @@ Methods inherited from <a href="ranger.gui.curses_shortcuts.html#CursesShortcuts
 
 <dl><dt><a name="TaskView-set_fg_bg_attr"><strong>set_fg_bg_attr</strong></a>(self, fg, bg, attr)</dt></dl>
 
-<hr>
-Methods inherited from <a href="ranger.core.shared.html#SettingsAware">ranger.core.shared.SettingsAware</a>:<br>
-<strong>settings</strong> = None
-<hr>
-Data descriptors inherited from <a href="ranger.core.shared.html#Awareness">ranger.core.shared.Awareness</a>:<br>
-<dl><dt><strong>__dict__</strong></dt>
-<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
-</dl>
-<dl><dt><strong>__weakref__</strong></dt>
-<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
-</dl>
 <hr>
 Methods inherited from <a href="ranger.ext.accumulator.html#Accumulator">ranger.ext.accumulator.Accumulator</a>:<br>
 <dl><dt><a name="TaskView-correct_pointer"><strong>correct_pointer</strong></a>(self)</dt><dd><tt>#&nbsp;XXX&nbsp;Is&nbsp;this&nbsp;still&nbsp;necessary?&nbsp;&nbsp;<a href="#TaskView-move">move</a>()&nbsp;ensures&nbsp;correct&nbsp;pointer&nbsp;position</tt></dd></dl>

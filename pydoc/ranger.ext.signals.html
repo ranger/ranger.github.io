@@ -1,6 +1,6 @@
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html><head><title>Python: module ranger.ext.signals</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head><body bgcolor="#f0f0f8">
 
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
@@ -27,9 +27,9 @@ signal_garbage_collect().<br>
 &nbsp;<br>
 &gt;&gt;&gt;&nbsp;def&nbsp;test_function(signal):<br>
 ...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;'display'&nbsp;in&nbsp;signal:<br>
-...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(signal.display)<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(signal.display)<br>
 ...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<br>
-...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;signal.stop()<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;signal.stop()<br>
 &gt;&gt;&gt;&nbsp;def&nbsp;temporary_function():<br>
 ...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("A&nbsp;temporary&nbsp;function")<br>
 &nbsp;<br>
@@ -79,25 +79,25 @@ True</tt></p>
     
 <tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
 <td width="100%"><dl>
-<dt><font face="helvetica, arial"><a href="__builtin__.html#dict">__builtin__.dict</a>(<a href="__builtin__.html#object">__builtin__.object</a>)
+<dt><font face="helvetica, arial"><a href="builtins.html#dict">builtins.dict</a>(<a href="builtins.html#object">builtins.object</a>)
 </font></dt><dd>
 <dl>
 <dt><font face="helvetica, arial"><a href="ranger.ext.signals.html#Signal">Signal</a>
 </font></dt></dl>
 </dd>
-<dt><font face="helvetica, arial"><a href="__builtin__.html#object">__builtin__.object</a>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
 </font></dt><dd>
 <dl>
 <dt><font face="helvetica, arial"><a href="ranger.ext.signals.html#SignalDispatcher">SignalDispatcher</a>
+</font></dt><dt><font face="helvetica, arial"><a href="ranger.ext.signals.html#SignalHandler">SignalHandler</a>
 </font></dt></dl>
 </dd>
-<dt><font face="helvetica, arial"><a href="ranger.ext.signals.html#SignalHandler">SignalHandler</a>
-</font></dt></dl>
+</dl>
  <p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#ffc8d8">
 <td colspan=3 valign=bottom>&nbsp;<br>
-<font color="#000000" face="helvetica, arial"><a name="Signal">class <strong>Signal</strong></a>(<a href="__builtin__.html#dict">__builtin__.dict</a>)</font></td></tr>
+<font color="#000000" face="helvetica, arial"><a name="Signal">class <strong>Signal</strong></a>(<a href="builtins.html#dict">builtins.dict</a>)</font></td></tr>
     
 <tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
 <td colspan=2><tt>Signals&nbsp;are&nbsp;passed&nbsp;to&nbsp;the&nbsp;bound&nbsp;functions&nbsp;as&nbsp;an&nbsp;argument.<br>
@@ -105,14 +105,14 @@ True</tt></p>
 They&nbsp;contain&nbsp;the&nbsp;attributes&nbsp;"origin",&nbsp;which&nbsp;is&nbsp;a&nbsp;reference&nbsp;to&nbsp;the<br>
 signal&nbsp;dispatcher,&nbsp;and&nbsp;"name",&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;signal&nbsp;that&nbsp;was&nbsp;emitted.<br>
 You&nbsp;can&nbsp;call&nbsp;signal_emit&nbsp;with&nbsp;any&nbsp;keyword&nbsp;arguments,&nbsp;which&nbsp;will&nbsp;be<br>
-turned&nbsp;into&nbsp;attributes&nbsp;of&nbsp;this&nbsp;<a href="__builtin__.html#object">object</a>&nbsp;as&nbsp;well.<br>
+turned&nbsp;into&nbsp;attributes&nbsp;of&nbsp;this&nbsp;<a href="builtins.html#object">object</a>&nbsp;as&nbsp;well.<br>
 &nbsp;<br>
 To&nbsp;delete&nbsp;a&nbsp;signal&nbsp;handler&nbsp;from&nbsp;inside&nbsp;a&nbsp;signal,&nbsp;raise&nbsp;a&nbsp;ReferenceError.<br>&nbsp;</tt></td></tr>
 <tr><td>&nbsp;</td>
 <td width="100%"><dl><dt>Method resolution order:</dt>
 <dd><a href="ranger.ext.signals.html#Signal">Signal</a></dd>
-<dd><a href="__builtin__.html#dict">__builtin__.dict</a></dd>
-<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+<dd><a href="builtins.html#dict">builtins.dict</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
 </dl>
 <hr>
 Methods defined here:<br>
@@ -133,9 +133,7 @@ Data and other attributes defined here:<br>
 <dl><dt><strong>stopped</strong> = False</dl>
 
 <hr>
-Methods inherited from <a href="__builtin__.html#dict">__builtin__.dict</a>:<br>
-<dl><dt><a name="Signal-__cmp__"><strong>__cmp__</strong></a>(...)</dt><dd><tt>x.<a href="#Signal-__cmp__">__cmp__</a>(y)&nbsp;&lt;==&gt;&nbsp;cmp(x,y)</tt></dd></dl>
-
+Methods inherited from <a href="builtins.html#dict">builtins.dict</a>:<br>
 <dl><dt><a name="Signal-__contains__"><strong>__contains__</strong></a>(...)</dt><dd><tt>D.<a href="#Signal-__contains__">__contains__</a>(k)&nbsp;-&gt;&nbsp;True&nbsp;if&nbsp;D&nbsp;has&nbsp;a&nbsp;key&nbsp;k,&nbsp;else&nbsp;False</tt></dd></dl>
 
 <dl><dt><a name="Signal-__delitem__"><strong>__delitem__</strong></a>(...)</dt><dd><tt>x.<a href="#Signal-__delitem__">__delitem__</a>(y)&nbsp;&lt;==&gt;&nbsp;del&nbsp;x[y]</tt></dd></dl>
@@ -170,22 +168,14 @@ Methods inherited from <a href="__builtin__.html#dict">__builtin__.dict</a>:<br>
 
 <dl><dt><a name="Signal-copy"><strong>copy</strong></a>(...)</dt><dd><tt>D.<a href="#Signal-copy">copy</a>()&nbsp;-&gt;&nbsp;a&nbsp;shallow&nbsp;copy&nbsp;of&nbsp;D</tt></dd></dl>
 
-<dl><dt><a name="Signal-fromkeys"><strong>fromkeys</strong></a>(...)</dt><dd><tt><a href="__builtin__.html#dict">dict</a>.<a href="#Signal-fromkeys">fromkeys</a>(S[,v])&nbsp;-&gt;&nbsp;New&nbsp;<a href="__builtin__.html#dict">dict</a>&nbsp;with&nbsp;keys&nbsp;from&nbsp;S&nbsp;and&nbsp;values&nbsp;equal&nbsp;to&nbsp;v.<br>
+<dl><dt><a name="Signal-fromkeys"><strong>fromkeys</strong></a>(...)</dt><dd><tt><a href="builtins.html#dict">dict</a>.<a href="#Signal-fromkeys">fromkeys</a>(S[,v])&nbsp;-&gt;&nbsp;New&nbsp;<a href="builtins.html#dict">dict</a>&nbsp;with&nbsp;keys&nbsp;from&nbsp;S&nbsp;and&nbsp;values&nbsp;equal&nbsp;to&nbsp;v.<br>
 v&nbsp;defaults&nbsp;to&nbsp;None.</tt></dd></dl>
 
 <dl><dt><a name="Signal-get"><strong>get</strong></a>(...)</dt><dd><tt>D.<a href="#Signal-get">get</a>(k[,d])&nbsp;-&gt;&nbsp;D[k]&nbsp;if&nbsp;k&nbsp;in&nbsp;D,&nbsp;else&nbsp;d.&nbsp;&nbsp;d&nbsp;defaults&nbsp;to&nbsp;None.</tt></dd></dl>
 
-<dl><dt><a name="Signal-has_key"><strong>has_key</strong></a>(...)</dt><dd><tt>D.<a href="#Signal-has_key">has_key</a>(k)&nbsp;-&gt;&nbsp;True&nbsp;if&nbsp;D&nbsp;has&nbsp;a&nbsp;key&nbsp;k,&nbsp;else&nbsp;False</tt></dd></dl>
+<dl><dt><a name="Signal-items"><strong>items</strong></a>(...)</dt><dd><tt>D.<a href="#Signal-items">items</a>()&nbsp;-&gt;&nbsp;a&nbsp;set-like&nbsp;<a href="builtins.html#object">object</a>&nbsp;providing&nbsp;a&nbsp;view&nbsp;on&nbsp;D's&nbsp;items</tt></dd></dl>
 
-<dl><dt><a name="Signal-items"><strong>items</strong></a>(...)</dt><dd><tt>D.<a href="#Signal-items">items</a>()&nbsp;-&gt;&nbsp;list&nbsp;of&nbsp;D's&nbsp;(key,&nbsp;value)&nbsp;pairs,&nbsp;as&nbsp;2-tuples</tt></dd></dl>
-
-<dl><dt><a name="Signal-iteritems"><strong>iteritems</strong></a>(...)</dt><dd><tt>D.<a href="#Signal-iteritems">iteritems</a>()&nbsp;-&gt;&nbsp;an&nbsp;iterator&nbsp;over&nbsp;the&nbsp;(key,&nbsp;value)&nbsp;items&nbsp;of&nbsp;D</tt></dd></dl>
-
-<dl><dt><a name="Signal-iterkeys"><strong>iterkeys</strong></a>(...)</dt><dd><tt>D.<a href="#Signal-iterkeys">iterkeys</a>()&nbsp;-&gt;&nbsp;an&nbsp;iterator&nbsp;over&nbsp;the&nbsp;keys&nbsp;of&nbsp;D</tt></dd></dl>
-
-<dl><dt><a name="Signal-itervalues"><strong>itervalues</strong></a>(...)</dt><dd><tt>D.<a href="#Signal-itervalues">itervalues</a>()&nbsp;-&gt;&nbsp;an&nbsp;iterator&nbsp;over&nbsp;the&nbsp;values&nbsp;of&nbsp;D</tt></dd></dl>
-
-<dl><dt><a name="Signal-keys"><strong>keys</strong></a>(...)</dt><dd><tt>D.<a href="#Signal-keys">keys</a>()&nbsp;-&gt;&nbsp;list&nbsp;of&nbsp;D's&nbsp;keys</tt></dd></dl>
+<dl><dt><a name="Signal-keys"><strong>keys</strong></a>(...)</dt><dd><tt>D.<a href="#Signal-keys">keys</a>()&nbsp;-&gt;&nbsp;a&nbsp;set-like&nbsp;<a href="builtins.html#object">object</a>&nbsp;providing&nbsp;a&nbsp;view&nbsp;on&nbsp;D's&nbsp;keys</tt></dd></dl>
 
 <dl><dt><a name="Signal-pop"><strong>pop</strong></a>(...)</dt><dd><tt>D.<a href="#Signal-pop">pop</a>(k[,d])&nbsp;-&gt;&nbsp;v,&nbsp;remove&nbsp;specified&nbsp;key&nbsp;and&nbsp;return&nbsp;the&nbsp;corresponding&nbsp;value.<br>
 If&nbsp;key&nbsp;is&nbsp;not&nbsp;found,&nbsp;d&nbsp;is&nbsp;returned&nbsp;if&nbsp;given,&nbsp;otherwise&nbsp;KeyError&nbsp;is&nbsp;raised</tt></dd></dl>
@@ -195,30 +185,24 @@ If&nbsp;key&nbsp;is&nbsp;not&nbsp;found,&nbsp;d&nbsp;is&nbsp;returned&nbsp;if&nb
 
 <dl><dt><a name="Signal-setdefault"><strong>setdefault</strong></a>(...)</dt><dd><tt>D.<a href="#Signal-setdefault">setdefault</a>(k[,d])&nbsp;-&gt;&nbsp;D.<a href="#Signal-get">get</a>(k,d),&nbsp;also&nbsp;set&nbsp;D[k]=d&nbsp;if&nbsp;k&nbsp;not&nbsp;in&nbsp;D</tt></dd></dl>
 
-<dl><dt><a name="Signal-update"><strong>update</strong></a>(...)</dt><dd><tt>D.<a href="#Signal-update">update</a>([E,&nbsp;]**F)&nbsp;-&gt;&nbsp;None.&nbsp;&nbsp;Update&nbsp;D&nbsp;from&nbsp;<a href="__builtin__.html#dict">dict</a>/iterable&nbsp;E&nbsp;and&nbsp;F.<br>
+<dl><dt><a name="Signal-update"><strong>update</strong></a>(...)</dt><dd><tt>D.<a href="#Signal-update">update</a>([E,&nbsp;]**F)&nbsp;-&gt;&nbsp;None.&nbsp;&nbsp;Update&nbsp;D&nbsp;from&nbsp;<a href="builtins.html#dict">dict</a>/iterable&nbsp;E&nbsp;and&nbsp;F.<br>
 If&nbsp;E&nbsp;present&nbsp;and&nbsp;has&nbsp;a&nbsp;.<a href="#Signal-keys">keys</a>()&nbsp;method,&nbsp;does:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;k&nbsp;in&nbsp;E:&nbsp;D[k]&nbsp;=&nbsp;E[k]<br>
 If&nbsp;E&nbsp;present&nbsp;and&nbsp;lacks&nbsp;.<a href="#Signal-keys">keys</a>()&nbsp;method,&nbsp;does:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(k,&nbsp;v)&nbsp;in&nbsp;E:&nbsp;D[k]&nbsp;=&nbsp;v<br>
 In&nbsp;either&nbsp;case,&nbsp;this&nbsp;is&nbsp;followed&nbsp;by:&nbsp;for&nbsp;k&nbsp;in&nbsp;F:&nbsp;D[k]&nbsp;=&nbsp;F[k]</tt></dd></dl>
 
-<dl><dt><a name="Signal-values"><strong>values</strong></a>(...)</dt><dd><tt>D.<a href="#Signal-values">values</a>()&nbsp;-&gt;&nbsp;list&nbsp;of&nbsp;D's&nbsp;values</tt></dd></dl>
-
-<dl><dt><a name="Signal-viewitems"><strong>viewitems</strong></a>(...)</dt><dd><tt>D.<a href="#Signal-viewitems">viewitems</a>()&nbsp;-&gt;&nbsp;a&nbsp;set-like&nbsp;<a href="__builtin__.html#object">object</a>&nbsp;providing&nbsp;a&nbsp;view&nbsp;on&nbsp;D's&nbsp;items</tt></dd></dl>
-
-<dl><dt><a name="Signal-viewkeys"><strong>viewkeys</strong></a>(...)</dt><dd><tt>D.<a href="#Signal-viewkeys">viewkeys</a>()&nbsp;-&gt;&nbsp;a&nbsp;set-like&nbsp;<a href="__builtin__.html#object">object</a>&nbsp;providing&nbsp;a&nbsp;view&nbsp;on&nbsp;D's&nbsp;keys</tt></dd></dl>
-
-<dl><dt><a name="Signal-viewvalues"><strong>viewvalues</strong></a>(...)</dt><dd><tt>D.<a href="#Signal-viewvalues">viewvalues</a>()&nbsp;-&gt;&nbsp;an&nbsp;<a href="__builtin__.html#object">object</a>&nbsp;providing&nbsp;a&nbsp;view&nbsp;on&nbsp;D's&nbsp;values</tt></dd></dl>
+<dl><dt><a name="Signal-values"><strong>values</strong></a>(...)</dt><dd><tt>D.<a href="#Signal-values">values</a>()&nbsp;-&gt;&nbsp;an&nbsp;<a href="builtins.html#object">object</a>&nbsp;providing&nbsp;a&nbsp;view&nbsp;on&nbsp;D's&nbsp;values</tt></dd></dl>
 
 <hr>
-Data and other attributes inherited from <a href="__builtin__.html#dict">__builtin__.dict</a>:<br>
+Data and other attributes inherited from <a href="builtins.html#dict">builtins.dict</a>:<br>
 <dl><dt><strong>__hash__</strong> = None</dl>
 
-<dl><dt><strong>__new__</strong> = &lt;built-in method __new__ of type object&gt;<dd><tt>T.<a href="#Signal-__new__">__new__</a>(S,&nbsp;...)&nbsp;-&gt;&nbsp;a&nbsp;new&nbsp;<a href="__builtin__.html#object">object</a>&nbsp;with&nbsp;type&nbsp;S,&nbsp;a&nbsp;subtype&nbsp;of&nbsp;T</tt></dl>
+<dl><dt><strong>__new__</strong> = &lt;built-in method __new__ of type object&gt;<dd><tt>T.<a href="#Signal-__new__">__new__</a>(S,&nbsp;...)&nbsp;-&gt;&nbsp;a&nbsp;new&nbsp;<a href="builtins.html#object">object</a>&nbsp;with&nbsp;type&nbsp;S,&nbsp;a&nbsp;subtype&nbsp;of&nbsp;T</tt></dl>
 
 </td></tr></table> <p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#ffc8d8">
 <td colspan=3 valign=bottom>&nbsp;<br>
-<font color="#000000" face="helvetica, arial"><a name="SignalDispatcher">class <strong>SignalDispatcher</strong></a>(<a href="__builtin__.html#object">__builtin__.object</a>)</font></td></tr>
+<font color="#000000" face="helvetica, arial"><a name="SignalDispatcher">class <strong>SignalDispatcher</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
     
 <tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
 <td colspan=2><tt>This&nbsp;abstract&nbsp;class&nbsp;handles&nbsp;the&nbsp;binding&nbsp;and&nbsp;emitting&nbsp;of&nbsp;signals.<br>&nbsp;</tt></td></tr>
@@ -230,12 +214,12 @@ Data and other attributes inherited from <a href="__builtin__.html#dict">__built
 &nbsp;<br>
 signal_name:&nbsp;&nbsp;Any&nbsp;string&nbsp;to&nbsp;name&nbsp;the&nbsp;signal<br>
 function:&nbsp;&nbsp;Any&nbsp;function&nbsp;with&nbsp;either&nbsp;one&nbsp;or&nbsp;zero&nbsp;arguments&nbsp;which&nbsp;will&nbsp;be<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;called&nbsp;when&nbsp;the&nbsp;signal&nbsp;is&nbsp;emitted.&nbsp;&nbsp;If&nbsp;it&nbsp;takes&nbsp;one&nbsp;argument,&nbsp;a<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Signal">Signal</a>&nbsp;<a href="__builtin__.html#object">object</a>&nbsp;will&nbsp;be&nbsp;passed&nbsp;to&nbsp;it.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;called&nbsp;when&nbsp;the&nbsp;signal&nbsp;is&nbsp;emitted.&nbsp;&nbsp;If&nbsp;it&nbsp;takes&nbsp;one&nbsp;argument,&nbsp;a<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Signal">Signal</a>&nbsp;<a href="builtins.html#object">object</a>&nbsp;will&nbsp;be&nbsp;passed&nbsp;to&nbsp;it.<br>
 priority:&nbsp;&nbsp;Optional,&nbsp;any&nbsp;number.&nbsp;&nbsp;When&nbsp;signals&nbsp;are&nbsp;emitted,&nbsp;handlers&nbsp;will<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;be&nbsp;called&nbsp;in&nbsp;order&nbsp;of&nbsp;priority.&nbsp;&nbsp;(highest&nbsp;priority&nbsp;first)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;be&nbsp;called&nbsp;in&nbsp;order&nbsp;of&nbsp;priority.&nbsp;&nbsp;(highest&nbsp;priority&nbsp;first)<br>
 weak:&nbsp;&nbsp;Use&nbsp;a&nbsp;weak&nbsp;reference&nbsp;of&nbsp;"function"&nbsp;so&nbsp;it&nbsp;can&nbsp;be&nbsp;garbage&nbsp;collected<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;properly&nbsp;when&nbsp;it's&nbsp;deleted.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;properly&nbsp;when&nbsp;it's&nbsp;deleted.<br>
 &nbsp;<br>
 Returns&nbsp;a&nbsp;<a href="#SignalHandler">SignalHandler</a>&nbsp;which&nbsp;can&nbsp;be&nbsp;used&nbsp;to&nbsp;remove&nbsp;this&nbsp;binding&nbsp;by<br>
 passing&nbsp;it&nbsp;to&nbsp;<a href="#SignalDispatcher-signal_unbind">signal_unbind</a>().</tt></dd></dl>
@@ -245,7 +229,7 @@ passing&nbsp;it&nbsp;to&nbsp;<a href="#SignalDispatcher-signal_unbind">signal_un
 <dl><dt><a name="SignalDispatcher-signal_emit"><strong>signal_emit</strong></a>(self, signal_name, **kw)</dt><dd><tt>Emits&nbsp;a&nbsp;signal&nbsp;and&nbsp;call&nbsp;every&nbsp;function&nbsp;that&nbsp;was&nbsp;bound&nbsp;to&nbsp;that&nbsp;signal.<br>
 &nbsp;<br>
 You&nbsp;can&nbsp;call&nbsp;this&nbsp;method&nbsp;with&nbsp;any&nbsp;key&nbsp;words.&nbsp;&nbsp;They&nbsp;will&nbsp;be&nbsp;turned&nbsp;into<br>
-attributes&nbsp;of&nbsp;the&nbsp;<a href="#Signal">Signal</a>&nbsp;<a href="__builtin__.html#object">object</a>&nbsp;that&nbsp;is&nbsp;passed&nbsp;to&nbsp;the&nbsp;functions.<br>
+attributes&nbsp;of&nbsp;the&nbsp;<a href="#Signal">Signal</a>&nbsp;<a href="builtins.html#object">object</a>&nbsp;that&nbsp;is&nbsp;passed&nbsp;to&nbsp;the&nbsp;functions.<br>
 If&nbsp;a&nbsp;function&nbsp;calls&nbsp;signal.stop(),&nbsp;no&nbsp;further&nbsp;functions&nbsp;will&nbsp;be&nbsp;called.<br>
 If&nbsp;a&nbsp;function&nbsp;raises&nbsp;a&nbsp;ReferenceError,&nbsp;the&nbsp;handler&nbsp;will&nbsp;be&nbsp;deleted.<br>
 &nbsp;<br>
@@ -304,7 +288,7 @@ Data descriptors defined here:<br>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#ffc8d8">
 <td colspan=3 valign=bottom>&nbsp;<br>
-<font color="#000000" face="helvetica, arial"><a name="SignalHandler">class <strong>SignalHandler</strong></a></font></td></tr>
+<font color="#000000" face="helvetica, arial"><a name="SignalHandler">class <strong>SignalHandler</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
     
 <tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
 <td colspan=2><tt><a href="#Signal">Signal</a>&nbsp;Handlers&nbsp;contain&nbsp;information&nbsp;about&nbsp;a&nbsp;signal&nbsp;binding.<br>
@@ -318,6 +302,14 @@ You&nbsp;can&nbsp;disable&nbsp;a&nbsp;handler&nbsp;without&nbsp;removing&nbsp;it
 <td width="100%">Methods defined here:<br>
 <dl><dt><a name="SignalHandler-__init__"><strong>__init__</strong></a>(self, signal_name, function, priority, pass_signal)</dt></dl>
 
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
 <hr>
 Data and other attributes defined here:<br>
 <dl><dt><strong>active</strong> = True</dl>

@@ -1,6 +1,6 @@
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html><head><title>Python: module ranger.gui.widgets.console</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head><body bgcolor="#f0f0f8">
 
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
@@ -9,8 +9,7 @@
 <font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong><a href="ranger.html"><font color="#ffffff">ranger</font></a>.<a href="ranger.gui.html"><font color="#ffffff">gui</font></a>.<a href="ranger.gui.widgets.html"><font color="#ffffff">widgets</font></a>.console</strong></big></big></font></td
 ><td align=right valign=bottom
 ><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:../../ranger/gui/widgets/console.py">../../ranger/gui/widgets/console.py</a></font></td></tr></table>
-    <p><tt>The&nbsp;<a href="#Console">Console</a>&nbsp;widget&nbsp;implements&nbsp;a&nbsp;vim-like&nbsp;console&nbsp;for&nbsp;entering<br>
-commands,&nbsp;searching&nbsp;and&nbsp;executing&nbsp;files.</tt></p>
+    <p><tt>The&nbsp;<a href="#Console">Console</a>&nbsp;widget&nbsp;implements&nbsp;a&nbsp;vim-like&nbsp;console</tt></p>
 <p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#aa55cc">
@@ -51,14 +50,25 @@ commands,&nbsp;searching&nbsp;and&nbsp;executing&nbsp;files.</tt></p>
 <dd><a href="ranger.core.shared.html#FileManagerAware">ranger.core.shared.FileManagerAware</a></dd>
 <dd><a href="ranger.gui.curses_shortcuts.html#CursesShortcuts">ranger.gui.curses_shortcuts.CursesShortcuts</a></dd>
 <dd><a href="ranger.core.shared.html#SettingsAware">ranger.core.shared.SettingsAware</a></dd>
-<dd><a href="ranger.core.shared.html#Awareness">ranger.core.shared.Awareness</a></dd>
-<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
 </dl>
 <hr>
 Methods defined here:<br>
 <dl><dt><a name="Console-__init__"><strong>__init__</strong></a>(self, win)</dt></dl>
 
 <dl><dt><a name="Console-add_to_history"><strong>add_to_history</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Console-ask"><strong>ask</strong></a>(self, text, callback, choices<font color="#909090">=['y', 'n']</font>)</dt><dd><tt>Open&nbsp;a&nbsp;question&nbsp;prompt&nbsp;with&nbsp;predefined&nbsp;choices<br>
+&nbsp;<br>
+The&nbsp;"text"&nbsp;is&nbsp;displayed&nbsp;as&nbsp;the&nbsp;question&nbsp;text&nbsp;and&nbsp;should&nbsp;include&nbsp;a&nbsp;list<br>
+of&nbsp;possible&nbsp;keys&nbsp;that&nbsp;the&nbsp;user&nbsp;can&nbsp;type.&nbsp;&nbsp;The&nbsp;"callback"&nbsp;is&nbsp;a&nbsp;function<br>
+that&nbsp;is&nbsp;called&nbsp;when&nbsp;the&nbsp;question&nbsp;is&nbsp;answered.&nbsp;&nbsp;It&nbsp;only&nbsp;gets&nbsp;the&nbsp;answer<br>
+as&nbsp;an&nbsp;argument.&nbsp;&nbsp;"choices"&nbsp;is&nbsp;a&nbsp;tuple&nbsp;of&nbsp;one-letter&nbsp;strings&nbsp;that&nbsp;can&nbsp;be<br>
+typed&nbsp;in&nbsp;by&nbsp;the&nbsp;user.&nbsp;&nbsp;Every&nbsp;other&nbsp;input&nbsp;gets&nbsp;ignored,&nbsp;except&nbsp;&lt;Enter&gt;<br>
+and&nbsp;&lt;ESC&gt;.<br>
+&nbsp;<br>
+The&nbsp;first&nbsp;choice&nbsp;is&nbsp;used&nbsp;when&nbsp;the&nbsp;user&nbsp;presses&nbsp;&lt;Enter&gt;,&nbsp;the&nbsp;second<br>
+choice&nbsp;is&nbsp;used&nbsp;when&nbsp;the&nbsp;user&nbsp;presses&nbsp;&lt;ESC&gt;.</tt></dd></dl>
 
 <dl><dt><a name="Console-clear"><strong>clear</strong></a>(self)</dt></dl>
 
@@ -118,13 +128,24 @@ Data and other attributes defined here:<br>
 
 <dl><dt><strong>tab_deque</strong> = None</dl>
 
+<dl><dt><strong>unicode_buffer</strong> = ''</dl>
+
 <dl><dt><strong>visible</strong> = False</dl>
+
+<dl><dt><strong>wait_for_command_input</strong> = False</dl>
+
+<hr>
+Data and other attributes inherited from <a href="ranger.gui.widgets.html#Widget">ranger.gui.widgets.Widget</a>:<br>
+<dl><dt><strong>vcsfilestatus_symb</strong> = {'changed': ('*', ['vcschanged']), 'conflict': ('X', ['vcsconflict']), 'deleted': ('-', ['vcschanged']), 'ignored': ('·', ['vcsignored']), 'none': (' ', []), 'staged': ('*', ['vcsstaged']), 'sync': ('√', ['vcssync']), 'unknown': ('?', ['vcsunknown']), 'untracked': ('+', ['vcschanged'])}</dl>
+
+<dl><dt><strong>vcsremotestatus_symb</strong> = {'ahead': ('&gt;', ['vcsahead']), 'behind': ('&lt;', ['vcsbehind']), 'diverged': ('Y', ['vcsdiverged']), 'none': (' ', []), 'sync': ('=', ['vcssync']), 'unknown': ('?', ['vcsunknown'])}</dl>
 
 <hr>
 Methods inherited from <a href="ranger.gui.displayable.html#Displayable">ranger.gui.displayable.Displayable</a>:<br>
 <dl><dt><a name="Console-__bool__"><strong>__bool__</strong></a> = __nonzero__(self)</dt><dd><tt>Always&nbsp;True</tt></dd></dl>
 
-<dl><dt><a name="Console-__contains__"><strong>__contains__</strong></a>(self, item)</dt><dd><tt>Is&nbsp;item&nbsp;inside&nbsp;the&nbsp;boundaries?<br>
+<dl><dt><a name="Console-__contains__"><strong>__contains__</strong></a>(self, item)</dt><dd><tt>Checks&nbsp;if&nbsp;item&nbsp;is&nbsp;inside&nbsp;the&nbsp;boundaries.<br>
+&nbsp;<br>
 item&nbsp;can&nbsp;be&nbsp;an&nbsp;iterable&nbsp;like&nbsp;[y,&nbsp;x]&nbsp;or&nbsp;an&nbsp;object&nbsp;with&nbsp;x&nbsp;and&nbsp;y&nbsp;methods.</tt></dd></dl>
 
 <dl><dt><a name="Console-__nonzero__"><strong>__nonzero__</strong></a>(self)</dt><dd><tt>Always&nbsp;True</tt></dd></dl>
@@ -132,10 +153,12 @@ item&nbsp;can&nbsp;be&nbsp;an&nbsp;iterable&nbsp;like&nbsp;[y,&nbsp;x]&nbsp;or&n
 <dl><dt><a name="Console-__str__"><strong>__str__</strong></a>(self)</dt></dl>
 
 <dl><dt><a name="Console-click"><strong>click</strong></a>(self, event)</dt><dd><tt>Called&nbsp;when&nbsp;a&nbsp;mouse&nbsp;key&nbsp;is&nbsp;pressed&nbsp;and&nbsp;self.<strong>focused</strong>&nbsp;is&nbsp;True.<br>
+&nbsp;<br>
 Override&nbsp;this!</tt></dd></dl>
 
-<dl><dt><a name="Console-contains_point"><strong>contains_point</strong></a>(self, y, x)</dt><dd><tt>Test&nbsp;whether&nbsp;the&nbsp;point&nbsp;(with&nbsp;absolute&nbsp;coordinates)&nbsp;lies<br>
-within&nbsp;the&nbsp;boundaries&nbsp;of&nbsp;this&nbsp;object.</tt></dd></dl>
+<dl><dt><a name="Console-contains_point"><strong>contains_point</strong></a>(self, y, x)</dt><dd><tt>Test&nbsp;whether&nbsp;the&nbsp;point&nbsp;lies&nbsp;inside&nbsp;this&nbsp;object.<br>
+&nbsp;<br>
+x&nbsp;and&nbsp;y&nbsp;should&nbsp;be&nbsp;absolute&nbsp;coordinates.</tt></dd></dl>
 
 <dl><dt><a name="Console-poke"><strong>poke</strong></a>(self)</dt><dd><tt>Called&nbsp;before&nbsp;drawing,&nbsp;even&nbsp;if&nbsp;invisible</tt></dd></dl>
 
@@ -145,8 +168,13 @@ within&nbsp;the&nbsp;boundaries&nbsp;of&nbsp;this&nbsp;object.</tt></dd></dl>
 Methods inherited from <a href="ranger.core.shared.html#EnvironmentAware">ranger.core.shared.EnvironmentAware</a>:<br>
 <strong>env</strong> = None
 <hr>
-Methods inherited from <a href="ranger.core.shared.html#FileManagerAware">ranger.core.shared.FileManagerAware</a>:<br>
-<strong>fm</strong> = None
+Data descriptors inherited from <a href="ranger.core.shared.html#EnvironmentAware">ranger.core.shared.EnvironmentAware</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
 <hr>
 Methods inherited from <a href="ranger.gui.curses_shortcuts.html#CursesShortcuts">ranger.gui.curses_shortcuts.CursesShortcuts</a>:<br>
 <dl><dt><a name="Console-addch"><strong>addch</strong></a>(self, *args)</dt></dl>
@@ -163,16 +191,5 @@ Methods inherited from <a href="ranger.gui.curses_shortcuts.html#CursesShortcuts
 
 <dl><dt><a name="Console-set_fg_bg_attr"><strong>set_fg_bg_attr</strong></a>(self, fg, bg, attr)</dt></dl>
 
-<hr>
-Methods inherited from <a href="ranger.core.shared.html#SettingsAware">ranger.core.shared.SettingsAware</a>:<br>
-<strong>settings</strong> = None
-<hr>
-Data descriptors inherited from <a href="ranger.core.shared.html#Awareness">ranger.core.shared.Awareness</a>:<br>
-<dl><dt><strong>__dict__</strong></dt>
-<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
-</dl>
-<dl><dt><strong>__weakref__</strong></dt>
-<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
-</dl>
 </td></tr></table></td></tr></table>
 </body></html>
