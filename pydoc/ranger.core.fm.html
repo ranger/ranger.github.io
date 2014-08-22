@@ -6,7 +6,7 @@
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
 <tr bgcolor="#7799ee">
 <td valign=bottom>&nbsp;<br>
-<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong><a href="ranger.html"><font color="#ffffff">ranger</font></a>.<a href="ranger.core.html"><font color="#ffffff">core</font></a>.fm</strong></big></big> (version 1.6.0)</font></td
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong><a href="ranger.html"><font color="#ffffff">ranger</font></a>.<a href="ranger.core.html"><font color="#ffffff">core</font></a>.fm</strong></big></big> (version 1.6.1)</font></td
 ><td align=right valign=bottom
 ><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:../../ranger/core/fm.py">../../ranger/core/fm.py</a></font></td></tr></table>
     <p><tt>The&nbsp;File&nbsp;Manager,&nbsp;putting&nbsp;the&nbsp;pieces&nbsp;together</tt></p>
@@ -63,9 +63,9 @@
 </dl>
 <hr>
 Methods defined here:<br>
-<dl><dt><a name="FM-__init__"><strong>__init__</strong></a>(self, ui<font color="#909090">=None</font>, bookmarks<font color="#909090">=None</font>, tags<font color="#909090">=None</font>, paths<font color="#909090">=['.']</font>)</dt><dd><tt>Initialize&nbsp;<a href="#FM">FM</a>.</tt></dd></dl>
+<dl><dt><a name="FM-__init__"><strong>__init__</strong></a>(self, ui=None, bookmarks=None, tags=None, paths=['.'])</dt><dd><tt>Initialize&nbsp;<a href="#FM">FM</a>.</tt></dd></dl>
 
-<dl><dt><a name="FM-block_input"><strong>block_input</strong></a>(self, sec<font color="#909090">=0</font>)</dt></dl>
+<dl><dt><a name="FM-block_input"><strong>block_input</strong></a>(self, sec=0)</dt></dl>
 
 <dl><dt><a name="FM-confpath"><strong>confpath</strong></a>(self, *paths)</dt><dd><tt>returns&nbsp;the&nbsp;path&nbsp;relative&nbsp;to&nbsp;rangers&nbsp;configuration&nbsp;directory</tt></dd></dl>
 
@@ -73,7 +73,7 @@ Methods defined here:<br>
 
 <dl><dt><a name="FM-destroy"><strong>destroy</strong></a>(self)</dt></dl>
 
-<dl><dt><a name="FM-garbage_collect"><strong>garbage_collect</strong></a>(self, age, tabs<font color="#909090">=None</font>)</dt><dd><tt>Delete&nbsp;unused&nbsp;directory&nbsp;objects</tt></dd></dl>
+<dl><dt><a name="FM-garbage_collect"><strong>garbage_collect</strong></a>(self, age, tabs=None)</dt><dd><tt>Delete&nbsp;unused&nbsp;directory&nbsp;objects</tt></dd></dl>
 
 <dl><dt><a name="FM-get_directory"><strong>get_directory</strong></a>(self, path)</dt><dd><tt>Get&nbsp;the&nbsp;directory&nbsp;object&nbsp;at&nbsp;the&nbsp;given&nbsp;path</tt></dd></dl>
 
@@ -112,13 +112,13 @@ Data and other attributes defined here:<br>
 Methods inherited from <a href="ranger.core.actions.html#Actions">ranger.core.actions.Actions</a>:<br>
 <dl><dt><a name="FM-abort"><strong>abort</strong></a>(self)</dt></dl>
 
-<dl><dt><a name="FM-cd"><strong>cd</strong></a>(self, path, remember<font color="#909090">=True</font>)</dt><dd><tt>enter&nbsp;the&nbsp;directory&nbsp;at&nbsp;the&nbsp;given&nbsp;path,&nbsp;remember=True</tt></dd></dl>
+<dl><dt><a name="FM-cd"><strong>cd</strong></a>(self, path, remember=True)</dt><dd><tt>enter&nbsp;the&nbsp;directory&nbsp;at&nbsp;the&nbsp;given&nbsp;path,&nbsp;remember=True</tt></dd></dl>
 
 <dl><dt><a name="FM-change_mode"><strong>change_mode</strong></a>(self, mode)</dt></dl>
 
-<dl><dt><a name="FM-copy"><strong>copy</strong></a>(self, mode<font color="#909090">='set'</font>, narg<font color="#909090">=None</font>, dirarg<font color="#909090">=None</font>)</dt><dd><tt>Copy&nbsp;the&nbsp;selected&nbsp;items.&nbsp;&nbsp;Modes&nbsp;are:&nbsp;'set',&nbsp;'add',&nbsp;'remove'.</tt></dd></dl>
+<dl><dt><a name="FM-copy"><strong>copy</strong></a>(self, mode='set', narg=None, dirarg=None)</dt><dd><tt>Copy&nbsp;the&nbsp;selected&nbsp;items.&nbsp;&nbsp;Modes&nbsp;are:&nbsp;'set',&nbsp;'add',&nbsp;'remove'.</tt></dd></dl>
 
-<dl><dt><a name="FM-cut"><strong>cut</strong></a>(self, mode<font color="#909090">='set'</font>, narg<font color="#909090">=None</font>, dirarg<font color="#909090">=None</font>)</dt></dl>
+<dl><dt><a name="FM-cut"><strong>cut</strong></a>(self, mode='set', narg=None, dirarg=None)</dt></dl>
 
 <dl><dt><a name="FM-delete"><strong>delete</strong></a>(self)</dt></dl>
 
@@ -140,15 +140,15 @@ Methods inherited from <a href="ranger.core.actions.html#Actions">ranger.core.ac
 
 <dl><dt><a name="FM-dump_settings"><strong>dump_settings</strong></a>(self)</dt></dl>
 
-<dl><dt><a name="FM-edit_file"><strong>edit_file</strong></a>(self, file<font color="#909090">=None</font>)</dt><dd><tt>Calls&nbsp;execute_file&nbsp;with&nbsp;the&nbsp;current&nbsp;file&nbsp;and&nbsp;label='editor'</tt></dd></dl>
+<dl><dt><a name="FM-edit_file"><strong>edit_file</strong></a>(self, file=None)</dt><dd><tt>Calls&nbsp;execute_file&nbsp;with&nbsp;the&nbsp;current&nbsp;file&nbsp;and&nbsp;label='editor'</tt></dd></dl>
 
 <dl><dt><a name="FM-enter_bookmark"><strong>enter_bookmark</strong></a>(self, key)</dt><dd><tt>Enter&nbsp;the&nbsp;bookmark&nbsp;with&nbsp;the&nbsp;name&nbsp;&lt;key&gt;</tt></dd></dl>
 
-<dl><dt><a name="FM-enter_dir"><strong>enter_dir</strong></a>(self, path, remember<font color="#909090">=False</font>, history<font color="#909090">=True</font>)</dt><dd><tt>Enter&nbsp;the&nbsp;directory&nbsp;at&nbsp;the&nbsp;given&nbsp;path</tt></dd></dl>
+<dl><dt><a name="FM-enter_dir"><strong>enter_dir</strong></a>(self, path, remember=False, history=True)</dt><dd><tt>Enter&nbsp;the&nbsp;directory&nbsp;at&nbsp;the&nbsp;given&nbsp;path</tt></dd></dl>
 
 <dl><dt><a name="FM-execute_command"><strong>execute_command</strong></a>(self, cmd, **kw)</dt></dl>
 
-<dl><dt><a name="FM-execute_console"><strong>execute_console</strong></a>(self, string<font color="#909090">=''</font>, wildcards<font color="#909090">=[]</font>, quantifier<font color="#909090">=None</font>)</dt><dd><tt>Execute&nbsp;a&nbsp;command&nbsp;for&nbsp;the&nbsp;console</tt></dd></dl>
+<dl><dt><a name="FM-execute_console"><strong>execute_console</strong></a>(self, string='', wildcards=[], quantifier=None)</dt><dd><tt>Execute&nbsp;a&nbsp;command&nbsp;for&nbsp;the&nbsp;console</tt></dd></dl>
 
 <dl><dt><a name="FM-execute_file"><strong>execute_file</strong></a>(self, files, **kw)</dt><dd><tt>Execute&nbsp;a&nbsp;file.<br>
 &nbsp;<br>
@@ -169,18 +169,18 @@ Both&nbsp;flags&nbsp;and&nbsp;mode&nbsp;specify&nbsp;how&nbsp;the&nbsp;program&n
 
 <dl><dt><a name="FM-history_go"><strong>history_go</strong></a>(self, relative)</dt><dd><tt>Move&nbsp;back&nbsp;and&nbsp;forth&nbsp;in&nbsp;the&nbsp;history</tt></dd></dl>
 
-<dl><dt><a name="FM-mark_files"><strong>mark_files</strong></a>(self, all<font color="#909090">=False</font>, toggle<font color="#909090">=False</font>, val<font color="#909090">=None</font>, movedown<font color="#909090">=None</font>, narg<font color="#909090">=1</font>)</dt><dd><tt>A&nbsp;wrapper&nbsp;for&nbsp;the&nbsp;directory.mark_xyz&nbsp;functions.<br>
+<dl><dt><a name="FM-mark_files"><strong>mark_files</strong></a>(self, all=False, toggle=False, val=None, movedown=None, narg=None)</dt><dd><tt>A&nbsp;wrapper&nbsp;for&nbsp;the&nbsp;directory.mark_xyz&nbsp;functions.<br>
 &nbsp;<br>
 Arguments:<br>
 all&nbsp;-&nbsp;change&nbsp;all&nbsp;files&nbsp;of&nbsp;the&nbsp;current&nbsp;directory&nbsp;at&nbsp;once?<br>
 toggle&nbsp;-&nbsp;toggle&nbsp;the&nbsp;marked-status?<br>
 val&nbsp;-&nbsp;mark&nbsp;or&nbsp;unmark?</tt></dd></dl>
 
-<dl><dt><a name="FM-mark_in_direction"><strong>mark_in_direction</strong></a>(self, val<font color="#909090">=True</font>, dirarg<font color="#909090">=None</font>)</dt></dl>
+<dl><dt><a name="FM-mark_in_direction"><strong>mark_in_direction</strong></a>(self, val=True, dirarg=None)</dt></dl>
 
 <dl><dt><a name="FM-mkdir"><strong>mkdir</strong></a>(self, name)</dt></dl>
 
-<dl><dt><a name="FM-move"><strong>move</strong></a>(self, narg<font color="#909090">=None</font>, **kw)</dt><dd><tt>A&nbsp;universal&nbsp;movement&nbsp;method.<br>
+<dl><dt><a name="FM-move"><strong>move</strong></a>(self, narg=None, **kw)</dt><dd><tt>A&nbsp;universal&nbsp;movement&nbsp;method.<br>
 &nbsp;<br>
 Accepts&nbsp;these&nbsp;parameters:<br>
 (int)&nbsp;down,&nbsp;(int)&nbsp;up,&nbsp;(int)&nbsp;left,&nbsp;(int)&nbsp;right,&nbsp;(int)&nbsp;to,<br>
@@ -194,23 +194,23 @@ Example:<br>
 <a href="#FM-move">move</a>(to=2,&nbsp;pages=True)&nbsp;&nbsp;#&nbsp;moves&nbsp;to&nbsp;page&nbsp;2.<br>
 <a href="#FM-move">move</a>(to=1,&nbsp;percentage=True)&nbsp;&nbsp;#&nbsp;moves&nbsp;to&nbsp;80%</tt></dd></dl>
 
-<dl><dt><a name="FM-move_parent"><strong>move_parent</strong></a>(self, n, narg<font color="#909090">=None</font>)</dt></dl>
+<dl><dt><a name="FM-move_parent"><strong>move_parent</strong></a>(self, n, narg=None)</dt></dl>
 
-<dl><dt><a name="FM-notify"><strong>notify</strong></a>(self, text, duration<font color="#909090">=4</font>, bad<font color="#909090">=False</font>)</dt></dl>
+<dl><dt><a name="FM-notify"><strong>notify</strong></a>(self, text, duration=4, bad=False)</dt></dl>
 
-<dl><dt><a name="FM-open_console"><strong>open_console</strong></a>(self, string<font color="#909090">=''</font>, prompt<font color="#909090">=None</font>, position<font color="#909090">=None</font>)</dt><dd><tt>Open&nbsp;the&nbsp;console</tt></dd></dl>
+<dl><dt><a name="FM-open_console"><strong>open_console</strong></a>(self, string='', prompt=None, position=None)</dt><dd><tt>Open&nbsp;the&nbsp;console</tt></dd></dl>
 
 <dl><dt><a name="FM-pager_close"><strong>pager_close</strong></a>(self)</dt></dl>
 
-<dl><dt><a name="FM-pager_move"><strong>pager_move</strong></a>(self, narg<font color="#909090">=None</font>, **kw)</dt></dl>
+<dl><dt><a name="FM-pager_move"><strong>pager_move</strong></a>(self, narg=None, **kw)</dt></dl>
 
-<dl><dt><a name="FM-paste"><strong>paste</strong></a>(self, overwrite<font color="#909090">=False</font>)</dt><dd><tt>Paste&nbsp;the&nbsp;selected&nbsp;items&nbsp;into&nbsp;the&nbsp;current&nbsp;directory</tt></dd></dl>
+<dl><dt><a name="FM-paste"><strong>paste</strong></a>(self, overwrite=False)</dt><dd><tt>Paste&nbsp;the&nbsp;selected&nbsp;items&nbsp;into&nbsp;the&nbsp;current&nbsp;directory</tt></dd></dl>
 
 <dl><dt><a name="FM-paste_hardlink"><strong>paste_hardlink</strong></a>(self)</dt></dl>
 
 <dl><dt><a name="FM-paste_hardlinked_subtree"><strong>paste_hardlinked_subtree</strong></a>(self)</dt></dl>
 
-<dl><dt><a name="FM-paste_symlink"><strong>paste_symlink</strong></a>(self, relative<font color="#909090">=False</font>)</dt></dl>
+<dl><dt><a name="FM-paste_symlink"><strong>paste_symlink</strong></a>(self, relative=False)</dt></dl>
 
 <dl><dt><a name="FM-pause_tasks"><strong>pause_tasks</strong></a>(self)</dt></dl>
 
@@ -224,9 +224,9 @@ Example:<br>
 
 <dl><dt><a name="FM-scroll"><strong>scroll</strong></a>(self, relative)</dt><dd><tt>Scroll&nbsp;down&nbsp;by&nbsp;&lt;relative&gt;&nbsp;lines</tt></dd></dl>
 
-<dl><dt><a name="FM-search_file"><strong>search_file</strong></a>(self, text, offset<font color="#909090">=1</font>, regexp<font color="#909090">=True</font>)</dt></dl>
+<dl><dt><a name="FM-search_file"><strong>search_file</strong></a>(self, text, offset=1, regexp=True)</dt></dl>
 
-<dl><dt><a name="FM-search_next"><strong>search_next</strong></a>(self, order<font color="#909090">=None</font>, offset<font color="#909090">=1</font>, forward<font color="#909090">=True</font>)</dt></dl>
+<dl><dt><a name="FM-search_next"><strong>search_next</strong></a>(self, order=None, offset=1, forward=True)</dt></dl>
 
 <dl><dt><a name="FM-select_file"><strong>select_file</strong></a>(self, path)</dt></dl>
 
@@ -236,43 +236,45 @@ Example:<br>
 
 <dl><dt><a name="FM-set_option"><strong>set_option</strong></a>(self, optname, value)</dt><dd><tt>Set&nbsp;the&nbsp;value&nbsp;of&nbsp;an&nbsp;option&nbsp;named&nbsp;&lt;optname&gt;</tt></dd></dl>
 
-<dl><dt><a name="FM-set_option_from_string"><strong>set_option_from_string</strong></a>(self, option_name, value, localpath<font color="#909090">=None</font>)</dt></dl>
+<dl><dt><a name="FM-set_option_from_string"><strong>set_option_from_string</strong></a>(self, option_name, value, localpath=None, tags=None)</dt></dl>
 
-<dl><dt><a name="FM-set_search_method"><strong>set_search_method</strong></a>(self, order, forward<font color="#909090">=True</font>)</dt></dl>
+<dl><dt><a name="FM-set_search_method"><strong>set_search_method</strong></a>(self, order, forward=True)</dt></dl>
 
-<dl><dt><a name="FM-sort"><strong>sort</strong></a>(self, func<font color="#909090">=None</font>, reverse<font color="#909090">=None</font>)</dt></dl>
+<dl><dt><a name="FM-sha1_encode"><strong>sha1_encode</strong></a>(self, path)</dt></dl>
+
+<dl><dt><a name="FM-sort"><strong>sort</strong></a>(self, func=None, reverse=None)</dt></dl>
 
 <dl><dt><a name="FM-source"><strong>source</strong></a>(self, filename)</dt></dl>
 
-<dl><dt><a name="FM-substitute_macros"><strong>substitute_macros</strong></a>(self, string, additional<font color="#909090">={}</font>, escape<font color="#909090">=False</font>)</dt></dl>
+<dl><dt><a name="FM-substitute_macros"><strong>substitute_macros</strong></a>(self, string, additional={}, escape=False)</dt></dl>
 
-<dl><dt><a name="FM-tab_close"><strong>tab_close</strong></a>(self, name<font color="#909090">=None</font>)</dt></dl>
+<dl><dt><a name="FM-tab_close"><strong>tab_close</strong></a>(self, name=None)</dt></dl>
 
-<dl><dt><a name="FM-tab_move"><strong>tab_move</strong></a>(self, offset)</dt></dl>
+<dl><dt><a name="FM-tab_move"><strong>tab_move</strong></a>(self, offset, narg=None)</dt></dl>
 
-<dl><dt><a name="FM-tab_new"><strong>tab_new</strong></a>(self, path<font color="#909090">=None</font>)</dt></dl>
+<dl><dt><a name="FM-tab_new"><strong>tab_new</strong></a>(self, path=None, narg=None)</dt></dl>
 
-<dl><dt><a name="FM-tab_open"><strong>tab_open</strong></a>(self, name, path<font color="#909090">=None</font>)</dt><dd><tt>#&nbsp;--------------------------<br>
+<dl><dt><a name="FM-tab_open"><strong>tab_open</strong></a>(self, name, path=None)</dt><dd><tt>#&nbsp;--------------------------<br>
 #&nbsp;--&nbsp;Tabs<br>
 #&nbsp;--------------------------</tt></dd></dl>
 
 <dl><dt><a name="FM-tab_restore"><strong>tab_restore</strong></a>(self)</dt></dl>
 
-<dl><dt><a name="FM-tag_add"><strong>tag_add</strong></a>(self, paths<font color="#909090">=None</font>, movedown<font color="#909090">=None</font>)</dt></dl>
+<dl><dt><a name="FM-tag_add"><strong>tag_add</strong></a>(self, paths=None, movedown=None)</dt></dl>
 
-<dl><dt><a name="FM-tag_remove"><strong>tag_remove</strong></a>(self, paths<font color="#909090">=None</font>, movedown<font color="#909090">=None</font>)</dt></dl>
+<dl><dt><a name="FM-tag_remove"><strong>tag_remove</strong></a>(self, paths=None, movedown=None)</dt></dl>
 
-<dl><dt><a name="FM-tag_toggle"><strong>tag_toggle</strong></a>(self, paths<font color="#909090">=None</font>, value<font color="#909090">=None</font>, movedown<font color="#909090">=None</font>, tag<font color="#909090">=None</font>)</dt></dl>
+<dl><dt><a name="FM-tag_toggle"><strong>tag_toggle</strong></a>(self, paths=None, value=None, movedown=None, tag=None)</dt></dl>
 
 <dl><dt><a name="FM-taskview_close"><strong>taskview_close</strong></a>(self)</dt></dl>
 
-<dl><dt><a name="FM-taskview_move"><strong>taskview_move</strong></a>(self, narg<font color="#909090">=None</font>, **kw)</dt></dl>
+<dl><dt><a name="FM-taskview_move"><strong>taskview_move</strong></a>(self, narg=None, **kw)</dt></dl>
 
 <dl><dt><a name="FM-taskview_open"><strong>taskview_open</strong></a>(self)</dt></dl>
 
 <dl><dt><a name="FM-toggle_option"><strong>toggle_option</strong></a>(self, string)</dt><dd><tt>Toggle&nbsp;a&nbsp;boolean&nbsp;option&nbsp;named&nbsp;&lt;string&gt;</tt></dd></dl>
 
-<dl><dt><a name="FM-toggle_visual_mode"><strong>toggle_visual_mode</strong></a>(self, reverse<font color="#909090">=False</font>)</dt></dl>
+<dl><dt><a name="FM-toggle_visual_mode"><strong>toggle_visual_mode</strong></a>(self, reverse=False, narg=None)</dt></dl>
 
 <dl><dt><a name="FM-traverse"><strong>traverse</strong></a>(self)</dt></dl>
 
@@ -297,7 +299,7 @@ Methods inherited from <a href="ranger.core.shared.html#EnvironmentAware">ranger
 <strong>env</strong> = None
 <hr>
 Methods inherited from <a href="ranger.ext.signals.html#SignalDispatcher">ranger.ext.signals.SignalDispatcher</a>:<br>
-<dl><dt><a name="FM-signal_bind"><strong>signal_bind</strong></a>(self, signal_name, function, priority<font color="#909090">=0.5</font>, weak<font color="#909090">=False</font>, autosort<font color="#909090">=True</font>)</dt><dd><tt>Bind&nbsp;a&nbsp;function&nbsp;to&nbsp;the&nbsp;signal.<br>
+<dl><dt><a name="FM-signal_bind"><strong>signal_bind</strong></a>(self, signal_name, function, priority=0.5, weak=False, autosort=True)</dt><dd><tt>Bind&nbsp;a&nbsp;function&nbsp;to&nbsp;the&nbsp;signal.<br>
 &nbsp;<br>
 signal_name:&nbsp;&nbsp;Any&nbsp;string&nbsp;to&nbsp;name&nbsp;the&nbsp;signal<br>
 function:&nbsp;&nbsp;Any&nbsp;function&nbsp;with&nbsp;either&nbsp;one&nbsp;or&nbsp;zero&nbsp;arguments&nbsp;which&nbsp;will&nbsp;be<br>
@@ -322,7 +324,7 @@ If&nbsp;a&nbsp;function&nbsp;raises&nbsp;a&nbsp;ReferenceError,&nbsp;the&nbsp;ha
 &nbsp;<br>
 Returns&nbsp;False&nbsp;if&nbsp;signal.stop()&nbsp;was&nbsp;called&nbsp;and&nbsp;True&nbsp;otherwise.</tt></dd></dl>
 
-<dl><dt><a name="FM-signal_force_sort"><strong>signal_force_sort</strong></a>(self, signal_name<font color="#909090">=None</font>)</dt><dd><tt>Forces&nbsp;a&nbsp;sorting&nbsp;of&nbsp;signal&nbsp;handlers&nbsp;by&nbsp;priority.<br>
+<dl><dt><a name="FM-signal_force_sort"><strong>signal_force_sort</strong></a>(self, signal_name=None)</dt><dd><tt>Forces&nbsp;a&nbsp;sorting&nbsp;of&nbsp;signal&nbsp;handlers&nbsp;by&nbsp;priority.<br>
 &nbsp;<br>
 This&nbsp;is&nbsp;only&nbsp;necessary&nbsp;if&nbsp;you&nbsp;used&nbsp;signal_bind&nbsp;with&nbsp;autosort=False<br>
 after&nbsp;finishing&nbsp;to&nbsp;bind&nbsp;many&nbsp;signals&nbsp;at&nbsp;once.</tt></dd></dl>

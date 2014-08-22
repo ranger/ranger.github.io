@@ -9,7 +9,7 @@
 <font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong><a href="ranger.html"><font color="#ffffff">ranger</font></a>.<a href="ranger.api.html"><font color="#ffffff">api</font></a>.commands</strong></big></big></font></td
 ><td align=right valign=bottom
 ><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:../../ranger/api/commands.py">../../ranger/api/commands.py</a></font></td></tr></table>
-    <p><tt>#&nbsp;Copyright&nbsp;(C)&nbsp;2009-2013&nbsp;&nbsp;Roman&nbsp;Zimbelmann&nbsp;&lt;hut@lavabit.com&gt;<br>
+    <p><tt>#&nbsp;Copyright&nbsp;(C)&nbsp;2009-2013&nbsp;&nbsp;Roman&nbsp;Zimbelmann&nbsp;&lt;hut@lepus.uberspace.de&gt;<br>
 #&nbsp;This&nbsp;software&nbsp;is&nbsp;distributed&nbsp;under&nbsp;the&nbsp;terms&nbsp;of&nbsp;the&nbsp;GNU&nbsp;GPL&nbsp;version&nbsp;3.</tt></p>
 <p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
@@ -73,7 +73,7 @@ Methods defined here:<br>
 
 <hr>
 Methods inherited from <a href="ranger.api.commands.html#Command">Command</a>:<br>
-<dl><dt><a name="AliasCommand-__init__"><strong>__init__</strong></a>(self, line, quantifier<font color="#909090">=None</font>)</dt></dl>
+<dl><dt><a name="AliasCommand-__init__"><strong>__init__</strong></a>(self, line, quantifier=None)</dt></dl>
 
 <dl><dt><a name="AliasCommand-arg"><strong>arg</strong></a>(self, n)</dt><dd><tt>Returns&nbsp;the&nbsp;nth&nbsp;space&nbsp;separated&nbsp;word</tt></dd></dl>
 
@@ -104,7 +104,7 @@ Methods inherited from <a href="ranger.api.commands.html#Command">Command</a>:<b
 
 <hr>
 Class methods inherited from <a href="ranger.api.commands.html#Command">Command</a>:<br>
-<dl><dt><a name="AliasCommand-get_name"><strong>get_name</strong></a>(self)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt></dl>
+<dl><dt><a name="AliasCommand-get_name"><strong>get_name</strong></a>()<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt></dl>
 
 <hr>
 Data and other attributes inherited from <a href="ranger.api.commands.html#Command">Command</a>:<br>
@@ -142,7 +142,7 @@ Data descriptors inherited from <a href="ranger.core.shared.html#FileManagerAwar
 </dl>
 <hr>
 Methods defined here:<br>
-<dl><dt><a name="Command-__init__"><strong>__init__</strong></a>(self, line, quantifier<font color="#909090">=None</font>)</dt></dl>
+<dl><dt><a name="Command-__init__"><strong>__init__</strong></a>(self, line, quantifier=None)</dt></dl>
 
 <dl><dt><a name="Command-arg"><strong>arg</strong></a>(self, n)</dt><dd><tt>Returns&nbsp;the&nbsp;nth&nbsp;space&nbsp;separated&nbsp;word</tt></dd></dl>
 
@@ -181,7 +181,7 @@ Methods defined here:<br>
 
 <hr>
 Class methods defined here:<br>
-<dl><dt><a name="Command-get_name"><strong>get_name</strong></a>(self)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt></dl>
+<dl><dt><a name="Command-get_name"><strong>get_name</strong></a>()<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt></dl>
 
 <hr>
 Data and other attributes defined here:<br>
@@ -219,7 +219,7 @@ Data descriptors inherited from <a href="ranger.core.shared.html#FileManagerAwar
 
 <dl><dt><a name="CommandContainer-command_generator"><strong>command_generator</strong></a>(self, start)</dt></dl>
 
-<dl><dt><a name="CommandContainer-get_command"><strong>get_command</strong></a>(self, name, abbrev<font color="#909090">=True</font>)</dt></dl>
+<dl><dt><a name="CommandContainer-get_command"><strong>get_command</strong></a>(self, name, abbrev=True)</dt></dl>
 
 <dl><dt><a name="CommandContainer-load_commands_from_module"><strong>load_commands_from_module</strong></a>(self, module)</dt></dl>
 
@@ -252,7 +252,7 @@ Methods defined here:<br>
 
 <hr>
 Methods inherited from <a href="ranger.api.commands.html#Command">Command</a>:<br>
-<dl><dt><a name="FunctionCommand-__init__"><strong>__init__</strong></a>(self, line, quantifier<font color="#909090">=None</font>)</dt></dl>
+<dl><dt><a name="FunctionCommand-__init__"><strong>__init__</strong></a>(self, line, quantifier=None)</dt></dl>
 
 <dl><dt><a name="FunctionCommand-arg"><strong>arg</strong></a>(self, n)</dt><dd><tt>Returns&nbsp;the&nbsp;nth&nbsp;space&nbsp;separated&nbsp;word</tt></dd></dl>
 
@@ -289,7 +289,7 @@ Methods inherited from <a href="ranger.api.commands.html#Command">Command</a>:<b
 
 <hr>
 Class methods inherited from <a href="ranger.api.commands.html#Command">Command</a>:<br>
-<dl><dt><a name="FunctionCommand-get_name"><strong>get_name</strong></a>(self)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt></dl>
+<dl><dt><a name="FunctionCommand-get_name"><strong>get_name</strong></a>()<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt></dl>
 
 <hr>
 Data and other attributes inherited from <a href="ranger.api.commands.html#Command">Command</a>:<br>
@@ -326,6 +326,5 @@ Data descriptors inherited from <a href="ranger.core.shared.html#FileManagerAwar
 <font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
     
 <tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><strong>DELETE_WARNING</strong> = 'delete seriously? '<br>
-<strong>SETTINGS_RE</strong> = &lt;_sre.SRE_Pattern object&gt;</td></tr></table>
+<td width="100%"><strong>DELETE_WARNING</strong> = 'delete seriously? '</td></tr></table>
 </body></html>

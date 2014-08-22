@@ -9,7 +9,7 @@
 <font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong><a href="ranger.html"><font color="#ffffff">ranger</font></a>.<a href="ranger.core.html"><font color="#ffffff">core</font></a>.actions</strong></big></big></font></td
 ><td align=right valign=bottom
 ><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:../../ranger/core/actions.py">../../ranger/core/actions.py</a></font></td></tr></table>
-    <p><tt>#&nbsp;Copyright&nbsp;(C)&nbsp;2009-2013&nbsp;&nbsp;Roman&nbsp;Zimbelmann&nbsp;&lt;hut@lavabit.com&gt;<br>
+    <p><tt>#&nbsp;Copyright&nbsp;(C)&nbsp;2009-2013&nbsp;&nbsp;Roman&nbsp;Zimbelmann&nbsp;&lt;hut@lepus.uberspace.de&gt;<br>
 #&nbsp;This&nbsp;software&nbsp;is&nbsp;distributed&nbsp;under&nbsp;the&nbsp;terms&nbsp;of&nbsp;the&nbsp;GNU&nbsp;GPL&nbsp;version&nbsp;3.</tt></p>
 <p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
@@ -70,13 +70,13 @@
 Methods defined here:<br>
 <dl><dt><a name="Actions-abort"><strong>abort</strong></a>(self)</dt></dl>
 
-<dl><dt><a name="Actions-cd"><strong>cd</strong></a>(self, path, remember<font color="#909090">=True</font>)</dt><dd><tt>enter&nbsp;the&nbsp;directory&nbsp;at&nbsp;the&nbsp;given&nbsp;path,&nbsp;remember=True</tt></dd></dl>
+<dl><dt><a name="Actions-cd"><strong>cd</strong></a>(self, path, remember=True)</dt><dd><tt>enter&nbsp;the&nbsp;directory&nbsp;at&nbsp;the&nbsp;given&nbsp;path,&nbsp;remember=True</tt></dd></dl>
 
 <dl><dt><a name="Actions-change_mode"><strong>change_mode</strong></a>(self, mode)</dt></dl>
 
-<dl><dt><a name="Actions-copy"><strong>copy</strong></a>(self, mode<font color="#909090">='set'</font>, narg<font color="#909090">=None</font>, dirarg<font color="#909090">=None</font>)</dt><dd><tt>Copy&nbsp;the&nbsp;selected&nbsp;items.&nbsp;&nbsp;Modes&nbsp;are:&nbsp;'set',&nbsp;'add',&nbsp;'remove'.</tt></dd></dl>
+<dl><dt><a name="Actions-copy"><strong>copy</strong></a>(self, mode='set', narg=None, dirarg=None)</dt><dd><tt>Copy&nbsp;the&nbsp;selected&nbsp;items.&nbsp;&nbsp;Modes&nbsp;are:&nbsp;'set',&nbsp;'add',&nbsp;'remove'.</tt></dd></dl>
 
-<dl><dt><a name="Actions-cut"><strong>cut</strong></a>(self, mode<font color="#909090">='set'</font>, narg<font color="#909090">=None</font>, dirarg<font color="#909090">=None</font>)</dt></dl>
+<dl><dt><a name="Actions-cut"><strong>cut</strong></a>(self, mode='set', narg=None, dirarg=None)</dt></dl>
 
 <dl><dt><a name="Actions-delete"><strong>delete</strong></a>(self)</dt></dl>
 
@@ -98,15 +98,15 @@ Methods defined here:<br>
 
 <dl><dt><a name="Actions-dump_settings"><strong>dump_settings</strong></a>(self)</dt></dl>
 
-<dl><dt><a name="Actions-edit_file"><strong>edit_file</strong></a>(self, file<font color="#909090">=None</font>)</dt><dd><tt>Calls&nbsp;execute_file&nbsp;with&nbsp;the&nbsp;current&nbsp;file&nbsp;and&nbsp;label='editor'</tt></dd></dl>
+<dl><dt><a name="Actions-edit_file"><strong>edit_file</strong></a>(self, file=None)</dt><dd><tt>Calls&nbsp;execute_file&nbsp;with&nbsp;the&nbsp;current&nbsp;file&nbsp;and&nbsp;label='editor'</tt></dd></dl>
 
 <dl><dt><a name="Actions-enter_bookmark"><strong>enter_bookmark</strong></a>(self, key)</dt><dd><tt>Enter&nbsp;the&nbsp;bookmark&nbsp;with&nbsp;the&nbsp;name&nbsp;&lt;key&gt;</tt></dd></dl>
 
-<dl><dt><a name="Actions-enter_dir"><strong>enter_dir</strong></a>(self, path, remember<font color="#909090">=False</font>, history<font color="#909090">=True</font>)</dt><dd><tt>Enter&nbsp;the&nbsp;directory&nbsp;at&nbsp;the&nbsp;given&nbsp;path</tt></dd></dl>
+<dl><dt><a name="Actions-enter_dir"><strong>enter_dir</strong></a>(self, path, remember=False, history=True)</dt><dd><tt>Enter&nbsp;the&nbsp;directory&nbsp;at&nbsp;the&nbsp;given&nbsp;path</tt></dd></dl>
 
 <dl><dt><a name="Actions-execute_command"><strong>execute_command</strong></a>(self, cmd, **kw)</dt></dl>
 
-<dl><dt><a name="Actions-execute_console"><strong>execute_console</strong></a>(self, string<font color="#909090">=''</font>, wildcards<font color="#909090">=[]</font>, quantifier<font color="#909090">=None</font>)</dt><dd><tt>Execute&nbsp;a&nbsp;command&nbsp;for&nbsp;the&nbsp;console</tt></dd></dl>
+<dl><dt><a name="Actions-execute_console"><strong>execute_console</strong></a>(self, string='', wildcards=[], quantifier=None)</dt><dd><tt>Execute&nbsp;a&nbsp;command&nbsp;for&nbsp;the&nbsp;console</tt></dd></dl>
 
 <dl><dt><a name="Actions-execute_file"><strong>execute_file</strong></a>(self, files, **kw)</dt><dd><tt>Execute&nbsp;a&nbsp;file.<br>
 &nbsp;<br>
@@ -127,18 +127,18 @@ Both&nbsp;flags&nbsp;and&nbsp;mode&nbsp;specify&nbsp;how&nbsp;the&nbsp;program&n
 
 <dl><dt><a name="Actions-history_go"><strong>history_go</strong></a>(self, relative)</dt><dd><tt>Move&nbsp;back&nbsp;and&nbsp;forth&nbsp;in&nbsp;the&nbsp;history</tt></dd></dl>
 
-<dl><dt><a name="Actions-mark_files"><strong>mark_files</strong></a>(self, all<font color="#909090">=False</font>, toggle<font color="#909090">=False</font>, val<font color="#909090">=None</font>, movedown<font color="#909090">=None</font>, narg<font color="#909090">=1</font>)</dt><dd><tt>A&nbsp;wrapper&nbsp;for&nbsp;the&nbsp;directory.mark_xyz&nbsp;functions.<br>
+<dl><dt><a name="Actions-mark_files"><strong>mark_files</strong></a>(self, all=False, toggle=False, val=None, movedown=None, narg=None)</dt><dd><tt>A&nbsp;wrapper&nbsp;for&nbsp;the&nbsp;directory.mark_xyz&nbsp;functions.<br>
 &nbsp;<br>
 Arguments:<br>
 all&nbsp;-&nbsp;change&nbsp;all&nbsp;files&nbsp;of&nbsp;the&nbsp;current&nbsp;directory&nbsp;at&nbsp;once?<br>
 toggle&nbsp;-&nbsp;toggle&nbsp;the&nbsp;marked-status?<br>
 val&nbsp;-&nbsp;mark&nbsp;or&nbsp;unmark?</tt></dd></dl>
 
-<dl><dt><a name="Actions-mark_in_direction"><strong>mark_in_direction</strong></a>(self, val<font color="#909090">=True</font>, dirarg<font color="#909090">=None</font>)</dt></dl>
+<dl><dt><a name="Actions-mark_in_direction"><strong>mark_in_direction</strong></a>(self, val=True, dirarg=None)</dt></dl>
 
 <dl><dt><a name="Actions-mkdir"><strong>mkdir</strong></a>(self, name)</dt></dl>
 
-<dl><dt><a name="Actions-move"><strong>move</strong></a>(self, narg<font color="#909090">=None</font>, **kw)</dt><dd><tt>A&nbsp;universal&nbsp;movement&nbsp;method.<br>
+<dl><dt><a name="Actions-move"><strong>move</strong></a>(self, narg=None, **kw)</dt><dd><tt>A&nbsp;universal&nbsp;movement&nbsp;method.<br>
 &nbsp;<br>
 Accepts&nbsp;these&nbsp;parameters:<br>
 (int)&nbsp;down,&nbsp;(int)&nbsp;up,&nbsp;(int)&nbsp;left,&nbsp;(int)&nbsp;right,&nbsp;(int)&nbsp;to,<br>
@@ -152,23 +152,23 @@ Example:<br>
 <a href="#Actions-move">move</a>(to=2,&nbsp;pages=True)&nbsp;&nbsp;#&nbsp;moves&nbsp;to&nbsp;page&nbsp;2.<br>
 <a href="#Actions-move">move</a>(to=1,&nbsp;percentage=True)&nbsp;&nbsp;#&nbsp;moves&nbsp;to&nbsp;80%</tt></dd></dl>
 
-<dl><dt><a name="Actions-move_parent"><strong>move_parent</strong></a>(self, n, narg<font color="#909090">=None</font>)</dt></dl>
+<dl><dt><a name="Actions-move_parent"><strong>move_parent</strong></a>(self, n, narg=None)</dt></dl>
 
-<dl><dt><a name="Actions-notify"><strong>notify</strong></a>(self, text, duration<font color="#909090">=4</font>, bad<font color="#909090">=False</font>)</dt></dl>
+<dl><dt><a name="Actions-notify"><strong>notify</strong></a>(self, text, duration=4, bad=False)</dt></dl>
 
-<dl><dt><a name="Actions-open_console"><strong>open_console</strong></a>(self, string<font color="#909090">=''</font>, prompt<font color="#909090">=None</font>, position<font color="#909090">=None</font>)</dt><dd><tt>Open&nbsp;the&nbsp;console</tt></dd></dl>
+<dl><dt><a name="Actions-open_console"><strong>open_console</strong></a>(self, string='', prompt=None, position=None)</dt><dd><tt>Open&nbsp;the&nbsp;console</tt></dd></dl>
 
 <dl><dt><a name="Actions-pager_close"><strong>pager_close</strong></a>(self)</dt></dl>
 
-<dl><dt><a name="Actions-pager_move"><strong>pager_move</strong></a>(self, narg<font color="#909090">=None</font>, **kw)</dt></dl>
+<dl><dt><a name="Actions-pager_move"><strong>pager_move</strong></a>(self, narg=None, **kw)</dt></dl>
 
-<dl><dt><a name="Actions-paste"><strong>paste</strong></a>(self, overwrite<font color="#909090">=False</font>)</dt><dd><tt>Paste&nbsp;the&nbsp;selected&nbsp;items&nbsp;into&nbsp;the&nbsp;current&nbsp;directory</tt></dd></dl>
+<dl><dt><a name="Actions-paste"><strong>paste</strong></a>(self, overwrite=False)</dt><dd><tt>Paste&nbsp;the&nbsp;selected&nbsp;items&nbsp;into&nbsp;the&nbsp;current&nbsp;directory</tt></dd></dl>
 
 <dl><dt><a name="Actions-paste_hardlink"><strong>paste_hardlink</strong></a>(self)</dt></dl>
 
 <dl><dt><a name="Actions-paste_hardlinked_subtree"><strong>paste_hardlinked_subtree</strong></a>(self)</dt></dl>
 
-<dl><dt><a name="Actions-paste_symlink"><strong>paste_symlink</strong></a>(self, relative<font color="#909090">=False</font>)</dt></dl>
+<dl><dt><a name="Actions-paste_symlink"><strong>paste_symlink</strong></a>(self, relative=False)</dt></dl>
 
 <dl><dt><a name="Actions-pause_tasks"><strong>pause_tasks</strong></a>(self)</dt></dl>
 
@@ -182,9 +182,9 @@ Example:<br>
 
 <dl><dt><a name="Actions-scroll"><strong>scroll</strong></a>(self, relative)</dt><dd><tt>Scroll&nbsp;down&nbsp;by&nbsp;&lt;relative&gt;&nbsp;lines</tt></dd></dl>
 
-<dl><dt><a name="Actions-search_file"><strong>search_file</strong></a>(self, text, offset<font color="#909090">=1</font>, regexp<font color="#909090">=True</font>)</dt></dl>
+<dl><dt><a name="Actions-search_file"><strong>search_file</strong></a>(self, text, offset=1, regexp=True)</dt></dl>
 
-<dl><dt><a name="Actions-search_next"><strong>search_next</strong></a>(self, order<font color="#909090">=None</font>, offset<font color="#909090">=1</font>, forward<font color="#909090">=True</font>)</dt></dl>
+<dl><dt><a name="Actions-search_next"><strong>search_next</strong></a>(self, order=None, offset=1, forward=True)</dt></dl>
 
 <dl><dt><a name="Actions-select_file"><strong>select_file</strong></a>(self, path)</dt></dl>
 
@@ -194,43 +194,45 @@ Example:<br>
 
 <dl><dt><a name="Actions-set_option"><strong>set_option</strong></a>(self, optname, value)</dt><dd><tt>Set&nbsp;the&nbsp;value&nbsp;of&nbsp;an&nbsp;option&nbsp;named&nbsp;&lt;optname&gt;</tt></dd></dl>
 
-<dl><dt><a name="Actions-set_option_from_string"><strong>set_option_from_string</strong></a>(self, option_name, value, localpath<font color="#909090">=None</font>)</dt></dl>
+<dl><dt><a name="Actions-set_option_from_string"><strong>set_option_from_string</strong></a>(self, option_name, value, localpath=None, tags=None)</dt></dl>
 
-<dl><dt><a name="Actions-set_search_method"><strong>set_search_method</strong></a>(self, order, forward<font color="#909090">=True</font>)</dt></dl>
+<dl><dt><a name="Actions-set_search_method"><strong>set_search_method</strong></a>(self, order, forward=True)</dt></dl>
 
-<dl><dt><a name="Actions-sort"><strong>sort</strong></a>(self, func<font color="#909090">=None</font>, reverse<font color="#909090">=None</font>)</dt></dl>
+<dl><dt><a name="Actions-sha1_encode"><strong>sha1_encode</strong></a>(self, path)</dt></dl>
+
+<dl><dt><a name="Actions-sort"><strong>sort</strong></a>(self, func=None, reverse=None)</dt></dl>
 
 <dl><dt><a name="Actions-source"><strong>source</strong></a>(self, filename)</dt></dl>
 
-<dl><dt><a name="Actions-substitute_macros"><strong>substitute_macros</strong></a>(self, string, additional<font color="#909090">={}</font>, escape<font color="#909090">=False</font>)</dt></dl>
+<dl><dt><a name="Actions-substitute_macros"><strong>substitute_macros</strong></a>(self, string, additional={}, escape=False)</dt></dl>
 
-<dl><dt><a name="Actions-tab_close"><strong>tab_close</strong></a>(self, name<font color="#909090">=None</font>)</dt></dl>
+<dl><dt><a name="Actions-tab_close"><strong>tab_close</strong></a>(self, name=None)</dt></dl>
 
-<dl><dt><a name="Actions-tab_move"><strong>tab_move</strong></a>(self, offset)</dt></dl>
+<dl><dt><a name="Actions-tab_move"><strong>tab_move</strong></a>(self, offset, narg=None)</dt></dl>
 
-<dl><dt><a name="Actions-tab_new"><strong>tab_new</strong></a>(self, path<font color="#909090">=None</font>)</dt></dl>
+<dl><dt><a name="Actions-tab_new"><strong>tab_new</strong></a>(self, path=None, narg=None)</dt></dl>
 
-<dl><dt><a name="Actions-tab_open"><strong>tab_open</strong></a>(self, name, path<font color="#909090">=None</font>)</dt><dd><tt>#&nbsp;--------------------------<br>
+<dl><dt><a name="Actions-tab_open"><strong>tab_open</strong></a>(self, name, path=None)</dt><dd><tt>#&nbsp;--------------------------<br>
 #&nbsp;--&nbsp;Tabs<br>
 #&nbsp;--------------------------</tt></dd></dl>
 
 <dl><dt><a name="Actions-tab_restore"><strong>tab_restore</strong></a>(self)</dt></dl>
 
-<dl><dt><a name="Actions-tag_add"><strong>tag_add</strong></a>(self, paths<font color="#909090">=None</font>, movedown<font color="#909090">=None</font>)</dt></dl>
+<dl><dt><a name="Actions-tag_add"><strong>tag_add</strong></a>(self, paths=None, movedown=None)</dt></dl>
 
-<dl><dt><a name="Actions-tag_remove"><strong>tag_remove</strong></a>(self, paths<font color="#909090">=None</font>, movedown<font color="#909090">=None</font>)</dt></dl>
+<dl><dt><a name="Actions-tag_remove"><strong>tag_remove</strong></a>(self, paths=None, movedown=None)</dt></dl>
 
-<dl><dt><a name="Actions-tag_toggle"><strong>tag_toggle</strong></a>(self, paths<font color="#909090">=None</font>, value<font color="#909090">=None</font>, movedown<font color="#909090">=None</font>, tag<font color="#909090">=None</font>)</dt></dl>
+<dl><dt><a name="Actions-tag_toggle"><strong>tag_toggle</strong></a>(self, paths=None, value=None, movedown=None, tag=None)</dt></dl>
 
 <dl><dt><a name="Actions-taskview_close"><strong>taskview_close</strong></a>(self)</dt></dl>
 
-<dl><dt><a name="Actions-taskview_move"><strong>taskview_move</strong></a>(self, narg<font color="#909090">=None</font>, **kw)</dt></dl>
+<dl><dt><a name="Actions-taskview_move"><strong>taskview_move</strong></a>(self, narg=None, **kw)</dt></dl>
 
 <dl><dt><a name="Actions-taskview_open"><strong>taskview_open</strong></a>(self)</dt></dl>
 
 <dl><dt><a name="Actions-toggle_option"><strong>toggle_option</strong></a>(self, string)</dt><dd><tt>Toggle&nbsp;a&nbsp;boolean&nbsp;option&nbsp;named&nbsp;&lt;string&gt;</tt></dd></dl>
 
-<dl><dt><a name="Actions-toggle_visual_mode"><strong>toggle_visual_mode</strong></a>(self, reverse<font color="#909090">=False</font>)</dt></dl>
+<dl><dt><a name="Actions-toggle_visual_mode"><strong>toggle_visual_mode</strong></a>(self, reverse=False, narg=None)</dt></dl>
 
 <dl><dt><a name="Actions-traverse"><strong>traverse</strong></a>(self)</dt></dl>
 
@@ -288,20 +290,25 @@ path&nbsp;can&nbsp;be&nbsp;specified&nbsp;as&nbsp;either&nbsp;str&nbsp;or&nbsp;b
 On&nbsp;some&nbsp;platforms,&nbsp;path&nbsp;may&nbsp;also&nbsp;be&nbsp;specified&nbsp;as&nbsp;an&nbsp;open&nbsp;file&nbsp;descriptor;<br>
 &nbsp;&nbsp;the&nbsp;file&nbsp;descriptor&nbsp;must&nbsp;refer&nbsp;to&nbsp;a&nbsp;directory.<br>
 &nbsp;&nbsp;If&nbsp;this&nbsp;functionality&nbsp;is&nbsp;unavailable,&nbsp;using&nbsp;it&nbsp;raises&nbsp;NotImplementedError.</tt></dd></dl>
- <dl><dt><a name="-stat"><strong>stat</strong></a>(...)</dt><dd><tt><a href="#-stat">stat</a>(path,&nbsp;*,&nbsp;dir_fd=None,&nbsp;follow_symlinks=True)&nbsp;-&gt;&nbsp;stat&nbsp;result<br>
+ <dl><dt><a name="-sha1"><strong>sha1</strong></a> = openssl_sha1(...)</dt><dd><tt>Returns&nbsp;a&nbsp;sha1&nbsp;hash&nbsp;object;&nbsp;optionally&nbsp;initialized&nbsp;with&nbsp;a&nbsp;string</tt></dd></dl>
+ <dl><dt><a name="-stat"><strong>stat</strong></a>(path, *, dir_fd=None, follow_symlinks=True)</dt><dd><tt>Perform&nbsp;a&nbsp;stat&nbsp;system&nbsp;call&nbsp;on&nbsp;the&nbsp;given&nbsp;path.<br>
 &nbsp;<br>
-Perform&nbsp;a&nbsp;stat&nbsp;system&nbsp;call&nbsp;on&nbsp;the&nbsp;given&nbsp;path.<br>
+&nbsp;&nbsp;path<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Path&nbsp;to&nbsp;be&nbsp;examined;&nbsp;can&nbsp;be&nbsp;string,&nbsp;bytes,&nbsp;or&nbsp;open-file-descriptor&nbsp;int.<br>
+&nbsp;&nbsp;dir_fd<br>
+&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;not&nbsp;None,&nbsp;it&nbsp;should&nbsp;be&nbsp;a&nbsp;file&nbsp;descriptor&nbsp;open&nbsp;to&nbsp;a&nbsp;directory,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;and&nbsp;path&nbsp;should&nbsp;be&nbsp;a&nbsp;relative&nbsp;string;&nbsp;path&nbsp;will&nbsp;then&nbsp;be&nbsp;relative&nbsp;to<br>
+&nbsp;&nbsp;&nbsp;&nbsp;that&nbsp;directory.<br>
+&nbsp;&nbsp;follow_symlinks<br>
+&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;False,&nbsp;and&nbsp;the&nbsp;last&nbsp;element&nbsp;of&nbsp;the&nbsp;path&nbsp;is&nbsp;a&nbsp;symbolic&nbsp;link,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;stat&nbsp;will&nbsp;examine&nbsp;the&nbsp;symbolic&nbsp;link&nbsp;itself&nbsp;instead&nbsp;of&nbsp;the&nbsp;file<br>
+&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;link&nbsp;points&nbsp;to.<br>
 &nbsp;<br>
-path&nbsp;may&nbsp;be&nbsp;specified&nbsp;as&nbsp;either&nbsp;a&nbsp;string&nbsp;or&nbsp;as&nbsp;an&nbsp;open&nbsp;file&nbsp;descriptor.<br>
+dir_fd&nbsp;and&nbsp;follow_symlinks&nbsp;may&nbsp;not&nbsp;be&nbsp;implemented<br>
+&nbsp;&nbsp;on&nbsp;your&nbsp;platform.&nbsp;&nbsp;If&nbsp;they&nbsp;are&nbsp;unavailable,&nbsp;using&nbsp;them&nbsp;will&nbsp;raise&nbsp;a<br>
+&nbsp;&nbsp;NotImplementedError.<br>
 &nbsp;<br>
-If&nbsp;dir_fd&nbsp;is&nbsp;not&nbsp;None,&nbsp;it&nbsp;should&nbsp;be&nbsp;a&nbsp;file&nbsp;descriptor&nbsp;open&nbsp;to&nbsp;a&nbsp;directory,<br>
-&nbsp;&nbsp;and&nbsp;path&nbsp;should&nbsp;be&nbsp;relative;&nbsp;path&nbsp;will&nbsp;then&nbsp;be&nbsp;relative&nbsp;to&nbsp;that&nbsp;directory.<br>
-&nbsp;&nbsp;dir_fd&nbsp;may&nbsp;not&nbsp;be&nbsp;supported&nbsp;on&nbsp;your&nbsp;platform;&nbsp;if&nbsp;it&nbsp;is&nbsp;unavailable,&nbsp;using<br>
-&nbsp;&nbsp;it&nbsp;will&nbsp;raise&nbsp;a&nbsp;NotImplementedError.<br>
-If&nbsp;follow_symlinks&nbsp;is&nbsp;False,&nbsp;and&nbsp;the&nbsp;last&nbsp;element&nbsp;of&nbsp;the&nbsp;path&nbsp;is&nbsp;a&nbsp;symbolic<br>
-&nbsp;&nbsp;link,&nbsp;stat&nbsp;will&nbsp;examine&nbsp;the&nbsp;symbolic&nbsp;link&nbsp;itself&nbsp;instead&nbsp;of&nbsp;the&nbsp;file&nbsp;the<br>
-&nbsp;&nbsp;link&nbsp;points&nbsp;to.<br>
-It&nbsp;is&nbsp;an&nbsp;error&nbsp;to&nbsp;use&nbsp;dir_fd&nbsp;or&nbsp;follow_symlinks&nbsp;when&nbsp;specifying&nbsp;path&nbsp;as<br>
+It's&nbsp;an&nbsp;error&nbsp;to&nbsp;use&nbsp;dir_fd&nbsp;or&nbsp;follow_symlinks&nbsp;when&nbsp;specifying&nbsp;path&nbsp;as<br>
 &nbsp;&nbsp;an&nbsp;open&nbsp;file&nbsp;descriptor.</tt></dd></dl>
  <dl><dt><a name="-symlink"><strong>symlink</strong></a>(...)</dt><dd><tt><a href="#-symlink">symlink</a>(src,&nbsp;dst,&nbsp;target_is_directory=False,&nbsp;*,&nbsp;dir_fd=None)<br>
 &nbsp;<br>
@@ -323,8 +330,9 @@ dir_fd&nbsp;may&nbsp;not&nbsp;be&nbsp;implemented&nbsp;on&nbsp;your&nbsp;platfor
 <font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
     
 <tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><strong>ALLOWED_SETTINGS</strong> = {'autosave_bookmarks': &lt;class 'bool'&gt;, 'autoupdate_cumulative_size': &lt;class 'bool'&gt;, 'collapse_preview': &lt;class 'bool'&gt;, 'colorscheme': &lt;class 'str'&gt;, 'column_ratios': (&lt;class 'tuple'&gt;, &lt;class 'list'&gt;), 'confirm_on_delete': &lt;class 'str'&gt;, 'dirname_in_tabs': &lt;class 'bool'&gt;, 'display_size_in_main_column': &lt;class 'bool'&gt;, 'display_size_in_status_bar': &lt;class 'bool'&gt;, 'display_tags_in_all_columns': &lt;class 'bool'&gt;, ...}<br>
+<td width="100%"><strong>ALLOWED_SETTINGS</strong> = {'automatically_count_files': &lt;class 'bool'&gt;, 'autosave_bookmarks': &lt;class 'bool'&gt;, 'autoupdate_cumulative_size': &lt;class 'bool'&gt;, 'cd_bookmarks': &lt;class 'bool'&gt;, 'collapse_preview': &lt;class 'bool'&gt;, 'colorscheme': &lt;class 'str'&gt;, 'column_ratios': (&lt;class 'tuple'&gt;, &lt;class 'list'&gt;), 'confirm_on_delete': &lt;class 'str'&gt;, 'dirname_in_tabs': &lt;class 'bool'&gt;, 'display_size_in_main_column': &lt;class 'bool'&gt;, ...}<br>
 <strong>ASK_COMMAND</strong> = 'ask'<br>
 <strong>MACRO_FAIL</strong> = '&lt;<font color="#c040c0">\x01\x01</font>MACRO_HAS_NO_VALUE<font color="#c040c0">\x01\x01</font>&gt;'<br>
-<strong>S_IEXEC</strong> = 64</td></tr></table>
+<strong>S_IEXEC</strong> = 64<br>
+<strong>version_info</strong> = sys.version_info(major=3, minor=4, micro=0, releaselevel='final', serial=0)</td></tr></table>
 </body></html>

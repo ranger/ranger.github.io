@@ -9,7 +9,7 @@
 <font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong><a href="ranger.html"><font color="#ffffff">ranger</font></a>.<a href="ranger.container.html"><font color="#ffffff">container</font></a>.bookmarks</strong></big></big></font></td
 ><td align=right valign=bottom
 ><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:../../ranger/container/bookmarks.py">../../ranger/container/bookmarks.py</a></font></td></tr></table>
-    <p><tt>#&nbsp;Copyright&nbsp;(C)&nbsp;2009-2013&nbsp;&nbsp;Roman&nbsp;Zimbelmann&nbsp;&lt;hut@lavabit.com&gt;<br>
+    <p><tt>#&nbsp;Copyright&nbsp;(C)&nbsp;2009-2013&nbsp;&nbsp;Roman&nbsp;Zimbelmann&nbsp;&lt;hut@lepus.uberspace.de&gt;<br>
 #&nbsp;This&nbsp;software&nbsp;is&nbsp;distributed&nbsp;under&nbsp;the&nbsp;terms&nbsp;of&nbsp;the&nbsp;GNU&nbsp;GPL&nbsp;version&nbsp;3.</tt></p>
 <p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
@@ -58,7 +58,7 @@ Optionally,&nbsp;a&nbsp;bookmark.go()&nbsp;method&nbsp;is&nbsp;used&nbsp;for&nbs
 
 <dl><dt><a name="Bookmarks-__getitem__"><strong>__getitem__</strong></a>(self, key)</dt><dd><tt>Get&nbsp;the&nbsp;bookmark&nbsp;associated&nbsp;with&nbsp;the&nbsp;key</tt></dd></dl>
 
-<dl><dt><a name="Bookmarks-__init__"><strong>__init__</strong></a>(self, bookmarkfile, bookmarktype<font color="#909090">=&lt;class 'str'&gt;</font>, autosave<font color="#909090">=False</font>)</dt><dd><tt>Initializes&nbsp;<a href="#Bookmarks">Bookmarks</a>.<br>
+<dl><dt><a name="Bookmarks-__init__"><strong>__init__</strong></a>(self, bookmarkfile, bookmarktype=<class 'str'>, autosave=False)</dt><dd><tt>Initializes&nbsp;<a href="#Bookmarks">Bookmarks</a>.<br>
 &nbsp;<br>
 &lt;bookmarkfile&gt;&nbsp;specifies&nbsp;the&nbsp;path&nbsp;to&nbsp;the&nbsp;file&nbsp;where<br>
 bookmarks&nbsp;are&nbsp;saved&nbsp;in.</tt></dd></dl>
@@ -104,7 +104,7 @@ Data and other attributes defined here:<br>
 
 <dl><dt><strong>last_mtime</strong> = None</dl>
 
-<dl><dt><strong>load_pattern</strong> = &lt;_sre.SRE_Pattern object&gt;</dl>
+<dl><dt><strong>load_pattern</strong> = re.compile("^[\\d\\w']:.")</dl>
 
 </td></tr></table></td></tr></table><p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">

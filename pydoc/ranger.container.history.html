@@ -9,7 +9,7 @@
 <font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong><a href="ranger.html"><font color="#ffffff">ranger</font></a>.<a href="ranger.container.html"><font color="#ffffff">container</font></a>.history</strong></big></big></font></td
 ><td align=right valign=bottom
 ><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:../../ranger/container/history.py">../../ranger/container/history.py</a></font></td></tr></table>
-    <p><tt>#&nbsp;Copyright&nbsp;(C)&nbsp;2009-2013&nbsp;&nbsp;Roman&nbsp;Zimbelmann&nbsp;&lt;hut@lavabit.com&gt;<br>
+    <p><tt>#&nbsp;Copyright&nbsp;(C)&nbsp;2009-2013&nbsp;&nbsp;Roman&nbsp;Zimbelmann&nbsp;&lt;hut@lepus.uberspace.de&gt;<br>
 #&nbsp;This&nbsp;software&nbsp;is&nbsp;distributed&nbsp;under&nbsp;the&nbsp;terms&nbsp;of&nbsp;the&nbsp;GNU&nbsp;GPL&nbsp;version&nbsp;3.</tt></p>
 <p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
@@ -40,7 +40,7 @@
     
 <tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
 <td width="100%">Methods defined here:<br>
-<dl><dt><a name="History-__init__"><strong>__init__</strong></a>(self, maxlen<font color="#909090">=None</font>, unique<font color="#909090">=True</font>)</dt></dl>
+<dl><dt><a name="History-__init__"><strong>__init__</strong></a>(self, maxlen=None, unique=True)</dt></dl>
 
 <dl><dt><a name="History-__iter__"><strong>__iter__</strong></a>(self)</dt></dl>
 
@@ -58,7 +58,7 @@
 
 <dl><dt><a name="History-forward"><strong>forward</strong></a>(self)</dt></dl>
 
-<dl><dt><a name="History-modify"><strong>modify</strong></a>(self, item, unique<font color="#909090">=False</font>)</dt></dl>
+<dl><dt><a name="History-modify"><strong>modify</strong></a>(self, item, unique=False)</dt></dl>
 
 <dl><dt><a name="History-move"><strong>move</strong></a>(self, n)</dt></dl>
 
@@ -98,27 +98,25 @@ Data descriptors defined here:<br>
 </dl>
 <hr>
 Methods inherited from <a href="builtins.html#Exception">builtins.Exception</a>:<br>
-<dl><dt><a name="HistoryEmptyException-__init__"><strong>__init__</strong></a>(...)</dt><dd><tt>x.<a href="#HistoryEmptyException-__init__">__init__</a>(...)&nbsp;initializes&nbsp;x;&nbsp;see&nbsp;help(type(x))&nbsp;for&nbsp;signature</tt></dd></dl>
+<dl><dt><a name="HistoryEmptyException-__init__"><strong>__init__</strong></a>(self, /, *args, **kwargs)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
 
-<hr>
-Data and other attributes inherited from <a href="builtins.html#Exception">builtins.Exception</a>:<br>
-<dl><dt><strong>__new__</strong> = &lt;built-in method __new__ of type object&gt;<dd><tt>T.<a href="#HistoryEmptyException-__new__">__new__</a>(S,&nbsp;...)&nbsp;-&gt;&nbsp;a&nbsp;new&nbsp;<a href="builtins.html#object">object</a>&nbsp;with&nbsp;type&nbsp;S,&nbsp;a&nbsp;subtype&nbsp;of&nbsp;T</tt></dl>
+<dl><dt><a name="HistoryEmptyException-__new__"><strong>__new__</strong></a>(*args, **kwargs)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>Create&nbsp;and&nbsp;return&nbsp;a&nbsp;new&nbsp;<a href="builtins.html#object">object</a>.&nbsp;&nbsp;See&nbsp;help(type)&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
 
 <hr>
 Methods inherited from <a href="builtins.html#BaseException">builtins.BaseException</a>:<br>
-<dl><dt><a name="HistoryEmptyException-__delattr__"><strong>__delattr__</strong></a>(...)</dt><dd><tt>x.<a href="#HistoryEmptyException-__delattr__">__delattr__</a>('name')&nbsp;&lt;==&gt;&nbsp;del&nbsp;x.name</tt></dd></dl>
+<dl><dt><a name="HistoryEmptyException-__delattr__"><strong>__delattr__</strong></a>(self, name, /)</dt><dd><tt>Implement&nbsp;delattr(self,&nbsp;name).</tt></dd></dl>
 
-<dl><dt><a name="HistoryEmptyException-__getattribute__"><strong>__getattribute__</strong></a>(...)</dt><dd><tt>x.<a href="#HistoryEmptyException-__getattribute__">__getattribute__</a>('name')&nbsp;&lt;==&gt;&nbsp;x.name</tt></dd></dl>
+<dl><dt><a name="HistoryEmptyException-__getattribute__"><strong>__getattribute__</strong></a>(self, name, /)</dt><dd><tt>Return&nbsp;getattr(self,&nbsp;name).</tt></dd></dl>
 
 <dl><dt><a name="HistoryEmptyException-__reduce__"><strong>__reduce__</strong></a>(...)</dt></dl>
 
-<dl><dt><a name="HistoryEmptyException-__repr__"><strong>__repr__</strong></a>(...)</dt><dd><tt>x.<a href="#HistoryEmptyException-__repr__">__repr__</a>()&nbsp;&lt;==&gt;&nbsp;repr(x)</tt></dd></dl>
+<dl><dt><a name="HistoryEmptyException-__repr__"><strong>__repr__</strong></a>(self, /)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
 
-<dl><dt><a name="HistoryEmptyException-__setattr__"><strong>__setattr__</strong></a>(...)</dt><dd><tt>x.<a href="#HistoryEmptyException-__setattr__">__setattr__</a>('name',&nbsp;value)&nbsp;&lt;==&gt;&nbsp;x.name&nbsp;=&nbsp;value</tt></dd></dl>
+<dl><dt><a name="HistoryEmptyException-__setattr__"><strong>__setattr__</strong></a>(self, name, value, /)</dt><dd><tt>Implement&nbsp;setattr(self,&nbsp;name,&nbsp;value).</tt></dd></dl>
 
 <dl><dt><a name="HistoryEmptyException-__setstate__"><strong>__setstate__</strong></a>(...)</dt></dl>
 
-<dl><dt><a name="HistoryEmptyException-__str__"><strong>__str__</strong></a>(...)</dt><dd><tt>x.<a href="#HistoryEmptyException-__str__">__str__</a>()&nbsp;&lt;==&gt;&nbsp;str(x)</tt></dd></dl>
+<dl><dt><a name="HistoryEmptyException-__str__"><strong>__str__</strong></a>(self, /)</dt><dd><tt>Return&nbsp;str(self).</tt></dd></dl>
 
 <dl><dt><a name="HistoryEmptyException-with_traceback"><strong>with_traceback</strong></a>(...)</dt><dd><tt><a href="builtins.html#Exception">Exception</a>.<a href="#HistoryEmptyException-with_traceback">with_traceback</a>(tb)&nbsp;--<br>
 set&nbsp;self.<strong>__traceback__</strong>&nbsp;to&nbsp;tb&nbsp;and&nbsp;return&nbsp;self.</tt></dd></dl>

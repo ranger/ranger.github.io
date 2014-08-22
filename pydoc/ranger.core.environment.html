@@ -9,7 +9,7 @@
 <font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong><a href="ranger.html"><font color="#ffffff">ranger</font></a>.<a href="ranger.core.html"><font color="#ffffff">core</font></a>.environment</strong></big></big></font></td
 ><td align=right valign=bottom
 ><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:../../ranger/core/environment.py">../../ranger/core/environment.py</a></font></td></tr></table>
-    <p><tt>#&nbsp;Copyright&nbsp;(C)&nbsp;2009-2013&nbsp;&nbsp;Roman&nbsp;Zimbelmann&nbsp;&lt;hut@lavabit.com&gt;<br>
+    <p><tt>#&nbsp;Copyright&nbsp;(C)&nbsp;2009-2013&nbsp;&nbsp;Roman&nbsp;Zimbelmann&nbsp;&lt;hut@lepus.uberspace.de&gt;<br>
 #&nbsp;This&nbsp;software&nbsp;is&nbsp;distributed&nbsp;under&nbsp;the&nbsp;terms&nbsp;of&nbsp;the&nbsp;GNU&nbsp;GPL&nbsp;version&nbsp;3.</tt></p>
 <p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
@@ -122,7 +122,7 @@ Data descriptors inherited from <a href="ranger.core.shared.html#SettingsAware">
 </dl>
 <hr>
 Methods inherited from <a href="ranger.ext.signals.html#SignalDispatcher">ranger.ext.signals.SignalDispatcher</a>:<br>
-<dl><dt><a name="Environment-signal_bind"><strong>signal_bind</strong></a>(self, signal_name, function, priority<font color="#909090">=0.5</font>, weak<font color="#909090">=False</font>, autosort<font color="#909090">=True</font>)</dt><dd><tt>Bind&nbsp;a&nbsp;function&nbsp;to&nbsp;the&nbsp;signal.<br>
+<dl><dt><a name="Environment-signal_bind"><strong>signal_bind</strong></a>(self, signal_name, function, priority=0.5, weak=False, autosort=True)</dt><dd><tt>Bind&nbsp;a&nbsp;function&nbsp;to&nbsp;the&nbsp;signal.<br>
 &nbsp;<br>
 signal_name:&nbsp;&nbsp;Any&nbsp;string&nbsp;to&nbsp;name&nbsp;the&nbsp;signal<br>
 function:&nbsp;&nbsp;Any&nbsp;function&nbsp;with&nbsp;either&nbsp;one&nbsp;or&nbsp;zero&nbsp;arguments&nbsp;which&nbsp;will&nbsp;be<br>
@@ -147,7 +147,7 @@ If&nbsp;a&nbsp;function&nbsp;raises&nbsp;a&nbsp;ReferenceError,&nbsp;the&nbsp;ha
 &nbsp;<br>
 Returns&nbsp;False&nbsp;if&nbsp;signal.stop()&nbsp;was&nbsp;called&nbsp;and&nbsp;True&nbsp;otherwise.</tt></dd></dl>
 
-<dl><dt><a name="Environment-signal_force_sort"><strong>signal_force_sort</strong></a>(self, signal_name<font color="#909090">=None</font>)</dt><dd><tt>Forces&nbsp;a&nbsp;sorting&nbsp;of&nbsp;signal&nbsp;handlers&nbsp;by&nbsp;priority.<br>
+<dl><dt><a name="Environment-signal_force_sort"><strong>signal_force_sort</strong></a>(self, signal_name=None)</dt><dd><tt>Forces&nbsp;a&nbsp;sorting&nbsp;of&nbsp;signal&nbsp;handlers&nbsp;by&nbsp;priority.<br>
 &nbsp;<br>
 This&nbsp;is&nbsp;only&nbsp;necessary&nbsp;if&nbsp;you&nbsp;used&nbsp;signal_bind&nbsp;with&nbsp;autosort=False<br>
 after&nbsp;finishing&nbsp;to&nbsp;bind&nbsp;many&nbsp;signals&nbsp;at&nbsp;once.</tt></dd></dl>
