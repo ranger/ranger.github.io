@@ -169,7 +169,7 @@ Both&nbsp;flags&nbsp;and&nbsp;mode&nbsp;specify&nbsp;how&nbsp;the&nbsp;program&n
 
 <dl><dt><a name="FM-history_go"><strong>history_go</strong></a>(self, relative)</dt><dd><tt>Move&nbsp;back&nbsp;and&nbsp;forth&nbsp;in&nbsp;the&nbsp;history</tt></dd></dl>
 
-<dl><dt><a name="FM-mark_files"><strong>mark_files</strong></a>(self, all=False, toggle=False, val=None, movedown=None, narg=None)</dt><dd><tt>A&nbsp;wrapper&nbsp;for&nbsp;the&nbsp;directory.mark_xyz&nbsp;functions.<br>
+<dl><dt><a name="FM-mark_files"><strong>mark_files</strong></a>(self, all=False, toggle=False, val=None, movedown=None, narg=1)</dt><dd><tt>A&nbsp;wrapper&nbsp;for&nbsp;the&nbsp;directory.mark_xyz&nbsp;functions.<br>
 &nbsp;<br>
 Arguments:<br>
 all&nbsp;-&nbsp;change&nbsp;all&nbsp;files&nbsp;of&nbsp;the&nbsp;current&nbsp;directory&nbsp;at&nbsp;once?<br>
@@ -240,8 +240,6 @@ Example:<br>
 
 <dl><dt><a name="FM-set_search_method"><strong>set_search_method</strong></a>(self, order, forward=True)</dt></dl>
 
-<dl><dt><a name="FM-sha1_encode"><strong>sha1_encode</strong></a>(self, path)</dt></dl>
-
 <dl><dt><a name="FM-sort"><strong>sort</strong></a>(self, func=None, reverse=None)</dt></dl>
 
 <dl><dt><a name="FM-source"><strong>source</strong></a>(self, filename)</dt></dl>
@@ -250,9 +248,9 @@ Example:<br>
 
 <dl><dt><a name="FM-tab_close"><strong>tab_close</strong></a>(self, name=None)</dt></dl>
 
-<dl><dt><a name="FM-tab_move"><strong>tab_move</strong></a>(self, offset, narg=None)</dt></dl>
+<dl><dt><a name="FM-tab_move"><strong>tab_move</strong></a>(self, offset)</dt></dl>
 
-<dl><dt><a name="FM-tab_new"><strong>tab_new</strong></a>(self, path=None, narg=None)</dt></dl>
+<dl><dt><a name="FM-tab_new"><strong>tab_new</strong></a>(self, path=None)</dt></dl>
 
 <dl><dt><a name="FM-tab_open"><strong>tab_open</strong></a>(self, name, path=None)</dt><dd><tt>#&nbsp;--------------------------<br>
 #&nbsp;--&nbsp;Tabs<br>
@@ -274,7 +272,7 @@ Example:<br>
 
 <dl><dt><a name="FM-toggle_option"><strong>toggle_option</strong></a>(self, string)</dt><dd><tt>Toggle&nbsp;a&nbsp;boolean&nbsp;option&nbsp;named&nbsp;&lt;string&gt;</tt></dd></dl>
 
-<dl><dt><a name="FM-toggle_visual_mode"><strong>toggle_visual_mode</strong></a>(self, reverse=False, narg=None)</dt></dl>
+<dl><dt><a name="FM-toggle_visual_mode"><strong>toggle_visual_mode</strong></a>(self, reverse=False)</dt></dl>
 
 <dl><dt><a name="FM-traverse"><strong>traverse</strong></a>(self)</dt></dl>
 

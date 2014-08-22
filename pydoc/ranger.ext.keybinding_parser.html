@@ -9,7 +9,7 @@
 <font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong><a href="ranger.html"><font color="#ffffff">ranger</font></a>.<a href="ranger.ext.html"><font color="#ffffff">ext</font></a>.keybinding_parser</strong></big></big></font></td
 ><td align=right valign=bottom
 ><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:../../ranger/ext/keybinding_parser.py">../../ranger/ext/keybinding_parser.py</a></font></td></tr></table>
-    <p><tt>#&nbsp;Copyright&nbsp;(C)&nbsp;2009-2013&nbsp;&nbsp;Roman&nbsp;Zimbelmann&nbsp;&lt;hut@lepus.uberspace.de&gt;<br>
+    <p><tt>#&nbsp;Copyright&nbsp;(C)&nbsp;2009-2013&nbsp;&nbsp;Roman&nbsp;Zimbelmann&nbsp;&lt;hut@lavabit.com&gt;<br>
 #&nbsp;This&nbsp;software&nbsp;is&nbsp;distributed&nbsp;under&nbsp;the&nbsp;terms&nbsp;of&nbsp;the&nbsp;GNU&nbsp;GPL&nbsp;version&nbsp;3.</tt></p>
 <p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
@@ -185,18 +185,10 @@ Data and other attributes inherited from <a href="builtins.html#dict">builtins.d
  <dl><dt><a name="-key_to_string"><strong>key_to_string</strong></a>(key)</dt></dl>
  <dl><dt><a name="-parse_keybinding"><strong>parse_keybinding</strong></a>(obj)</dt><dd><tt>Translate&nbsp;a&nbsp;keybinding&nbsp;to&nbsp;a&nbsp;sequence&nbsp;of&nbsp;integers<br>
 &nbsp;<br>
-&gt;&gt;&gt;&nbsp;tuple(<a href="#-parse_keybinding">parse_keybinding</a>("lol&lt;CR&gt;"))<br>
-(108,&nbsp;111,&nbsp;108,&nbsp;10)<br>
-&nbsp;<br>
-&gt;&gt;&gt;&nbsp;out&nbsp;=&nbsp;tuple(<a href="#-parse_keybinding">parse_keybinding</a>("x&lt;A-Left&gt;"))<br>
-&gt;&gt;&gt;&nbsp;out&nbsp;&nbsp;#&nbsp;it's&nbsp;kind&nbsp;of&nbsp;dumb&nbsp;that&nbsp;you&nbsp;cant&nbsp;test&nbsp;for&nbsp;constants...<br>
-(120,&nbsp;9003,&nbsp;260)<br>
-&gt;&gt;&gt;&nbsp;out[0]&nbsp;==&nbsp;ord('x')<br>
-True<br>
-&gt;&gt;&gt;&nbsp;out[1]&nbsp;==&nbsp;ALT_KEY<br>
-True<br>
-&gt;&gt;&gt;&nbsp;out[2]&nbsp;==&nbsp;curses.KEY_LEFT<br>
-True</tt></dd></dl>
+Example:<br>
+lol&lt;CR&gt;&nbsp;&nbsp;&nbsp;=&gt;&nbsp;&nbsp;&nbsp;(ord('l'),&nbsp;ord('o'),&nbsp;ord('l'),&nbsp;ord('\n'))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&gt;&nbsp;&nbsp;&nbsp;(108,&nbsp;111,&nbsp;108,&nbsp;10)<br>
+x&lt;A-Left&gt;&nbsp;=&gt;&nbsp;&nbsp;&nbsp;(120,&nbsp;(27,&nbsp;curses.KEY_LEFT))</tt></dd></dl>
 </td></tr></table><p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#55aa55">
@@ -211,9 +203,9 @@ True</tt></dd></dl>
 <strong>QUANT_KEY</strong> = 9004<br>
 <strong>char</strong> = 'z'<br>
 <strong>digits</strong> = set([48, 49, 50, 51, 52, 53, ...])<br>
-<strong>key</strong> = 'backspace2'<br>
+<strong>key</strong> = 'return'<br>
 <strong>n</strong> = 63<br>
-<strong>reversed_special_keys</strong> = {1: 'c-a', 2: 'c-b', 3: 'c-c', 4: 'c-d', 5: 'c-e', 6: 'c-f', 7: 'c-g', 8: 'c-h', 9: 'c-i', 10: 'c-j', ...}<br>
+<strong>reversed_special_keys</strong> = {1: 'c-a', (9003, 74): 'a-J', 3: 'c-c', 4: 'c-d', 5: 'c-e', 6: 'c-f', 7: 'c-g', 8: 'c-h', 9: 'tab', 10: 'cr', ...}<br>
 <strong>special_keys</strong> = {'a-0': (9003, 48), 'a-1': (9003, 49), 'a-2': (9003, 50), 'a-3': (9003, 51), 'a-4': (9003, 52), 'a-5': (9003, 53), 'a-6': (9003, 54), 'a-7': (9003, 55), 'a-8': (9003, 56), 'a-9': (9003, 57), ...}<br>
-<strong>val</strong> = 127</td></tr></table>
+<strong>val</strong> = 10</td></tr></table>
 </body></html>

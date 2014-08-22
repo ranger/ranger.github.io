@@ -9,7 +9,7 @@
 <font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong><a href="ranger.html"><font color="#ffffff">ranger</font></a>.<a href="ranger.core.html"><font color="#ffffff">core</font></a>.actions</strong></big></big></font></td
 ><td align=right valign=bottom
 ><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:../../ranger/core/actions.py">../../ranger/core/actions.py</a></font></td></tr></table>
-    <p><tt>#&nbsp;Copyright&nbsp;(C)&nbsp;2009-2013&nbsp;&nbsp;Roman&nbsp;Zimbelmann&nbsp;&lt;hut@lepus.uberspace.de&gt;<br>
+    <p><tt>#&nbsp;Copyright&nbsp;(C)&nbsp;2009-2013&nbsp;&nbsp;Roman&nbsp;Zimbelmann&nbsp;&lt;hut@lavabit.com&gt;<br>
 #&nbsp;This&nbsp;software&nbsp;is&nbsp;distributed&nbsp;under&nbsp;the&nbsp;terms&nbsp;of&nbsp;the&nbsp;GNU&nbsp;GPL&nbsp;version&nbsp;3.</tt></p>
 <p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
@@ -127,7 +127,7 @@ Both&nbsp;flags&nbsp;and&nbsp;mode&nbsp;specify&nbsp;how&nbsp;the&nbsp;program&n
 
 <dl><dt><a name="Actions-history_go"><strong>history_go</strong></a>(self, relative)</dt><dd><tt>Move&nbsp;back&nbsp;and&nbsp;forth&nbsp;in&nbsp;the&nbsp;history</tt></dd></dl>
 
-<dl><dt><a name="Actions-mark_files"><strong>mark_files</strong></a>(self, all=False, toggle=False, val=None, movedown=None, narg=None)</dt><dd><tt>A&nbsp;wrapper&nbsp;for&nbsp;the&nbsp;directory.mark_xyz&nbsp;functions.<br>
+<dl><dt><a name="Actions-mark_files"><strong>mark_files</strong></a>(self, all=False, toggle=False, val=None, movedown=None, narg=1)</dt><dd><tt>A&nbsp;wrapper&nbsp;for&nbsp;the&nbsp;directory.mark_xyz&nbsp;functions.<br>
 &nbsp;<br>
 Arguments:<br>
 all&nbsp;-&nbsp;change&nbsp;all&nbsp;files&nbsp;of&nbsp;the&nbsp;current&nbsp;directory&nbsp;at&nbsp;once?<br>
@@ -198,8 +198,6 @@ Example:<br>
 
 <dl><dt><a name="Actions-set_search_method"><strong>set_search_method</strong></a>(self, order, forward=True)</dt></dl>
 
-<dl><dt><a name="Actions-sha1_encode"><strong>sha1_encode</strong></a>(self, path)</dt></dl>
-
 <dl><dt><a name="Actions-sort"><strong>sort</strong></a>(self, func=None, reverse=None)</dt></dl>
 
 <dl><dt><a name="Actions-source"><strong>source</strong></a>(self, filename)</dt></dl>
@@ -208,9 +206,9 @@ Example:<br>
 
 <dl><dt><a name="Actions-tab_close"><strong>tab_close</strong></a>(self, name=None)</dt></dl>
 
-<dl><dt><a name="Actions-tab_move"><strong>tab_move</strong></a>(self, offset, narg=None)</dt></dl>
+<dl><dt><a name="Actions-tab_move"><strong>tab_move</strong></a>(self, offset)</dt></dl>
 
-<dl><dt><a name="Actions-tab_new"><strong>tab_new</strong></a>(self, path=None, narg=None)</dt></dl>
+<dl><dt><a name="Actions-tab_new"><strong>tab_new</strong></a>(self, path=None)</dt></dl>
 
 <dl><dt><a name="Actions-tab_open"><strong>tab_open</strong></a>(self, name, path=None)</dt><dd><tt>#&nbsp;--------------------------<br>
 #&nbsp;--&nbsp;Tabs<br>
@@ -232,7 +230,7 @@ Example:<br>
 
 <dl><dt><a name="Actions-toggle_option"><strong>toggle_option</strong></a>(self, string)</dt><dd><tt>Toggle&nbsp;a&nbsp;boolean&nbsp;option&nbsp;named&nbsp;&lt;string&gt;</tt></dd></dl>
 
-<dl><dt><a name="Actions-toggle_visual_mode"><strong>toggle_visual_mode</strong></a>(self, reverse=False, narg=None)</dt></dl>
+<dl><dt><a name="Actions-toggle_visual_mode"><strong>toggle_visual_mode</strong></a>(self, reverse=False)</dt></dl>
 
 <dl><dt><a name="Actions-traverse"><strong>traverse</strong></a>(self)</dt></dl>
 
@@ -290,7 +288,6 @@ path&nbsp;can&nbsp;be&nbsp;specified&nbsp;as&nbsp;either&nbsp;str&nbsp;or&nbsp;b
 On&nbsp;some&nbsp;platforms,&nbsp;path&nbsp;may&nbsp;also&nbsp;be&nbsp;specified&nbsp;as&nbsp;an&nbsp;open&nbsp;file&nbsp;descriptor;<br>
 &nbsp;&nbsp;the&nbsp;file&nbsp;descriptor&nbsp;must&nbsp;refer&nbsp;to&nbsp;a&nbsp;directory.<br>
 &nbsp;&nbsp;If&nbsp;this&nbsp;functionality&nbsp;is&nbsp;unavailable,&nbsp;using&nbsp;it&nbsp;raises&nbsp;NotImplementedError.</tt></dd></dl>
- <dl><dt><a name="-sha1"><strong>sha1</strong></a> = openssl_sha1(...)</dt><dd><tt>Returns&nbsp;a&nbsp;sha1&nbsp;hash&nbsp;object;&nbsp;optionally&nbsp;initialized&nbsp;with&nbsp;a&nbsp;string</tt></dd></dl>
  <dl><dt><a name="-stat"><strong>stat</strong></a>(path, *, dir_fd=None, follow_symlinks=True)</dt><dd><tt>Perform&nbsp;a&nbsp;stat&nbsp;system&nbsp;call&nbsp;on&nbsp;the&nbsp;given&nbsp;path.<br>
 &nbsp;<br>
 &nbsp;&nbsp;path<br>
@@ -330,9 +327,8 @@ dir_fd&nbsp;may&nbsp;not&nbsp;be&nbsp;implemented&nbsp;on&nbsp;your&nbsp;platfor
 <font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
     
 <tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><strong>ALLOWED_SETTINGS</strong> = {'automatically_count_files': &lt;class 'bool'&gt;, 'autosave_bookmarks': &lt;class 'bool'&gt;, 'autoupdate_cumulative_size': &lt;class 'bool'&gt;, 'cd_bookmarks': &lt;class 'bool'&gt;, 'collapse_preview': &lt;class 'bool'&gt;, 'colorscheme': &lt;class 'str'&gt;, 'column_ratios': (&lt;class 'tuple'&gt;, &lt;class 'list'&gt;), 'confirm_on_delete': &lt;class 'str'&gt;, 'dirname_in_tabs': &lt;class 'bool'&gt;, 'display_size_in_main_column': &lt;class 'bool'&gt;, ...}<br>
+<td width="100%"><strong>ALLOWED_SETTINGS</strong> = {'autosave_bookmarks': &lt;class 'bool'&gt;, 'autoupdate_cumulative_size': &lt;class 'bool'&gt;, 'collapse_preview': &lt;class 'bool'&gt;, 'colorscheme': &lt;class 'str'&gt;, 'column_ratios': (&lt;class 'tuple'&gt;, &lt;class 'list'&gt;), 'confirm_on_delete': &lt;class 'str'&gt;, 'dirname_in_tabs': &lt;class 'bool'&gt;, 'display_size_in_main_column': &lt;class 'bool'&gt;, 'display_size_in_status_bar': &lt;class 'bool'&gt;, 'display_tags_in_all_columns': &lt;class 'bool'&gt;, ...}<br>
 <strong>ASK_COMMAND</strong> = 'ask'<br>
 <strong>MACRO_FAIL</strong> = '&lt;<font color="#c040c0">\x01\x01</font>MACRO_HAS_NO_VALUE<font color="#c040c0">\x01\x01</font>&gt;'<br>
-<strong>S_IEXEC</strong> = 64<br>
-<strong>version_info</strong> = sys.version_info(major=3, minor=4, micro=0, releaselevel='final', serial=0)</td></tr></table>
+<strong>S_IEXEC</strong> = 64</td></tr></table>
 </body></html>
