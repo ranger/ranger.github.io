@@ -1,5 +1,5 @@
 body {
-  background: #EEEEEE;
+  background: url(bg.png) #f9f9f9;
   color: #000000;
   font-family: sans-serif;
   margin: 0px;
@@ -32,7 +32,7 @@ div.curve {
   height: 20px;
 }
 div.content {
-  margin: 5ch;
+  margin: 0 5ch;
 }
 div.menu {
   text-align: center;
@@ -54,7 +54,7 @@ img {
   border: none;
 }
 div.code {
-  background-color :#CCCCCC;
+  background-color: #CCCCCC;
   color: #111;
   padding: 4px 14px;
   margin-left: 18px;
