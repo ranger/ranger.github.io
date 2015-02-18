@@ -2,8 +2,10 @@ body {
   background: #EEEEEE;
   color: #000000;
   font-family: sans-serif;
+  margin: 0px;
 }
 h1 {
+  margin: 0px;
   font-size: 24px;
   text-align: center;
 }
@@ -12,6 +14,25 @@ h2 {
 }
 h3 {
   font-size: 16px;
+}
+div.header {
+  margin: 0px;
+  padding: 0px;
+  padding-bottom: 5px;
+  background: black;
+  color: #ddd;
+}
+div.header a {
+  color: #8ac;
+}
+div.curve {
+  background: url(curve.png);
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  height: 20px;
+}
+div.content {
+  margin: 5ch;
 }
 div.menu {
   text-align: center;
@@ -44,4 +65,9 @@ div.code {
 p {
   padding-left: 10px;
   font-family: sans-serif;
+}
+hr {
+  border: 0px hidden black;
+  border-bottom: 0.5em solid #ccc;
+  margin: 0px -5ch;
 }
