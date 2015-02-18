@@ -18,7 +18,7 @@ h3 {
 div.header {
   margin: 0px;
   padding: 0px;
-  padding-bottom: 5px;
+  padding-bottom: 0.75em;
   background: black;
   color: #ddd;
 }
