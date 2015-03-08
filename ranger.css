@@ -25,8 +25,8 @@ div.header a {
   color: #8ac;
 }
 div.curve {
-  border-top-left-radius:  3em 1em;
-  border-top-right-radius: 3em 1em;
+  border-top-left-radius:  10em 1em;
+  border-top-right-radius: 10em 1em;
   height: 1em;
   background: #eee;
   margin-top: 1em;
