@@ -18,7 +18,6 @@ h3 {
 div.header {
   margin: 0px;
   padding: 0px;
-  padding-bottom: 0.75em;
   background: black;
   color: #ddd;
 }
@@ -26,13 +25,16 @@ div.header a {
   color: #8ac;
 }
 div.curve {
-  background: url(curve.png);
-  background-size: 100% auto;
-  background-repeat: no-repeat;
-  height: 20px;
+  border-top-left-radius:  3em 1em;
+  border-top-right-radius: 3em 1em;
+  height: 1em;
+  background: #eee;
+  margin-top: 1em;
+  color: red;
 }
 div.content {
   margin: 0 5ch;
+  margin-top: -0.5em;
 }
 div.menu {
   text-align: center;
