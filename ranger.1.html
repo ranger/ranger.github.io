@@ -59,7 +59,7 @@
 
 <h1 id="NAME">NAME</h1>
 
-<p>ranger - Emacs-like file browser</p>
+<p>ranger - visual file manager</p>
 
 <h1 id="SYNOPSIS">SYNOPSIS</h1>
 
@@ -67,13 +67,13 @@
 
 <h1 id="DESCRIPTION">DESCRIPTION</h1>
 
-<p>ranger is a console file manager with Emacs key bindings.</p>
+<p>ranger is a console file manager with VI key bindings.</p>
 
 <h1 id="RESOURCES">RESOURCES</h1>
 
 <p><i>This manual</i> contains instructions on how to use and configure ranger.</p>
 
-<p><i>Inside ranger</i>, you can press <i>&lt;C-h&gt;</i> for help.</p>
+<p><i>Inside ranger</i>, you can press <i>1?</i> for a list of key bindings, <i>2?</i> for commands and <i>3?</i> for settings.</p>
 
 <p>The <i>README</i> contains install instructions.</p>
 
@@ -211,9 +211,9 @@
 
 <h2 id="SELECTION">SELECTION</h2>
 
-<p>The <i>selection</i> is defined as &quot;All marked files IF THERE ARE ANY, otherwise the current file.&quot; Be aware of this when using the <code>&lt;M-x&gt;delete</code> command, which deletes all files in the selection.</p>
+<p>The <i>selection</i> is defined as &quot;All marked files IF THERE ARE ANY, otherwise the current file.&quot; Be aware of this when using the :delete command, which deletes all files in the selection.</p>
 
-<p>You can mark files by pressing &lt;Space&gt;, &lt;C-Space&gt;, etc. A yellow <b>Mrk</b> symbol at the bottom right indicates that there are marked files in this directory.</p>
+<p>You can mark files by pressing &lt;Space&gt;, v, etc. A yellow <b>Mrk</b> symbol at the bottom right indicates that there are marked files in this directory.</p>
 
 <h2 id="MACROS">MACROS</h2>
 
@@ -238,11 +238,11 @@
 
 <h2 id="BOOKMARKS">BOOKMARKS</h2>
 
-<p>Type <b>&lt;C-x&gt;rm&lt;key&gt;</b> to bookmark the current directory. You can re-enter this directory by typing <b>&lt;C-x&gt;rb&lt;key&gt;</b>. &lt;key&gt; can be any letter or digit. Unlike vim, both lowercase and uppercase bookmarks are persistent.</p>
+<p>Type <b>m&lt;key&gt;</b> to bookmark the current directory. You can re-enter this directory by typing <b>`&lt;key&gt;</b>. &lt;key&gt; can be any letter or digit. Unlike vim, both lowercase and uppercase bookmarks are persistent.</p>
 
-<p>Each time you jump to a bookmark, the special bookmark at key ` will be set to the last directory. So typing <b>&lt;C-x&gt;rb`</b> gets you back to where you were before.</p>
+<p>Each time you jump to a bookmark, the special bookmark at key ` will be set to the last directory. So typing &quot;``&quot; gets you back to where you were before.</p>
 
-<p>Bookmarks are selectable when tabbing in the <code>&lt;M-x&gt;cd</code> command.</p>
+<p>Bookmarks are selectable when tabbing in the :cd command.</p>
 
 <p>Note: The bookmarks &#39; (Apostrophe) and ` (Backtick) are the same.</p>
 
@@ -250,20 +250,20 @@
 
 <p>Rifle is the file opener of ranger. It can be used as a standalone program or a python module. It is located at <i>ranger/ext/rifle.py</i>. In contrast to other, more simple file openers, rifle can automatically find installed programs so it can be used effectively out of the box on a variety of systems.</p>
 
-<p>It&#39;s configured in <i>rifle.conf</i> through a list of conditions and commands. For each line the conditions are checked and if they are met, the respective command is taken into consideration. By default, simply the first matching rule is used. In ranger, you can list and choose rules by typing <b>&lt;M-f&gt;</b> or simply by typing &quot;&lt;rulenumber&gt;&lt;enter&gt;&quot;. If you use rifle standalone, you can list all rules with the &quot;-l&quot; option and pick a rule with &quot;-p &lt;number&gt;&quot;.</p>
+<p>It&#39;s configured in <i>rifle.conf</i> through a list of conditions and commands. For each line the conditions are checked and if they are met, the respective command is taken into consideration. By default, simply the first matching rule is used. In ranger, you can list and choose rules by typing &quot;r&quot; or simply by typing &quot;&lt;rulenumber&gt;&lt;enter&gt;&quot;. If you use rifle standalone, you can list all rules with the &quot;-l&quot; option and pick a rule with &quot;-p &lt;number&gt;&quot;.</p>
 
 <p>The rules, along with further documentation, are contained in <i>ranger/config/rifle.conf</i>.</p>
 
 <h2 id="FLAGS">FLAGS</h2>
 
-<p>Flags give you a way to modify the behavior of the spawned process. They are used in the commands <code>&lt;M-x&gt;open_with</code> (key <b>&lt;M-f&gt;</b>) and <code>&lt;M-x&gt;shell</code> (key <b>&lt;M-!&gt;</b>).</p>
+<p>Flags give you a way to modify the behavior of the spawned process. They are used in the commands <code>:open_with</code> (key &quot;r&quot;) and <code>:shell</code> (key &quot;!&quot;).</p>
 
 <pre><code> f   Fork the process.  (Run in background)
  c   Run the current file only, instead of the selection
  r   Run application with root privilege (requires sudo)
  t   Run application in a new terminal window</code></pre>
 
-<p>There are some additional flags that can currently be used only in the <code>shell</code> command: (for example <code>&lt;M-x&gt; shell -w df</code>)</p>
+<p>There are some additional flags that can currently be used only in the <code>shell</code> command: (for example <code>:shell -w df</code>)</p>
 
 <pre><code> p   Redirect output to the pager
  s   Silent mode.  Output will be discarded.
@@ -273,7 +273,7 @@
 
 <p>The terminal program name for the &quot;t&quot; flag is taken from the environment variable $TERMCMD. If it doesn&#39;t exist, it tries to extract it from $TERM and uses &quot;xterm&quot; as a fallback if that fails.</p>
 
-<p>Examples: <code>&lt;M-x&gt;open_with c</code> will open the file that you currently point at, even if you have selected other files. <code>&lt;M-x&gt;shell -w df</code> will run &quot;df&quot; and wait for you to press Enter before switching back to ranger.</p>
+<p>Examples: <code>:open_with c</code> will open the file that you currently point at, even if you have selected other files. <code>:shell -w df</code> will run &quot;df&quot; and wait for you to press Enter before switching back to ranger.</p>
 
 <h2 id="PLUGINS">PLUGINS</h2>
 
@@ -293,61 +293,51 @@
 
 <p>Key bindings are defined in the file <i>ranger/config/rc.conf</i>. Check this file for a list of all key bindings. You can copy it to your local configuration directory with the --copy-config=rc option.</p>
 
+<p>Many key bindings take an additional numeric argument. Type <i>5j</i> to move down 5 lines, <i>2l</i> to open a file in mode 2, <i>10&lt;Space&gt;</i> to mark 10 files.</p>
+
 <p>This list contains the most useful bindings:</p>
 
 <h2 id="MAIN-BINDINGS">MAIN BINDINGS</h2>
 
 <dl>
 
-<dt id="G">^G</dt>
+<dt id="h-j-k-l">h, j, k, l</dt>
 <dd>
 
-<p>The universal &quot;abort&quot; key. Stops copying processes, clears selection and gets you out of the console.</p>
+<p>Move left, down, up or right</p>
 
 </dd>
-<dt id="P-N">^P, ^N</dt>
+<dt id="D-or-J-U-or-K">^D or J, ^U or K</dt>
 <dd>
 
-<p>Move to the previous and next items</p>
+<p>Move a half page down, up</p>
 
 </dd>
-<dt id="B-F">^B, ^F</dt>
+<dt id="H-L">H, L</dt>
 <dd>
 
-<p>Move back and forward</p>
+<p>Move back and forward in the history</p>
 
 </dd>
-<dt id="V-Alt-v">^V, Alt+v</dt>
-<dd>
-
-<p>Move a page up and down</p>
-
-</dd>
-<dt id="U-Space">^U^Space</dt>
-<dd>
-
-<p>Move back in the history</p>
-
-</dd>
-<dt id="Alt">Alt+&lt;</dt>
+<dt id="gg">gg</dt>
 <dd>
 
 <p>Move to the top</p>
 
 </dd>
-<dt id="Alt1">Alt+&gt;</dt>
+<dt id="G">G</dt>
 <dd>
 
 <p>Move to the bottom</p>
 
 </dd>
-<dt id="Alt-Alt">Alt+{, Alt+}</dt>
+<dt id="pod">[, ]</dt>
 <dd>
 
 <p>Move up and down in the parent directory.</p>
 
 </dd>
-<dt id="X-R">^X^R</dt>
+<dt id="R">^R</dt>
 <dd>
 
 <p>Reload everything</p>
@@ -359,115 +349,121 @@
 <p>Redraw the screen</p>
 
 </dd>
-<dt id="Xi">^Xi</dt>
+<dt id="i">i</dt>
 <dd>
 
 <p>Inspect the current file in a bigger window.</p>
 
 </dd>
-<dt id="X-F">^X^F</dt>
+<dt id="E">E</dt>
 <dd>
 
-<p>Edit the current file in $EDITOR (&quot;emacs&quot; by default)</p>
+<p>Edit the current file in $EDITOR (&quot;nano&quot; by default)</p>
 
 </dd>
-<dt id="Hm">^Hm</dt>
+<dt id="S">S</dt>
+<dd>
+
+<p>Open a shell in the current directory</p>
+
+</dd>
+<dt id="pod1">?</dt>
 <dd>
 
 <p>Opens this man page</p>
 
 </dd>
-<dt id="XW">^XW</dt>
+<dt id="W">W</dt>
 <dd>
 
 <p>Opens the log window where you can review messages that pop up at the bottom.</p>
 
 </dd>
-<dt id="Ww">^Ww</dt>
+<dt id="w">w</dt>
 <dd>
 
-<p>Opens the task window where you can view and modify background processes that currently run in ranger. In there, you can type ^D to abort a process and Alt+p or Alt+n to change the priority of a process. Only one process is run at a time.</p>
+<p>Opens the task window where you can view and modify background processes that currently run in ranger. In there, you can type &quot;dd&quot; to abort a process and &quot;J&quot; or &quot;K&quot; to change the priority of a process. Only one process is run at a time.</p>
 
 </dd>
-<dt id="G1">^G</dt>
+<dt id="C">^C</dt>
 <dd>
 
 <p>Stop the currently running background process that ranger has started, like copying files, loading directories or file previews.</p>
 
 </dd>
-<dt id="C-x-whowhat-C-x-whowhat">&lt;C-x&gt;+&lt;who&gt;&lt;what&gt;, &lt;C-x&gt;-&lt;who&gt;&lt;what&gt;</dt>
+<dt id="octal-whowhat--whowhat">&lt;octal&gt;=, +&lt;who&gt;&lt;what&gt;, -&lt;who&gt;&lt;what&gt;</dt>
 <dd>
 
-<p>Change the permissions of the selection. For example, <code>&lt;C-x&gt;+ar</code> does <code>chmod a+r %s</code>, <code>&lt;C-x&gt;-ow</code> does <code>chmod o-w %s</code> etc.</p>
+<p>Change the permissions of the selection. For example, <code>777=</code> is equivalent to <code>chmod 777 %s</code>, <code>+ar</code> does <code>chmod a+r %s</code>, <code>-ow</code> does <code>chmod o-w %s</code> etc.</p>
 
 </dd>
-<dt id="Alt-w">Alt+w</dt>
+<dt id="yy">yy</dt>
 <dd>
 
 <p>Copy (yank) the selection, like pressing Ctrl+C in modern GUI programs.</p>
 
 </dd>
-<dt id="W">^W</dt>
+<dt id="dd">dd</dt>
 <dd>
 
 <p>Cut the selection, like pressing Ctrl+X in modern GUI programs.</p>
 
 </dd>
-<dt id="Yy">^Yy</dt>
+<dt id="pp">pp</dt>
 <dd>
 
 <p>Paste the files which were previously copied or cut, like pressing Ctrl+V in modern GUI programs.</p>
 
 </dd>
-<dt id="Yo">^Yo</dt>
+<dt id="po">po</dt>
 <dd>
 
 <p>Paste the copied/cut files, overwriting existing files.</p>
 
 </dd>
-<dt id="Yl-YL">^Yl, ^YL</dt>
+<dt id="pl-pL">pl, pL</dt>
 <dd>
 
 <p>Create symlinks (absolute or relative) to the copied files</p>
 
 </dd>
-<dt id="Yhl">^Yhl</dt>
+<dt id="phl">phl</dt>
 <dd>
 
 <p>Create hardlinks to the copied files</p>
 
 </dd>
-<dt id="Yht">^Yht</dt>
+<dt id="pht">pht</dt>
 <dd>
 
 <p>Duplicate the subdirectory tree of the copied directory, then create hardlinks for each contained file into the new directory tree.</p>
 
 </dd>
-<dt id="XrmX">^Xrm<i>X</i></dt>
+<dt id="mX">m<i>X</i></dt>
 <dd>
 
 <p>Create a bookmark with the name <i>X</i></p>
 
 </dd>
-<dt id="XrbX">^Xrb<i>X</i></dt>
+<dt id="X">`<i>X</i></dt>
 <dd>
 
 <p>Move to the bookmark with the name <i>X</i></p>
 
 </dd>
-<dt id="S">^S</dt>
+<dt id="n">n</dt>
 <dd>
 
-<p>Find the next file. (Currently broken)</p>
+<p>Find the next file. By default, this gets you to the newest file in the directory, but if you search something using the keys /, cm, ct, ..., it will get you to the next found entry.</p>
 
 </dd>
-<dt id="R">^R</dt>
+<dt id="N">N</dt>
 <dd>
 
 <p>Find the previous file.</p>
 
 </dd>
-<dt id="XoX">^Xo<i>X</i></dt>
+<dt id="oX">o<i>X</i></dt>
 <dd>
 
 <p>Change the sort method (like in mutt)</p>
@@ -479,10 +475,16 @@
 <p>Change settings. See the settings section for a list of settings and their hotkey.</p>
 
 </dd>
-<dt id="pod-_">^_</dt>
+<dt id="u">u<i>?</i></dt>
 <dd>
 
-<p>Universal undo-key. Depending on the key that you press afterwards, it either restores closed tabs (^_k), removes tags (^_t) or clears the copy/cut buffer (^_w).</p>
+<p>Universal undo-key. Depending on the key that you press after &quot;u&quot;, it either restores closed tabs (uq), removes tags (ut), clears the copy/cut buffer (ud), starts the reversed visual mode (uV) or clears the selection (uv).</p>
+
+</dd>
+<dt id="f">f</dt>
+<dd>
+
+<p>Quickly navigate by entering a part of the filename.</p>
 
 </dd>
 <dt id="Space">Space</dt>
@@ -491,34 +493,52 @@
 <p>Mark a file.</p>
 
 </dd>
-<dt id="Space1">^Space</dt>
+<dt id="v">v</dt>
+<dd>
+
+<p>Toggle the mark-status of all files</p>
+
+</dd>
+<dt id="V">V</dt>
 <dd>
 
 <p>Starts the visual mode, which selects all files between the starting point and the cursor until you press ESC. To unselect files in the same way, use &quot;uV&quot;.</p>
 
 </dd>
-<dt id="Xs">^Xs</dt>
+<dt id="pod2">/</dt>
 <dd>
 
 <p>Search for files in the current directory.</p>
 
 </dd>
-<dt id="Alt-x">Alt+x</dt>
+<dt id="pod3">:</dt>
 <dd>
 
 <p>Open the console.</p>
 
 </dd>
-<dt id="Alt2">Alt+!</dt>
+<dt id="pod4">!</dt>
 <dd>
 
 <p>Open the console with the content &quot;shell &quot; so you can quickly run commands</p>
 
 </dd>
-<dt id="Alt-f">Alt+f</dt>
+<dt id="pod5">@</dt>
+<dd>
+
+<p>Open the console with the content &quot;shell %s&quot;, placing the cursor before the &quot; %s&quot; so you can quickly run commands with the current selection as the argument.</p>
+
+</dd>
+<dt id="r">r</dt>
 <dd>
 
 <p>Open the console with the content &quot;open with &quot; so you can decide which program to use to open the current file selection.</p>
+
+</dd>
+<dt id="cd">cd</dt>
+<dd>
+
+<p>Open the console with the content &quot;cd &quot;</p>
 
 </dd>
 <dt id="Alt-N">Alt-<i>N</i></dt>
@@ -527,25 +547,25 @@
 <p>Open a tab. N has to be a number from 0 to 9. If the tab doesn&#39;t exist yet, it will be created.</p>
 
 </dd>
-<dt id="Xf">^Xf</dt>
+<dt id="gn-N">gn, ^N</dt>
 <dd>
 
 <p>Create a new tab.</p>
 
 </dd>
-<dt id="Xb">^Xb</dt>
+<dt id="gt-gT">gt, gT</dt>
 <dd>
 
-<p>Go to the next tab.</p>
+<p>Go to the next or previous tab. You can also use TAB and SHIFT+TAB instead.</p>
 
 </dd>
-<dt id="Xk">^Xk</dt>
+<dt id="gc-W">gc, ^W</dt>
 <dd>
 
 <p>Close the current tab. The last tab cannot be closed this way.</p>
 
 </dd>
-<dt id="Xm">^Xm</dt>
+<dt id="M">M</dt>
 <dd>
 
 <p>A key chain that allows you to quickly change the line mode of all the files of the current directory. For a more permanent solution, use the command &quot;default_linemode&quot; in your rc.conf.</p>
@@ -557,13 +577,13 @@
 
 <dl>
 
-<dt id="B-F1">^B, ^F</dt>
+<dt id="B-F">^B, ^F</dt>
 <dd>
 
 <p>Move left and right (B for back, F for forward)</p>
 
 </dd>
-<dt id="P-N1">^P, ^N</dt>
+<dt id="P-N">^P, ^N</dt>
 <dd>
 
 <p>Move up and down (P for previous, N for Next)</p>
@@ -617,7 +637,7 @@
 
 <p>This section lists all built-in settings of ranger. The valid types for the value are in [brackets]. The hotkey to toggle the setting is in &lt;brokets&gt;, if a hotkey exists.</p>
 
-<p>Settings can be changed in the file <i>~/.config/ranger/rc.conf</i> or on the fly with the command <b>&lt;M-x&gt;set option value</b>. Examples:</p>
+<p>Settings can be changed in the file <i>~/.config/ranger/rc.conf</i> or on the fly with the command <b>:set option value</b>. Examples:</p>
 
 <pre><code> set column_ratios 1,2,3
  set show_hidden true</code></pre>
@@ -632,7 +652,7 @@
  list           | 1,2,3,4
  none           | none</code></pre>
 
-<p>You can view a list of all settings and their current values by pressing &quot;^Hs&quot; in ranger.</p>
+<p>You can view a list of all settings and their current values by pressing &quot;3?&quot; in ranger.</p>
 
 <dl>
 
@@ -645,13 +665,13 @@
 <dt id="autosave_bookmarks-bool">autosave_bookmarks [bool]</dt>
 <dd>
 
-<p>Save bookmarks (used with <b>&lt;C-x&gt;rm</b> and <b>&lt;C-x&gt;rb</b>) instantly? This helps to synchronize bookmarks between multiple ranger instances but leads to *slight* performance loss. When false, bookmarks are saved when ranger is exited.</p>
+<p>Save bookmarks (used with mX and `X) instantly? This helps to synchronize bookmarks between multiple ranger instances but leads to *slight* performance loss. When false, bookmarks are saved when ranger is exited.</p>
 
 </dd>
 <dt id="autoupdate_cumulative_size-bool">autoupdate_cumulative_size [bool]</dt>
 <dd>
 
-<p>You can display the &quot;real&quot; cumulative size of directories by using the command &lt;M-x&gt;get_cumulative_size or typing &quot;&lt;C-x&gt;dc&quot;. The size is expensive to calculate and will not be updated automatically. You can choose to update it automatically though by turning on this option.</p>
+<p>You can display the &quot;real&quot; cumulative size of directories by using the command :get_cumulative_size or typing &quot;dc&quot;. The size is expensive to calculate and will not be updated automatically. You can choose to update it automatically though by turning on this option.</p>
 
 </dd>
 <dt id="cd_bookmarks-bool">cd_bookmarks [bool]</dt>
@@ -660,7 +680,7 @@
 <p>Specify whether bookmarks should be included in the tab completion of the &quot;cd&quot; command.</p>
 
 </dd>
-<dt id="collapse_preview-bool-Xzc">collapse_preview [bool] &lt;^Xzc&gt;</dt>
+<dt id="collapse_preview-bool-zc">collapse_preview [bool] &lt;zc&gt;</dt>
 <dd>
 
 <p>When no preview is visible, should the last column be squeezed to make use of the whitespace?</p>
@@ -720,7 +740,7 @@
 <p>Draw a progress bar in the status bar which displays the average state of all currently running tasks which support progress bars?</p>
 
 </dd>
-<dt id="flushinput-bool-Xzi">flushinput [bool] &lt;^Xzi&gt;</dt>
+<dt id="flushinput-bool-zi">flushinput [bool] &lt;zi&gt;</dt>
 <dd>
 
 <p>Flush the input after each key hit? One advantage is that when scrolling down with &quot;j&quot;, ranger stops scrolling instantly when you release the key. One disadvantage is that when you type commands blindly, some keys might get lost.</p>
@@ -758,7 +778,7 @@
 <p>When the metadata manager module looks for metadata, should it only look for a &quot;.metadata.json&quot; file in the current directory, or do a deep search and check all directories above the current one as well?</p>
 
 </dd>
-<dt id="mouse_enabled-bool-Xzm">mouse_enabled [bool] &lt;^Xzm&gt;</dt>
+<dt id="mouse_enabled-bool-zm">mouse_enabled [bool] &lt;zm&gt;</dt>
 <dd>
 
 <p>Enable mouse input?</p>
@@ -770,13 +790,13 @@
 <p>When collapse_preview is on and there is no preview, should there remain a little padding on the right? This allows you to click into that space to run the file.</p>
 
 </dd>
-<dt id="preview_directories-bool-XzP">preview_directories [bool] &lt;^XzP&gt;</dt>
+<dt id="preview_directories-bool-zP">preview_directories [bool] &lt;zP&gt;</dt>
 <dd>
 
 <p>Preview directories in the preview column?</p>
 
 </dd>
-<dt id="preview_files-bool-Xzp">preview_files [bool] &lt;^Xzp&gt;</dt>
+<dt id="preview_files-bool-zp">preview_files [bool] &lt;zp&gt;</dt>
 <dd>
 
 <p>Preview files in the preview column?</p>
@@ -830,25 +850,25 @@
 <p>Show dotfiles in the bookmark preview window? (Type &#39;)</p>
 
 </dd>
-<dt id="show_hidden-bool-Xzh">show_hidden [bool] &lt;^Xzh&gt;</dt>
+<dt id="show_hidden-bool-zh-H">show_hidden [bool] &lt;zh&gt;, &lt;^H&gt;</dt>
 <dd>
 
 <p>Show hidden files?</p>
 
 </dd>
-<dt id="sort_case_insensitive-bool-Xzc">sort_case_insensitive [bool] &lt;^Xzc&gt;</dt>
+<dt id="sort_case_insensitive-bool-zc">sort_case_insensitive [bool] &lt;zc&gt;</dt>
 <dd>
 
 <p>Sort case-insensitively? If true, &quot;a&quot; will be listed before &quot;B&quot; even though its ASCII value is higher.</p>
 
 </dd>
-<dt id="sort_directories_first-bool-Xzd">sort_directories_first [bool] &lt;^Xzd&gt;</dt>
+<dt id="sort_directories_first-bool-zd">sort_directories_first [bool] &lt;zd&gt;</dt>
 <dd>
 
 <p>Sort directories first?</p>
 
 </dd>
-<dt id="sort_reverse-bool-Xor">sort_reverse [bool] &lt;^Xor&gt;</dt>
+<dt id="sort_reverse-bool-or">sort_reverse [bool] &lt;or&gt;</dt>
 <dd>
 
 <p>Reverse the order of files?</p>
@@ -860,7 +880,7 @@
 <p>When sorting according to some string, should the unicode characters be compared, instead of looking at the raw character values to save time?</p>
 
 </dd>
-<dt id="sort-string-Xoa-Xob-Xoc-Xoe-Xom-Xon-Xot-Xos-Xoz">sort [string] &lt;^Xoa&gt;, &lt;^Xob&gt;, &lt;^Xoc&gt;, &lt;^Xoe&gt;, &lt;^Xom&gt;, &lt;^Xon&gt;, &lt;^Xot&gt;, &lt;^Xos&gt;, &lt;^Xoz&gt;</dt>
+<dt id="sort-string-oa-ob-oc-oe-om-on-ot-os-oz">sort [string] &lt;oa&gt;, &lt;ob&gt;, &lt;oc&gt;, &lt;oe&gt;, &lt;om&gt;, &lt;on&gt;, &lt;ot&gt;, &lt;os&gt;, &lt;oz&gt;</dt>
 <dd>
 
 <p>Which sorting mechanism should be used? Choose one of <b>atime</b>, <b>basename</b>, <b>ctime</b>, <b>extension</b>, <b>mtime</b>, <b>natural</b>, <b>type</b>, <b>size</b>, <b>random</b></p>
@@ -898,7 +918,7 @@
 <p>Set the title to &quot;ranger&quot; in the tmux program?</p>
 
 </dd>
-<dt id="use_preview_script-bool-Xzv">use_preview_script [bool] &lt;^Xzv&gt;</dt>
+<dt id="use_preview_script-bool-zv">use_preview_script [bool] &lt;zv&gt;</dt>
 <dd>
 
 <p>Use the preview script defined in the setting <i>preview_script</i>?</p>
@@ -930,9 +950,9 @@
 
 <h1 id="COMMANDS">COMMANDS</h1>
 
-<p>You can enter the commands in the console which is opened by pressing <b>Alt+x</b>.</p>
+<p>You can enter the commands in the console which is opened by pressing &quot;:&quot;.</p>
 
-<p>You can always get a list of the currently existing commands by typing &quot;^Hc&quot; in ranger. For your convenience, this is a list of the &quot;public&quot; commands including their parameters, excluding descriptions:</p>
+<p>You can always get a list of the currently existing commands by typing &quot;2?&quot; in ranger. For your convenience, this is a list of the &quot;public&quot; commands including their parameters, excluding descriptions:</p>
 
 <pre><code> alias [newcommand] [oldcommand]
  bulkrename
@@ -1010,7 +1030,7 @@
 <dt id="cd-directory">cd [<i>directory</i>]</dt>
 <dd>
 
-<p>The cd command changes the directory. The command <code>&lt;M-x&gt;cd -</code> is equivalent to typing ``.</p>
+<p>The cd command changes the directory. The command <code>:cd -</code> is equivalent to typing ``.</p>
 
 </dd>
 <dt id="chain-command1-command2-command3">chain <i>command1</i>[; <i>command2</i>[; <i>command3</i>...]]</dt>
@@ -1025,6 +1045,8 @@
 <p>Sets the permissions of the selection to the octal number.</p>
 
 <p>The octal number is between 000 and 777. The digits specify the permissions for the user, the group and others. A 1 permits execution, a 2 permits writing, a 4 permits reading. Add those numbers to combine them. So a 7 permits everything.</p>
+
+<p>Key bindings in the form of [-+]&lt;who&gt;&lt;what&gt; and &lt;octal&gt;= also exist. For example, <b>+ar</b> allows reading for everyone, -ow forbids others to write and 777= allows everything.</p>
 
 <p>See also: man 1 chmod</p>
 
@@ -1080,11 +1102,11 @@
 
 <p>Examples:</p>
 
-<p>Set the global default linemode to &quot;permissions&quot;: &lt;M-x&gt; default_linemode permissions</p>
+<p>Set the global default linemode to &quot;permissions&quot;: :default_linemode permissions</p>
 
-<p>Set the default linemode to &quot;permissions&quot; for all files tagged with &quot;p&quot; or &quot;P&quot;: &lt;M-x&gt; default_linemode tag=pP permissions</p>
+<p>Set the default linemode to &quot;permissions&quot; for all files tagged with &quot;p&quot; or &quot;P&quot;: :default_linemode tag=pP permissions</p>
 
-<p>Set the default linemode for all files in ~/books/ to &quot;metatitle&quot;: &lt;M-x&gt; default_linemode path=/home/.*?/books/.* metatitle</p>
+<p>Set the default linemode for all files in ~/books/ to &quot;metatitle&quot;: :default_linemode path=/home/.*?/books/.* metatitle</p>
 
 </dd>
 <dt id="delete">delete</dt>
@@ -1104,7 +1126,7 @@
 
 <p>Evaluates the python code. `fm&#39; is a reference to the FM instance. To display text, use the function `p&#39;. The result is displayed on the screen unless you use the &quot;-q&quot; option.</p>
 
-<p>Examples: &lt;M-x&gt; eval fm &lt;M-x&gt; eval len(fm.tabs) &lt;M-x&gt; eval p(&quot;Hello World!&quot;)</p>
+<p>Examples: :eval fm :eval len(fm.tabs) :eval p(&quot;Hello World!&quot;)</p>
 
 </dd>
 <dt id="filter-string">filter [<i>string</i>]</dt>
@@ -1150,7 +1172,7 @@
  &quot;permissions&quot;: display each line as &quot;&lt;permissions&gt; &lt;owner&gt; &lt;group&gt; &lt;basename&gt;&quot;
  &quot;metatitle&quot;: display metadata from .metadata.json files if
      available, fall back to the &quot;filename&quot; linemode if no
-     metadata was found.  See &lt;M-x&gt;meta command.</code></pre>
+     metadata was found.  See :meta command.</code></pre>
 
 <p>The custom linemodes may be added by subclassing the <i>LinemodeBase</i> class. See the <i>ranger.core.linemode</i> module for some examples.</p>
 
@@ -1188,8 +1210,8 @@
 
 <p>Set the metadata of the currently highlighted file. Example:</p>
 
-<pre><code> &lt;M-x&gt; meta title The Hitchhiker&#39;s Guide to the Galaxy
- &lt;M-x&gt; meta year 1979</code></pre>
+<pre><code> :meta title The Hitchhiker&#39;s Guide to the Galaxy
+ :meta year 1979</code></pre>
 
 <p>This metadata can be displayed by, for example, using the &quot;metatitle&quot; line mode by typing Mt.</p>
 
@@ -1247,7 +1269,7 @@
 <dt id="rename_append">rename_append</dt>
 <dd>
 
-<p>Opens the console with &quot;&lt;M-x&gt; rename &lt;current file&gt;&quot; with the cursor automatically placed before the file extension</p>
+<p>Opens the console with &quot;:rename &lt;current file&gt;&quot; with the cursor automatically placed before the file extension</p>
 
 </dd>
 <dt id="rename-newname">rename <i>newname</i></dt>
@@ -1281,7 +1303,7 @@
  -t = apply filter and search pattern as you type
  -v = inverts the match</code></pre>
 
-<p>Multiple flags can be combined. For example, &quot;&lt;M-x&gt;scout -gpt&quot; would create a &lt;M-x&gt;filter-like command using globbing.</p>
+<p>Multiple flags can be combined. For example, &quot;:scout -gpt&quot; would create a :filter-like command using globbing.</p>
 
 </dd>
 <dt id="search-pattern">search <i>pattern</i></dt>
@@ -1403,7 +1425,7 @@
 <dt id="commands.py">commands.py</dt>
 <dd>
 
-<p>A python module that defines commands which can be used in ranger&#39;s console by typing &quot;&lt;M-x&gt;&quot; or in the rc.conf file.</p>
+<p>A python module that defines commands which can be used in ranger&#39;s console by typing &quot;:&quot; or in the rc.conf file.</p>
 
 </dd>
 <dt id="commands_full.py">commands_full.py</dt>
@@ -1445,13 +1467,13 @@
 <dt id="bookmarks">bookmarks</dt>
 <dd>
 
-<p>This file contains a list of bookmarks. The syntax is /^(.):(.*)$/. The first character is the bookmark key and the rest after the colon is the path to the file. In ranger, bookmarks can be set by typing <b>&lt;C-x&gt;rm&lt;key&gt;</b>, accessed by typing <b>&lt;C-x&gt;rb&lt;key&gt;</b> and deleted by typing <b>&lt;C-x&gt;ru&lt;key&gt;</b>.</p>
+<p>This file contains a list of bookmarks. The syntax is /^(.):(.*)$/. The first character is the bookmark key and the rest after the colon is the path to the file. In ranger, bookmarks can be set by typing m&lt;key&gt;, accessed by typing &#39;&lt;key&gt; and deleted by typing um&lt;key&gt;.</p>
 
 </dd>
 <dt id="copy_buffer">copy_buffer</dt>
 <dd>
 
-<p>When running the command &lt;M-x&gt;save_copy_buffer, the paths of all currently copied files are saved in this file. You can later run &lt;M-x&gt;load_copy_buffer to copy the same files again, pass them to another ranger instance or process them in a script.</p>
+<p>When running the command :save_copy_buffer, the paths of all currently copied files are saved in this file. You can later run :load_copy_buffer to copy the same files again, pass them to another ranger instance or process them in a script.</p>
 
 </dd>
 <dt id="history">history</dt>
@@ -1463,7 +1485,7 @@
 <dt id="tagged">tagged</dt>
 <dd>
 
-<p>Contains a list of tagged files. The syntax is /^(.:)?(.*)$/ where the first letter is the optional name of the tag and the rest after the optional colon is the path to the file. In ranger, tags can be set by pressing <b>&lt;C-x&gt;t&lt;tagname&gt;</b> and removed with <b>&lt;C-_&gt;t</b>.</p>
+<p>Contains a list of tagged files. The syntax is /^(.:)?(.*)$/ where the first letter is the optional name of the tag and the rest after the optional colon is the path to the file. In ranger, tags can be set by pressing t and removed with T. To assign a named tag, type &quot;&lt;tagname&gt;.</p>
 
 </dd>
 </dl>
@@ -1489,13 +1511,19 @@
 <dt id="EDITOR">EDITOR</dt>
 <dd>
 
-<p>Defines the editor to be used for the <b>&lt;C-x&gt;&lt;C-f&gt;</b> key. Defaults to &quot;emacs&quot;.</p>
+<p>Defines the editor to be used for the &quot;E&quot; key. Defaults to &quot;nano&quot;.</p>
+
+</dd>
+<dt id="SHELL">SHELL</dt>
+<dd>
+
+<p>Defines the shell that ranger is going to use with the :shell command and the &quot;S&quot; key. Defaults to &quot;/bin/sh&quot;.</p>
 
 </dd>
 <dt id="TERMCMD">TERMCMD</dt>
 <dd>
 
-<p>Defines the terminal emulator command that ranger is going to use with the &lt;M-x&gt;terminal command and the &quot;t&quot; run flag. Defaults to &quot;xterm&quot;.</p>
+<p>Defines the terminal emulator command that ranger is going to use with the :terminal command and the &quot;t&quot; run flag. Defaults to &quot;xterm&quot;.</p>
 
 </dd>
 <dt id="XDG_CONFIG_HOME">XDG_CONFIG_HOME</dt>
