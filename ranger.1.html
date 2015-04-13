@@ -73,13 +73,15 @@
 
 <p><i>This manual</i> contains instructions on how to use and configure ranger.</p>
 
-<p><i>Inside ranger</i>, you can press <i>1?</i> for a list of key bindings, <i>2?</i> for commands and <i>3?</i> for settings.</p>
+<p><i>Inside ranger</i>, you can press <i>?</i> for a list of key bindings, commands or settings.</p>
 
 <p>The <i>README</i> contains install instructions.</p>
 
 <p>The file <i>HACKING.md</i> contains guidelines for code modification.</p>
 
-<p>The directory <i>doc/configs</i> contains configuration files. They are usually installed to <i>/usr/lib/python*/site-packages/ranger/config</i> and can be obtained with ranger&#39;s --copy-config option.</p>
+<p>The directory <i>doc/configs</i> contains configuration files. They are usually installed to <i>/usr/share/doc/ranger/config</i> and can be obtained with ranger&#39;s --copy-config option.</p>
+
+<p>The directory <i>examples</i> contains reference implementations for ranger plugins, sample configuration files and some programs for integrating ranger with other software. They are usually installed to <i>/usr/share/doc/ranger/examples</i>.</p>
 
 <p>The man page of rifle(1) describes the functions of the file opener</p>
 
@@ -235,6 +237,10 @@
 <p>Macros for file paths are generally shell-escaped so they can be used in the <code>shell</code> command.</p>
 
 <p>Additionally, if you create a key binding that uses &lt;any&gt;, a special statement which accepts any key, then the macro %any (or %any0, %any1, %any2, ...) can be used in the command to get the key that was pressed.</p>
+
+<p>The macro %rangerdir expands to the directory of ranger&#39;s python library, you can use it for something like this command: alias show_commands shell less %rangerdir/config/commands.py</p>
+
+<p>The macro %space expands to a space character. You can use it to add spaces to the end of a command when needed, while preventing editors to strip spaces off the end of the line automatically.</p>
 
 <h2 id="BOOKMARKS">BOOKMARKS</h2>
 
@@ -975,6 +981,7 @@
  find pattern
  flat level
  grep pattern
+ help
  linemode linemodename
  load_copy_buffer
  map key command
@@ -996,6 +1003,7 @@
  search pattern
  search_inc pattern
  set option value
+ setintag tags option value
  setlocal [path=&lt;path&gt;] option value
  shell [-FLAGS] command
  terminal
@@ -1163,12 +1171,19 @@
 <p>Looks for a string in all marked files or directories.</p>
 
 </dd>
+<dt id="help">help</dt>
+<dd>
+
+<p>Provides a quick way to view ranger documentations.</p>
+
+</dd>
 <dt id="linemode-linemodename">linemode <i>linemodename</i></dt>
 <dd>
 
 <p>Sets the linemode of all files in the current directory. The linemode may be:</p>
 
 <pre><code> &quot;filename&quot;: display each line as &quot;&lt;basename&gt;...&lt;size&gt;&quot;
+ &quot;fileinfo&quot;: display each line as &quot;&lt;basename&gt;...&lt;file(1) output&gt;&quot;
  &quot;permissions&quot;: display each line as &quot;&lt;permissions&gt; &lt;owner&gt; &lt;group&gt; &lt;basename&gt;&quot;
  &quot;metatitle&quot;: display metadata from .metadata.json files if
      available, fall back to the &quot;filename&quot; linemode if no
@@ -1334,6 +1349,12 @@
  string         | foo, hello world
  list           | 1,2,3,4
  none           | none</code></pre>
+
+</dd>
+<dt id="setintag-tags-option-value">setintag <i>tags</i> <i>option</i> <i>value</i></dt>
+<dd>
+
+<p>Assigns a new value to an option, but locally for the directories that are marked with <i>tag</i>. This means, that this option only takes effect when visiting that directory.</p>
 
 </dd>
 <dt id="setlocal-path-path-option-value">setlocal [path=<i>path</i>] <i>option</i> <i>value</i></dt>
