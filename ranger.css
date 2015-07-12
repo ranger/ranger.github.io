@@ -65,6 +65,7 @@ a:hover {
 }
 img {
   border: none;
+  max-width: 100%;
 }
 div.code, .content pre {
   background-color: #CCCCCC;
@@ -76,6 +77,7 @@ div.code, .content pre {
   white-space: pre;
   /*box-shadow: 0 0 5pt 1pt #555;*/
   border-radius: 5pt;
+  overflow: auto;
 }
 p {
   padding-left: 10px;
