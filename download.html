@@ -1,69 +1,83 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <!--get head from index.html-->
-<html><head>
-  <title>ranger</title>
-  <link rel="stylesheet" href="ranger.css" type="text/css" />
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-</head><body>
-<div class="header">
-<h1>ranger - file manager</h1>
-<div class="menu">
-  <a href="index.html">Description</a>
-  <a href="https://github.com/hut/ranger/wiki">Wiki</a>
-  <a href="screenshots.html">Screenshots</a>
-  <a href="download.html">Download</a>
-  <a href="documentation.html">Documentation</a>
-  <a href="contact.html">Contact</a>
-  <!--<a href="http://ourproject.org/moin/projects/ranger">Wiki</a>-->
-</div>
-<div class="curve"></div>
-</div>
-<div class="content">
+<html>
+    <head>
+        <title>ranger</title>
+        <link rel="stylesheet" href="ranger.css" type="text/css" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=0.5" />
+    </head>
+    <body>
+        <div class="header">
+            <h1>ranger</h1>
+            <div class="menu">
+                <a href="index.html">Description</a>
+                <a href="https://github.com/hut/ranger/wiki">Wiki</a>
+                <a href="screenshots.html">Screenshots</a>
+                <a href="download.html">Download</a>
+                <a href="documentation.html">Documentation</a>
+                <a href="contact.html">Contact</a>
+                <!--<a href="http://ourproject.org/moin/projects/ranger">Wiki</a>-->
+            </div>
+        </div>
+        <div class="content">
 <!--/get-->
 
-<h2>Download</h2>
+<!-- run cat download.md | markdown --><h1>Download</h1>
 
 <ul>
-<li>Stable: <a href="http://nongnu.org/ranger/ranger-stable.tar.gz">http://nongnu.org/ranger/ranger-stable.tar.gz</a></li>
+<li>Stable: <a href="http://nongnu.org/ranger/ranger-stable.tar.gz">http://nongnu.org/ranger/ranger-stable.tar.gz</a></a></li></li>
 <li>Testing: <a href="http://git.savannah.gnu.org/cgit/ranger.git/snapshot/ranger-master.tar.gz">http://git.savannah.gnu.org/cgit/ranger.git/snapshot/ranger-master.tar.gz</a></li>
 <li>More downloads: <a href="http://git.savannah.gnu.org/cgit/ranger.git/refs/tags">http://git.savannah.gnu.org/cgit/ranger.git/refs/tags</a></li>
 </ul>
 
-<p>
-  Unpack the archive, enter the directory and run ranger:
-</p>
-<div class="code">tar xvf ranger-stable.tar.gz
+<p>Unpack the archive, enter the directory and run ranger:</p>
+
+<pre><code>tar xvf ranger-stable.tar.gz
 cd ranger-stable
-./ranger.py</div>
-<p>
-  If you want to conventionally install it, for example for a multi-user system, you can run this command:
-</p>
-<div class="code">sudo make install</div>
+./ranger.py
+</code></pre>
 
-<p> <hr /> </p>
+<p>If you want to conventionally install it, for example for a multi-user system, you can run this command:</p>
 
-<h3>Get ranger with git</h3>
+<pre><code>sudo make install
+</code></pre>
 
-<p>
-  <a href="http://git-scm.com">git</a> is the version control system used to manage the source code of ranger.  Install it, then type:
-</p>
-<div class="code">git clone git://git.savannah.nongnu.org/ranger.git
-cd ranger</div>
-<p>
-  You can also <a href="http://git.savannah.gnu.org/cgit/ranger.git">browse the source code</a>.
-</p>
-<p>
-  The advantage of git is that you get lots of useful commands for keeping the code up to date and merging your own changes with the upstream code.  Here is a selection of commands.  For more details, please read the fine manual.
-</p>
+<h2>Get ranger with git</h2>
 
-<div class="code">git checkout stable  # use the stable version
+<p><a href="http://git-scm.com">git</a> is the version control system used to manage the source code of ranger.  Install it, then type:</p>
+
+<pre><code>git clone git://git.savannah.nongnu.org/ranger.git
+cd ranger
+</code></pre>
+
+<p>You can also <a href="http://git.savannah.gnu.org/cgit/ranger.git">browse the source code</a></p>
+
+<p>The advantage of git is that you get lots of useful commands for keeping the code up to date and merging your own changes with the upstream code.  Here is a selection of commands.  For more details, please read the fine manual.</p>
+
+<pre><code>git checkout stable  # use the stable version
 git checkout master  # use the testing version
 git pull             # fetch updates from upstream
-git commit -a        # commit your changes to your local branch</div>
+git commit -a        # commit your changes to your local branch
+</code></pre>
 
-<p> <hr /> </p>
+<h2>Signed Packages</h2>
 
-<h3 id="signed">Signed Packages</h3>
+<p>If you want to be sure of the authenticity of the snapshot, please download <a href="ranger-stable.tar.gz">ranger-stable.tar.gz</a> and its <a href="ranger-stable.tar.gz.sig">signature</a>, then verify the signature with the author's public key: <a href="huterich.gpg">huterich.gpg</a>.</p>
+
+<pre><code>gpg --import huterich.gpg
+gpg --verify ranger-stable.tar.gz.sig
+</code></pre>
+
+<p>If this prints <code>Good signature from "huterich &amp;lt;hut@lavabit.com&amp;gt;</code>, the signature was verified.  However, you can only trust the authenticity of the snapshot as much as you trust the authenticity of the public key. Please ensure that the key really belongs to Roman Zimbelmann alias hut by verifying it from multiple sources.  Once you are sure, you can sign the key with your own signature as described <a href="http://www.dewinter.com/gnupg_howto/english/GPGMiniHowto-3.html#ss3.6">here</a> to avoid the warning that says "This key is not certified with a trusted signature! There is no indication that the signature belongs to the owner."<br />
+<br /></p>
+
+<p>
+    This is a list of all released packages since 1.2.2 with their signatures:
+</p><!-- /run -->
+
+
+<h2 id="signed">Signed Packages</h2>
 
 If you want to be sure of the authenticity of the snapshot, please download <a href="ranger-stable.tar.gz">ranger-stable.tar.gz</a> and its <a href="ranger-stable.tar.gz.sig">signature</a>, then verify the signature with the author's public key: <a href="huterich.gpg">huterich.gpg</a>.<br />
 <br />
@@ -73,7 +87,9 @@ gpg --verify ranger-stable.tar.gz.sig
 <br />
 If this prints '<i>Good signature from "huterich &lt;hut@lavabit.com&gt;"</i>', the signature was verified.  However, you can only trust the authenticity of the snapshot as much as you trust the authenticity of the public key. Please ensure that the key really belongs to Roman Zimbelmann alias hut by verifying it from multiple sources.  Once you are sure, you can sign the key with your own signature as described <a href="http://www.dewinter.com/gnupg_howto/english/GPGMiniHowto-3.html#ss3.6">here</a> to avoid the warning that says "This key is not certified with a trusted signature! There is no indication that the signature belongs to the owner."<br />
 <br />
-This is a list of all released packages since 1.2.2 with their signatures:
+<p>
+    This is a list of all released packages since 1.2.2 with their signatures:
+</p>
 <ul>
   <!-- run ls *.tar.gz | sort -r | sed 's,\(.*\),<li><a href="\1">\1</a> - <a href="\1.sig">signature</a></li>,' -->
 <li><a href="ranger-stable.tar.gz">ranger-stable.tar.gz</a> - <a href="ranger-stable.tar.gz.sig">signature</a></li>
@@ -97,9 +113,7 @@ This is a list of all released packages since 1.2.2 with their signatures:
 <!-- /run -->
 </ul>
 
-<hr />
-
-<h3>Package Managers</h3>
+<h2>Package Managers</h2>
 
 <p>
   <b>Arch Linux</b>: A stable version is in the <a href="http://www.archlinux.org/packages/community/any/ranger/">Community Repository</a>, the freshest git-version can be found in the <a href="http://aur.archlinux.org/packages.php?ID=35421">Arch User Repositories</a>.
@@ -118,7 +132,6 @@ This is a list of all released packages since 1.2.2 with their signatures:
 </p>
 
 <!--get foot from index.html-->
-</div>
 </div>
 </body></html>
 <!--/get-->
