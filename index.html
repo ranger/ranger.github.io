@@ -149,37 +149,37 @@ configuration.</p><!-- /run -->
 <h1>2015-05-04: version 1.7.1</h1>
 
 <ul>
-<li>Added doc/cheatsheet.svg</li>
-<li>Added examples/rc_emacs.conf, a config file adding emacs-like key bindings</li>
-<li>Added "env" keyword in rifle.conf</li>
-<li>Fixed ":bulkrename" command in python3</li>
-<li>Fixed "S" key binding not working when SHELL=fish</li>
+<li>Added <code>doc/cheatsheet.svg</code></li>
+<li>Added <code>examples/rc_emacs.conf</code>, a config file adding emacs-like key bindings</li>
+<li>Added <code>env</code> keyword in rifle.conf</li>
+<li>Fixed <code>:bulkrename</code> command in python3</li>
+<li>Fixed <code>S</code> key binding not working when SHELL=fish</li>
 </ul>
 
 <h1>2015-04-13: version 1.7.0</h1>
 
 <ul>
-<li>The default editor is now "vim" instead of "nano"</li>
+<li>The default editor is now <code>vim</code> instead of <code>nano</code></li>
 <li>Added automatic updates of tags when a file is renamed from within ranger</li>
-<li>Added <code>preview_images_method</code> which can be set to "iterm2" to use native
+<li>Added <code>preview_images_method</code> which can be set to <code>iterm2</code> to use native
 iTerm2 image previews</li>
 <li>Added <code>:rename_append</code> command to rename files without the file extension</li>
-<li>Added ":linemode" command to change the way the files are displayed
+<li>Added <code>:linemode</code> command to change the way the files are displayed
 Try this out by pressing M followed by one of the suggested keys.
-New linemodes can be added with ranger.api.register_linemode().</li>
-<li>Added ":filter<em>inode</em>type" command to only show directories, files or links</li>
-<li>Added ":meta" command for managing custom file metadata</li>
-<li>Added ":flat" command for displaying subdirectories</li>
-<li>Added "solarized" colorscheme</li>
+New linemodes can be added with <code>ranger.api.register_linemode()</code>.</li>
+<li>Added <code>:filter_inode_type</code> command to only show directories, files or links</li>
+<li>Added <code>:meta</code> command for managing custom file metadata</li>
+<li>Added <code>:flat</code> command for displaying subdirectories</li>
+<li>Added <code>solarized</code> colorscheme</li>
 <li>Added generic ability to use scope.sh for image previews</li>
 <li>Added video previews in scope.sh</li>
-<li>Added option "sort_unicode" to sort according to unicode, not ASCII</li>
-<li>":mkdir" can now create multiple directory levels (like <code>mkdir -p</code>)</li>
-<li>":help" (key binding "?") is now interactive</li>
-<li>":find" (key binding "/") is now case insensitive by default</li>
-<li>"ranger --copy-config=all" now copies a short sample commands.py rather than
+<li>Added option <code>sort_unicode</code> to sort according to unicode, not ASCII</li>
+<li><code>:mkdir</code> can now create multiple directory levels (like <code>mkdir -p</code>)</li>
+<li><code>:help</code> (key binding <code>?</code>) is now interactive</li>
+<li><code>:find</code> (key binding <code>/</code>) is now case insensitive by default</li>
+<li><code>ranger --copy-config=all</code> now copies a short sample commands.py rather than
 the full one, so that you can update ranger without having broken commands.
-The full commands.py is still copied to ~/.config/ranger/commands_full.py.</li>
+The full commands.py is still copied to <code>~/.config/ranger/commands_full.py</code>.</li>
 <li>Fixed broken copying of symlinks</li>
 </ul>
 
@@ -189,50 +189,50 @@ The full commands.py is still copied to ~/.config/ranger/commands_full.py.</li>
 <li>Added support for version control systems, see:
 http://lists.nongnu.org/archive/html/ranger-users/2013-03/msg00007.html</li>
 <li>Added :scout command as a unified backend to :find, :search, etc</li>
-<li>Added "open<em>all</em>images" setting to remove the need for external scripts
+<li>Added <code>open_all_images</code> setting to remove the need for external scripts
 to handle opening of all images in a directory at once.</li>
-<li>Now previewing with "i" uses the whole available width.</li>
+<li>Now previewing with <code>i</code> uses the whole available width.</li>
 </ul>
 
 <h1>2013-02-22: Version 1.6.0</h1>
 
 <ul>
 <li>Overhauled all config files.  Please update them or use the --clean switch</li>
-<li>Added "examples/" directory to source code which contains sample programs or
+<li>Added <code>examples/</code> directory to source code which contains sample programs or
 plugins that can be used together with ranger</li>
 <li>Added progress bars to copying, moving and directory loading processes</li>
 <li>Added feature to draw images inside the console using w3mimgdisplay (you need
-to add "set preview_images true" in rc.conf)</li>
-<li>Added a plugin system like in the program "anki", i.e. place any python file
+to add <code>set preview_images true</code> in rc.conf)</li>
+<li>Added a plugin system like in the program <code>anki</code>, i.e. place any python file
 into ~/.config/ranger/plugins/ and it will be imported by ranger</li>
-<li>Added a separate file launcher named "rifle" that is configured through
+<li>Added a separate file launcher named <code>rifle</code> that is configured through
 rifle.conf and is installed as a standalone program.
-Using "ranger [filename]" from the shell for opening files is deprecated now,
-please use "rifle [filename]" instead.</li>
-<li>Added "uq" keybinding to undo closed tabs</li>
+Using <code>ranger [filename]</code> from the shell for opening files is deprecated now,
+please use <code>rifle [filename]</code> instead.</li>
+<li>Added <code>uq</code> keybinding to undo closed tabs</li>
 <li>Added :setlocal command to change settings for specific directories only</li>
 <li>Added :travel command to move more quickly to your destination</li>
 <li>Added 256 color support for scope.sh</li>
 <li>Added a real yes/no prompt for :delete command</li>
-<li>Added settings: confirm<em>on</em>delete, draw<em>progress</em>bar<em>in</em>status<em>bar,
-preview</em>images, status<em>bar</em>on<em>top, update</em>tmux_title</li>
-<li>Added commands: :mark<em>tag, :unmark</em>tag</li>
+<li>Added settings: <code>confirm_on_delete</code>, <code>draw_progress_bar_in_status_bar</code>,
+<code>preview_images</code>, <code>status_bar_on_top</code>, <code>update_tmux_title</code></li>
+<li>Added commands: <code>:mark_tag</code>, <code>:unmark_tag</code></li>
 <li>Added BSD-friendly setsid implementation</li>
-<li>Added as-you-type filtering for :filter command</li>
-<li>Replaced "options.py" file by :set commands in rc.conf</li>
-<li>Replaced "apps.py" file with rifle.conf</li>
-<li>Improved "r" key to interface with rifle</li>
-<li>Rewritten "scope.sh" in POSIX shell</li>
+<li>Added as-you-type filtering for <code>:filter</code> command</li>
+<li>Replaced <code>options.py</code> file by :set commands in rc.conf</li>
+<li>Replaced <code>apps.py</code> file with rifle.conf</li>
+<li>Improved <code>r</code> key to interface with rifle</li>
+<li>Rewritten <code>scope.sh</code> in POSIX shell</li>
 <li>Changed copying/moving code to work without GNU coreutils</li>
-<li>Changed key to untag files from "T" to "ut"</li>
-<li>Changed the flag "d" (for detached) to "f" (for fork) in program launcher</li>
+<li>Changed key to untag files from <code>T</code> to <code>ut</code></li>
+<li>Changed the flag <code>d</code> (for detached) to <code>f</code> (for fork) in program launcher</li>
 <li>Changed appearance of keybinding-hints and bookmarks</li>
 <li>Changed tabs with 4 spaces in the source code (see PEP 8)</li>
 <li>Removed ranger.core.environment class</li>
-<li>Removed settings: colorscheme<em>overlay, draw</em>bookmark<em>borders, init</em>function,
-load<em>default</em>rc</li>
+<li>Removed settings: <code>colorscheme_overlay</code>, <code>draw_bookmark_borders</code>,
+<code>init_function</code>, <code>load_default_rc</code></li>
 <li>Fixed zombie process apocalypse</li>
-<li>Fixed draw<em>borders=true in combination with padding</em>right=false</li>
+<li>Fixed <code>draw_borders=true</code> in combination with <code>padding_right=false</code></li>
 </ul>
 
 <h1>2012-08-10: Version 1.5.5</h1>
@@ -246,7 +246,7 @@ load<em>default</em>rc</li>
 <ul>
 <li>Added exiftool to scope.sh by default</li>
 <li>Fixed a crash when entering a directory with a unicode name</li>
-<li>Speedup in ranger.ext.get_executables</li>
+<li>Speedup in <code>ranger.ext.get_executables</code></li>
 </ul>
 
 <h1>2012-03-05: Version 1.5.3</h1>
@@ -256,22 +256,22 @@ load<em>default</em>rc</li>
 <li>Added --list-tagged-files option</li>
 <li>Added --cmd option to run commands on startup</li>
 <li>Added --profile option for additional debug information on exit</li>
-<li>Added a visual mode (activate with "V", deactivate with Esc)</li>
-<li>Added a reversed visual mode (activate with "uV")</li>
-<li>Added $RANGER_LEVEL environment variable which ranger sets to "1" or higher
+<li>Added a visual mode (activate with <code>V</code>, deactivate with Esc)</li>
+<li>Added a reversed visual mode (activate with <code>uV</code>)</li>
+<li>Added <code>$RANGER_LEVEL</code> environment variable which ranger sets to <code>1</code> or higher
 so programs can know that they were spawned from ranger</li>
-<li>Added run flag "r" for running with root privileges (needs sudo)</li>
-<li>Added run flag "t" for running in a new terminal (as specified in $TERMCMD)</li>
+<li>Added run flag <code>r</code> for running with root privileges (needs sudo)</li>
+<li>Added run flag <code>t</code> for running in a new terminal (as specified in $TERMCMD)</li>
 <li>Added :relink command to change destinations of symlinks</li>
-<li>Added "dc" binding for getting the cumulative size of a directory</li>
-<li>Added "autoupdate<em>cumulative</em>size" option</li>
-<li>Added "pht" binding to Paste Hardlinked subTrees (like cp -l)</li>
+<li>Added <code>dc</code> binding for getting the cumulative size of a directory</li>
+<li>Added <code>autoupdate_cumulative_size</code> option</li>
+<li>Added <code>pht</code> binding to Paste Hardlinked subTrees (like cp -l)</li>
 <li>Improved sorting speed of signals (noticable when caching many directories)</li>
 <li>Improved drawing speed</li>
 <li>Fixed unexpected behavior when displaying nonprintable characters</li>
 <li>Fixed :bulkrename to work with files starting with a minus sign</li>
 <li>Fixed RangerChooser example in man page</li>
-<li>Fixed crash when opening images with sxiv/feh by running "ranger <image>"</li>
+<li>Fixed crash when opening images with sxiv/feh by running <code>ranger &lt;image&gt;</code></li>
 </ul>
 
 <h1>2011-10-23: Version 1.5.2</h1>
@@ -284,46 +284,46 @@ characters at the right edge.</li>
 <h1>2011-10-23: Version 1.5.1</h1>
 
 <ul>
-<li>Added fm.select_file(path)</li>
+<li>Added <code>fm.select_file(path)</code></li>
 <li>Added --choosefiles option (like --choosefile, but chooses multiple files)</li>
 <li>Fixed --list-unused-keys</li>
 <li>Fixed Zombie processes</li>
 <li>Fixed handling of filenames with undecodable bytes (unicode surrogates)</li>
 <li>Fixed crashes due to incomplete loading of directories</li>
-<li>Fixed tab completion of the command "shell"</li>
-<li>Fixed "ot" and "oT" keys in rc.conf</li>
-<li>Fixed parsing of chained commands (like in the binding "om")</li>
+<li>Fixed tab completion of the command <code>shell</code></li>
+<li>Fixed <code>ot</code> and <code>oT</code> keys in rc.conf</li>
+<li>Fixed parsing of chained commands (like in the binding <code>om</code>)</li>
 </ul>
 
 <h1>2011-10-11: Version 1.5.0</h1>
 
 <ul>
 <li>Full python3.2 compatibility</li>
-<li>Added new configuration file "rc.conf" which contains a list
+<li>Added new configuration file <code>rc.conf</code> which contains a list
 of commands that are executed on startup - mainly used for keybindings</li>
 <li>Added --list-unused-keys</li>
 <li>Added new program handlers to apps.py</li>
 <li>Added pop-up window for keychains and bookmarks</li>
-<li>Added load<em>default</em>rc option</li>
+<li>Added <code>load_default_rc</code> option</li>
 <li>Fixed all known unicode issues</li>
 <li>Fixed crash when $TERM is unknown to the system</li>
 <li>Fixed scrolling in colored preview</li>
-<li>Changed the default column_ratios to 1/3/4 and sorting method to "natural"</li>
+<li>Changed the default <code>column_ratios</code> to 1/3/4 and sorting method to <code>natural</code></li>
 <li>Changed :rename so it doesn't overwrite existing files</li>
 <li>Internal actions are now accessible as commands</li>
 <li>Replaced unittests by doctests</li>
 <li>Replaced integrated help with an extended man page and dynamic lists
 of keybindings, commands and settings.</li>
-<li>Removed "keys.py" configuration file in favor of "rc.conf"</li>
-<li>Removed "texas" colorscheme</li>
+<li>Removed <code>keys.py</code> configuration file in favor of <code>rc.conf</code></li>
+<li>Removed <code>texas</code> colorscheme</li>
 <li>apps.py: Now able to define programs that only run with Xorg</li>
 <li>commands.py: Using parse(self.line) to parse the line is unnecessary now.
 parse(self.line).rest(n) is now written as self.rest(n).
 However, parse(self.line).chunk(n) has been renamed to self.arg(n).</li>
 <li>commands.py: parse(self.line) + X is now self.firstpart + X</li>
-<li>commands.py: New special attribute "resolve_macros" which decides whether
+<li>commands.py: New special attribute <code>resolve_macros</code> which decides whether
 strings like %f should be expanded to the name of the current file, etc.</li>
-<li>commands.py: New special attribute "escape<em>macros</em>for_shell" to toggle
+<li>commands.py: New special attribute <code>escape_macros_for_shell</code> to toggle
 whether or not macros should be escaped, so you can use them in other
 commands than :shell, for example :edit %f</li>
 <li>Countless small fixes and improvements</li>
@@ -332,11 +332,11 @@ commands than :shell, for example :edit %f</li>
 <h1>2011-10-02: Version 1.4.4</h1>
 
 <ul>
-<li>Added keys for chmod (like +ow for "chmod o+w", etc)</li>
-<li>Added "c" flag for running files</li>
+<li>Added keys for chmod (like +ow for <code>chmod o+w</code>, etc)</li>
+<li>Added <code>c</code> flag for running files</li>
 <li>Added various key bindings</li>
 <li>Added wavpack and webm types to mime.types</li>
-<li>Added option "display<em>tags</em>in<em>all</em>columns"</li>
+<li>Added option <code>display_tags_in_all_columns</code></li>
 <li>Added command.cancel method which is called when pressing ESC in console</li>
 <li>Added sorting and cycling by ctime and atime</li>
 <li>Added custom tags (press "x)</li>
@@ -376,15 +376,15 @@ commands than :shell, for example :edit %f</li>
 <ul>
 <li>Added option to use any external scripts for previews (see scope.sh)</li>
 <li>Added key: zv to toggle the use of the external script</li>
-<li>Added indicator for the used filter (type "zf")</li>
-<li>Added option padding_right to remove whitespace if theres no preview</li>
-<li>Added command :search_inc for incremental search</li>
-<li>Added commands :save<em>copy</em>buffer and :load<em>copy</em>buffer to share
+<li>Added indicator for the used filter (type <code>zf</code>)</li>
+<li>Added option <code>padding_right</code> to remove whitespace if theres no preview</li>
+<li>Added command <code>:search_inc</code> for incremental search</li>
+<li>Added commands <code>:save_copy_buffer</code> and <code>:load_copy_buffer</code> to share
 the copied files between ranger instances</li>
 <li>Added mimeopen as a fallback if no useful application can be found</li>
-<li>Added natural sort, sorts 1foo before 10foo. (type "on")</li>
+<li>Added natural sort, sorts 1foo before 10foo. (type <code>on</code>)</li>
 <li>Added keys: yp, yd and yb to copy path, dirname or basename to seleciton</li>
-<li>Let open_with use the selection, not just one file</li>
+<li>Let <code>open_with</code> use the selection, not just one file</li>
 <li>Run files with right mouse click</li>
 <li>Implemented copying via coreutils rather than internal python code</li>
 <li>Improved handling of unicode</li>
@@ -408,7 +408,7 @@ the copied files between ranger instances</li>
 <li>Disable mouse buttons when console is open</li>
 <li>Fixed :cd command: Without arguments, cd's into $HOME</li>
 <li>Fixed bug which prevented pydoc to work on some config files</li>
-<li>Fixed some bugs in "snow" and "jungle" colorschemes</li>
+<li>Fixed some bugs in <code>snow</code> and <code>jungle</code> colorschemes</li>
 <li>Several other clean-ups and fixes</li>
 </ul>
 
@@ -422,7 +422,7 @@ the copied files between ranger instances</li>
 
 <ul>
 <li>!!! Changed the default configuration directory to ~/.config/ranger !!!</li>
-<li>Removed "Console Modes", each old mode is now a simple command</li>
+<li>Removed <code>Console Modes</code>, each old mode is now a simple command</li>
 <li>Disabled file previews by default if ranger is used by root</li>
 <li>Allow to jump to specific help sections by typing two numbers, e.g. 13?</li>
 <li>Added keys: da, dr, ya, yr for adding and removing files from copy buffer</li>
@@ -438,16 +438,16 @@ the copied files between ranger instances</li>
 
 <ul>
 <li>Fix crash when using scrollwheel to scroll down in some cases</li>
-<li>The command "ranger dir1 dir2 ..." opens multiple directories in tabs</li>
-<li>Removed pydoc html documentation by default, re-create it with "make doc"</li>
+<li>The command <code>ranger dir1 dir2 ...</code> opens multiple directories in tabs</li>
+<li>Removed pydoc html documentation by default, re-create it with <code>make doc</code></li>
 <li>Minor fixes</li>
 </ul>
 
 <h1>2010-06-18: Version 1.1.1</h1>
 
 <ul>
-<li>New install script, "setup.py"</li>
-<li>New flag for running programs: "w" (waits for enter press)</li>
+<li>New install script, <code>setup.py</code></li>
+<li>New flag for running programs: <code>w</code> (waits for enter press)</li>
 <li>Minor fixes</li>
 </ul>
 
@@ -461,7 +461,7 @@ the copied files between ranger instances</li>
 <li>Case insensitive sorting (type zs)</li>
 <li>Better UTF support</li>
 <li>Possibility to turn off previews (zp and zP)</li>
-<li>Changing options with :set (e.g. :set column_ratios=1,2,3,4)</li>
+<li>Changing options with :set (e.g. <code>:set column_ratios=1,2,3,4</code>)</li>
 <li>Ask for confirmation when using :delete</li>
 <li>New invocation flag: --fail-unless-cd</li>
 <li>New hotkeys, commands, options.</li>
