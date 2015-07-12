@@ -31,7 +31,7 @@ div.header {
   margin: 0px;
   margin-bottom: 30pt;
   padding: 10px;
-  background: #edf;
+  background: #ccf;
   color: #000;
   /*border-bottom: 0.3em solid black;*/
   box-shadow: 0 0 5pt 1pt black;
@@ -45,7 +45,9 @@ div.curve {
   color: red;
 }
 div.content {
-  margin: 0 5ch;
+  max-width: 500pt;
+  margin: 0 auto;
+  padding: 0 10pt;
   margin-top: -0.5em;
 }
 div.menu {
