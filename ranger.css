@@ -9,6 +9,9 @@ body {
   font-size: 24px;
   text-align: center;
 }
+.header a {
+    color: #00a;
+}
 h2 {
   font-size: 20;
 }
