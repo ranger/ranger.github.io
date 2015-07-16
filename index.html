@@ -23,7 +23,8 @@
         <div class="content">
 <!--/head-->
 
-<!-- run cat README.md | sed 's:doc/screenshot:screenshot:' | markdown --><h1>ranger v.1.7.1</h1>
+<!-- run grep screenshot README.md -B 1000 -m 1 | sed s,doc/scr,scr, | markdown -->
+<h1>ranger v.1.7.1</h1>
 
 <p>ranger is a console file manager with VI key bindings.  It provides a
 minimalistic and nice curses interface with a view on the directory hierarchy.
@@ -31,122 +32,71 @@ It ships with "rifle", a file launcher that is good at automatically finding
 out which program to use for what file type.</p>
 
 <p><img src="screenshot.png" alt="screenshot" title="" /></p>
+<!-- /run -->
 
-<p>This file describes ranger and how to get it to run.  For instructions on the
-usage, please read the man page.  See HACKING.md for development specific
-information.  For configuration, check the files in ranger/config/ or copy the
-default config to ~/.config/ranger with ranger's --copy-config option.  The
-examples/ directory contains several scripts and plugins that demonstrate how
-ranger can be extended or combined with other programs.  These files can be
-found in the git repository or in /usr/share/doc/ranger.</p>
-
-<p>A note to packagers:  Versions meant for packaging are listed in the changelog
-on the website.</p>
-
-<h2>About</h2>
+<h2>Download</h2>
 
 <ul>
-<li>Authors:     see "AUTHORS" file</li>
-<li>License:     GNU General Public License Version 3</li>
-<li>Website:     http://ranger.nongnu.org/</li>
-<li>Download:    http://ranger.nongnu.org/ranger-stable.tar.gz</li>
-<li>Bug reports: https://github.com/hut/ranger/issues</li>
-<li>git clone    http://git.sv.gnu.org/r/ranger.git</li>
+    <li><a href="http://git.savannah.gnu.org/cgit/ranger.git/snapshot/ranger-master.tar.gz">The latest stable version</a></li>
+    <li><a href="http://git.savannah.gnu.org/cgit/ranger.git/snapshot/ranger-master.tar.gz">The bleeding edge version from git</a></li>
+    <li><a href="https://github.com/hut/ranger">ranger on GitHub</a></li>
+    <li><code>git clone git://git.savannah.nongnu.org/ranger.git</code></li>
 </ul>
 
-<h2>Design Goals</h2>
-
-<ul>
-<li>An easily maintainable file manager in a high level language</li>
-<li>A quick way to switch directories and browse the file system</li>
-<li>Keep it small but useful, do one thing and do it well</li>
-<li>Console based, with smooth integration into the unix shell</li>
-</ul>
+<p>
+    New versions are announced on this <a href="https://savannah.nongnu.org/news/atom.php?group=ranger">atom feed</a> and on
+    the <a href="https://lists.nongnu.org/mailman/listinfo/ranger-users">mailing list</a>.
+    More information is on the <a href="download.html">download
+    page</a>.
+</p>
 
 <h2>Features</h2>
-
 <ul>
-<li>UTF-8 Support  (if your python copy supports it)</li>
-<li>Multi-column display</li>
-<li>Preview of the selected file/directory</li>
-<li>Common file operations (create/chmod/copy/delete/...)</li>
-<li>Renaming multiple files at once</li>
-<li>VIM-like console and hotkeys</li>
-<li>Automatically determine file types and run them with correct programs</li>
-<li>Change the directory of your shell after exiting ranger</li>
-<li>Tabs, Bookmarks, Mouse support</li>
+    <li>UTF-8 Support</li>
+    <li>Multi-column display</li>
+    <li>Preview of the selected file/directory</li>
+    <li>Common file operations (create/chmod/copy/delete/...)</li>
+    <li>VIM-like console and hotkeys</li>
+    <li>Automatically determine file types and run them with correct programs</li>
+    <li>Change the directory of your shell after exiting ranger</li>
+    <li>Tabs, Bookmarks, Mouse support</li>
 </ul>
 
 <h2>Dependencies</h2>
-
 <ul>
-<li>Python (tested with version 2.6, 2.7, 3.1, 3.2) with support for ncurses
-and (optionally) wide-unicode.</li>
-<li>A pager ("less" by default)</li>
+    <li><a href="http://python.org">Python</a> (tested with version 2.7, 3.1, 3.2, 3.3, 3.4) with support for ncurses and (optionally) wide-unicode.</li>
+    <li>A pager (<a href="http://www.gnu.org/software/less/">less</a> by default)</li>
 </ul>
 
-<p>Optional:</p>
-
+<p>
+    Optional:
+</p>
 <ul>
-<li>The "file" program for determining file types</li>
-<li>The python module "chardet", in case of encoding detection problems</li>
-<li>"sudo" to use the "run as root"-feature</li>
-<li>w3m for the "w3mimgdisplay" program to preview images</li>
+    <li><a href="http://www.darwinsys.com/file/">file</a> for determining file types</li>
+    <li>The python module <a href="http://pypi.python.org/pypi/chardet">chardet</a>, in case of encoding detection problems</li>
+    <li>"sudo" to use the "run as root"-feature</li>
+    <li><a href="http://w3m.sourceforge.net/">w3m</a> for <a href="screenshots/w3mimgpreview.png">previewing images in "true color"</a>.</li>
 </ul>
 
-<p>Optional, for enhanced file previews (with "scope.sh"):</p>
-
+<p>
+  Optional, for enhanced file previews (with "scope.sh"):
+</p>
 <ul>
-<li>img2txt (from caca-utils) for ASCII-art image previews</li>
-<li>highlight for syntax highlighting of code</li>
-<li>atool for previews of archives</li>
-<li>lynx, w3m or elinks for previews of html pages</li>
-<li>pdftotext for pdf previews</li>
-<li>transmission-show for viewing bit-torrent information</li>
-<li>mediainfo or exiftool for viewing information about media files</li>
+    <li>img2txt (from <a href="http://caca.zoy.org/wiki/libcaca">caca-utils</a>) for previewing images in <a href="screenshots/ranger-screenshot_large-image-preview.png">ASCII-art</a></li>
+    <li><a href="http://www.andre-simon.de/doku/highlight/en/highlight.html">highlight</a> for syntax highlighting of code</li>
+    <li><a href="http://www.nongnu.org/atool/">atool</a> for previews of archives</li>
+    <li><a href="http://lynx.browser.org">lynx</a>, <a href="http://w3m.sourceforge.net/">w3m</a> or <a href="http://elinks.or.cz/">elinks</a> for previews of html pages</li>
+    <li>pdftotext for pdf previews</li>
+    <li><a href="http://www.transmissionbt.com/">transmission-show</a> for viewing bit-torrent information</li>
+    <li><a href="http://mediainfo.sourceforge.net/en">mediainfo</a> or exiftool for viewing information about media files</li>
 </ul>
 
-<h2>Installing</h2>
-
-<p>Use the package manager of your operating system to install ranger.
-Note that ranger can be started without installing by simply running ranger.py.</p>
-
-<p>To install ranger manually:</p>
-
-<pre><code>sudo make install
-</code></pre>
-
-<p>This translates roughly to:</p>
-
-<pre><code>sudo python setup.py install --optimize=1 --record=install_log.txt
-</code></pre>
-
-<p>This also saves a list of all installed files to install_log.txt, which you can
-use to uninstall ranger.</p>
-
-<h2>Getting Started</h2>
-
-<p>After starting ranger, you can use the Arrow Keys (or hjkl) to navigate, Enter
-to open a file or type Q to quit.  The third column shows a preview of the
-current file.  The second is the main column and the first shows the parent
-directory.</p>
-
-<p>Ranger can automatically copy default configuration files to ~/.config/ranger
-if you run it with the switch --copy-config. (see ranger --help for a
-description of that switch.)  Also check ranger/config/ for the default
-configuration.</p><!-- /run -->
-
-<br />
-<br />
-<br />
-<br />
+<br /><br /><br /><br />
 
 <h2>Changelog</h2>
 
 <div class="changelog">
-<!--run cat CHANGELOG | markdown --><p>This log documents changes between stable versions.</p>
-
-<h1>2015-05-04: version 1.7.1</h1>
+<!--run markdown CHANGELOG --><h1>2015-05-04: version 1.7.1</h1>
 
 <ul>
 <li>Added <code>doc/cheatsheet.svg</code></li>
@@ -468,9 +418,7 @@ the copied files between ranger instances</li>
 <li>New syntax for ~/.ranger/keys.py</li>
 <li>Several user contributions</li>
 <li>And tons of general improvements</li>
-</ul>
-
-<p>NOTE: The syntax for configuration is still subject to change.</p><!--/run-->
+</ul><!--/run-->
 </div>
 
 <!--foot-->
