@@ -24,7 +24,7 @@
 <!--/head-->
 
 <!-- run grep screenshot README.md -B 1000 -m 1 | sed s,doc/scr,scr, | markdown -->
-<h1>ranger v.1.7.1</h1>
+<h1>ranger v.1.7.2</h1>
 
 <p>ranger is a console file manager with VI key bindings.  It provides a
 minimalistic and nice curses interface with a view on the directory hierarchy.
@@ -99,7 +99,26 @@ out which program to use for what file type.</p>
 <h2>Changelog</h2>
 
 <div class="changelog">
-<!--run markdown CHANGELOG --><h1>2015-05-04: version 1.7.1</h1>
+<!--run markdown CHANGELOG --><p>This log documents changes between stable versions.</p>
+
+<h1>2015-10-04: version 1.7.2</h1>
+
+<ul>
+<li>Fixed file name arguments passed to <code>sxiv</code> and <code>feh</code> when using <code>:flat</code></li>
+<li>Fixed removal of empty directories when using <code>:rename</code></li>
+<li>Fixed free disk space display on Mac OS X</li>
+<li>Fixed <code>examples/vim_file_chooser</code> to work with gvim too</li>
+<li>Fixed some other rare crashes and bugs</li>
+<li>Fixed downward mouse wheel scrolling</li>
+<li>Fixed warning about regex splits being drawin in title bar since python3.5</li>
+<li>Really fixed <code>S</code> key binding not working when SHELL=fish</li>
+<li>Improved <code>doc/cheatsheet.svg</code></li>
+<li>Added some entries to rifle.conf</li>
+<li>Added key bindings <code>pO</code> and <code>pP</code> which work like <code>po</code> and <code>pp</code> but queue the
+operation in a first-in-first-out order.</li>
+</ul>
+
+<h1>2015-05-04: version 1.7.1</h1>
 
 <ul>
 <li>Added <code>doc/cheatsheet.svg</code></li>
