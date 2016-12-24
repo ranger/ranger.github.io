@@ -30,7 +30,9 @@
 <!--/head-->
 
 <!-- run grep screenshot README.md -B 1000 -m 1 | sed s,doc/scr,scr, | markdown -->
-<h1>ranger v.1.7.2</h1>
+<h1>ranger v.1.8.0</h1>
+
+<p><a href="https://travis-ci.org/ranger/ranger"><img src="https://travis-ci.org/ranger/ranger.svg?branch=master" alt="Build Status" title="" /></a></p>
 
 <p>ranger is a console file manager with VI key bindings.  It provides a
 minimalistic and nice curses interface with a view on the directory hierarchy.
@@ -106,6 +108,34 @@ out which program to use for what file type.</p>
 
 <div class="changelog">
 <!--run markdown CHANGELOG --><p>This log documents changes between stable versions.</p>
+
+<h1>2016-12-24: version 1.8.0</h1>
+
+<ul>
+<li>scope.sh is now needed for the now fully scriptable image previews</li>
+<li>Overhaul of version control system integration, now with threads</li>
+<li>Fixed ranger not finding the location of w3mimgdisplay in most cases</li>
+<li>Fixed many minor bugs</li>
+<li>Added midnight-commander like multipane view, toggleable with <code>~</code> key.
+It displays the current directory of all the open tabs next to each other.</li>
+<li>Added autodetect for 256 color support in scope.sh source code preview</li>
+<li>Added macro <code>%confdir</code> that expands to <code>~/.config/ranger</code> by default</li>
+<li>Added possibility to toggle/cycle through options with <code>set &lt;option_name&gt;!</code></li>
+<li>Added <code>Mm</code>/<code>Ms</code> key to enable the linemode showing modification time</li>
+<li>Added <code>yt</code>/<code>dt</code> keys to toggle whether file is in copy/cut buffer</li>
+<li>Added <code>line_numbers</code> setting showing absolute/relative line numbers</li>
+<li>Added <code>Alt-Left</code> and <code>Alt-Right</code> key bindings to move by words in console</li>
+<li>Added previews for libreoffice files with <code>odt2txt</code></li>
+<li>Added <code>preview_images_method=urxvt</code> option for previewing images by changing
+the urxvt background (requires urxvt compiled with pixbuf support)</li>
+<li>Added <code>clear_filters_on_dir_change</code> option</li>
+<li>Added Travis-CI integration</li>
+<li>Changed <code>zi</code> key to toggle <code>preview_images</code> option</li>
+<li>Improved PEP8 compliance</li>
+<li>Improved documentation</li>
+<li>Improved UI by separating file path in title bar with a space from the
+username/hostname for quick copy&amp;pasting by shift+double-clicking on it.</li>
+</ul>
 
 <h1>2015-10-04: version 1.7.2</h1>
 
@@ -244,7 +274,7 @@ so programs can know that they were spawned from ranger</li>
 <li>Added <code>dc</code> binding for getting the cumulative size of a directory</li>
 <li>Added <code>autoupdate_cumulative_size</code> option</li>
 <li>Added <code>pht</code> binding to Paste Hardlinked subTrees (like cp -l)</li>
-<li>Improved sorting speed of signals (noticable when caching many directories)</li>
+<li>Improved sorting speed of signals (noticeable when caching many directories)</li>
 <li>Improved drawing speed</li>
 <li>Fixed unexpected behavior when displaying nonprintable characters</li>
 <li>Fixed :bulkrename to work with files starting with a minus sign</li>
@@ -255,7 +285,7 @@ so programs can know that they were spawned from ranger</li>
 <h1>2011-10-23: Version 1.5.2</h1>
 
 <ul>
-<li>Fixed graphical bug that appears in certian cases when drawing
+<li>Fixed graphical bug that appears in certain cases when drawing
 characters at the right edge.</li>
 </ul>
 

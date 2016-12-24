@@ -24,6 +24,8 @@
         <ul>
           <li><a href="#w3m">w3m</a></li>
           <li><a href="#iTerm2">iTerm2</a></li>
+          <li><a href="#urxvt">urxvt</a></li>
+          <li><a href="#urxvt-full">urxvt-full</a></li>
         </ul>
       </li>
       <li><a href="#SELECTION">SELECTION</a></li>
@@ -211,6 +213,20 @@
 
 <p>To enable this feature, set the option <code>preview_images_method</code> to iterm2.</p>
 
+<h3 id="urxvt">urxvt</h3>
+
+<p>This only works in urxvt compiled with pixbuf support. Does not work over ssh.</p>
+
+<p>Essentially this mode sets an image as a terminal background temporarily, so it will break any previously set image background.</p>
+
+<p>To enable this feature, set the option <code>preview_images_method</code> to urxvt.</p>
+
+<h3 id="urxvt-full">urxvt-full</h3>
+
+<p>The same as urxvt but utilizing not only the preview pane but the whole terminal window.</p>
+
+<p>To enable this feature, set the option <code>preview_images_method</code> to urxvt-full.</p>
+
 <h2 id="SELECTION">SELECTION</h2>
 
 <p>The <i>selection</i> is defined as &quot;All marked files IF THERE ARE ANY, otherwise the current file.&quot; Be aware of this when using the :delete command, which deletes all files in the selection.</p>
@@ -223,11 +239,12 @@
 
 <pre><code> %f   the highlighted file
  %d   the path of the current directory
- %s   the selected files in the current directory.
+ %s   the selected files in the current directory
  %t   all tagged files in the current directory
- %c   the full paths of the currently copied/cut files</code></pre>
+ %c   the full paths of the currently copied/cut files
+ %p   the full paths of selected files</code></pre>
 
-<p>The macros %f, %d and %s also have upper case variants, %F, %D and %S, which refer to the next tab. To refer to specific tabs, add a number in between. (%7s = selection of the seventh tab.)</p>
+<p>The macros %f, %d, %p, and %s also have upper case variants, %F, %D, %P, and %S, which refer to the next tab. To refer to specific tabs, add a number in between. (%7s = selection of the seventh tab.)</p>
 
 <p>%c is the only macro which ranges out of the current directory. So you may &quot;abuse&quot; the copying function for other purposes, like diffing two files which are in different directories:</p>
 
@@ -240,7 +257,11 @@
 
 <p>The macro %rangerdir expands to the directory of ranger&#39;s python library, you can use it for something like this command: alias show_commands shell less %rangerdir/config/commands.py</p>
 
+<p>%confdir expands to the directory given by <b>--confdir</b>.</p>
+
 <p>The macro %space expands to a space character. You can use it to add spaces to the end of a command when needed, while preventing editors to strip spaces off the end of the line automatically.</p>
+
+<p>To write a literal %, you need to escape it by writing %%.</p>
 
 <h2 id="BOOKMARKS">BOOKMARKS</h2>
 
@@ -284,6 +305,8 @@
 <h2 id="PLUGINS">PLUGINS</h2>
 
 <p>ranger&#39;s plugin system consists of python files which are located in <i>~/.config/ranger/plugins/</i> and are imported in alphabetical order when starting ranger. A plugin changes rangers behavior by overwriting or extending a function that ranger uses. This allows you to change pretty much every part of ranger, but there is no guarantee that things will continue to work in future versions as the source code evolves.</p>
+
+<p>Adding new commands via a plugin as simple as specifying them like you would do in the <i>commands.py</i>.</p>
 
 <p>There are some hooks that are specifically made for the use in plugins. They are functions that start with hook_ and can be found throughout the code.</p>
 
@@ -406,13 +429,13 @@
 <dt id="yy">yy</dt>
 <dd>
 
-<p>Copy (yank) the selection, like pressing Ctrl+C in modern GUI programs.</p>
+<p>Copy (yank) the selection, like pressing Ctrl+C in modern GUI programs. (You can also type &quot;ya&quot; to add files to the copy buffer, &quot;yr&quot; to remove files again, or &quot;yt&quot; for toggling.)</p>
 
 </dd>
 <dt id="dd">dd</dt>
 <dd>
 
-<p>Cut the selection, like pressing Ctrl+X in modern GUI programs.</p>
+<p>Cut the selection, like pressing Ctrl+X in modern GUI programs. (There are also &quot;da&quot;, &quot;dr&quot; and &quot;dt&quot; shortcuts equivalent to &quot;ya&quot;, &quot;yr&quot; and &quot;yt&quot;.)</p>
 
 </dd>
 <dt id="pp">pp</dt>
@@ -654,6 +677,10 @@
 <pre><code> set column_ratios 1,2,3
  set show_hidden true</code></pre>
 
+<p>Toggling options can be done with:</p>
+
+<pre><code> set show_hidden!</code></pre>
+
 <p>The different types of settings and an example for each type:</p>
 
 <pre><code> setting type   | example values
@@ -746,7 +773,7 @@
 <p>Draw borders around columns?</p>
 
 </dd>
-<dt id="draw_progress_bar_in_statusbar-bool">draw_progress_bar_in_statusbar [bool]</dt>
+<dt id="draw_progress_bar_in_status_bar-bool">draw_progress_bar_in_status_bar [bool]</dt>
 <dd>
 
 <p>Draw a progress bar in the status bar which displays the average state of all currently running tasks which support progress bars?</p>
@@ -770,6 +797,16 @@
 <dd>
 
 <p>The delay that ranger idly waits for user input, in milliseconds, with a resolution of 100ms. Lower delay reduces lag between directory updates but increases CPU load.</p>
+
+</dd>
+<dt id="line_numbers-string">line_numbers [string]</dt>
+<dd>
+
+<p>Show line numbers in main column. Possible values are:</p>
+
+<pre><code> false      turn the feature off
+ absolute   absolute line numbers for use with &quot;&lt;N&gt;gg&quot;
+ relative   relative line numbers for &quot;&lt;N&gt;k&quot; or &quot;&lt;N&gt;j&quot;</code></pre>
 
 </dd>
 <dt id="max_console_history_size-integer-none">max_console_history_size [integer, none]</dt>
@@ -958,6 +995,12 @@
 <p>Enable this if key combinations with the Alt Key don&#39;t work for you. (Especially on xterm)</p>
 
 </dd>
+<dt id="clear_filters_on_dir_change-bool">clear_filters_on_dir_change [bool]</dt>
+<dd>
+
+<p>If set to &#39;true&#39;, persistent filters would be cleared upon leaving the directory</p>
+
+</dd>
 </dl>
 
 <h1 id="COMMANDS">COMMANDS</h1>
@@ -980,6 +1023,7 @@
  cunmap keys...
  default_linemode [path=regexp | tag=tags] linemodename
  delete
+ echo [text]
  edit [filename]
  eval [-q] python_code
  filter [string]
@@ -1012,6 +1056,7 @@
  setintag tags option value
  setlocal [path=&lt;path&gt;] option value
  shell [-FLAGS] command
+ source filename
  terminal
  tmap key command
  touch filename
@@ -1129,6 +1174,12 @@
 <p>Destroy all files in the selection with a roundhouse kick. ranger will ask for a confirmation if you attempt to delete multiple (marked) files or non-empty directories. This can be changed by modifying the setting &quot;confirm_on_delete&quot;.</p>
 
 </dd>
+<dt id="echo-text">echo <i>text</i></dt>
+<dd>
+
+<p>Display the text in the statusbar.</p>
+
+</dd>
 <dt id="edit-filename">edit [<i>filename</i>]</dt>
 <dd>
 
@@ -1146,7 +1197,7 @@
 <dt id="filter-string">filter [<i>string</i>]</dt>
 <dd>
 
-<p>Displays only the files which contain the <i>string</i> in their basename. Running this command without any parameter will reset the fitler.</p>
+<p>Displays only the files which contain the <i>string</i> in their basename. Running this command without any parameter will reset the filter.</p>
 
 <p>This command is based on the <i>scout</i> command and supports all of its options.</p>
 
@@ -1320,6 +1371,7 @@
  -m = mark the matching files after pressing enter
  -M = unmark the matching files after pressing enter
  -p = permanent filter: hide non-matching files after pressing enter
+ -r = interpret pattern as a regular expression pattern
  -s = smart case; like -i unless pattern contains upper case letters
  -t = apply filter and search pattern as you type
  -v = inverts the match</code></pre>
@@ -1362,17 +1414,33 @@
 
 <p>Assigns a new value to an option, but locally for the directories that are marked with <i>tag</i>. This means, that this option only takes effect when visiting that directory.</p>
 
+<p>For example, to change the sorting order in your downloads directory, tag it with the <i>v</i> tag by typing <i>&quot;v</i>, then use this command:</p>
+
+<pre><code> setintag v sort ctime</code></pre>
+
 </dd>
 <dt id="setlocal-path-path-option-value">setlocal [path=<i>path</i>] <i>option</i> <i>value</i></dt>
 <dd>
 
 <p>Assigns a new value to an option, but locally for the directory given by <i>path</i>. This means, that this option only takes effect when visiting that directory. If no path is given, uses the current directory.</p>
 
+<p><i>path</i> is a regular expression. This means that <code>path=~/dl</code> applies to all paths that start with <i>~/dl</i>, e.g. <i>~/dl2</i> and <i>~/dl/foo</i>. To avoid this, use <code>path=~/dl$</code>.</p>
+
 </dd>
 <dt id="shell--flags-command">shell [-<i>flags</i>] <i>command</i></dt>
 <dd>
 
 <p>Run a shell command. <i>flags</i> are discussed in their own section.</p>
+
+</dd>
+<dt id="source-filename">source <i>filename</i></dt>
+<dd>
+
+<p>Reads commands from a file and executes them in the ranger console.</p>
+
+<p>This can be used to re-evaluate the rc.conf file after changing it:</p>
+
+<pre><code> map X chain shell vim -p %confdir/rc.conf %rangerdir/config/rc.conf; source %confdir/rc.conf</code></pre>
 
 </dd>
 <dt id="terminal">terminal</dt>
@@ -1452,7 +1520,7 @@
 <dt id="commands.py">commands.py</dt>
 <dd>
 
-<p>A python module that defines commands which can be used in ranger&#39;s console by typing &quot;:&quot; or in the rc.conf file.</p>
+<p>A python module that defines commands which can be used in ranger&#39;s console by typing &quot;:&quot; or in the rc.conf file. Note that you can define commands in the same manner within plugins.</p>
 
 </dd>
 <dt id="commands_full.py">commands_full.py</dt>
