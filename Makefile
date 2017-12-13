@@ -1,9 +1,8 @@
-# Some commands to work with CVS and page generation.
+# Some commands to work with page generation.
 # Building the page requires https://github.com/hut/boobies
 
-.PHONY: push clone build
+.PHONY: build
 
-CVSDIR = _cvs
 ref ?= HEAD
 
 build:
