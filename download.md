@@ -21,7 +21,7 @@ If you want to conventionally install it, for example for a multi-user system, y
     git clone git://git.savannah.nongnu.org/ranger.git
     cd ranger
 
-You can also [browse the source code](http://git.savannah.gnu.org/cgit/ranger.git)
+You can also [browse the source code](https://github.com/ranger/ranger/)
 
 The advantage of git is that you get lots of useful commands for keeping the code up to date and merging your own changes with the upstream code.  Here is a selection of commands.  For more details, please read the fine manual.
 
