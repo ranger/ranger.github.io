@@ -29,18 +29,35 @@
         <div class="content">
 <!--/head-->
 
-<!-- run grep screenshot README.md -B 1000 -m 1 | sed s,doc/scr,scr, | markdown -->
-<h1>ranger v.1.8.1</h1>
-
-<p><a href="https://travis-ci.org/ranger/ranger"><img src="https://travis-ci.org/ranger/ranger.svg?branch=master" alt="Build Status" title="" /></a></p>
+<!-- run grep screenshot README.md -B 1000 -m 1 | grep -v 'Build Status' | sed s,doc/scr,scr, | markdown -->
+<h1>ranger 1.9.0b6</h1>
 
 <p>ranger is a console file manager with VI key bindings.  It provides a
 minimalistic and nice curses interface with a view on the directory hierarchy.
-It ships with "rifle", a file launcher that is good at automatically finding
+It ships with <code>rifle</code>, a file launcher that is good at automatically finding
 out which program to use for what file type.</p>
 
 <p><img src="https://raw.githubusercontent.com/ranger/ranger-assets/master/screenshots/screenshot.png" alt="screenshot" title="" /></p>
 <!-- /run -->
+
+<h2>News</h2>
+<div class="news">
+<!-- run for f in news/*.md; do markdown "$f"; done -->
+<div class="metadata date">2017-12-13</div>
+
+<div class="metadata author">hut</div>
+
+<h1>Relocated website</h1>
+
+<p>The URL for the ranger website has changed from <a href="http://ranger.nongnu.org">http://ranger.nongnu.org</a> to <a href="https://ranger.github.io">https://ranger.github.io</a>.  An automatic redirect has been set up.  Reasons for the move are:</p>
+
+<ul>
+<li>nongnu.org forces the use of CVS to update the website</li>
+<li>With GitHub's pull requests, everybody can contribute more easily to the website</li>
+<li>GitHub offers HTTPS</li>
+</ul>
+<!-- /run -->
+</div>
 
 <h2>Download</h2>
 
@@ -139,7 +156,7 @@ the urxvt background (requires urxvt compiled with pixbuf support)</li>
 <li>Changed <code>zi</code> key to toggle <code>preview_images</code> option</li>
 <li>Improved PEP8 compliance</li>
 <li>Improved documentation</li>
-<li>Improved UI by separating file path in title bar with a space from the
+<li>Improved UI by separating file path in titlebar with a space from the
 username/hostname for quick copy&amp;pasting by shift+double-clicking on it.</li>
 </ul>
 
@@ -152,7 +169,7 @@ username/hostname for quick copy&amp;pasting by shift+double-clicking on it.</li
 <li>Fixed <code>examples/vim_file_chooser</code> to work with gvim too</li>
 <li>Fixed some other rare crashes and bugs</li>
 <li>Fixed downward mouse wheel scrolling</li>
-<li>Fixed warning about regex splits being drawn in title bar since python3.5</li>
+<li>Fixed warning about regex splits being drawn in titlebar since python3.5</li>
 <li>Really fixed <code>S</code> key binding not working when SHELL=fish</li>
 <li>Improved <code>doc/cheatsheet.svg</code></li>
 <li>Added some entries to rifle.conf</li>
