@@ -1,10 +1,6 @@
 body {
     background: black;
 }
-div.rangerstar {
-    font-size: 80%;
-    font-family: monospace;
-}
 div.index {
     width: 15ch;
     position: fixed;
