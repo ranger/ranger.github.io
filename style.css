@@ -1,0 +1,96 @@
+body {
+    background: black;
+}
+div.rangerstar {
+    font-size: 80%;
+    font-family: monospace;
+}
+div.index {
+    width: 15ch;
+    position: fixed;
+}
+div.content {
+    max-width: 50em;
+    color: #fff;
+    font-family: monospace;
+    margin-left: 12em;
+}
+.ranger {
+    font-family: monospace;
+    text-decoration: none;
+    width: 100%;
+    display: block;
+    padding-left: 1ch;
+}
+.tagged {
+    padding-left: 0ch;
+}
+.tagged::before {
+    content: "*";
+    color: #c44;
+}
+.filetype_link::after {
+    content: " ->";
+}
+.filetype_image {
+    color: #ffbb00;
+}
+.filetype_image:hover {
+    color: black;
+    background-color: #ffbb00;
+}
+.filetype_text {
+    color: white;
+}
+.filetype_text:hover {
+    color: black;
+    background-color: white;
+}
+.filetype_directory {
+    color: #66f;
+}
+.filetype_directory:hover {
+    color: black;
+    background-color: #66f;
+}
+.filetype_link {
+    color: #0CC;
+}
+.filetype_link:hover {
+    color: black;
+    background-color: #0CC;
+}
+.filetype_targz {
+    color: #c44;
+}
+.filetype_targz:hover {
+    color: black;
+    background-color: #c44;
+}
+.content {
+    margin-bottom: 2em;
+    border-radius: 1em;
+    padding: 0 1em;
+}
+.content a {
+    color: #0CC;
+    text-decoration: none;
+    font-weight: bold;
+}
+.content a:hover {
+    color: black;
+    background-color: #0CC;
+}
+.changelog h1, .news h1 {
+  border-bottom: 2pt solid #ccc;
+  font-size: 100%;
+  padding: 0;
+  margin: 0;
+}
+.metadata {
+    float: right;
+    padding: 0 0 0 0.5em;
+    color: #999;
+}
+table, td, tr { border-collapse: collapse; }
+p, h1, h2, h3 { background: url(""); } /* android fix #40186 */
