@@ -13,7 +13,7 @@ div.content {
     max-width: 50em;
     color: #fff;
     font-family: monospace;
-    margin-left: 12em;
+    margin-left: 21ch;
 }
 div.screenshots img, .screenshot {
     border: 1px solid #0CC;
