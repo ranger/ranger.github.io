@@ -25,11 +25,6 @@
 
 <h1>Documentation</h1>
 
-<p>
-The cheat sheet for version 1.7.0: (<a href="cheatsheet.png">png</a>, <a href="cheatsheet.svg">svg</a>)<br />
-<a href="cheatsheet.png"><img src="cheatsheet_thumb.png" /></a><br />
-</p>
-
 <h2>Links</h2>
 <ul>
 <li><a href="https://github.com/ranger/ranger/wiki">The official ranger wiki</a></li>
@@ -38,6 +33,58 @@ The cheat sheet for version 1.7.0: (<a href="cheatsheet.png">png</a>, <a href="c
 <li><a href="https://github.com/ranger/ranger/blob/master/README.md">README</a>, <a href="https://github.com/ranger/ranger/blob/master/HACKING.md">HACKING</a>, <a href="https://github.com/ranger/ranger/tree/master/doc">doc/*</a></li>
 <li><a href="http://wiki.archlinux.org/index.php/Ranger">Arch Linux Wiki</a></li>
 <li>Running "<b>make options</b>" will inform you about how to generate documentation yourself</li>
+</ul>
+
+<h2>Cheat sheet</h2>
+<p>
+The cheat sheet for version 1.7.0: (<a href="cheatsheet.png">png</a>, <a href="cheatsheet.svg">svg</a>)
+</p>
+</p>
+<a href="cheatsheet.png"><img src="cheatsheet_thumb.png" /></a><br />
+</p>
+
+<h2>Features</h2>
+<ul>
+    <li>UTF-8 Support</li>
+    <li>Multi-column display</li>
+    <li>Preview of the selected file/directory</li>
+    <li>Common file operations (create/chmod/copy/delete/...)</li>
+    <li>VIM-like console and hotkeys</li>
+    <li>Renaming multiple files at once</li>
+    <li>Automatically determine file types and run them with correct programs</li>
+    <li>Change the directory of your shell after exiting ranger</li>
+    <li>Tabs, Bookmarks, Mouse support</li>
+    <li>True Color Image previews [<a href="https://github.com/ranger/ranger/wiki/Image-Previews">How to enable</a>]</li>
+    <li>Video thumbnails [<a href="https://github.com/ranger/ranger/wiki/Video-Previews">How to enable</a>]</li>
+</ul>
+
+<h2>Dependencies</h2>
+<ul>
+    <li><a href="http://python.org">Python</a> (tested with version 2.7, 3.1, 3.2, 3.3, 3.4) with support for ncurses and (optionally) wide-unicode.</li>
+    <li>A pager (<a href="http://www.gnu.org/software/less/">less</a> by default)</li>
+</ul>
+
+<p>
+    Optional:
+</p>
+<ul>
+    <li><a href="http://www.darwinsys.com/file/">file</a> for determining file types</li>
+    <li>The python module <a href="http://pypi.python.org/pypi/chardet">chardet</a>, in case of encoding detection problems</li>
+    <li>"sudo" to use the "run as root"-feature</li>
+    <li><a href="http://w3m.sourceforge.net/">w3m</a> for <a href="screenshots/w3mimgpreview.png">previewing images in "true color"</a>.</li>
+</ul>
+
+<p>
+  Optional, for enhanced file previews (with "scope.sh"):
+</p>
+<ul>
+    <li>img2txt (from <a href="http://caca.zoy.org/wiki/libcaca">caca-utils</a>) for previewing images in <a href="screenshots/ranger-screenshot_large-image-preview.png">ASCII-art</a></li>
+    <li><a href="http://www.andre-simon.de/doku/highlight/en/highlight.html">highlight</a> for syntax highlighting of code</li>
+    <li><a href="http://www.nongnu.org/atool/">atool</a> for previews of archives</li>
+    <li><a href="http://lynx.browser.org">lynx</a>, <a href="http://w3m.sourceforge.net/">w3m</a> or <a href="http://elinks.or.cz/">elinks</a> for previews of html pages</li>
+    <li>pdftotext for pdf previews</li>
+    <li><a href="http://www.transmissionbt.com/">transmission-show</a> for viewing bit-torrent information</li>
+    <li><a href="http://mediainfo.sourceforge.net/en">mediainfo</a> or exiftool for viewing information about media files</li>
 </ul>
 
 <!--get foot from index.html-->
