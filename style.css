@@ -1,4 +1,4 @@
-@media only screen and (min-width: 90ch) {
+@media only screen and (min-width: 800px) {
     div.index {
         width: 14ch;
         position: fixed;
@@ -25,6 +25,7 @@ div.content {
 div.screenshots img, .screenshot {
     border: 1px solid #0CC;
     padding: 0.3em;
+    border-radius: 0.7em;
 }
 div.screenshots a:hover {
     background-color: #000 !important;
@@ -96,10 +97,10 @@ div.screenshots a:hover {
     background-color: #0CC;
 }
 .changelog h1, .news h1 {
-  border-bottom: 2pt solid #ccc;
-  font-size: 100%;
-  padding: 0;
-  margin: 0;
+    border-bottom: 2pt solid #ccc;
+    font-size: 100%;
+    padding: 0;
+    margin: 0;
 }
 .metadata {
     float: right;
