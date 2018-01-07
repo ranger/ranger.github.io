@@ -2,134 +2,157 @@
 <!--head-->
 <html>
     <head>
-        <title>ranger</title>
-        <link rel="stylesheet" href="ranger.css" type="text/css" />
+        <title></title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=0.5" />
+        <meta name="ROBOTS" content="NOINDEX, NOFOLLOW" />
+        <script src="jquery2.min.js"></script>
+        <link rel="stylesheet" href="style.css" type="text/css" />
+        <style type="text/css">
+            body {
+                background: black;
+            }
+            div.rangerstar {
+                font-size: 80%;
+                font-family: monospace;
+            }
+            div.index {
+                width: 8em;
+                position: fixed;
+            }
+            div.content {
+                max-width: 50em;
+                color: #fff;
+                font-family: monospace;
+                margin-left: 12em;
+            }
+            .ranger {
+                font-family: monospace;
+                text-decoration: none;
+                width: 100%;
+                display: block;
+                padding-left: 1em;
+            }
+            .filetype_image {
+                color: #ffbb00;
+            }
+            .filetype_image:hover {
+                color: black;
+                background-color: #ffbb00;
+            }
+            .filetype_text {
+                color: white;
+            }
+            .filetype_text:hover {
+                color: black;
+                background-color: white;
+            }
+            .filetype_directory {
+                color: #66f;
+            }
+            .filetype_directory:hover {
+                color: black;
+                background-color: #66f;
+            }
+            .filetype_link {
+                color: #0CC;
+            }
+            .filetype_link:hover {
+                color: black;
+                background-color: #0CC;
+            }
+            .filetype_targz {
+                color: #c44;
+            }
+            .filetype_targz:hover {
+                color: black;
+                background-color: #c44;
+            }
+            .content {
+                margin-bottom: 2em;
+                border-radius: 1em;
+                padding: 0 1em;
+            }
+            .content a {
+                color: #0CC;
+                text-decoration: none;
+                font-weight: bold;
+            }
+            .content a:hover {
+                color: black;
+                background-color: #0CC;
+            }
+            table, td, tr { border-collapse: collapse; }
+            p, h1, h2, h3 { background: url(""); } /* android fix #40186 */
+        </style>
     </head>
     <body>
-        <div class="header">
-            <h1>ranger</h1>
-            <div class="menu">
-                <a href="index.html">Description</a>
-                <a href="https://github.com/ranger/ranger/wiki">Wiki</a>
-                <svg style="height: 0.7em;" xmlns="http://www.w3.org/2000/svg" viewBox="0 -256 1850 1850" version="1.1">
-                    <g transform="matrix(1,0,0,-1,30.372881,1426.9492)">
-                        <path d="M 1408,608 V 288 Q 1408,169 1323.5,84.5 1239,0 1120,0 H 288 Q 169,0 84.5,84.5 0,169 0,288 v 832 Q 0,1239 84.5,1323.5 169,1408 288,1408 h 704 q 14,0 23,-9 9,-9 9,-23 v -64 q 0,-14 -9,-23 -9,-9 -23,-9 H 288 q -66,0 -113,-47 -47,-47 -47,-113 V 288 q 0,-66 47,-113 47,-47 113,-47 h 832 q 66,0 113,47 47,47 47,113 v 320 q 0,14 9,23 9,9 23,9 h 64 q 14,0 23,-9 9,-9 9,-23 z m 384,864 V 960 q 0,-26 -19,-45 -19,-19 -45,-19 -26,0 -45,19 L 1507,1091 855,439 q -10,-10 -23,-10 -13,0 -23,10 L 695,553 q -10,10 -10,23 0,13 10,23 l 652,652 -176,176 q -19,19 -19,45 0,26 19,45 19,19 45,19 h 512 q 26,0 45,-19 19,-19 19,-45 z" />
-                    </g>
-                </svg>
-
-                <a href="screenshots.html">Screenshots</a>
-                <a href="download.html">Download</a>
-                <a href="documentation.html">Documentation</a>
-                <a href="contact.html">Contact</a>
-            </div>
+        <div class="index">
+            <a href="index.html#star" class="ranger filetype_image">star.png</a>
+            <a href="index.html#intro" class="ranger filetype_text">intro.md</a>
+            <a href="index.html#screenshot" class="ranger filetype_image">screenshot.png</a>
+            <a href="index.html#changelog" class="ranger filetype_text">CHANGELOG.md</a>
+            <br />
+            <a href="screenshots.html" class="ranger filetype_directory">screenshots</a>
+            <a href="contact.html" class="ranger filetype_text">contact.html</a>
+            <a href="documentation.html" class="ranger filetype_text">docs.html</a>
+            <a href="download.html" class="ranger filetype_text">download.md</a>
+            <a href="https://github.com/ranger/ranger/archive/stable.zip" class="ranger filetype_targz">ranger.tar.gz</a>
+            <a href="https://github.com/ranger/ranger/wiki" class="ranger filetype_link">wiki.html</a>
         </div>
         <div class="content">
 <!--/head-->
-
-<!-- run grep screenshot README.md -B 1000 -m 1 | grep -v 'Build Status' | sed s,doc/scr,scr, | markdown -->
-<h1>ranger 1.9.0b6</h1>
-
-<p>ranger is a console file manager with VI key bindings.  It provides a
-minimalistic and nice curses interface with a view on the directory hierarchy.
-It ships with <code>rifle</code>, a file launcher that is good at automatically finding
-out which program to use for what file type.</p>
-
-<p><img src="https://raw.githubusercontent.com/ranger/ranger-assets/master/screenshots/screenshot.png" alt="screenshot" title="" /></p>
-<!-- /run -->
-
-<h2>News</h2>
-<div class="news">
-<!-- run for f in news/*.md; do markdown "$f"; done -->
-<div class="metadata date">2017-12-13</div>
-
-<div class="metadata author">hut</div>
-
-<h1>Relocated website</h1>
-
-<p>The URL for the ranger website has changed from <a href="http://ranger.nongnu.org">http://ranger.nongnu.org</a> to <a href="https://ranger.github.io">https://ranger.github.io</a>.  An automatic redirect has been set up.  Reasons for the move are:</p>
-
-<ul>
-<li>nongnu.org forces the use of CVS to update the website</li>
-<li>With GitHub's <a href="https://github.com/ranger/ranger.github.io/pulls">pull requests</a>, everybody can contribute more easily to the website</li>
-<li>GitHub offers HTTPS</li>
-</ul>
-<!-- /run -->
-</div>
-
-<h2>Download</h2>
-
-<ul>
-    <li><a href="http://nongnu.org/ranger/ranger-stable.tar.gz">The latest stable version</a></li>
-    <li><a href="http://git.savannah.gnu.org/cgit/ranger.git/snapshot/ranger-master.tar.gz">The bleeding edge version from git</a></li>
-    <li><a href="https://github.com/ranger/ranger">ranger on GitHub</a></li>
-    <li><code>git clone git://git.savannah.nongnu.org/ranger.git</code></li>
-</ul>
-
-<p>
-    New versions are announced on this <a href="https://savannah.nongnu.org/news/atom.php?group=ranger">atom feed</a> and on
-    the <a href="https://lists.nongnu.org/mailman/listinfo/ranger-users">mailing list</a>.
-    More information is on the <a href="download.html">download
-    page</a>.
-</p>
-
-<h2>Features</h2>
-<ul>
-    <li>UTF-8 Support</li>
-    <li>Multi-column display</li>
-    <li>Preview of the selected file/directory</li>
-    <li>Common file operations (create/chmod/copy/delete/...)</li>
-    <li>VIM-like console and hotkeys</li>
-    <li>Renaming multiple files at once</li>
-    <li>Automatically determine file types and run them with correct programs</li>
-    <li>Change the directory of your shell after exiting ranger</li>
-    <li>Tabs, Bookmarks, Mouse support</li>
-    <li>True Color Image previews [<a href="https://github.com/ranger/ranger/wiki/Image-Previews">How to enable</a>]</li>
-    <li>Video thumbnails [<a href="https://github.com/ranger/ranger/wiki/Video-Previews">How to enable</a>]</li>
-</ul>
-
-<h2>Dependencies</h2>
-<ul>
-    <li><a href="http://python.org">Python</a> (tested with version 2.7, 3.1, 3.2, 3.3, 3.4) with support for ncurses and (optionally) wide-unicode.</li>
-    <li>A pager (<a href="http://www.gnu.org/software/less/">less</a> by default)</li>
-</ul>
-
-<p>
-    Optional:
-</p>
-<ul>
-    <li><a href="http://www.darwinsys.com/file/">file</a> for determining file types</li>
-    <li>The python module <a href="http://pypi.python.org/pypi/chardet">chardet</a>, in case of encoding detection problems</li>
-    <li>"sudo" to use the "run as root"-feature</li>
-    <li><a href="http://w3m.sourceforge.net/">w3m</a> for <a href="screenshots/w3mimgpreview.png">previewing images in "true color"</a>.</li>
-</ul>
-
-<p>
-  Optional, for enhanced file previews (with "scope.sh"):
-</p>
-<ul>
-    <li>img2txt (from <a href="http://caca.zoy.org/wiki/libcaca">caca-utils</a>) for previewing images in <a href="screenshots/ranger-screenshot_large-image-preview.png">ASCII-art</a></li>
-    <li><a href="http://www.andre-simon.de/doku/highlight/en/highlight.html">highlight</a> for syntax highlighting of code</li>
-    <li><a href="http://www.nongnu.org/atool/">atool</a> for previews of archives</li>
-    <li><a href="http://lynx.browser.org">lynx</a>, <a href="http://w3m.sourceforge.net/">w3m</a> or <a href="http://elinks.or.cz/">elinks</a> for previews of html pages</li>
-    <li>pdftotext for pdf previews</li>
-    <li><a href="http://www.transmissionbt.com/">transmission-show</a> for viewing bit-torrent information</li>
-    <li><a href="http://mediainfo.sourceforge.net/en">mediainfo</a> or exiftool for viewing information about media files</li>
-</ul>
-
-<br /><br /><br /><br />
-
-<h2>Changelog</h2>
-
-<div class="changelog">
-<!--run markdown CHANGELOG --><p>This log documents changes between stable versions.</p>
+        <div style="font-weight: bold;" class="file rangerstar" id="star">
+<span style="">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span><span style=";color:#555;background-color:#a50">8</span><span style=";color:#a50;background-color:#ff5">%</span><span style="">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span><br />
+<span style="">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span><span style=";color:#555;background-color:#a50">S</span><span style=";color:#a50;background-color:#ff5">&#160;&#160;</span><span style=";color:#555;background-color:#a50">X</span><span style="">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span><br />
+<span style="">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span><span style=";color:#555;background-color:#a50">;</span><span style=";color:#a50;background-color:#ff5">;</span><span style=";color:#ff5;background-color:#a50">;</span><span style=";color:#a50;background-color:#ff5">%:</span><span style=";color:#555;background-color:#a50">@</span><span style="">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span><br />
+<span style="">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span><span style=";color:#555;background-color:#a50">S</span><span style=";color:#a50;background-color:#ff5">t&#160;:</span><span style=";color:#a00;background-color:#555">8</span><span style=";color:#a50;background-color:#ff5">;</span><span style=";color:#555;background-color:#a50">S</span><span style=";color:#a00;background-color:#a50">@</span><span style="">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span><br />
+<span style="">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span><span style=";color:#a50;background-color:#ff5">S</span><span style=";color:#555;background-color:#a50">8</span><span style=";color:#f55;background-color:#a50">8</span><span style=";color:#a50;background-color:#ff5">S</span><span style=";color:#aaa;background-color:#ff5">X</span><span style=";color:#ff5;background-color:#a50">..%</span><span style=";color:#555;background-color:#a50">%</span><span style="">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span><br />
+<span style="">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span><span style=";color:#ff5;background-color:#a50">@</span><span style=";color:#a50;background-color:#ff5">:;t</span><span style=";color:#aaa;background-color:#a50">@</span><span style=";color:#a50;background-color:#ff5">;</span><span style=";color:#f55;background-color:#a50">8</span><span style=";color:#aaa;background-color:#ff5">.</span><span style=";color:#555;background-color:#a50">8t</span><span style="">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span><br />
+<span style="">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span><span style=";color:#a50;background-color:#ff5">t&#160;</span><span style=";color:#aaa;background-color:#a50">X</span><span style=";color:#f55;background-color:#a50">8</span><span style=";color:#aaa;background-color:#ff5">S</span><span style=";color:#a50;background-color:#ff5">&#160;</span><span style=";color:#555;background-color:#a50">8</span><span style=";color:#a50;background-color:#ff5">t</span><span style=";color:#aaa;background-color:#ff5">X</span><span style=";color:#f55;background-color:#a50">8</span><span style=";color:#a50;background-color:#ff5">t</span><span style=";color:#555;background-color:#a50">S</span><span style="">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span><br />
+<span style="">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span><span style=";color:#a50;background-color:#ff5">S</span><span style=";color:#ff5;background-color:#a50">S</span><span style=";color:#aaa;background-color:#ff5">S</span><span style=";color:#a50;background-color:#ff5">&#160;</span><span style=";color:#ff5;background-color:#a50">%</span><span style=";color:#aaa;background-color:#ff5">X</span><span style=";color:#a00;background-color:#a50">%</span><span style=";color:#f55;background-color:#a50">8</span><span style=";color:#ff5;background-color:#a50">S</span><span style=";color:#a50;background-color:#ff5">%</span><span style=";color:#ff5;background-color:#a50">%</span><span style=";color:#a50;background-color:#ff5">%</span><span style=";color:#555;background-color:#a50">@</span><span style=";color:#a50;background-color:#ff5">S</span><span style="">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span><br />
+<span style="">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span><span style=";color:#555;background-color:#a50">::</span><span style=";color:#ff5;background-color:#a50">S</span><span style=";color:#555;background-color:#a50">t</span><span style=";color:#a50;background-color:#ff5">S</span><span style=";color:#ff5;background-color:#a50">%</span><span style=";color:#a50;background-color:#ff5">%</span><span style=";color:#555;background-color:#a50">8</span><span style=";color:#a50;background-color:#ff5">&#160;&#160;</span><span style=";color:#aaa;background-color:#ff5">@</span><span style=";color:#ff5;background-color:#a50">;</span><span style=";color:#a50;background-color:#ff5">&#160;</span><span style=";color:#aaa;background-color:#a50">X</span><span style=";color:#ff5;background-color:#a50">x</span><span style=";color:#a50;background-color:#ff5">.</span><span style=";color:#aaa;background-color:#a50">@</span><span style=";color:#ff5;background-color:#a50">;</span><span style=";color:#aaa;background-color:#ff5">X</span><span style=";color:#ff5;background-color:#a50">;</span><span style=";color:#a50;background-color:#ff5">t</span><span style=";color:#555;background-color:#a50">X</span><span style=";color:#ff5;background-color:#a50">%</span><span style=";color:#555;background-color:#a50">%tXt;;</span><span style="">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span><br />
+<span style="">&#160;&#160;&#160;&#160;&#160;</span><span style=";color:#555;background-color:#a50">t</span><span style=";color:#a50;background-color:#555">8</span><span style=";color:#555;background-color:#a50">;XXS</span><span style=";color:#ff5;background-color:#a50">X%;</span><span style=";color:#a50;background-color:#ff5">;</span><span style=";color:#ff5;background-color:#a50">%</span><span style=";color:#a50;background-color:#ff5">:;t</span><span style=";color:#aaa;background-color:#a50">X</span><span style=";color:#f55;background-color:#a50">8</span><span style=";color:#555;background-color:#a50">S</span><span style=";color:#a50;background-color:#ff5">:</span><span style=";color:#f55;background-color:#a50">8</span><span style=";color:#aaa;background-color:#ff5">%%</span><span style=";color:#ff5;background-color:#a50">.</span><span style=";color:#a50;background-color:#ff5">&#160;;</span><span style=";color:#555;background-color:#a50">8</span><span style=";color:#a50;background-color:#ff5">&#160;&#160;&#160;</span><span style=";color:#aaa;background-color:#ff5">X</span><span style=";color:#f55;background-color:#a50">8</span><span style=";color:#a50;background-color:#ff5">t</span><span style=";color:#555;background-color:#a50">@</span><span style=";color:#a50;background-color:#ff5">.</span><span style=";color:#ff5;background-color:#a50">t</span><span style=";color:#a50;background-color:#ff5">&#160;</span><span style=";color:#ff5;background-color:#a50">::;S</span><span style=";color:#a50;background-color:#ff5">SX;%</span><span style=";color:#555;background-color:#a50">@;;</span><span style="">&#160;&#160;&#160;&#160;&#160;</span><br />
+<span style="">&#160;&#160;&#160;&#160;&#160;&#160;</span><span style=";color:#555;background-color:#a50">%</span><span style=";color:#a50;background-color:#ff5">t</span><span style=";color:#ff5;background-color:#a50">%</span><span style=";color:#a50;background-color:#ff5">:</span><span style=";color:#555;background-color:#a50">@</span><span style=";color:#a50;background-color:#ff5">&#160;</span><span style=";color:#555;background-color:#a50">8</span><span style=";color:#a50;background-color:#ff5">&#160;;</span><span style=";color:#f55;background-color:#a50">8</span><span style=";color:#aaa;background-color:#a50">X</span><span style=";color:#a50;background-color:#ff5">:</span><span style=";color:#ff5;background-color:#a50">;</span><span style=";color:#aaa;background-color:#ff5">S</span><span style=";color:#555;background-color:#a50">t</span><span style=";color:#f55;background-color:#a50">8</span><span style=";color:#a50;background-color:#ff5">%</span><span style=";color:#ff5;background-color:#a50">;</span><span style=";color:#a50;background-color:#ff5">&#160;.&#160;</span><span style=";color:#a0a;background-color:#a00">8</span><span style=";color:#a50;background-color:#ff5">.</span><span style=";color:#f55;background-color:#a50">8</span><span style=";color:#555;background-color:#a50">8</span><span style=";color:#f55;background-color:#a50">8</span><span style=";color:#a50;background-color:#ff5">&#160;</span><span style=";color:#aaa;background-color:#ff5">X</span><span style=";color:#a50;background-color:#ff5">&#160;</span><span style=";color:#555;background-color:#a50">8</span><span style=";color:#f55;background-color:#a50">8</span><span style=";color:#a50;background-color:#ff5">:</span><span style=";color:#ff5;background-color:#a50">:</span><span style=";color:#f55;background-color:#a50">8</span><span style=";color:#aaa;background-color:#ff5">S</span><span style=";color:#a50;background-color:#ff5">&#160;&#160;</span><span style=";color:#aaa;background-color:#ff5">X</span><span style=";color:#ff5;background-color:#a50">:</span><span style=";color:#a50;background-color:#ff5">.</span><span style=";color:#aaa;background-color:#a50">@</span><span style=";color:#a50;background-color:#ff5">&#160;</span><span style=";color:#ff5;background-color:#a50">%</span><span style=";color:#555;background-color:#a50">X</span><span style="">&#160;&#160;&#160;&#160;&#160;&#160;</span><br />
+<span style="">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span><span style=";color:#555;background-color:#a50">t</span><span style=";color:#a50;background-color:#ff5">;.</span><span style=";color:#aaa;background-color:#ff5">X</span><span style=";color:#a50;background-color:#ff5">&#160;</span><span style=";color:#555;background-color:#a50">88</span><span style=";color:#a50;background-color:#ff5">t</span><span style=";color:#f55;background-color:#a50">8</span><span style=";color:#a50;background-color:#ff5">%</span><span style=";color:#aaa;background-color:#ff5">X</span><span style=";color:#a50;background-color:#ff5">;</span><span style=";color:#ff5;background-color:#a50">:</span><span style=";color:#a50;background-color:#ff5">:</span><span style=";color:#aaa;background-color:#ff5">@</span><span style=";color:#555;background-color:#a50">8</span><span style=";color:#aaa;background-color:#ff5">S</span><span style=";color:#f55;background-color:#a50">8</span><span style=";color:#ff5;background-color:#a50">%</span><span style=";color:#555;background-color:#a50">8</span><span style=";color:#a50;background-color:#ff5">.</span><span style=";color:#aaa;background-color:#ff5">X</span><span style=";color:#a50;background-color:#ff5">.</span><span style=";color:#555;background-color:#a50">8</span><span style=";color:#a50;background-color:#ff5">;</span><span style=";color:#555;background-color:#a50">8</span><span style=";color:#a00;background-color:#a50">S</span><span style=";color:#a50;background-color:#ff5">.</span><span style=";color:#ff5;background-color:#a50">S</span><span style=";color:#a50;background-color:#ff5">:</span><span style=";color:#aaa;background-color:#ff5">@</span><span style=";color:#a50;background-color:#ff5">:</span><span style=";color:#f55;background-color:#a50">8</span><span style=";color:#aaa;background-color:#a50">S</span><span style=";color:#a50;background-color:#ff5">&#160;&#160;</span><span style=";color:#f55;background-color:#a50">8</span><span style=";color:#aaa;background-color:#ff5">@</span><span style=";color:#f55;background-color:#a50">8</span><span style=";color:#555;background-color:#a50">8</span><span style="">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span><br />
+<span style="">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span><span style=";color:#a50;background-color:#ff5">%</span><span style=";color:#ff5;background-color:#a50">:</span><span style=";color:#f55;background-color:#a50">8</span><span style=";color:#aaa;background-color:#ff5">%</span><span style=";color:#a50;background-color:#ff5">.</span><span style=";color:#555;background-color:#a50">8</span><span style=";color:#ff5;background-color:#a50">.</span><span style=";color:#a50;background-color:#ff5">.</span><span style=";color:#f55;background-color:#a50">8</span><span style=";color:#a50;background-color:#ff5">&#160;</span><span style=";color:#aaa;background-color:#ff5">X</span><span style=";color:#ff5;background-color:#a50">:</span><span style=";color:#aaa;background-color:#ff5">%</span><span style=";color:#a00;background-color:#a50">S</span><span style=";color:#a50;background-color:#ff5">&#160;</span><span style=";color:#aaa;background-color:#a50">S</span><span style=";color:#a50;background-color:#ff5">:.</span><span style=";color:#a50;background-color:#a00">8</span><span style=";color:#aaa;background-color:#ff5">SS</span><span style=";color:#f55;background-color:#a50">8</span><span style=";color:#a50;background-color:#ff5">S</span><span style=";color:#555;background-color:#a50">8</span><span style=";color:#ff5;background-color:#a50">:</span><span style=";color:#a50;background-color:#ff5">:</span><span style=";color:#f55;background-color:#a50">8</span><span style=";color:#a50;background-color:#ff5">%</span><span style=";color:#ff5;background-color:#a50">;</span><span style=";color:#a50;background-color:#ff5">t</span><span style=";color:#aaa;background-color:#a50">S</span><span style=";color:#a50;background-color:#ff5">&#160;</span><span style=";color:#f55;background-color:#a50">8</span><span style=";color:#aaa;background-color:#ff5">8</span><span style=";color:#ff5;background-color:#a50">t</span><span style=";color:#555;background-color:#a50">8</span><span style=";color:#000;background-color:#a00">8</span><span style="">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span><br />
+<span style="">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span><span style=";color:#555;background-color:#a50">t</span><span style=";color:#a50;background-color:#ff5">%</span><span style=";color:#f55;background-color:#a50">8</span><span style=";color:#a50;background-color:#ff5">%&#160;</span><span style=";color:#f55;background-color:#a50">8</span><span style=";color:#a50;background-color:#ff5">S</span><span style=";color:#aaa;background-color:#a50">@</span><span style=";color:#a50;background-color:#ff5">&#160;</span><span style=";color:#aaa;background-color:#ff5">S</span><span style=";color:#f55;background-color:#a50">8</span><span style=";color:#a50;background-color:#ff5">:</span><span style=";color:#555;background-color:#a50">8</span><span style=";color:#a50;background-color:#ff5">:</span><span style=";color:#f55;background-color:#a50">8</span><span style=";color:#aaa;background-color:#ff5">X</span><span style=";color:#ff5;background-color:#a50">;</span><span style=";color:#555;background-color:#a50">8</span><span style=";color:#a50;background-color:#ff5">&#160;</span><span style=";color:#555;background-color:#a50">X</span><span style=";color:#aaa;background-color:#ff5">%</span><span style=";color:#a50;background-color:#ff5">.</span><span style=";color:#a50;background-color:#a00">8</span><span style=";color:#aaa;background-color:#ff5">@</span><span style=";color:#aaa;background-color:#a50">S</span><span style=";color:#a50;background-color:#ff5">;</span><span style=";color:#a50;background-color:#555">X</span><span style=";color:#a50;background-color:#ff5">&#160;</span><span style=";color:#555;background-color:#a50">8</span><span style=";color:#a50;background-color:#ff5">&#160;</span><span style=";color:#f55;background-color:#a50">8</span><span style=";color:#aaa;background-color:#ff5">S</span><span style=";color:#a50;background-color:#ff5">.</span><span style=";color:#555;background-color:#a50">8</span><span style="">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span><br />
+<span style="">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span><span style=";color:#555;background-color:#a50">t</span><span style=";color:#a50;background-color:#ff5">%</span><span style=";color:#555;background-color:#a50">8</span><span style=";color:#aaa;background-color:#ff5">S</span><span style=";color:#a50;background-color:#ff5">&#160;</span><span style=";color:#aaa;background-color:#ff5">S</span><span style=";color:#f55;background-color:#a50">8</span><span style=";color:#a50;background-color:#ff5">S</span><span style=";color:#555;background-color:#a50">8</span><span style=";color:#a50;background-color:#ff5">:</span><span style=";color:#f55;background-color:#a50">8</span><span style=";color:#a50;background-color:#ff5">;%</span><span style=";color:#ff5;background-color:#a50">.</span><span style=";color:#aaa;background-color:#ff5">X</span><span style=";color:#a50;background-color:#ff5">&#160;</span><span style=";color:#ff5;background-color:#a50">;</span><span style=";color:#f55;background-color:#a50">8</span><span style=";color:#ff5;background-color:#a50">t</span><span style=";color:#aaa;background-color:#ff5">@</span><span style=";color:#a50;background-color:#ff5">:&#160;</span><span style=";color:#a00;background-color:#a50">8</span><span style=";color:#a50;background-color:#ff5">;</span><span style=";color:#a00;background-color:#a50">8</span><span style=";color:#aaa;background-color:#ff5">X</span><span style=";color:#f55;background-color:#a50">8</span><span style=";color:#a50;background-color:#ff5">t%</span><span style=";color:#555;background-color:#a50">8</span><span style="">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span><br />
+<span style="">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span><span style=";color:#ff5;background-color:#a50">X;</span><span style=";color:#aaa;background-color:#ff5">%</span><span style=";color:#a50;background-color:#ff5">.</span><span style=";color:#555;background-color:#a50">8</span><span style=";color:#aaa;background-color:#ff5">%</span><span style=";color:#a00;background-color:#a50">8</span><span style=";color:#aaa;background-color:#ff5">%</span><span style=";color:#a50;background-color:#ff5">t</span><span style=";color:#aaa;background-color:#a50">@</span><span style=";color:#a50;background-color:#ff5">..</span><span style=";color:#f55;background-color:#a50">8</span><span style=";color:#aaa;background-color:#ff5">@</span><span style=";color:#555;background-color:#a50">X</span><span style=";color:#a50;background-color:#ff5">&#160;</span><span style=";color:#aaa;background-color:#ff5">S</span><span style=";color:#a50;background-color:#ff5">&#160;</span><span style=";color:#a00;background-color:#a50">8</span><span style=";color:#555;background-color:#a50">8</span><span style=";color:#aaa;background-color:#ff5">S</span><span style=";color:#555;background-color:#a50">8</span><span style=";color:#f55;background-color:#a50">8</span><span style=";color:#a50;background-color:#ff5">.:</span><span style=";color:#555;background-color:#a50">8</span><span style="">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span><br />
+<span style="">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span><span style=";color:#ff5;background-color:#a50">S</span><span style=";color:#a50;background-color:#ff5">t</span><span style=";color:#ff5;background-color:#a50">;</span><span style=";color:#f55;background-color:#a50">8</span><span style=";color:#a50;background-color:#ff5">:</span><span style=";color:#555;background-color:#a50">@</span><span style=";color:#a50;background-color:#ff5">&#160;</span><span style=";color:#ff5;background-color:#a50">.</span><span style=";color:#a50;background-color:#ff5">&#160;</span><span style=";color:#f55;background-color:#a50">8</span><span style=";color:#aaa;background-color:#ff5">8%</span><span style=";color:#a50;background-color:#ff5">;</span><span style=";color:#a50;background-color:#a00">8</span><span style=";color:#ff5;background-color:#a50">.</span><span style=";color:#aaa;background-color:#ff5">%</span><span style=";color:#a50;background-color:#ff5">&#160;.</span><span style=";color:#f55;background-color:#a50">8</span><span style=";color:#555;background-color:#a50">@</span><span style=";color:#a50;background-color:#ff5">&#160;t</span><span style=";color:#555;background-color:#a50">8</span><span style=";color:#aaa;background-color:#ff5">S</span><span style="">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span><br />
+<span style="">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span><span style=";color:#555;background-color:#a50">8</span><span style=";color:#ff5;background-color:#a50">:</span><span style=";color:#aaa;background-color:#ff5">:</span><span style=";color:#a50;background-color:#ff5">S</span><span style=";color:#aaa;background-color:#ff5">X</span><span style=";color:#a00;background-color:#a50">%</span><span style=";color:#a50;background-color:#ff5">&#160;</span><span style=";color:#555;background-color:#a50">8</span><span style=";color:#a50;background-color:#ff5">:</span><span style=";color:#aaa;background-color:#ff5">@</span><span style=";color:#ff5;background-color:#a50">;</span><span style=";color:#a50;background-color:#ff5">&#160;</span><span style=";color:#aaa;background-color:#a50">S</span><span style=";color:#ff5;background-color:#a50">;</span><span style=";color:#a50;background-color:#ff5">&#160;.</span><span style=";color:#aaa;background-color:#ff5">8</span><span style=";color:#aaa;background-color:#a50">X</span><span style=";color:#555;background-color:#a50">S</span><span style=";color:#f55;background-color:#a50">8</span><span style=";color:#a50;background-color:#ff5">&#160;</span><span style=";color:#aaa;background-color:#ff5">S</span><span style=";color:#f55;background-color:#a50">8</span><span style=";color:#ff5;background-color:#a50">;</span><span style=";color:#555;background-color:#a00">8</span><span style="">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span><br />
+<span style="">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span><span style=";color:#a50;background-color:#555">t</span><span style=";color:#555;background-color:#a50">8</span><span style=";color:#a50;background-color:#ff5">;</span><span style=";color:#aaa;background-color:#ff5">X</span><span style=";color:#a50;background-color:#ff5">:</span><span style=";color:#f55;background-color:#a50">8</span><span style=";color:#a50;background-color:#ff5">St</span><span style=";color:#aaa;background-color:#ff5">@</span><span style=";color:#a50;background-color:#a00">8</span><span style=";color:#ff5;background-color:#a50">::</span><span style=";color:#a50;background-color:#ff5">&#160;</span><span style=";color:#a50;background-color:#f55">%</span><span style=";color:#a50;background-color:#ff5">%</span><span style=";color:#ff5;background-color:#a50">.</span><span style=";color:#a50;background-color:#ff5">.</span><span style=";color:#a50;background-color:#f55">;</span><span style=";color:#a50;background-color:#ff5">t</span><span style=";color:#555;background-color:#a50">X</span><span style=";color:#ff5;background-color:#a50">%</span><span style=";color:#a50;background-color:#ff5">&#160;</span><span style=";color:#aaa;background-color:#ff5">%</span><span style=";color:#ff5;background-color:#a50">%</span><span style=";color:#555;background-color:#a50">S</span><span style=";color:#a00;background-color:#a50">S</span><span style="">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span><br />
+<span style="">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span><span style=";color:#555;background-color:#a50">8</span><span style=";color:#ff5;background-color:#a50">S.</span><span style=";color:#a50;background-color:#ff5">&#160;</span><span style=";color:#aaa;background-color:#a50">X</span><span style=";color:#a50;background-color:#ff5">%</span><span style=";color:#aaa;background-color:#a50">X</span><span style=";color:#a50;background-color:#ff5">&#160;</span><span style=";color:#f55;background-color:#a50">8</span><span style=";color:#a50;background-color:#ff5">%</span><span style=";color:#555;background-color:#a50">8</span><span style=";color:#a50;background-color:#ff5">&#160;</span><span style=";color:#555;background-color:#a50">8</span><span style=";color:#a50;background-color:#ff5">.</span><span style=";color:#555;background-color:#a50">8</span><span style=";color:#aaa;background-color:#ff5">S</span><span style=";color:#a50;background-color:#ff5">&#160;</span><span style=";color:#555;background-color:#a50">8</span><span style=";color:#aaa;background-color:#ff5">%</span><span style=";color:#a50;background-color:#ff5">:</span><span style=";color:#f55;background-color:#a50">8</span><span style=";color:#a50;background-color:#ff5">t</span><span style=";color:#aaa;background-color:#ff5">X</span><span style=";color:#ff5;background-color:#a50">:</span><span style=";color:#f55;background-color:#a50">8</span><span style=";color:#555;background-color:#a50">%</span><span style="">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span><br />
+<span style="">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span><span style=";color:#a50;background-color:#ff5">:</span><span style=";color:#aaa;background-color:#a50">X</span><span style=";color:#f55;background-color:#a50">8</span><span style=";color:#a50;background-color:#ff5">&#160;</span><span style=";color:#555;background-color:#a50">8</span><span style=";color:#a50;background-color:#ff5">&#160;</span><span style=";color:#f55;background-color:#a50">8</span><span style=";color:#aaa;background-color:#ff5">X</span><span style=";color:#555;background-color:#a50">8</span><span style=";color:#aaa;background-color:#ff5">%</span><span style=";color:#f55;background-color:#a50">8</span><span style=";color:#aaa;background-color:#ff5">S</span><span style=";color:#a50;background-color:#ff5">&#160;</span><span style=";color:#f55;background-color:#a50">8</span><span style=";color:#ff5;background-color:#a50">;</span><span style=";color:#aaa;background-color:#ff5">S</span><span style=";color:#a50;background-color:#ff5">.</span><span style=";color:#555;background-color:#a50">@</span><span style=";color:#a50;background-color:#ff5">&#160;</span><span style=";color:#555;background-color:#a50">8</span><span style=";color:#a50;background-color:#ff5">%</span><span style=";color:#aaa;background-color:#a50">S</span><span style=";color:#a50;background-color:#ff5">&#160;</span><span style=";color:#f55;background-color:#a50">8</span><span style=";color:#aaa;background-color:#ff5">:</span><span style=";color:#ff5;background-color:#a50">@</span><span style=";color:#555;background-color:#a00">8</span><span style="">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span><br />
+<span style="">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span><span style=";color:#a50;background-color:#ff5">:</span><span style=";color:#aaa;background-color:#ff5">%</span><span style=";color:#a50;background-color:#ff5">S</span><span style=";color:#555;background-color:#a50">8</span><span style=";color:#ff5;background-color:#a50">.</span><span style=";color:#aaa;background-color:#ff5">X</span><span style=";color:#a00;background-color:#a50">S</span><span style=";color:#ff5;background-color:#a50">;</span><span style=";color:#a50;background-color:#ff5">&#160;&#160;</span><span style=";color:#555;background-color:#a50">8</span><span style=";color:#f55;background-color:#a50">8</span><span style=";color:#a00;background-color:#555">@</span><span style="">&#160;</span><span style=";color:#555;background-color:#a50">t</span><span style=";color:#a50;background-color:#ff5">;</span><span style=";color:#a00;background-color:#a50">@</span><span style=";color:#a50;background-color:#ff5">&#160;</span><span style=";color:#f55;background-color:#a50">8</span><span style=";color:#ff5;background-color:#a50">t</span><span style=";color:#a50;background-color:#ff5">:&#160;</span><span style=";color:#f55;background-color:#a50">8</span><span style=";color:#aaa;background-color:#ff5">X</span><span style=";color:#a50;background-color:#ff5">t</span><span style=";color:#ff5;background-color:#a50">S</span><span style=";color:#555;background-color:#a50">%</span><span style="">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span><br />
+<span style="">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span><span style=";color:#555;background-color:#a50">;</span><span style=";color:#a50;background-color:#ff5">S:</span><span style=";color:#aaa;background-color:#a50">S</span><span style=";color:#ff5;background-color:#a50">.</span><span style=";color:#a50;background-color:#ff5">&#160;</span><span style=";color:#f55;background-color:#a50">8</span><span style=";color:#a50;background-color:#ff5">;</span><span style=";color:#ff5;background-color:#a50">.</span><span style=";color:#555;background-color:#a50">8</span><span style="">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span><span style=";color:#555;background-color:#a50">;</span><span style=";color:#ff5;background-color:#a50">S</span><span style=";color:#aaa;background-color:#ff5">X</span><span style=";color:#a00;background-color:#a50">8</span><span style=";color:#ff5;background-color:#a50">:</span><span style=";color:#aaa;background-color:#ff5">X</span><span style=";color:#ff5;background-color:#a50">:</span><span style=";color:#aaa;background-color:#ff5">%</span><span style=";color:#a50;background-color:#ff5">&#160;&#160;</span><span style="">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span><br />
+<span style="">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span><span style=";color:#ff5;background-color:#a50">X</span><span style=";color:#a50;background-color:#ff5">t</span><span style=";color:#aaa;background-color:#ff5">X</span><span style=";color:#ff5;background-color:#a50">:</span><span style=";color:#f55;background-color:#a50">8</span><span style=";color:#555;background-color:#a50">8</span><span style=";color:#a00;background-color:#555">8</span><span style="">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span><span style=";color:#555;background-color:#a50">:</span><span style=";color:#a50;background-color:#ff5">.</span><span style=";color:#ff5;background-color:#a50">:</span><span style=";color:#f55;background-color:#a50">8</span><span style=";color:#aaa;background-color:#ff5">X</span><span style=";color:#ff5;background-color:#a50">S</span><span style="">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span><br />
+<span style="">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span><span style=";color:#555;background-color:#a50">t</span><span style=";color:#ff5;background-color:#a50">;</span><span style=";color:#555;background-color:#a50">8</span><span style=";color:#a00;background-color:#a50">X</span><span style="">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span><span style=";color:#555;background-color:#a50">;</span><span style=";color:#a50;background-color:#ff5">&#160;</span><span style=";color:#ff5;background-color:#a50">%</span><span style=";color:#555;background-color:#a50">@</span><span style="">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span><br />
+        </div>
+        <div class="file" id="intro">
+            <p>
+                <a href="https://github.com/ranger/ranger">ranger</a> is a console file manager with VI key bindings.
+            </p>
+            </p>
+                It provides a minimalistic and nice curses interface with a
+                view on the directory hierarchy.  It ships with
+                <a href="https://github.com/ranger/ranger/blob/master/ranger/ext/rifle.py">rifle</a>, a file launcher that is good at
+                automatically finding out which program to use for what file
+                type.
+            </p>
+        </div>
+        <div class="file" id="screenshot">
+            <img src="screenshots/screenshot0.png" />
+        </div>
+        <div class="file changelog" id="changelog">
+            <!--run markdown CHANGELOG --><p>This log documents changes between stable versions.</p>
 
 <h1>2017-01-08: version 1.8.1</h1>
 
 <ul>
 <li>Fixed <code>:scout</code> break due to incompatible change in python 3.6</li>
 </ul>
+
 
 <h1>2016-12-24: version 1.8.0</h1>
 
@@ -159,6 +182,7 @@ the urxvt background (requires urxvt compiled with pixbuf support)</li>
 username/hostname for quick copy&amp;pasting by shift+double-clicking on it.</li>
 </ul>
 
+
 <h1>2015-10-04: version 1.7.2</h1>
 
 <ul>
@@ -176,6 +200,7 @@ username/hostname for quick copy&amp;pasting by shift+double-clicking on it.</li
 operation in a first-in-first-out order.</li>
 </ul>
 
+
 <h1>2015-05-04: version 1.7.1</h1>
 
 <ul>
@@ -185,6 +210,7 @@ operation in a first-in-first-out order.</li>
 <li>Fixed <code>:bulkrename</code> command in python3</li>
 <li>Fixed <code>S</code> key binding not working when SHELL=fish</li>
 </ul>
+
 
 <h1>2015-04-13: version 1.7.0</h1>
 
@@ -213,6 +239,7 @@ The full commands.py is still copied to <code>~/.config/ranger/commands_full.py<
 <li>Fixed broken copying of symlinks</li>
 </ul>
 
+
 <h1>2013-05-24: Version 1.6.1</h1>
 
 <ul>
@@ -224,10 +251,11 @@ to handle opening of all images in a directory at once.</li>
 <li>Now previewing with <code>i</code> uses the whole available width.</li>
 </ul>
 
+
 <h1>2013-02-22: Version 1.6.0</h1>
 
 <ul>
-<li>Overhauled all config files.  Please update them or use the --clean switch</li>
+<li>Overhauled all config files.  Please update them or use the &ndash;clean switch</li>
 <li>Added <code>examples/</code> directory to source code which contains sample programs or
 plugins that can be used together with ranger</li>
 <li>Added progress bars to copying, moving and directory loading processes</li>
@@ -265,11 +293,13 @@ please use <code>rifle [filename]</code> instead.</li>
 <li>Fixed <code>draw_borders=true</code> in combination with <code>padding_right=false</code></li>
 </ul>
 
+
 <h1>2012-08-10: Version 1.5.5</h1>
 
 <ul>
 <li>Ensure that detached programs continue to run when ranger is killed</li>
 </ul>
+
 
 <h1>2012-05-03: Version 1.5.4</h1>
 
@@ -279,13 +309,14 @@ please use <code>rifle [filename]</code> instead.</li>
 <li>Speedup in <code>ranger.ext.get_executables</code></li>
 </ul>
 
+
 <h1>2012-03-05: Version 1.5.3</h1>
 
 <ul>
-<li>Added --selectfile option that selects a certain file on startup</li>
-<li>Added --list-tagged-files option</li>
-<li>Added --cmd option to run commands on startup</li>
-<li>Added --profile option for additional debug information on exit</li>
+<li>Added &ndash;selectfile option that selects a certain file on startup</li>
+<li>Added &ndash;list-tagged-files option</li>
+<li>Added &ndash;cmd option to run commands on startup</li>
+<li>Added &ndash;profile option for additional debug information on exit</li>
 <li>Added a visual mode (activate with <code>V</code>, deactivate with Esc)</li>
 <li>Added a reversed visual mode (activate with <code>uV</code>)</li>
 <li>Added <code>$RANGER_LEVEL</code> environment variable which ranger sets to <code>1</code> or higher
@@ -304,6 +335,7 @@ so programs can know that they were spawned from ranger</li>
 <li>Fixed crash when opening images with sxiv/feh by running <code>ranger &lt;image&gt;</code></li>
 </ul>
 
+
 <h1>2011-10-23: Version 1.5.2</h1>
 
 <ul>
@@ -311,12 +343,13 @@ so programs can know that they were spawned from ranger</li>
 characters at the right edge.</li>
 </ul>
 
+
 <h1>2011-10-23: Version 1.5.1</h1>
 
 <ul>
 <li>Added <code>fm.select_file(path)</code></li>
-<li>Added --choosefiles option (like --choosefile, but chooses multiple files)</li>
-<li>Fixed --list-unused-keys</li>
+<li>Added &ndash;choosefiles option (like &ndash;choosefile, but chooses multiple files)</li>
+<li>Fixed &ndash;list-unused-keys</li>
 <li>Fixed Zombie processes</li>
 <li>Fixed handling of filenames with undecodable bytes (unicode surrogates)</li>
 <li>Fixed crashes due to incomplete loading of directories</li>
@@ -325,21 +358,22 @@ characters at the right edge.</li>
 <li>Fixed parsing of chained commands (like in the binding <code>om</code>)</li>
 </ul>
 
+
 <h1>2011-10-11: Version 1.5.0</h1>
 
 <ul>
 <li>Full python3.2 compatibility</li>
 <li>Added new configuration file <code>rc.conf</code> which contains a list
 of commands that are executed on startup - mainly used for keybindings</li>
-<li>Added --list-unused-keys</li>
+<li>Added &ndash;list-unused-keys</li>
 <li>Added new program handlers to apps.py</li>
 <li>Added pop-up window for keychains and bookmarks</li>
 <li>Added <code>load_default_rc</code> option</li>
 <li>Fixed all known unicode issues</li>
 <li>Fixed crash when $TERM is unknown to the system</li>
 <li>Fixed scrolling in colored preview</li>
-<li>Changed the default <code>column_ratios</code> to 1/3/4 and sorting method to <code>natural</code></li>
-<li>Changed :rename so it doesn't overwrite existing files</li>
+<li>Changed the default <code>column_ratios</code> to 1/&frac34; and sorting method to <code>natural</code></li>
+<li>Changed :rename so it doesn&rsquo;t overwrite existing files</li>
 <li>Internal actions are now accessible as commands</li>
 <li>Replaced unittests by doctests</li>
 <li>Replaced integrated help with an extended man page and dynamic lists
@@ -359,6 +393,7 @@ commands than :shell, for example :edit %f</li>
 <li>Countless small fixes and improvements</li>
 </ul>
 
+
 <h1>2011-10-02: Version 1.4.4</h1>
 
 <ul>
@@ -369,7 +404,7 @@ commands than :shell, for example :edit %f</li>
 <li>Added option <code>display_tags_in_all_columns</code></li>
 <li>Added command.cancel method which is called when pressing ESC in console</li>
 <li>Added sorting and cycling by ctime and atime</li>
-<li>Added custom tags (press "x)</li>
+<li>Added custom tags (press &ldquo;x)</li>
 <li>Added bittorrent preview</li>
 <li>Fixed blocking when using interactive scripts in scope.sh</li>
 <li>Fixed issues with ALT key</li>
@@ -377,6 +412,7 @@ commands than :shell, for example :edit %f</li>
 <li>Forbid piping things into ranger</li>
 <li>Improved hints</li>
 </ul>
+
 
 <h1>2011-04-05: Version 1.4.3</h1>
 
@@ -386,13 +422,15 @@ commands than :shell, for example :edit %f</li>
 <li>Minor improvements</li>
 </ul>
 
+
 <h1>2011-03-05: Version 1.4.2</h1>
 
 <ul>
-<li>Added --choosefile and --choosedir flag</li>
+<li>Added &ndash;choosefile and &ndash;choosedir flag</li>
 <li>Added use of bookmarks in tab completion of the :cd command</li>
 <li>Fixed bug with detached programs and python 3.2</li>
 </ul>
+
 
 <h1>2011-01-04: Version 1.4.1</h1>
 
@@ -400,6 +438,7 @@ commands than :shell, for example :edit %f</li>
 <li>Fixed crash when preview failed under some circumstances</li>
 <li>Fixed graphical bug when pressing i</li>
 </ul>
+
 
 <h1>2010-12-22: Version 1.4.0</h1>
 
@@ -421,6 +460,7 @@ the copied files between ranger instances</li>
 <li>Some restructuration of the source code</li>
 </ul>
 
+
 <h1>2010-12-13: Version 1.2.3</h1>
 
 <ul>
@@ -431,22 +471,25 @@ the copied files between ranger instances</li>
 <li>Fixed lazy lookup of some FSObject attributes</li>
 </ul>
 
+
 <h1>2010-10-10: Version 1.2.2</h1>
 
 <ul>
 <li>Prevent currently used directories from being garbage collected</li>
 <li>Disable mouse buttons when console is open</li>
-<li>Fixed :cd command: Without arguments, cd's into $HOME</li>
+<li>Fixed :cd command: Without arguments, cd&rsquo;s into $HOME</li>
 <li>Fixed bug which prevented pydoc to work on some config files</li>
 <li>Fixed some bugs in <code>snow</code> and <code>jungle</code> colorschemes</li>
 <li>Several other clean-ups and fixes</li>
 </ul>
+
 
 <h1>2010-09-16: Version 1.2.1</h1>
 
 <ul>
 <li>Fixed yy/pp bug when yanking multiple directories</li>
 </ul>
+
 
 <h1>2010-09-13: Version 1.2.0</h1>
 
@@ -464,6 +507,7 @@ the copied files between ranger instances</li>
 <li>Several clean-ups and fixes</li>
 </ul>
 
+
 <h1>2010-07-17: Version 1.1.2</h1>
 
 <ul>
@@ -473,6 +517,7 @@ the copied files between ranger instances</li>
 <li>Minor fixes</li>
 </ul>
 
+
 <h1>2010-06-18: Version 1.1.1</h1>
 
 <ul>
@@ -480,6 +525,7 @@ the copied files between ranger instances</li>
 <li>New flag for running programs: <code>w</code> (waits for enter press)</li>
 <li>Minor fixes</li>
 </ul>
+
 
 <h1>2010-06-09: Version 1.1.0</h1>
 
@@ -493,15 +539,14 @@ the copied files between ranger instances</li>
 <li>Possibility to turn off previews (zp and zP)</li>
 <li>Changing options with :set (e.g. <code>:set column_ratios=1,2,3,4</code>)</li>
 <li>Ask for confirmation when using :delete</li>
-<li>New invocation flag: --fail-unless-cd</li>
+<li>New invocation flag: &ndash;fail-unless-cd</li>
 <li>New hotkeys, commands, options.</li>
 <li>New syntax for ~/.ranger/keys.py</li>
 <li>Several user contributions</li>
 <li>And tons of general improvements</li>
 </ul><!--/run-->
-</div>
-
 <!--foot-->
-</div>
-</body></html>
+        </div>
+    </body>
+</html>
 <!--/foot-->

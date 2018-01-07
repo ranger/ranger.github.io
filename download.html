@@ -2,28 +2,103 @@
 <!--get head from index.html-->
 <html>
     <head>
-        <title>ranger</title>
-        <link rel="stylesheet" href="ranger.css" type="text/css" />
+        <title></title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=0.5" />
+        <meta name="ROBOTS" content="NOINDEX, NOFOLLOW" />
+        <script src="jquery2.min.js"></script>
+        <link rel="stylesheet" href="style.css" type="text/css" />
+        <style type="text/css">
+            body {
+                background: black;
+            }
+            div.rangerstar {
+                font-size: 80%;
+                font-family: monospace;
+            }
+            div.index {
+                width: 8em;
+                position: fixed;
+            }
+            div.content {
+                max-width: 50em;
+                color: #fff;
+                font-family: monospace;
+                margin-left: 12em;
+            }
+            .ranger {
+                font-family: monospace;
+                text-decoration: none;
+                width: 100%;
+                display: block;
+                padding-left: 1em;
+            }
+            .filetype_image {
+                color: #ffbb00;
+            }
+            .filetype_image:hover {
+                color: black;
+                background-color: #ffbb00;
+            }
+            .filetype_text {
+                color: white;
+            }
+            .filetype_text:hover {
+                color: black;
+                background-color: white;
+            }
+            .filetype_directory {
+                color: #66f;
+            }
+            .filetype_directory:hover {
+                color: black;
+                background-color: #66f;
+            }
+            .filetype_link {
+                color: #0CC;
+            }
+            .filetype_link:hover {
+                color: black;
+                background-color: #0CC;
+            }
+            .filetype_targz {
+                color: #c44;
+            }
+            .filetype_targz:hover {
+                color: black;
+                background-color: #c44;
+            }
+            .content {
+                margin-bottom: 2em;
+                border-radius: 1em;
+                padding: 0 1em;
+            }
+            .content a {
+                color: #0CC;
+                text-decoration: none;
+                font-weight: bold;
+            }
+            .content a:hover {
+                color: black;
+                background-color: #0CC;
+            }
+            table, td, tr { border-collapse: collapse; }
+            p, h1, h2, h3 { background: url(""); } /* android fix #40186 */
+        </style>
     </head>
     <body>
-        <div class="header">
-            <h1>ranger</h1>
-            <div class="menu">
-                <a href="index.html">Description</a>
-                <a href="https://github.com/ranger/ranger/wiki">Wiki</a>
-                <svg style="height: 0.7em;" xmlns="http://www.w3.org/2000/svg" viewBox="0 -256 1850 1850" version="1.1">
-                    <g transform="matrix(1,0,0,-1,30.372881,1426.9492)">
-                        <path d="M 1408,608 V 288 Q 1408,169 1323.5,84.5 1239,0 1120,0 H 288 Q 169,0 84.5,84.5 0,169 0,288 v 832 Q 0,1239 84.5,1323.5 169,1408 288,1408 h 704 q 14,0 23,-9 9,-9 9,-23 v -64 q 0,-14 -9,-23 -9,-9 -23,-9 H 288 q -66,0 -113,-47 -47,-47 -47,-113 V 288 q 0,-66 47,-113 47,-47 113,-47 h 832 q 66,0 113,47 47,47 47,113 v 320 q 0,14 9,23 9,9 23,9 h 64 q 14,0 23,-9 9,-9 9,-23 z m 384,864 V 960 q 0,-26 -19,-45 -19,-19 -45,-19 -26,0 -45,19 L 1507,1091 855,439 q -10,-10 -23,-10 -13,0 -23,10 L 695,553 q -10,10 -10,23 0,13 10,23 l 652,652 -176,176 q -19,19 -19,45 0,26 19,45 19,19 45,19 h 512 q 26,0 45,-19 19,-19 19,-45 z" />
-                    </g>
-                </svg>
-
-                <a href="screenshots.html">Screenshots</a>
-                <a href="download.html">Download</a>
-                <a href="documentation.html">Documentation</a>
-                <a href="contact.html">Contact</a>
-            </div>
+        <div class="index">
+            <a href="index.html#star" class="ranger filetype_image">star.png</a>
+            <a href="index.html#intro" class="ranger filetype_text">intro.md</a>
+            <a href="index.html#screenshot" class="ranger filetype_image">screenshot.png</a>
+            <a href="index.html#changelog" class="ranger filetype_text">CHANGELOG.md</a>
+            <br />
+            <a href="screenshots.html" class="ranger filetype_directory">screenshots</a>
+            <a href="contact.html" class="ranger filetype_text">contact.html</a>
+            <a href="documentation.html" class="ranger filetype_text">docs.html</a>
+            <a href="download.html" class="ranger filetype_text">download.md</a>
+            <a href="https://github.com/ranger/ranger/archive/stable.zip" class="ranger filetype_targz">ranger.tar.gz</a>
+            <a href="https://github.com/ranger/ranger/wiki" class="ranger filetype_link">wiki.html</a>
         </div>
         <div class="content">
 <!--/get-->
@@ -35,6 +110,7 @@
 <li>Testing: <a href="http://git.savannah.gnu.org/cgit/ranger.git/snapshot/ranger-master.tar.gz">http://git.savannah.gnu.org/cgit/ranger.git/snapshot/ranger-master.tar.gz</a></li>
 <li>More downloads: <a href="http://git.savannah.gnu.org/cgit/ranger.git/refs/tags">http://git.savannah.gnu.org/cgit/ranger.git/refs/tags</a></li>
 </ul>
+
 
 <p>Unpack the archive, enter the directory and run ranger:</p>
 
@@ -68,13 +144,13 @@ git commit -a        # commit your changes to your local branch
 
 <h2>Signed Packages</h2>
 
-<p>If you want to be sure of the authenticity of the snapshot, please download <a href="ranger-stable.tar.gz">ranger-stable.tar.gz</a> and its <a href="ranger-stable.tar.gz.sig">signature</a>, then verify the signature with the author's public key: <a href="huterich.gpg">huterich.gpg</a>.</p>
+<p>If you want to be sure of the authenticity of the snapshot, please download <a href="ranger-stable.tar.gz">ranger-stable.tar.gz</a> and its <a href="ranger-stable.tar.gz.sig">signature</a>, then verify the signature with the author&rsquo;s public key: <a href="huterich.gpg">huterich.gpg</a>.</p>
 
 <pre><code>gpg --import huterich.gpg
 gpg --verify ranger-stable.tar.gz.sig
 </code></pre>
 
-<p>If this prints <code>Good signature from "huterich &amp;lt;hut@lavabit.com&amp;gt;</code>, the signature was verified.  However, you can only trust the authenticity of the snapshot as much as you trust the authenticity of the public key. Please ensure that the key really belongs to Roman Zimbelmann alias hut by verifying it from multiple sources.  Once you are sure, you can sign the key with your own signature as described <a href="http://www.dewinter.com/gnupg_howto/english/GPGMiniHowto-3.html#ss3.6">here</a> to avoid the warning that says "This key is not certified with a trusted signature! There is no indication that the signature belongs to the owner."</p>
+<p>If this prints <code>Good signature from "huterich &amp;lt;hut@lavabit.com&amp;gt;</code>, the signature was verified.  However, you can only trust the authenticity of the snapshot as much as you trust the authenticity of the public key. Please ensure that the key really belongs to Roman Zimbelmann alias hut by verifying it from multiple sources.  Once you are sure, you can sign the key with your own signature as described <a href="http://www.dewinter.com/gnupg_howto/english/GPGMiniHowto-3.html#ss3.6">here</a> to avoid the warning that says &ldquo;This key is not certified with a trusted signature! There is no indication that the signature belongs to the owner.&rdquo;</p>
 
 <p>This is a list of all released packages since 1.2.2 with their signatures:</p><!-- /run -->
 
@@ -107,25 +183,30 @@ gpg --verify ranger-stable.tar.gz.sig
 <h2>Package Managers</h2>
 
 <p>
-  <b>Arch Linux</b>: A stable version is in the <a href="http://www.archlinux.org/packages/community/any/ranger/">Community Repository</a>, the freshest git-version can be found in the <a href="http://aur.archlinux.org/packages.php?ID=35421">Arch User Repositories</a>.
 </p>
-<p>
-  <b>Slackware</b>: There is a stable version of ranger in <a href="http://slackbuilds.org/repository/14.1/system/ranger/?search=ranger">SlackBuilds</a>
-</p>
-<p>
-  <b>Debian</b>: There is a stable version of ranger in <a href="http://packages.debian.org/sid/ranger">sid</a>
-</p>
-<p>
-  <b>Gentoo</b>: Stable versions of ranger are in <a href="http://packages.gentoo.org/package/app-misc/ranger">Portage</a>
-</p>
-<p>
-  <b>Nix/NixOS</b>: Stable versions of ranger are in <a href="https://github.com/NixOS/nixpkgs/blob/master/pkgs/applications/misc/ranger/default.nix">nixpkgs</a>
-</p>
-<p>
-  <b>FreeBSD</b>: py-ranger in the <a href="http://www.freebsd.org/cgi/cvsweb.cgi/ports/sysutils/py-ranger/">ports</a>
-</p>
+<ul>
+    <li>
+        <b>Arch Linux</b>: A stable version is in the <a href="http://www.archlinux.org/packages/community/any/ranger/">Community Repository</a>, the freshest git-version can be found in the <a href="http://aur.archlinux.org/packages.php?ID=35421">Arch User Repositories</a>.
+    </li>
+    <li>
+        <b>Slackware</b>: There is a stable version of ranger in <a href="http://slackbuilds.org/repository/14.1/system/ranger/?search=ranger">SlackBuilds</a>
+    </li>
+    <li>
+        <b>Debian</b>: There is a stable version of ranger in <a href="http://packages.debian.org/sid/ranger">sid</a>
+    </li>
+    <li>
+        <b>Gentoo</b>: Stable versions of ranger are in <a href="http://packages.gentoo.org/package/app-misc/ranger">Portage</a>
+    </li>
+    <li>
+        <b>Nix/NixOS</b>: Stable versions of ranger are in <a href="https://github.com/NixOS/nixpkgs/blob/master/pkgs/applications/misc/ranger/default.nix">nixpkgs</a>
+    </li>
+    <li>
+        <b>FreeBSD</b>: py-ranger in the <a href="http://www.freebsd.org/cgi/cvsweb.cgi/ports/sysutils/py-ranger/">ports</a>
+    </li>
+</ul>
 
 <!--get foot from index.html-->
-</div>
-</body></html>
+        </div>
+    </body>
+</html>
 <!--/get-->
