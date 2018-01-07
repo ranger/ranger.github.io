@@ -6,4 +6,4 @@
 ref ?= HEAD
 
 build:
-	boobies index.html screenshots.html contact.html documentation.html download.html
+	boobies index.html screenshots.html contact.html documentation.html download.html changelog.html

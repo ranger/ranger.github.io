@@ -17,7 +17,7 @@
                 font-family: monospace;
             }
             div.index {
-                width: 8em;
+                width: 15ch;
                 position: fixed;
             }
             div.content {
@@ -31,7 +31,17 @@
                 text-decoration: none;
                 width: 100%;
                 display: block;
-                padding-left: 1em;
+                padding-left: 1ch;
+            }
+            .tagged {
+                padding-left: 0ch;
+            }
+            .tagged::before {
+                content: "*";
+                color: #c44;
+            }
+            .filetype_link::after {
+                content: " ->";
             }
             .filetype_image {
                 color: #ffbb00;
@@ -82,22 +92,30 @@
                 color: black;
                 background-color: #0CC;
             }
+            .changelog h1, .news h1 {
+              border-bottom: 2pt solid #ccc;
+              font-size: 100%;
+              padding: 0;
+              margin: 0;
+            }
+            .metadata {
+                float: right;
+                padding: 0 0 0 0.5em;
+                color: #999;
+            }
             table, td, tr { border-collapse: collapse; }
             p, h1, h2, h3 { background: url(""); } /* android fix #40186 */
         </style>
     </head>
     <body>
         <div class="index">
-            <a href="index.html#star" class="ranger filetype_image">star.png</a>
-            <a href="index.html#intro" class="ranger filetype_text">intro.md</a>
-            <a href="index.html#screenshot" class="ranger filetype_image">screenshot.png</a>
-            <a href="index.html#changelog" class="ranger filetype_text">CHANGELOG.md</a>
-            <br />
-            <a href="screenshots.html" class="ranger filetype_directory">screenshots</a>
+            <a href="changelog.html" class="ranger filetype_text">CHANGELOG.md</a>
             <a href="contact.html" class="ranger filetype_text">contact.html</a>
             <a href="documentation.html" class="ranger filetype_text">docs.html</a>
-            <a href="download.html" class="ranger filetype_text">download.md</a>
-            <a href="https://github.com/ranger/ranger/archive/stable.zip" class="ranger filetype_targz">ranger.tar.gz</a>
+            <a href="https://github.com/ranger/ranger" class="ranger filetype_link">github.link</a>
+            <a href="download.html" class="ranger filetype_targz">ranger.tar.gz</a>
+            <a href="index.html" class="ranger filetype_text tagged">README.md</a>
+            <a href="screenshots.html" class="ranger filetype_image">screenshot.png</a>
             <a href="https://github.com/ranger/ranger/wiki" class="ranger filetype_link">wiki.html</a>
         </div>
         <div class="content">
