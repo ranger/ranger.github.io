@@ -1,19 +1,28 @@
+@media only screen and (min-width: 90ch) {
+    div.index {
+        width: 14ch;
+        position: fixed;
+        border-bottom: none !important;
+    }
+    div.content {
+        margin-left: 20ch;
+    }
+}
+
 body {
     background: black;
 }
 div.index {
-    width: 15ch;
-    position: fixed;
+    padding-bottom: 1em;
+    border-bottom: 2px solid white;
 }
 div.content {
-    max-width: 50em;
+    max-width: 90ch;
     color: #fff;
     font-family: monospace;
-    margin-left: 21ch;
 }
 div.screenshots img, .screenshot {
     border: 1px solid #0CC;
-    border-radius: 0.7em;
     padding: 0.3em;
 }
 div.screenshots a:hover {
