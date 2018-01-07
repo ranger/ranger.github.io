@@ -15,10 +15,10 @@ div.content {
     font-family: monospace;
     margin-left: 12em;
 }
-div.screenshots img {
+div.screenshots img, .screenshot {
     border: 1px solid #0CC;
     border-radius: 0.7em;
-    margin: 0.3em;
+    padding: 0.3em;
 }
 div.screenshots a:hover {
     background-color: #000 !important;
