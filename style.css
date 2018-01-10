@@ -3,9 +3,16 @@
         width: 14ch;
         position: fixed;
         border-bottom: none !important;
+        text-align: left !important;
     }
     div.content {
         margin-left: 20ch;
+    }
+    .ranger {
+        display: block;
+    }
+    .filetype_link::after {
+        content: " ->";
     }
 }
 
@@ -16,6 +23,7 @@ body {
 div.index {
     padding-bottom: 1em;
     border-bottom: 2px solid white;
+    text-align: center;
 }
 div.content {
     max-width: 90ch;
@@ -34,7 +42,6 @@ div.screenshots a:hover {
     font-family: monospace;
     text-decoration: none;
     width: 100%;
-    display: block;
     padding-left: 1ch;
 }
 .tagged {
@@ -43,9 +50,6 @@ div.screenshots a:hover {
 .tagged::before {
     content: "*";
     color: #c44;
-}
-.filetype_link::after {
-    content: " ->";
 }
 .filetype_image {
     color: #ffbb00;
