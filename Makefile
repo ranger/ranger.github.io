@@ -1,9 +1,9 @@
 # Some commands to work with page generation.
-# Building the page requires https://github.com/hut/boobies
+# Building the page requires https://github.com/hut/inlineswap
 
 .PHONY: build
 
 ref ?= HEAD
 
 build:
-	boobies index.html screenshots.html contact.html documentation.html download.html changelog.html
+	inlineswap index.html screenshots.html contact.html documentation.html download.html changelog.html
