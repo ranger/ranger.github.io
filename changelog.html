@@ -26,6 +26,104 @@
 <!--run markdown CHANGELOG | sed 's/h1>/h2>/g' -->
 <p>This log documents changes between stable versions.</p>
 
+<h2>2018-01-25: version 1.9.0</h2>
+
+<ul>
+<li>Fixed memory leak in w3m image preview</li>
+<li>Fixed <code>Q</code> binding, map it to <code>quitall</code> instead of <code>quit!</code></li>
+<li>Fixed <code>gR</code> binding</li>
+<li>Fixed custom linemode not being applied to files</li>
+<li>Fixed w3m image display invocation on OpenBSD</li>
+<li>Fixed broken pager after changing view mode with <code>~</code></li>
+<li>Added reset of rifle.conf when pressing <code>&lt;C-R&gt;</code></li>
+<li>Added image-based PDF previews to <code>scope.sh</code> (disabled by default)</li>
+<li>Added terminology-based image previews</li>
+<li>Added check for <code>$VISUAL</code> environment variable</li>
+<li>Added setting <code>iterm2_font_height</code> and <code>iterm2_font_width</code></li>
+<li>Renamed setting <code>cd_tab_smart</code> to <code>cd_tab_fuzzy</code></li>
+<li>Changed command for mercurial integration from <code>hg</code> to <code>chg</code></li>
+</ul>
+
+
+<h2>2017-11-19: version 1.9.0b6</h2>
+
+<ul>
+<li>Fixed crash when parsing corrupted history file</li>
+<li>Fixed tab completion with <code>cd -r ...</code></li>
+<li>Fixed crash when previewing files encoded in little-endian UTF-16</li>
+<li>Fixed flicker in previewing symlinked images</li>
+<li>Fixed detection of location of scope.sh</li>
+<li>Fixed crash when running ranger from the directory containing its package</li>
+<li>Fixed cursor position after moving half a page down and back up</li>
+<li>Fixed handling of lines that are too long for the console</li>
+<li>Added <code>&lt;F2&gt;</code> binding to <code>:rename_append</code></li>
+<li>Avoid dereferencing symlinked directory when starting ranger in one</li>
+<li>Added support for <code>file://</code> URIs as path arguments</li>
+<li>Added setting <code>save_tabs_on_exit</code></li>
+<li>Added setting <code>cd_tab_case</code>, sets case sensitivity of <code>:cd</code> tab completion</li>
+<li>Added setting <code>cd_tab_smart</code>, allows fuzzy tab completion with <code>:cd</code>,
+for example, <code>:cd /u/lo/b&lt;TAB&gt;</code> expands to <code>:cd /usr/local/bin</code></li>
+<li>Added setting <code>global_inode_type_filter</code> to show only directories when
+running ranger with the new option <code>--show-only-dirs</code></li>
+<li>Added setting <code>save_backtick_bookmark</code>, e.g. for easier syncing of bookmarks</li>
+<li>Added setting <code>one_indexed</code> to start counting line numbers from 1</li>
+<li>Added rifle.conf entries to list/extract archives without atool</li>
+<li>Added <code>:yank</code> command for simplified definitions of <code>yn</code>, <code>yd</code> &amp; <code>yp</code></li>
+<li>Added <code>:narrow</code> command, which filters selected files</li>
+<li>Added setting <code>freeze_files</code>, bound to <code>F</code> key, to avoid reloading files</li>
+<li>Changed <code>:shell -p ...</code> to display stderr in pager</li>
+</ul>
+
+
+<h2>2017-02-19: version 1.9.0b5</h2>
+
+<ul>
+<li>Fixed width calculation of multibyte characters in preview</li>
+<li>Fixed crash in iTerm2 preview with python 3.5</li>
+</ul>
+
+
+<h2>2017-02-10: version 1.9.0b1</h2>
+
+<ul>
+<li>Fixed crash when using <code>Mi</code> on files without reading permissions</li>
+<li>Fixed natural sorting (<code>11.jpg</code> &lt; <code>100.jpg</code>)</li>
+<li>Fixed loss of precision in timestamps when copying</li>
+<li>Fixed smart case matching in <code>:travel</code></li>
+<li>Fixed automatically disabling <code>preview_script</code> when running as root</li>
+<li>Fixed crash on sshfs disconnect</li>
+<li>Fixed crash on missing <code>~/.config/ranger/history</code></li>
+<li>Fixed crash when path not accessible during start-up</li>
+<li>Fixed automatic tmux title</li>
+<li>Fixed urxvt image previewing when running tmux</li>
+<li>Fixed macro expansion in aliased commands</li>
+<li>Fixed <code>hidden_filter</code> option when combined with <code>:flat</code></li>
+<li>Fixed various other crashes</li>
+<li>Fixed error message that occasionally pops up when changing settings</li>
+<li>Introduced extensive linting to ensure code quality</li>
+<li>Added continuous integration.  Patches now require <code>make test</code> to pass.</li>
+<li>Added handling of arguments in &ldquo;$PAGER&rdquo; environment variable</li>
+<li>Added quote parsing for <code>:setlocal path=...</code></li>
+<li>Added <code>ys</code> to copy the selection to clipboard</li>
+<li>Added setting <code>hostname_in_titlebar</code></li>
+<li>Added setting <code>wrap_scroll</code> to wrap cursor around when scrolling</li>
+<li>Added example plugin <code>plugin_fasd_add.py</code></li>
+<li>Added command <code>jump_non</code> to jump to the first non-directory file</li>
+<li>Added additional arguments to the command <code>:rename_append</code></li>
+<li>Added key binding &lsquo;zz&rsquo; as an alternative to &lsquo;zf&rsquo;</li>
+<li>Added option <code>-c</code> to the <code>rifle</code> file opener command</li>
+<li>Added support for <code>$XDG_DATA_HOME</code></li>
+<li>Avoid exiting ranger while copying.  Use <code>:quit!</code> to quit while copying.</li>
+<li>Improved scope.sh (better performance &amp; readability)</li>
+<li>Changed <code>ranger --choosefiles</code> to return all selected files in all paths</li>
+<li>Changed interpretation of commands: treat tabs as argument separators</li>
+<li>Changed <code>&lt;C-n&gt;</code> to open new tab in current directory rather than <code>$HOME</code></li>
+<li>Changed <code>:quit!</code> to only close 1 tab.  Use <code>:quitall</code> to close all tabs.</li>
+<li>Removed backward compatibility for <code>options.py</code>, predecessor of <code>rc.conf</code></li>
+<li>Automatically update bookmarks+tags when renaming them via ranger</li>
+</ul>
+
+
 <h2>2017-01-08: version 1.8.1</h2>
 
 <ul>

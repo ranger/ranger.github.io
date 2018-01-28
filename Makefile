@@ -7,3 +7,4 @@ ref ?= HEAD
 
 build:
 	inlineswap index.html screenshots.html contact.html documentation.html download.html changelog.html
+	@echo file://$(shell pwd)/index.html
