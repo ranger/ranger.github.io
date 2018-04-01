@@ -38,6 +38,9 @@ div.screenshots img, .screenshot {
 div.screenshots a:hover {
     background-color: #000 !important;
 }
+code {
+    color: #9f9;
+}
 .ranger {
     font-family: monospace;
     text-decoration: none;
