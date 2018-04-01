@@ -42,6 +42,24 @@
         <h2>News</h2>
         <div class="news">
             <!-- run for f in $(ls news/*.md | sort -r); do markdown "$f"; done -->
+<div class="metadata date">2018-04-01</div>
+
+
+<div class="metadata author">hut</div>
+
+
+<h1>Dockerfile</h1>
+
+<p>Finally, the much requested feature to integrate ranger with docker has been
+implemented!  Simply install docker and type:</p>
+
+<pre><code>git clone https://github.com/ranger/ranger.git
+cd ranger
+docker build -t ranger/ranger:latest ranger .
+docker run -it ranger/ranger ranger
+</code></pre>
+
+<p>Et voilà! You now can enjoy ranger in a freshly baked docker container! :)</p>
 <div class="metadata date">2018-02-22</div>
 
 <div class="metadata author">vifon</div>
