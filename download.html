@@ -63,13 +63,13 @@ git commit -a        # commit your changes to your local branch
 
 <h2>Signed Packages</h2>
 
-<p>If you want to be sure of the authenticity of the snapshot, please download <a href="ranger-stable.tar.gz">ranger-stable.tar.gz</a> and its <a href="ranger-stable.tar.gz.sig">signature</a>, then verify the signature with the author's public key: <a href="huterich.gpg">huterich.gpg</a>.</p>
+<p>If you want to be sure of the authenticity of the snapshot, please download <a href="ranger-stable.tar.gz">ranger-stable.tar.gz</a> and its <a href="ranger-stable.tar.gz.sig">signature</a>, then verify the signature with the author&rsquo;s public key: <a href="huterich.gpg">huterich.gpg</a>.</p>
 
 <pre><code>gpg --import huterich.gpg
 gpg --verify ranger-stable.tar.gz.sig
 </code></pre>
 
-<p>If this prints <code>Good signature from "huterich &amp;lt;hut@lavabit.com&amp;gt;</code>, the signature was verified.  However, you can only trust the authenticity of the snapshot as much as you trust the authenticity of the public key. Please ensure that the key really belongs to Roman Zimbelmann alias hut by verifying it from multiple sources.  Once you are sure, you can sign the key with your own signature as described <a href="http://www.dewinter.com/gnupg_howto/english/GPGMiniHowto-3.html#ss3.6">here</a> to avoid the warning that says "This key is not certified with a trusted signature! There is no indication that the signature belongs to the owner."</p>
+<p>If this prints <code>Good signature from "huterich &lt;hut@lavabit.com&gt;</code>, the signature was verified.  However, you can only trust the authenticity of the snapshot as much as you trust the authenticity of the public key. Please ensure that the key really belongs to Roman Zimbelmann alias hut by verifying it from multiple sources.  Once you are sure, you can sign the key with your own signature as described <a href="http://www.dewinter.com/gnupg_howto/english/GPGMiniHowto-3.html#ss3.6">here</a> to avoid the warning that says &ldquo;This key is not certified with a trusted signature! There is no indication that the signature belongs to the owner.&rdquo;</p>
 
 <p>This is a list of all released packages since 1.2.2 with their signatures:</p><!-- /run -->
 
