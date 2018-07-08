@@ -57,35 +57,35 @@ code {
 .filetype_image {
     color: #ffbb00;
 }
-.filetype_image:hover {
+.filetype_image:hover, .filetype_image:focus {
     color: black;
     background-color: #ffbb00;
 }
 .filetype_text {
     color: white;
 }
-.filetype_text:hover {
+.filetype_text:hover, .filetype_text:focus {
     color: black;
     background-color: white;
 }
 .filetype_directory {
     color: #66f;
 }
-.filetype_directory:hover {
+.filetype_directory:hover, .filetype_directory:focus {
     color: black;
     background-color: #66f;
 }
 .filetype_link {
     color: #0CC;
 }
-.filetype_link:hover {
+.filetype_link:hover, .filetype_link:focus {
     color: black;
     background-color: #0CC;
 }
 .filetype_targz {
     color: #c44;
 }
-.filetype_targz:hover {
+.filetype_targz:hover, .filetype_targz:focus {
     color: black;
     background-color: #c44;
 }
