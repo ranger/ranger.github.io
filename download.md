@@ -1,8 +1,11 @@
 # Download
 
-* Stable: [http://nongnu.org/ranger/ranger-stable.tar.gz](http://nongnu.org/ranger/ranger-stable.tar.gz)</a></li>
-* Testing: [http://git.savannah.gnu.org/cgit/ranger.git/snapshot/ranger-master.tar.gz](http://git.savannah.gnu.org/cgit/ranger.git/snapshot/ranger-master.tar.gz)
-* More downloads: [http://git.savannah.gnu.org/cgit/ranger.git/refs/tags](http://git.savannah.gnu.org/cgit/ranger.git/refs/tags)
+* Stable: [ranger-stable.tar.gz](ranger-stable.tar.gz) -
+  [ranger-stable.tar.gz.sig](ranger-stable.tar.gz.sig)
+* Testing:
+  [master.tar.gz](http://github.com/ranger/ranger/archive/master.tar.gz)
+* More downloads: [See below](#signed-packages) or find the
+  [releases on github](https://github.com/ranger/ranger/releases)
 
 Unpack the archive, enter the directory and run ranger:
 
@@ -18,7 +21,7 @@ If you want to conventionally install it, for example for a multi-user system, y
 
 [git](http://git-scm.com) is the version control system used to manage the source code of ranger.  Install it, then type:
 
-    git clone git://git.savannah.nongnu.org/ranger.git
+    git clone git@github.com:ranger/ranger.git
     cd ranger
 
 You can also [browse the source code](https://github.com/ranger/ranger/)
@@ -30,7 +33,7 @@ The advantage of git is that you get lots of useful commands for keeping the cod
     git pull             # fetch updates from upstream
     git commit -a        # commit your changes to your local branch
 
-## Signed Packages
+<h2 id="signed-packages">Signed Packages</h2>
 
 If you want to be sure of the authenticity of the snapshot, please download [ranger-stable.tar.gz](ranger-stable.tar.gz) and its [signature](ranger-stable.tar.gz.sig), then verify the signature with the author's public key: [huterich.gpg](huterich.gpg).
 

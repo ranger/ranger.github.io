@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title></title>
+<title>ranger - visual file manager</title>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <link rev="made" href="mailto:" />
 </head>
@@ -16,6 +16,7 @@
   <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
   <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
   <li><a href="#RESOURCES">RESOURCES</a></li>
+  <li><a href="#POSITIONAL-ARGUMENTS">POSITIONAL ARGUMENTS</a></li>
   <li><a href="#OPTIONS">OPTIONS</a></li>
   <li><a href="#CONCEPTS">CONCEPTS</a>
     <ul>
@@ -24,8 +25,10 @@
         <ul>
           <li><a href="#w3m">w3m</a></li>
           <li><a href="#iTerm2">iTerm2</a></li>
+          <li><a href="#terminology">terminology</a></li>
           <li><a href="#urxvt">urxvt</a></li>
           <li><a href="#urxvt-full">urxvt-full</a></li>
+          <li><a href="#kitty">kitty</a></li>
         </ul>
       </li>
       <li><a href="#SELECTION">SELECTION</a></li>
@@ -65,7 +68,7 @@
 
 <h1 id="SYNOPSIS">SYNOPSIS</h1>
 
-<p><b>ranger</b> [<b>--version</b>] [<b>--help</b>] [<b>--debug</b>] [<b>--clean</b>] [<b>--cachedir</b>=<i>directory</i>] [<b>--confdir</b>=<i>directory</i>] [<b>--datadir</b>=<i>directory</i>] [<b>--copy-config</b>=<i>which</i>] [<b>--choosefile</b>=<i>target</i>] [<b>--choosefiles</b>=<i>target</i>] [<b>--choosedir</b>=<i>target</i>] [<b>--selectfile</b>=<i>filepath</i>] [<b>--show-only-dirs</b>] [<b>--list-unused-keys</b>] [<b>--list-tagged-files</b>=<i>tag</i>] [<b>--profile</b>] [<b>--cmd</b>=<i>command</i>] [<i>path</i>]</p>
+<p><b>ranger</b> [<b>--version</b>] [<b>--help</b>] [<b>--debug</b>] [<b>--clean</b>] [<b>--cachedir</b>=<i>directory</i>] [<b>--confdir</b>=<i>directory</i>] [<b>--datadir</b>=<i>directory</i>] [<b>--copy-config</b>=<i>which</i>] [<b>--choosefile</b>=<i>target</i>] [<b>--choosefiles</b>=<i>target</i>] [<b>--choosedir</b>=<i>target</i>] [<b>--selectfile</b>=<i>filepath</i>] [<b>--show-only-dirs</b>] [<b>--list-unused-keys</b>] [<b>--list-tagged-files</b>=<i>tag</i>] [<b>--profile</b>] [<b>--cmd</b>=<i>command</i>] [<i>path ...</i>]</p>
 
 <h1 id="DESCRIPTION">DESCRIPTION</h1>
 
@@ -88,6 +91,18 @@
 <p>The man page of rifle(1) describes the functions of the file opener</p>
 
 <p>The section <i>LINKS</i> of this man page contains further resources.</p>
+
+<h1 id="POSITIONAL-ARGUMENTS">POSITIONAL ARGUMENTS</h1>
+
+<dl>
+
+<dt id="path"><i>path ...</i></dt>
+<dd>
+
+<p>Each path will be opened in a tab and if the path is a file it will be selected. Omitting this is equivalent to providing the current directory.</p>
+
+</dd>
+</dl>
 
 <h1 id="OPTIONS">OPTIONS</h1>
 
@@ -154,7 +169,7 @@
 <dt id="selectfile-targetfile"><b>--selectfile</b>=<i>targetfile</i></dt>
 <dd>
 
-<p>Open ranger with <i>targetfile</i> selected.</p>
+<p>Open ranger with <i>targetfile</i> selected. This is a legacy option, superseded by the behavior for the POSITIONAL ARGUMENTS.</p>
 
 </dd>
 <dt id="show-only-dirs"><b>--show-only-dirs</b></dt>
@@ -213,7 +228,7 @@
 
 <p>By default, only text files are previewed, but you can enable external preview scripts by setting the option <code>use_preview_script</code> and <code>preview_files</code> to true.</p>
 
-<p>This default script is <i>~/.config/ranger/scope.sh</i>. It contains more documentation and calls to the programs <i>lynx</i> and <i>elinks</i> for html, <i>highlight</i> for text/code, <i>img2txt</i> for images, <i>atool</i> for archives, <i>pdftotext</i> for PDFs and <i>mediainfo</i> for video and audio files.</p>
+<p>This default script is <i>%rangerdir/data/scope.sh</i>. It contains more documentation and calls to the programs <i>lynx</i> and <i>elinks</i> for html, <i>highlight</i> for text/code, <i>img2txt</i> for images, <i>atool</i> for archives, <i>pdftotext</i> or <i>mutool</i> for PDFs and <i>mediainfo</i> for video and audio files.</p>
 
 <p>Install these programs (just the ones you need) and scope.sh will automatically use them.</p>
 
@@ -233,6 +248,12 @@
 
 <p>This feature relies on the dimensions of the terminal&#39;s font. By default, a width of 8 and height of 11 are used. To use other values, set the options <code>iterm2_font_width</code> and <code>iterm2_font_height</code> to the desired values.</p>
 
+<h3 id="terminology">terminology</h3>
+
+<p>This only works in terminology. It can render vector graphics, but works only locally.</p>
+
+<p>To enable this feature, set the option <code>preview_images_method</code> to terminology.</p>
+
 <h3 id="urxvt">urxvt</h3>
 
 <p>This only works in urxvt compiled with pixbuf support. Does not work over ssh.</p>
@@ -246,6 +267,12 @@
 <p>The same as urxvt but utilizing not only the preview pane but the whole terminal window.</p>
 
 <p>To enable this feature, set the option <code>preview_images_method</code> to urxvt-full.</p>
+
+<h3 id="kitty">kitty</h3>
+
+<p>This only works on Kitty. It requires PIL (or pillow) to work. Allows remote image previews, for example in an ssh session.</p>
+
+<p>To enable this feature, set the option <code>preview_images_method</code> to kitty.</p>
 
 <h2 id="SELECTION">SELECTION</h2>
 
@@ -342,7 +369,7 @@
 
 <h1 id="KEY-BINDINGS">KEY BINDINGS</h1>
 
-<p>Key bindings are defined in the file <i>ranger/config/rc.conf</i>. Check this file for a list of all key bindings. You can copy it to your local configuration directory with the --copy-config=rc option.</p>
+<p>Key bindings are defined in the file <i>%rangerdir/config/rc.conf</i>. Check this file for a list of all key bindings. You can copy it to your local configuration directory with the --copy-config=rc option.</p>
 
 <p>Many key bindings take an additional numeric argument. Type <i>5j</i> to move down 5 lines, <i>2l</i> to open a file in mode 2, <i>10&lt;Space&gt;</i> to mark 10 files.</p>
 
@@ -604,6 +631,12 @@
 <p>Open the console with the content &quot;cd &quot;</p>
 
 </dd>
+<dt id="P">^P</dt>
+<dd>
+
+<p>Open the console with the most recent command.</p>
+
+</dd>
 <dt id="Alt-N">Alt-<i>N</i></dt>
 <dd>
 
@@ -634,6 +667,84 @@
 <p>A key chain that allows you to quickly change the line mode of all the files of the current directory. For a more permanent solution, use the command &quot;default_linemode&quot; in your rc.conf.</p>
 
 </dd>
+<dt id="n1">.n</dt>
+<dd>
+
+<p>Apply a new filename filter.</p>
+
+</dd>
+<dt id="m">.m</dt>
+<dd>
+
+<p>Apply a new mimetype filter.</p>
+
+</dd>
+<dt id="d">.d</dt>
+<dd>
+
+<p>Apply the typefilter &quot;directory&quot;.</p>
+
+</dd>
+<dt id="f1">.f</dt>
+<dd>
+
+<p>Apply the typefilter &quot;file&quot;.</p>
+
+</dd>
+<dt id="l">.l</dt>
+<dd>
+
+<p>Apply the typefilter &quot;symlink&quot;.</p>
+
+</dd>
+<dt id="pod6">.|</dt>
+<dd>
+
+<p>Combine the two topmost filters from the filter stack in the &quot;OR&quot; relationship, instead of the &quot;AND&quot; used implicitly.</p>
+
+</dd>
+<dt id="pod7">.&amp;</dt>
+<dd>
+
+<p>Explicitly combine the two topmost filters in the &quot;AND&quot; relationship. Usually not needed though might be useful in more complicated scenarios.</p>
+
+</dd>
+<dt id="pod8">.!</dt>
+<dd>
+
+<p>Negate the topmost filter.</p>
+
+</dd>
+<dt id="r1">.r</dt>
+<dd>
+
+<p>Rotate the filter stack by N elements. Just confirm with enter to rotate by 1, i.e. move the topmost element to the bottom of the stack.</p>
+
+</dd>
+<dt id="c">.c</dt>
+<dd>
+
+<p>Clear the filter stack.</p>
+
+</dd>
+<dt id="pod9">.*</dt>
+<dd>
+
+<p>Decompose the topmost filter combinator (e.g. <code>.!</code>, <code>.|</code>).</p>
+
+</dd>
+<dt id="p">.p</dt>
+<dd>
+
+<p>Pop the topmost filter from the filter stack.</p>
+
+</dd>
+<dt id="pod10">..</dt>
+<dd>
+
+<p>Show the current filter stack state.</p>
+
+</dd>
 </dl>
 
 <h2 id="READLINE-LIKE-BINDINGS-IN-THE-CONSOLE">READLINE-LIKE BINDINGS IN THE CONSOLE</h2>
@@ -656,6 +767,18 @@
 <dd>
 
 <p>Move to the start or to the end</p>
+
+</dd>
+<dt id="Alt-B-Alt-LEFT">Alt-B, Alt-LEFT</dt>
+<dd>
+
+<p>Move backwards by words.</p>
+
+</dd>
+<dt id="Alt-F-Alt-RIGHT">Alt-F, Alt-RIGHT</dt>
+<dd>
+
+<p>Move forwards by words.</p>
 
 </dd>
 <dt id="D">^D</dt>
@@ -698,7 +821,7 @@
 
 <h1 id="SETTINGS">SETTINGS</h1>
 
-<p>This section lists all built-in settings of ranger. The valid types for the value are in [brackets]. The hotkey to toggle the setting is in &lt;brokets&gt;, if a hotkey exists.</p>
+<p>This section lists all built-in settings of ranger. The valid types for the value are in [brackets]. The hotkey to toggle the setting is in &lt;brakets&gt;, if a hotkey exists.</p>
 
 <p>Settings can be changed in the file <i>~/.config/ranger/rc.conf</i> or on the fly with the command <b>:set option value</b>. Examples:</p>
 
@@ -726,7 +849,7 @@
 <dt id="automatically_count_files-bool">automatically_count_files [bool]</dt>
 <dd>
 
-<p>Should ranger count and display the number of files in each directory as soon as it&#39;s visible? This gets slow with remote file sytems. Turning it off will still allow you to see the number of files after entering the directory.</p>
+<p>Should ranger count and display the number of files in each directory as soon as it&#39;s visible? This gets slow with remote file systems. Turning it off will still allow you to see the number of files after entering the directory.</p>
 
 </dd>
 <dt id="autosave_bookmarks-bool">autosave_bookmarks [bool]</dt>
@@ -811,16 +934,28 @@
 <p>Display the file size in the status bar?</p>
 
 </dd>
+<dt id="display_free_space_in_status_bar-bool">display_free_space_in_status_bar [bool]</dt>
+<dd>
+
+<p>Display the free disk space in the status bar?</p>
+
+</dd>
 <dt id="display_tags_in_all_columns-bool">display_tags_in_all_columns [bool]</dt>
 <dd>
 
 <p>Display tags in all columns?</p>
 
 </dd>
-<dt id="draw_borders-bool">draw_borders [bool]</dt>
+<dt id="draw_borders-string">draw_borders [string]</dt>
 <dd>
 
-<p>Draw borders around columns?</p>
+<p>Draw borders around or between the columns? Possible values are:</p>
+
+<pre><code> none           no borders of any sort
+ outline        draw an outline around all the columns
+ separators     draw only vertical lines between columns
+ both           both of the above
+ </code></pre>
 
 </dd>
 <dt id="draw_progress_bar_in_status_bar-bool">draw_progress_bar_in_status_bar [bool]</dt>
@@ -855,6 +990,18 @@
 <p>A regular expression pattern for files which should be hidden. For example, this pattern will hide all files that start with a dot or end with a tilde.</p>
 
 <pre><code> set hidden_filter ^\.|~$</code></pre>
+
+</dd>
+<dt id="hint_collapse_threshold-int">hint_collapse_threshold [int]</dt>
+<dd>
+
+<p>The key hint lists up to this size have their sublists expanded. Otherwise the submaps are replaced with &quot;...&quot;.</p>
+
+</dd>
+<dt id="hostname_in_titlebar-bool">hostname_in_titlebar [bool]</dt>
+<dd>
+
+<p>Show hostname in titlebar?</p>
 
 </dd>
 <dt id="idle_delay-integer">idle_delay [integer]</dt>
@@ -966,6 +1113,12 @@
 <p>Which script should handle generating previews? If the file doesn&#39;t exist, or use_preview_script is off, ranger will handle previews itself by just printing the content.</p>
 
 </dd>
+<dt id="relative_current_zero-bool">relative_current_zero [bool]</dt>
+<dd>
+
+<p>When line_numbers is set to relative, show 0 on the current line if true or show the absolute number of the current line when false.</p>
+
+</dd>
 <dt id="save_backtick_bookmark-bool">save_backtick_bookmark [bool]</dt>
 <dd>
 
@@ -1058,12 +1211,6 @@
 <p>Put the status bar at the top of the window?</p>
 
 </dd>
-<dt id="hostname_in_titlebar-bool">hostname_in_titlebar [bool]</dt>
-<dd>
-
-<p>Show hostname in titlebar?</p>
-
-</dd>
 <dt id="tilde_in_titlebar-bool">tilde_in_titlebar [bool]</dt>
 <dd>
 
@@ -1074,6 +1221,12 @@
 <dd>
 
 <p>Use a unicode &quot;...&quot; character instead of &quot;~&quot; to mark cut-off filenames?</p>
+
+</dd>
+<dt id="bidi_support-bool">bidi_support [bool]</dt>
+<dd>
+
+<p>Try to properly display file names in RTL languages (Hebrew, Arabic) by using a BIDI algorithm to reverse the relevant parts of the text. Requires the python-bidi pip package.</p>
 
 </dd>
 <dt id="update_title-bool">update_title [bool]</dt>
@@ -1116,6 +1269,12 @@
 <p>Sets the view mode, which can be <b>miller</b> to display the files in the traditional miller column view that shows multiple levels of the hierarchy, or <b>multipane</b> to use multiple panes (one per tab) similar to midnight-commander.</p>
 
 </dd>
+<dt id="w3m_delay-float">w3m_delay [float]</dt>
+<dd>
+
+<p>Delay in seconds before displaying an image with the w3m method. Increase it in case of experiencing display corruption.</p>
+
+</dd>
 <dt id="wrap_scroll-bool">wrap_scroll [bool]</dt>
 <dd>
 
@@ -1138,7 +1297,7 @@
 
 <pre><code> alias [newcommand] [oldcommand]
  bulkrename
- cd [directory]
+ cd [path]
  chain command1[; command2[; command3...]]
  chmod octal_number
  cmap key command
@@ -1216,10 +1375,10 @@
 <p>This shell script is opened in an editor for you to review. After you close it, it will be executed.</p>
 
 </dd>
-<dt id="cd-directory">cd [<i>directory</i>]</dt>
+<dt id="cd-path">cd [<i>path</i>]</dt>
 <dd>
 
-<p>The cd command changes the directory. The command <code>:cd -</code> is equivalent to typing ``.</p>
+<p>The cd command changes the directory. If path is a file, selects that file. The command <code>:cd -</code> is equivalent to typing ``.</p>
 
 </dd>
 <dt id="chain-command1-command2-command3">chain <i>command1</i>[; <i>command2</i>[; <i>command3</i>...]]</dt>
@@ -1642,7 +1801,7 @@
 
 <p>ranger reads several configuration files which are located in <i>$HOME/.config/ranger</i> or <i>$XDG_CONFIG_HOME/ranger</i> if $XDG_CONFIG_HOME is defined. You can use the --copy-config option to obtain the default configuration files. The files contain further documentation.</p>
 
-<p><i>rc.conf</i>, <i>commands.py</i> and <i>colorschemes</i> do not need to be copied fully as they will only be adding to the default configuration files except if explicitly overridden. This may lead to some confusing situations, for example when a key is being bound despite the corresponding line being removed from the user&#39;s copy of the configuration file. This behavior may be disabled with an environment variable (see also: <b>ENVIRONMENT</b>). Note: All other configuration files only read from one source; i.e. default OR user, not both.</p>
+<p><i>rc.conf</i>, <i>commands.py</i> and <i>colorschemes</i> do not need to be copied fully as they will only be adding to the default configuration files except if explicitly overridden. This may lead to some confusing situations, for example when a key is being bound despite the corresponding line being removed from the user&#39;s copy of the configuration file. This behavior may be disabled with an environment variable (see also: <b>ENVIRONMENT</b>). Note: All other configuration files only read from one source; i.e. default OR user, not both. <i>rc.conf</i> and <i>commands.py</i> are additionally read from <i>/etc/ranger</i> if they exist for system-wide configuration, user configuration overrides system configuration which overrides the default configuration.</p>
 
 <p>When starting ranger with the <b>--clean</b> option, it will not access or create any of these files.</p>
 
