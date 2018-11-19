@@ -67,15 +67,12 @@ git commit -a        # commit your changes to your local branch
 
 <h2 id="signed-packages">Signed Packages</h2>
 
-
-<p>If you want to be sure of the authenticity of the snapshot, please download <a href="ranger-stable.tar.gz">ranger-stable.tar.gz</a> and its <a href="ranger-stable.tar.gz.sig">signature</a>, then verify the signature with the author&rsquo;s public key: <a href="huterich.gpg">huterich.gpg</a>.</p>
-
-<pre><code>gpg --import huterich.gpg
-gpg --verify ranger-stable.tar.gz.sig
+<p>If you want to be sure of the authenticity of the snapshot, please download <a href="ranger-stable.tar.gz">ranger-stable.tar.gz</a> and its <a href="ranger-stable.tar.gz.sig">signature</a>, then verify the signature with the author's public keys:</p>
+<pre><code>gpg --search-keys 1E9B36EC051FF6F7FFC969A7F08CE1E200FB5CDF  # Roman Zimbelmann's key
+gpg --search-keys 66FA95C0F1619BDA520A41F60D63346A5D15D055  # Toon Nolten's key
+gpg --verify ranger-stable.tar.gz.sig  # Check if the package was signed by one of the authors
 </code></pre>
-
-<p>If this prints <code>Good signature from "huterich &lt;hut@lavabit.com&gt;</code>, the signature was verified.  However, you can only trust the authenticity of the snapshot as much as you trust the authenticity of the public key. Please ensure that the key really belongs to Roman Zimbelmann alias hut by verifying it from multiple sources.  Once you are sure, you can sign the key with your own signature as described <a href="http://www.dewinter.com/gnupg_howto/english/GPGMiniHowto-3.html#ss3.6">here</a> to avoid the warning that says &ldquo;This key is not certified with a trusted signature! There is no indication that the signature belongs to the owner.&rdquo;</p>
-
+<p>If this prints <code>Good signature</code>, the signature was verified.  However, you can only trust the authenticity of the snapshot as much as you trust the authenticity of the public key. Please ensure that the key really belongs to Roman Zimbelmann (aka hut) or Toon Nolten (aka toonn, <strong>monty</strong>) by verifying it from multiple sources.  Once you are sure, you can sign the key with your own signature as described <a href="http://www.dewinter.com/gnupg_howto/english/GPGMiniHowto-3.html#ss3.6">here</a> to avoid the warning that says "This key is not certified with a trusted signature! There is no indication that the signature belongs to the owner."</p>
 <p>This is a list of all released packages since 1.2.2 with their signatures:</p><!-- /run -->
 
 <ul>
