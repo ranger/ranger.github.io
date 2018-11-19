@@ -38,10 +38,11 @@ The advantage of git is that you get lots of useful commands for keeping the cod
 If you want to be sure of the authenticity of the snapshot, please download [ranger-stable.tar.gz](ranger-stable.tar.gz) and its [signature](ranger-stable.tar.gz.sig), then verify the signature with the author's public keys:
 
     gpg --search-keys 1E9B36EC051FF6F7FFC969A7F08CE1E200FB5CDF  # Roman Zimbelmann's key
+    gpg --search-keys 30193C49CB39CD27008246ADE5902A52B247B8DE  # Wojciech Siewierski's key
     gpg --search-keys 66FA95C0F1619BDA520A41F60D63346A5D15D055  # Toon Nolten's key
     gpg --verify ranger-stable.tar.gz.sig  # Check if the package was signed by one of the authors
 
-If this prints `Good signature`, the signature was verified.  However, you can only trust the authenticity of the snapshot as much as you trust the authenticity of the public key. Please ensure that the key really belongs to Roman Zimbelmann (aka hut) or Toon Nolten (aka toonn, __monty__) by verifying it from multiple sources.  Once you are sure, you can sign the key with your own signature as described [here](http://www.dewinter.com/gnupg_howto/english/GPGMiniHowto-3.html#ss3.6) to avoid the warning that says "This key is not certified with a trusted signature! There is no indication that the signature belongs to the owner."
+If this prints `Good signature`, the signature was verified.  However, you can only trust the authenticity of the snapshot as much as you trust the authenticity of the public key. Please ensure that the key really belongs to Roman Zimbelmann (aka hut), Wojciech Siewierski (aka vifon) or Toon Nolten (aka toonn, __monty__) by verifying it from multiple sources.  Once you are sure, you can sign the key with your own signature as described [here](http://www.dewinter.com/gnupg_howto/english/GPGMiniHowto-3.html#ss3.6) to avoid the warning that says "This key is not certified with a trusted signature! There is no indication that the signature belongs to the owner."
 
 
 This is a list of all released packages since 1.2.2 with their signatures:
