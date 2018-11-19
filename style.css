@@ -114,5 +114,10 @@ code {
     padding: 0 0 0 0.5em;
     color: #999;
 }
-table, td, tr { border-collapse: collapse; }
+table, td, tr, th {
+	border-collapse: collapse;
+	border: 1px solid grey;
+}
+th { text-align: left }
+th, td { padding: 0.2em; }
 p, h1, h2, h3 { background: url(""); } /* android fix #40186 */
