@@ -19,6 +19,7 @@
 body {
     background: black;
     color: white;
+    font-size: 120%;
 }
 div.index {
     padding-bottom: 1em;
