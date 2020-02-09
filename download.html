@@ -77,6 +77,9 @@ gpg --search-keys 66FA95C0F1619BDA520A41F60D63346A5D15D055  # Toon Nolten's key
 gpg --verify ranger-stable.tar.gz.sig  # Check if the package was signed by one of the authors
 </code></pre>
 
+<p>We usually use the <a href="https://pgp.mit.edu">MIT keyserver pgp.mit.edu</a> so you
+might want to add <code>--keyserver pgp.mit.edu</code> to the key search commands.</p>
+
 <p>If this prints <code>Good signature</code>, the signature was verified.  However, you can only trust the authenticity of the snapshot as much as you trust the authenticity of the public key. Please ensure that the key really belongs to Roman Zimbelmann (aka hut), Wojciech Siewierski (aka vifon) or Toon Nolten (aka toonn, __monty__) by verifying it from multiple sources.  Once you are sure, you can sign the key with your own signature as described <a href="http://www.dewinter.com/gnupg_howto/english/GPGMiniHowto-3.html#ss3.6">here</a> to avoid the warning that says "This key is not certified with a trusted signature! There is no indication that the signature belongs to the owner."</p>
 
 <p>This is a list of all released packages since 1.2.2 with their signatures:</p><!-- /run -->
