@@ -2,9 +2,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>ranger - visual file manager</title>
+<title></title>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link rev="made" href="mailto:" />
+<link rev="made" href="mailto:root@nixoss-imac.local" />
 </head>
 
 <body>
@@ -12,7 +12,6 @@
 
 
 <ul id="index">
-  <li><a href="#NAME">NAME</a></li>
   <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
   <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
   <li><a href="#RESOURCES">RESOURCES</a></li>
@@ -23,12 +22,13 @@
       <li><a href="#TAGS">TAGS</a></li>
       <li><a href="#PREVIEWS">PREVIEWS</a>
         <ul>
-          <li><a href="#w3m">w3m</a></li>
           <li><a href="#iTerm2">iTerm2</a></li>
+          <li><a href="#kitty">kitty</a></li>
           <li><a href="#terminology">terminology</a></li>
+          <li><a href="#ueberzug">ueberzug</a></li>
           <li><a href="#urxvt">urxvt</a></li>
           <li><a href="#urxvt-full">urxvt-full</a></li>
-          <li><a href="#kitty">kitty</a></li>
+          <li><a href="#w3m">w3m</a></li>
         </ul>
       </li>
       <li><a href="#SELECTION">SELECTION</a></li>
@@ -62,8 +62,6 @@
   <li><a href="#BUGS">BUGS</a></li>
 </ul>
 
-<h1 id="NAME">NAME</h1>
-
 <p>ranger - visual file manager</p>
 
 <h1 id="SYNOPSIS">SYNOPSIS</h1>
@@ -76,9 +74,9 @@
 
 <h1 id="RESOURCES">RESOURCES</h1>
 
-<p><i>This manual</i> contains instructions on how to use and configure ranger.</p>
+<p>This <i>manual</i> contains instructions on how to use and configure ranger.</p>
 
-<p><i>Inside ranger</i>, you can press <i>?</i> for a list of key bindings, commands or settings.</p>
+<p>Inside <i>ranger</i>, you can press <i>?</i> for a list of key bindings, commands or settings.</p>
 
 <p>The <i>README</i> contains install instructions.</p>
 
@@ -228,17 +226,151 @@
 
 <p>By default, only text files are previewed, but you can enable external preview scripts by setting the option <code>use_preview_script</code> and <code>preview_files</code> to true.</p>
 
-<p>This default script is <i>%rangerdir/data/scope.sh</i>. It contains more documentation and calls to the programs <i>lynx</i> and <i>elinks</i> for html, <i>highlight</i> for text/code, <i>img2txt</i> for images, <i>atool</i> for archives, <i>pdftotext</i> or <i>mutool</i> for PDFs and <i>mediainfo</i> for video and audio files.</p>
+<p>This default script is <i>%rangerdir/data/scope.sh</i>. It contains more documentation and calls to many external programs to generate previews. They are automatically used when available but completely optional.</p>
+
+<dl>
+
+<dt id="For-general-usage">For general usage:</dt>
+<dd>
+
+<dl>
+
+<dt id="pod">-</dt>
+<dd>
+
+<p><code>file</code> for determining file types</p>
+
+</dd>
+<dt id="pod1">-</dt>
+<dd>
+
+<p><code>chardet</code> (Python package) for improved encoding detection of text files</p>
+
+</dd>
+<dt id="pod2">-</dt>
+<dd>
+
+<p><code>sudo</code> to use the &quot;run as root&quot; feature</p>
+
+</dd>
+<dt id="pod3">-</dt>
+<dd>
+
+<p><code>python-bidi</code> (Python package) to display right-to-left file names correctly (Hebrew, Arabic)</p>
+
+</dd>
+</dl>
+
+</dd>
+<dt id="For-enhanced-file-previews-with-scope.sh">For enhanced file previews (with scope.sh):</dt>
+<dd>
+
+<dl>
+
+<dt id="pod4">-</dt>
+<dd>
+
+<p><code>img2txt</code> (from <code>caca-utils</code>) for ASCII-art image previews</p>
+
+</dd>
+<dt id="pod5">-</dt>
+<dd>
+
+<p><code>w3mimgdisplay</code>, <code>ueberzug</code>, <code>mpv</code>, <code>iTerm2</code>, <code>kitty</code>, <code>terminology</code> or <code>urxvt</code> for image previews</p>
+
+</dd>
+<dt id="pod6">-</dt>
+<dd>
+
+<p><code>convert</code> (from <code>imagemagick</code>) to auto-rotate images and for SVG previews</p>
+
+</dd>
+<dt id="pod7">-</dt>
+<dd>
+
+<p><code>ffmpegthumbnailer</code> for video thumbnails</p>
+
+</dd>
+<dt id="pod8">-</dt>
+<dd>
+
+<p><code>highlight</code>, <code>bat</code> or <code>pygmentize</code> for syntax highlighting of code</p>
+
+</dd>
+<dt id="pod9">-</dt>
+<dd>
+
+<p><code>atool</code>, <code>bsdtar</code>, <code>unrar</code> and/or <code>7z</code> to preview archives</p>
+
+</dd>
+<dt id="pod10">-</dt>
+<dd>
+
+<p><code>bsdtar</code>, <code>tar</code>, <code>unrar</code>, <code>unzip</code> and/or <code>zipinfo</code> (and <code>sed</code>) to preview archives as their first image</p>
+
+</dd>
+<dt id="pod11">-</dt>
+<dd>
+
+<p><code>lynx</code>, <code>w3m</code> or <code>elinks</code> to preview html pages</p>
+
+</dd>
+<dt id="pod12">-</dt>
+<dd>
+
+<p><code>pdftotext</code> or <code>mutool</code> (and <code>fmt</code>) for textual pdf previews, <code>pdftoppm</code> to preview as image</p>
+
+</dd>
+<dt id="pod13">-</dt>
+<dd>
+
+<p><code>djvutxt</code> for textual DjVu previews, <code>ddjvu</code> to preview as image</p>
+
+</dd>
+<dt id="pod14">-</dt>
+<dd>
+
+<p><code>calibre</code> or <code>epub-thumbnailer</code> for image previews of ebooks</p>
+
+</dd>
+<dt id="pod15">-</dt>
+<dd>
+
+<p><code>transmission-show</code> for viewing BitTorrent information</p>
+
+</dd>
+<dt id="pod16">-</dt>
+<dd>
+
+<p><code>mediainfo</code> or <code>exiftool</code> for viewing information about media files</p>
+
+</dd>
+<dt id="pod17">-</dt>
+<dd>
+
+<p><code>odt2txt</code> for OpenDocument text files (odt, ods, odp and sxw)</p>
+
+</dd>
+<dt id="pod18">-</dt>
+<dd>
+
+<p><code>python</code> or <code>jq</code> for JSON files</p>
+
+</dd>
+<dt id="pod19">-</dt>
+<dd>
+
+<p><code>fontimage</code> for font previews</p>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
 
 <p>Install these programs (just the ones you need) and scope.sh will automatically use them.</p>
 
 <p>Independently of the preview script, there is a feature to preview images by drawing them directly into the terminal. To enable this feature, set the option <code>preview_images</code> to true and enable one of the image preview modes:</p>
-
-<h3 id="w3m">w3m</h3>
-
-<p>This does not work over ssh, requires certain terminals (tested on &quot;xterm&quot; and &quot;urxvt&quot;) and is incompatible with tmux, although it works with screen.</p>
-
-<p>To enable this feature, install the program &quot;w3m&quot; and set the option <code>preview_images_method</code> to w3m.</p>
 
 <h3 id="iTerm2">iTerm2</h3>
 
@@ -248,11 +380,23 @@
 
 <p>This feature relies on the dimensions of the terminal&#39;s font. By default, a width of 8 and height of 11 are used. To use other values, set the options <code>iterm2_font_width</code> and <code>iterm2_font_height</code> to the desired values.</p>
 
+<h3 id="kitty">kitty</h3>
+
+<p>This only works in Kitty. It requires PIL (or pillow) to work. Allows remote image previews, for example in an ssh session.</p>
+
+<p>To enable this feature, set the option <code>preview_images_method</code> to kitty.</p>
+
 <h3 id="terminology">terminology</h3>
 
 <p>This only works in terminology. It can render vector graphics, but works only locally.</p>
 
 <p>To enable this feature, set the option <code>preview_images_method</code> to terminology.</p>
+
+<h3 id="ueberzug">ueberzug</h3>
+
+<p>Überzug is a command line utility which draws images on terminals using child windows. It requires PIL (or pillow) and relies on X11. This makes it compatible (in a limited way, i.e., tmux splits are not supported) with many terminals and tmux but not the Linux console or Wayland.</p>
+
+<p>To enable this feature, set the option <code>preview_images_method</code> to ueberzug.</p>
 
 <h3 id="urxvt">urxvt</h3>
 
@@ -268,11 +412,13 @@
 
 <p>To enable this feature, set the option <code>preview_images_method</code> to urxvt-full.</p>
 
-<h3 id="kitty">kitty</h3>
+<h3 id="w3m">w3m</h3>
 
-<p>This only works on Kitty. It requires PIL (or pillow) to work. Allows remote image previews, for example in an ssh session.</p>
+<p>This does not work over ssh, requires certain terminals (tested on &quot;xterm&quot; and &quot;urxvt&quot;) and is incompatible with tmux, although it works with screen.</p>
 
-<p>To enable this feature, set the option <code>preview_images_method</code> to kitty.</p>
+<p>To enable this feature, install the program &quot;w3m&quot; and set the option <code>preview_images_method</code> to w3m.</p>
+
+<p>When using a terminal with a nonzero border which is not automatically detected, the w3m preview will be misaligned. Use the <code>w3m_offset</code> option to manually adjust the image offset. This should be the same value as the terminal&#39;s border value.</p>
 
 <h2 id="SELECTION">SELECTION</h2>
 
@@ -300,7 +446,21 @@
 
 <p>Macros for file paths are generally shell-escaped so they can be used in the <code>shell</code> command.</p>
 
-<p>Additionally, if you create a key binding that uses &lt;any&gt;, a special statement which accepts any key, then the macro %any (or %any0, %any1, %any2, ...) can be used in the command to get the key that was pressed.</p>
+<p>When mapping keys you can use the placeholder &lt;any&gt;, the key entered in that position can be used through the %any and %any_path macros. (When using multiple &lt;any&gt; placeholders you can index the macros: %any0, %any_path0, %any1, %any_path1...) The macro %any will be replaced with the key pressed in the position of the &lt;any&gt; placeholder. The macro %any_path will be replaced with the path of the bookmark mapped to the key pressed in the position of the &lt;any&gt; placeholder. For example this macro can be used to echo the key that was pressed after &quot;c&quot;:</p>
+
+<pre><code> map c&lt;any&gt; echo %any</code></pre>
+
+<p>%any is used in the ranger configuration to create a keybinding for adding a bookmark. c&lt;set_bookmark&gt; creates a bookmark for the current directory and the key for the bookmark is the first supplied argument. In this case the key pressed after &quot;m&quot;:</p>
+
+<pre><code> map m&lt;any&gt; set_bookmark %any</code></pre>
+
+<p>The %any_path macro can be used to echo the path of the bookmark that is set to the key pressed after &quot;c&quot;:</p>
+
+<pre><code> map c&lt;any&gt; echo %any_path</code></pre>
+
+<p>A practical example of the use of %any_path is the pasting of cut/copied files to a bookmarked directory:</p>
+
+<pre><code> map p&#39;&lt;any&gt; paste dest=%any_path</code></pre>
 
 <p>The macro %rangerdir expands to the directory of ranger&#39;s python library, you can use it for something like this command: alias show_commands shell less %rangerdir/config/commands.py</p>
 
@@ -311,6 +471,8 @@
 <p>The macro %space expands to a space character. You can use it to add spaces to the end of a command when needed, while preventing editors to strip spaces off the end of the line automatically.</p>
 
 <p>To write a literal %, you need to escape it by writing %%.</p>
+
+<p>Note that macros are expanded twice when using chain. For example, to insert a space character in a chained command, you would write %%space: chain command1; command2%%space</p>
 
 <h2 id="BOOKMARKS">BOOKMARKS</h2>
 
@@ -324,17 +486,19 @@
 
 <h2 id="RIFLE">RIFLE</h2>
 
-<p>Rifle is the file opener of ranger. It can be used as a standalone program or a python module. It is located at <i>ranger/ext/rifle.py</i>. In contrast to other, more simple file openers, rifle can automatically find installed programs so it can be used effectively out of the box on a variety of systems.</p>
+<p>Rifle is the file opener of ranger. It can be used as a standalone program or a python module. It is located at <i>$repo/ranger/ext/rifle.py</i>. In contrast to other, more simple file openers, rifle can automatically find installed programs so it can be used effectively out of the box on a variety of systems.</p>
 
 <p>It&#39;s configured in <i>rifle.conf</i> through a list of conditions and commands. For each line the conditions are checked and if they are met, the respective command is taken into consideration. By default, simply the first matching rule is used. In ranger, you can list and choose rules by typing &quot;r&quot; or simply by typing &quot;&lt;rulenumber&gt;&lt;enter&gt;&quot;. If you use rifle standalone, you can list all rules with the &quot;-l&quot; option and pick a rule with &quot;-p &lt;number&gt;&quot;.</p>
 
-<p>The rules, along with further documentation, are contained in <i>ranger/config/rifle.conf</i>.</p>
+<p>The rules, along with further documentation, are contained in <i>$repo/ranger/config/rifle.conf</i>.</p>
 
 <h2 id="FLAGS">FLAGS</h2>
 
 <p>Flags give you a way to modify the behavior of the spawned process. They are used in the commands <code>:open_with</code> (key &quot;r&quot;) and <code>:shell</code> (key &quot;!&quot;).</p>
 
-<pre><code> f   Fork the process.  (Run in background)
+<pre><code> f   Fork the process, i.e. run in background. Please use this flag
+     instead of calling &quot;disown&quot; or &quot;nohup&quot;, to avoid killing the
+     background command when pressing Ctrl+C in ranger.
  c   Run the current file only, instead of the selection
  r   Run application with root privilege (requires sudo)
  t   Run application in a new terminal window</code></pre>
@@ -345,7 +509,7 @@
  s   Silent mode.  Output will be discarded.
  w   Wait for an Enter-press when the process is done</code></pre>
 
-<p>By default, all the flags are off unless specified otherwise in the <i>rifle.conf</i> configuration file. You can specify as many flags as you want. An uppercase flag negates the effect: &quot;ffcccFsf&quot; is equivalent to &quot;cs&quot;.</p>
+<p>By default, all the flags are off unless otherwise specified in <i>rc.conf</i> key bindings or <i>rifle.conf</i> rules. You can specify as many flags as you want. An uppercase flag negates the effect: &quot;ffcccFsf&quot; is equivalent to &quot;cs&quot;.</p>
 
 <p>The terminal program name for the &quot;t&quot; flag is taken from the environment variable $TERMCMD. If it doesn&#39;t exist, it tries to extract it from $TERM, uses &quot;x-terminal-emulator&quot; as a fallback, and then &quot;xterm&quot; if that fails.</p>
 
@@ -409,7 +573,7 @@
 <p>Move to the bottom</p>
 
 </dd>
-<dt id="pod">[, ]</dt>
+<dt id="pod20">[, ]</dt>
 <dd>
 
 <p>Move up and down in the parent directory.</p>
@@ -451,7 +615,7 @@
 <p>Open a shell in the current directory</p>
 
 </dd>
-<dt id="pod1">?</dt>
+<dt id="pod21">?</dt>
 <dd>
 
 <p>Opens this man page</p>
@@ -497,6 +661,8 @@
 <dd>
 
 <p>Paste the files which were previously copied or cut, like pressing Ctrl+V in modern GUI programs.</p>
+
+<p>Conflicts will be renamed by appending an &#39;_&#39; (and a counter if necessary), resulting in <code>file.ext_</code>, <code>file.ext_0</code>, etc. If you prefer <code>file_.ext</code> you can use the <code>paste_ext</code> command.</p>
 
 </dd>
 <dt id="po">po</dt>
@@ -595,25 +761,25 @@
 <p>Starts the visual mode, which selects all files between the starting point and the cursor until you press ESC. To unselect files in the same way, use &quot;uV&quot;.</p>
 
 </dd>
-<dt id="pod2">/</dt>
+<dt id="pod22">/</dt>
 <dd>
 
 <p>Search for files in the current directory.</p>
 
 </dd>
-<dt id="pod3">:</dt>
+<dt id="pod23">:</dt>
 <dd>
 
 <p>Open the console.</p>
 
 </dd>
-<dt id="pod4">!</dt>
+<dt id="pod24">!</dt>
 <dd>
 
 <p>Open the console with the content &quot;shell &quot; so you can quickly run commands</p>
 
 </dd>
-<dt id="pod5">@</dt>
+<dt id="pod25">@</dt>
 <dd>
 
 <p>Open the console with the content &quot;shell %s&quot;, placing the cursor before the &quot; %s&quot; so you can quickly run commands with the current selection as the argument.</p>
@@ -643,6 +809,12 @@
 <p>Open a tab. N has to be a number from 0 to 9. If the tab doesn&#39;t exist yet, it will be created.</p>
 
 </dd>
+<dt id="Alt-l-Alt-r">Alt-l, Alt-r</dt>
+<dd>
+
+<p>Shift a tab left, respectively right.</p>
+
+</dd>
 <dt id="gn-N">gn, ^N</dt>
 <dd>
 
@@ -667,18 +839,6 @@
 <p>A key chain that allows you to quickly change the line mode of all the files of the current directory. For a more permanent solution, use the command &quot;default_linemode&quot; in your rc.conf.</p>
 
 </dd>
-<dt id="n1">.n</dt>
-<dd>
-
-<p>Apply a new filename filter.</p>
-
-</dd>
-<dt id="m">.m</dt>
-<dd>
-
-<p>Apply a new mimetype filter.</p>
-
-</dd>
 <dt id="d">.d</dt>
 <dd>
 
@@ -697,19 +857,49 @@
 <p>Apply the typefilter &quot;symlink&quot;.</p>
 
 </dd>
-<dt id="pod6">.|</dt>
+<dt id="m">.m</dt>
 <dd>
 
-<p>Combine the two topmost filters from the filter stack in the &quot;OR&quot; relationship, instead of the &quot;AND&quot; used implicitly.</p>
+<p>Apply a new mimetype filter.</p>
 
 </dd>
-<dt id="pod7">.&amp;</dt>
+<dt id="n1">.n</dt>
 <dd>
 
-<p>Explicitly combine the two topmost filters in the &quot;AND&quot; relationship. Usually not needed though might be useful in more complicated scenarios.</p>
+<p>Apply a new filename filter.</p>
 
 </dd>
-<dt id="pod8">.!</dt>
+<dt id="pod26">.#</dt>
+<dd>
+
+<p>Apply a new hash filter.</p>
+
+</dd>
+<dt id="pod27">.&quot;</dt>
+<dd>
+
+<p>Apply a new duplicate filter.</p>
+
+</dd>
+<dt id="pod28">.&#39;</dt>
+<dd>
+
+<p>Apply a new unique filter.</p>
+
+</dd>
+<dt id="pod29">.|</dt>
+<dd>
+
+<p>Combine the two topmost filters from the filter stack in the <code>OR</code> relationship, instead of the <code>AND</code> used implicitly.</p>
+
+</dd>
+<dt id="pod30">.&amp;</dt>
+<dd>
+
+<p>Explicitly combine the two topmost filters in the <code>AND</code> relationship. Usually not needed because filters are implicitly in this relationship though might be useful in more complicated scenarios.</p>
+
+</dd>
+<dt id="pod31">.!</dt>
 <dd>
 
 <p>Negate the topmost filter.</p>
@@ -718,7 +908,7 @@
 <dt id="r1">.r</dt>
 <dd>
 
-<p>Rotate the filter stack by N elements. Just confirm with enter to rotate by 1, i.e. move the topmost element to the bottom of the stack.</p>
+<p>Rotate the filter stack by N elements. Where N is provided as a numeric prefix like vim&#39;s <i>count</i> and defaults to 1, i.e. move the topmost element to the bottom of the stack.</p>
 
 </dd>
 <dt id="c">.c</dt>
@@ -727,7 +917,7 @@
 <p>Clear the filter stack.</p>
 
 </dd>
-<dt id="pod9">.*</dt>
+<dt id="pod32">.*</dt>
 <dd>
 
 <p>Decompose the topmost filter combinator (e.g. <code>.!</code>, <code>.|</code>).</p>
@@ -739,7 +929,7 @@
 <p>Pop the topmost filter from the filter stack.</p>
 
 </dd>
-<dt id="pod10">..</dt>
+<dt id="pod33">..</dt>
 <dd>
 
 <p>Show the current filter stack state.</p>
@@ -954,8 +1144,7 @@
 <pre><code> none           no borders of any sort
  outline        draw an outline around all the columns
  separators     draw only vertical lines between columns
- both           both of the above
- </code></pre>
+ both           both of the above</code></pre>
 
 </dd>
 <dt id="draw_progress_bar_in_status_bar-bool">draw_progress_bar_in_status_bar [bool]</dt>
@@ -1002,6 +1191,12 @@
 <dd>
 
 <p>Show hostname in titlebar?</p>
+
+</dd>
+<dt id="size_in_bytes-bool">size_in_bytes [bool]</dt>
+<dd>
+
+<p>Print file sizes in bytes instead of the default human-readable format.</p>
 
 </dd>
 <dt id="idle_delay-integer">idle_delay [integer]</dt>
@@ -1056,6 +1251,12 @@
 <p>Enable mouse input?</p>
 
 </dd>
+<dt id="nested_ranger_warning-string">nested_ranger_warning [string]</dt>
+<dd>
+
+<p>Warn at startup if <code>RANGER_LEVEL</code> is greater than 0, in other words give a warning when you nest ranger in a subshell started by ranger. Allowed values are <code>true</code>, <code>false</code> and <code>error</code>. The special value <code>error</code> promotes the warning to an error, this is usually shown as red text but will crash ranger when run with the <code>--debug</code> flag.</p>
+
+</dd>
 <dt id="one_indexed-bool">one_indexed [bool]</dt>
 <dd>
 
@@ -1069,6 +1270,8 @@
 <dd>
 
 <p>Open all images in this directory when running certain image viewers like feh or sxiv? You can still open selected files by marking them.</p>
+
+<p>If there would be too many files for the system to handle, this option will be temporarily disabled automatically.</p>
 
 </dd>
 <dt id="padding_right-bool">padding_right [bool]</dt>
@@ -1232,13 +1435,13 @@
 <dt id="update_title-bool">update_title [bool]</dt>
 <dd>
 
-<p>Set a window title?</p>
+<p>Set a window title? Updates both the <i>WM_NAME</i> and <i>WM_ICON_NAME</i> properties.</p>
 
 </dd>
 <dt id="update_tmux_title-bool">update_tmux_title [bool]</dt>
 <dd>
 
-<p>Set the title to &quot;ranger&quot; in the tmux program?</p>
+<p>Set the tmux/screen <i>window-name</i> to &quot;ranger&quot;?</p>
 
 </dd>
 <dt id="use_preview_script-bool-zv">use_preview_script [bool] &lt;zv&gt;</dt>
@@ -1258,9 +1461,16 @@
 
 <p>Sets the state for the version control backend. The possible values are:</p>
 
-<pre><code> disabled   don&#39;t display any information.
- local      display only local state.
- enabled    display both, local and remote state. May be slow for hg and bzr.</code></pre>
+<pre><code> disabled   Don&#39;t display any information.
+ local      Display only local state.
+ enabled    Display both, local and remote state.
+            May be slow for hg and bzr.</code></pre>
+
+</dd>
+<dt id="vcs_msg_length-int">vcs_msg_length [int]</dt>
+<dd>
+
+<p>Length to truncate first line of the commit messages to when shown in the statusbar. Defaults to 50.</p>
 
 </dd>
 <dt id="viewmode-string">viewmode [string]</dt>
@@ -1273,6 +1483,18 @@
 <dd>
 
 <p>Delay in seconds before displaying an image with the w3m method. Increase it in case of experiencing display corruption.</p>
+
+</dd>
+<dt id="w3m_offset-int">w3m_offset [int]</dt>
+<dd>
+
+<p>Offset in pixels for the inner border of the terminal. Some terminals require the offset to be specified explicitly, among others st and UXterm, some don&#39;t like urxvt.</p>
+
+</dd>
+<dt id="wrap_plaintext_previews-bool">wrap_plaintext_previews [bool]</dt>
+<dd>
+
+<p>Whether or not to wrap long lines in the pager, this includes previews of plain text files.</p>
 
 </dd>
 <dt id="wrap_scroll-bool">wrap_scroll [bool]</dt>
@@ -1293,7 +1515,7 @@
 
 <p>You can enter the commands in the console which is opened by pressing &quot;:&quot;.</p>
 
-<p>You can always get a list of the currently existing commands by typing &quot;2?&quot; in ranger. For your convenience, this is a list of the &quot;public&quot; commands including their parameters, excluding descriptions:</p>
+<p>You can always get a list of the currently existing commands by typing &quot;?c&quot; in ranger. For your convenience, this is a list of the &quot;public&quot; commands including their parameters, excluding descriptions:</p>
 
 <pre><code> alias [newcommand] [oldcommand]
  bulkrename
@@ -1349,6 +1571,7 @@
  terminal
  tmap key command
  touch filename
+ trash
  travel pattern
  tunmap keys...
  unmap keys...
@@ -1399,48 +1622,30 @@
 <p>See also: man 1 chmod</p>
 
 </dd>
-<dt id="cmap-key-command">cmap <i>key</i> <i>command</i></dt>
-<dd>
-
-<p>Binds keys for the console. Works like the <code>map</code> command.</p>
-
-</dd>
 <dt id="console--pN-command">console [-p<i>N</i>] <i>command</i></dt>
 <dd>
 
 <p>Opens the console with the command already typed in. The cursor is placed at <i>N</i>.</p>
 
 </dd>
-<dt id="copycmap-key-newkey-newkey2">copycmap <i>key</i> <i>newkey</i> [<i>newkey2</i> ...]</dt>
-<dd>
-
-<p>See <code>copymap</code></p>
-
-</dd>
 <dt id="copymap-key-newkey-newkey2">copymap <i>key</i> <i>newkey</i> [<i>newkey2</i> ...]</dt>
 <dd>
 
-<p>Copies the keybinding <i>key</i> to <i>newkey</i> in the &quot;browser&quot; context. This is a deep copy, so if you change the new binding (or parts of it) later, the old one is not modified.</p>
-
-<p>To copy key bindings of the console, taskview, or pager use &quot;copycmap&quot;, &quot;copytmap&quot; or &quot;copypmap&quot;.</p>
+</dd>
+<dt id="copycmap-key-newkey-newkey2">copycmap <i>key</i> <i>newkey</i> [<i>newkey2</i> ...]</dt>
+<dd>
 
 </dd>
 <dt id="copypmap-key-newkey-newkey2">copypmap <i>key</i> <i>newkey</i> [<i>newkey2</i> ...]</dt>
 <dd>
 
-<p>See <code>copymap</code></p>
-
 </dd>
 <dt id="copytmap-key-newkey-newkey2">copytmap <i>key</i> <i>newkey</i> [<i>newkey2</i> ...]</dt>
 <dd>
 
-<p>See <code>copymap</code></p>
+<p>Copies the keybinding <i>key</i> to <i>newkey</i> in the &quot;browser&quot; context. This is a deep copy, so if you change the new binding (or parts of it) later, the old one is not modified. For example, <i>copymap j down</i> will make the key sequence &quot;down&quot; move the cursor down one item.</p>
 
-</dd>
-<dt id="cunmap-keys">cunmap [<i>keys...</i>]</dt>
-<dd>
-
-<p>Removes key mappings of the console. Works like the <code>unmap</code> command.</p>
+<p>To copy key bindings of the console, pager or taskview use &quot;copycmap&quot;, &quot;copypmap&quot; or &quot;copytmap&quot; respectively.</p>
 
 </dd>
 <dt id="default_linemode-path-regexp-tag-tags-linemodename">default_linemode [<i>path=regexp</i> | <i>tag=tags</i>] <i>linemodename</i></dt>
@@ -1497,6 +1702,122 @@
 <p>Displays only the files of specified inode type. To display only directories, use the &#39;d&#39; parameter. To display only files, use the &#39;f&#39; parameter. To display only links, use the &#39;l&#39; parameter. Parameters can be combined. To remove this filter, use no parameter.</p>
 
 </dd>
+<dt id="filter_stack-command-args">filter_stack [<i>command</i> [<i>args</i>]]</dt>
+<dd>
+
+<p>Manage the filter stack, adding, removing and manipulating filters. For example, to show only duplicate files and symlinks:</p>
+
+<pre><code>  :filter_stack add type f
+  :filter_stack add duplicate
+  :filter_stack add and
+  :filter_stack add type l
+  :filter_stack add or</code></pre>
+
+<p>Or using the mapped keys:</p>
+
+<pre><code>  .f .&quot; .&amp; .l .|</code></pre>
+
+<p>Available subcommands:</p>
+
+<dl>
+
+<dt id="add-FILTER_TYPE-ARGS">add FILTER_TYPE [ARGS...]</dt>
+<dd>
+
+<p>Add a new filter to the top of the filter stack. Each filter on the stack is applied in turn, resulting in an implicit logical <code>AND</code> relation. The following <code>FILTER_TYPE</code>s are available:</p>
+
+<dl>
+
+<dt id="duplicate">duplicate</dt>
+<dd>
+
+<p>Filter files so only files that have duplicates in the same directory are shown. Useful when cleaning up identical songs and memes that were saved using distinct file names.</p>
+
+</dd>
+<dt id="filename-NAME">filename NAME</dt>
+<dd>
+
+<p>Filter files that contain NAME in the filename, regular expression syntax is allowed.</p>
+
+</dd>
+<dt id="hash-PATH">hash PATH</dt>
+<dd>
+
+<p>Filter files so only files with the same hash as PATH are shown.</p>
+
+</dd>
+<dt id="mimetype-TYPE">mimetype TYPE</dt>
+<dd>
+
+<p>Filter files of a certain MIME type, regular expression syntax is allowed.</p>
+
+</dd>
+<dt id="typefilter-d-f-l">typefilter [d|f|l]</dt>
+<dd>
+
+<p>Filter files of a certain type, <code>d</code> for directories, <code>f</code> for files and <code>l</code> for symlinks.</p>
+
+</dd>
+<dt id="unique">unique</dt>
+<dd>
+
+<p>Filter files so only unique files and the oldest file of every set of duplicates is shown.</p>
+
+</dd>
+<dt id="and">and</dt>
+<dd>
+
+<p>Explicitly combine the two topmost filters in the &quot;AND&quot; relationship. Usually not needed because filters are implicitly in this relationship though might be useful in more complicated scenarios.</p>
+
+</dd>
+<dt id="not">not</dt>
+<dd>
+
+<p>Negate the topmost filter.</p>
+
+</dd>
+<dt id="or">or</dt>
+<dd>
+
+<p>Combine the two topmost filters from the filter stack in the &quot;OR&quot; relationship, instead of the &quot;AND&quot; used implicitly.</p>
+
+</dd>
+</dl>
+
+</dd>
+<dt id="pop">pop</dt>
+<dd>
+
+<p>Pop the topmost filter from the filter stack.</p>
+
+</dd>
+<dt id="decompose">decompose</dt>
+<dd>
+
+<p>Decompose the topmost filter combinator (e.g. <code>.!</code>, <code>.|</code>).</p>
+
+</dd>
+<dt id="rotate-N-1">rotate [N=1]</dt>
+<dd>
+
+<p>Rotate the filter stack by N elements. Where N is passed as argument or as a numeric prefix like vim&#39;s <i>count</i>, default to 1, i.e. move the topmost element to the bottom of the stack.</p>
+
+</dd>
+<dt id="clear">clear</dt>
+<dd>
+
+<p>Clear the filter stack.</p>
+
+</dd>
+<dt id="show">show</dt>
+<dd>
+
+<p>Show the current filter stack state.</p>
+
+</dd>
+</dl>
+
+</dd>
 <dt id="find-pattern">find <i>pattern</i></dt>
 <dd>
 
@@ -1536,12 +1857,26 @@
 
 <p>Sets the linemode of all files in the current directory. The linemode may be:</p>
 
-<pre><code> &quot;filename&quot;: display each line as &quot;&lt;basename&gt;...&lt;size&gt;&quot;
- &quot;fileinfo&quot;: display each line as &quot;&lt;basename&gt;...&lt;file(1) output&gt;&quot;
- &quot;permissions&quot;: display each line as &quot;&lt;permissions&gt; &lt;owner&gt; &lt;group&gt; &lt;basename&gt;&quot;
- &quot;metatitle&quot;: display metadata from .metadata.json files if
-     available, fall back to the &quot;filename&quot; linemode if no
-     metadata was found.  See :meta command.</code></pre>
+<pre><code> &quot;filename&quot;:
+   display each line as &quot;&lt;basename&gt;...&lt;size&gt;&quot;
+ &quot;fileinfo&quot;:
+   display each line as &quot;&lt;basename&gt;...&lt;file(1) output&gt;&quot;
+ &quot;mtime&quot;:
+   display each line as &quot;&lt;basename&gt;...&lt;mtime&gt;&quot; in ISO format
+ &quot;humanreadablemtime&quot;:
+   display each line as &quot;&lt;basename&gt;...&lt;mtime&gt;&quot; in a human readable
+   format, more precise the more recent.
+ &quot;sizemtime&quot;:
+   display each line as &quot;&lt;basename&gt;...&lt;size&gt; &lt;mtime&gt;&quot; in ISO format
+ &quot;humanreadablesizemtime&quot;:
+   display each line as &quot;&lt;basename&gt;...&lt;size&gt; &lt;mtime&gt;&quot; in a human
+   readable format, more precise the more recent.
+ &quot;permissions&quot;:
+   display each line as &quot;&lt;permissions&gt; &lt;owner&gt; &lt;group&gt; &lt;basename&gt;&quot;
+ &quot;metatitle&quot;:
+   display metadata from .metadata.json files if available, fall back
+   to the &quot;filename&quot; linemode if no metadata was found.
+   See :meta command.</code></pre>
 
 <p>The custom linemodes may be added by subclassing the <i>LinemodeBase</i> class. See the <i>ranger.core.linemode</i> module for some examples.</p>
 
@@ -1555,9 +1890,21 @@
 <dt id="map-key-command">map <i>key</i> <i>command</i></dt>
 <dd>
 
+</dd>
+<dt id="cmap-key-command">cmap <i>key</i> <i>command</i></dt>
+<dd>
+
+</dd>
+<dt id="pmap-key-command">pmap <i>key</i> <i>command</i></dt>
+<dd>
+
+</dd>
+<dt id="tmap-key-command">tmap <i>key</i> <i>command</i></dt>
+<dd>
+
 <p>Assign the key combination to the given command. Whenever you type the key/keys, the command will be executed. Additionally, if you use a quantifier when typing the key, like 5j, it will be passed to the command as the attribute &quot;self.quantifier&quot;.</p>
 
-<p>The keys you bind with this command are accessible in the file browser only, not in the console, task view or pager. To bind keys there, use the commands &quot;cmap&quot;, &quot;tmap&quot; or &quot;pmap&quot;.</p>
+<p>The keys you bind with this command are accessible in the file browser only, not in the console, pager or taskview. To bind keys there, use the commands &quot;cmap&quot;, &quot;pmap&quot; or &quot;tmap&quot;.</p>
 
 </dd>
 <dt id="mark-pattern">mark <i>pattern</i></dt>
@@ -1599,22 +1946,10 @@
 <p>Note that if you specify an application, the mode is ignored.</p>
 
 </dd>
-<dt id="pmap-key-command">pmap <i>key</i> <i>command</i></dt>
-<dd>
-
-<p>Binds keys for the pager. Works like the <code>map</code> command.</p>
-
-</dd>
 <dt id="prompt_metadata-keys">prompt_metadata [<i>keys ...</i>]</dt>
 <dd>
 
 <p>Prompt the user to input metadata with the <code>meta</code> command for multiple keys in a row.</p>
-
-</dd>
-<dt id="punmap-keys">punmap [<i>keys ...</i>]</dt>
-<dd>
-
-<p>Removes key mappings of the pager. Works like the <code>unmap</code> command.</p>
 
 </dd>
 <dt id="quit">quit</dt>
@@ -1740,7 +2075,14 @@
 
 <p>This can be used to re-evaluate the rc.conf file after changing it:</p>
 
-<pre><code> map X chain shell vim -p %confdir/rc.conf %rangerdir/config/rc.conf; source %confdir/rc.conf</code></pre>
+<pre><code> map X chain shell vim -p %confdir/rc.conf %rangerdir/config/rc.conf; \
+                   source %confdir/rc.conf</code></pre>
+
+</dd>
+<dt id="scroll_preview-value">scroll_preview <i>value</i></dt>
+<dd>
+
+<p>Scroll the file preview by <i>value</i> lines.</p>
 
 </dd>
 <dt id="terminal">terminal</dt>
@@ -1749,16 +2091,16 @@
 <p>Spawns the <i>x-terminal-emulator</i> starting in the current directory.</p>
 
 </dd>
-<dt id="tmap-key-command">tmap <i>key</i> <i>command</i></dt>
-<dd>
-
-<p>Binds keys for the taskview. Works like the <code>map</code> command.</p>
-
-</dd>
 <dt id="touch-filename">touch <i>filename</i></dt>
 <dd>
 
 <p>Creates an empty file with the name <i>filename</i>, unless it already exists.</p>
+
+</dd>
+<dt id="trash">trash</dt>
+<dd>
+
+<p>Move all files in the selection to the trash using rifle. Rifle tries to use a trash manager like <i>trash-cli</i> if available but will fall back to moving files to either <i>$XDG_DATA_HOME/ranger-trash</i> or <i>~/.ranger/ranger-trash</i>. This is a less permanent version of <i>delete</i>, relying on the user to clear out the trash whenever it&#39;s convenient. While having the possibility of restoring trashed files until this happens. ranger will ask for a confirmation if you attempt to trash multiple (marked) files or non-empty directories. This can be changed by modifying the setting &quot;confirm_on_delete&quot;.</p>
 
 </dd>
 <dt id="travel-pattern">travel <i>pattern</i></dt>
@@ -1769,16 +2111,22 @@
 <p>This command is based on the <i>scout</i> command and supports all of its options.</p>
 
 </dd>
-<dt id="tunmap-keys">tunmap [<i>keys ...</i>]</dt>
-<dd>
-
-<p>Removes key mappings of the taskview. Works like the <code>unmap</code> command.</p>
-
-</dd>
 <dt id="unmap-keys">unmap [<i>keys</i> ...]</dt>
 <dd>
 
-<p>Removes the given key mappings in the &quot;browser&quot; context. To unmap key bindings in the console, taskview, or pager use &quot;cunmap&quot;, &quot;tunmap&quot; or &quot;punmap&quot;.</p>
+</dd>
+<dt id="cunmap-keys">cunmap [<i>keys</i> ...]</dt>
+<dd>
+
+</dd>
+<dt id="punmap-keys">punmap [<i>keys</i> ...]</dt>
+<dd>
+
+</dd>
+<dt id="tunmap-keys">tunmap [<i>keys</i> ...]</dt>
+<dd>
+
+<p>Removes the given key mappings in the &quot;browser&quot; context. To unmap key bindings in the console, pager, or taskview use &quot;cunmap&quot;, &quot;punmap&quot; or &quot;tunmap&quot;.</p>
 
 </dd>
 <dt id="unmark-pattern">unmark <i>pattern</i></dt>
@@ -1898,7 +2246,7 @@
 <dt id="RANGER_LOAD_DEFAULT_RC">RANGER_LOAD_DEFAULT_RC</dt>
 <dd>
 
-<p>If this variable is set to FALSE, ranger will not load the default rc.conf. This can save time if you copied the whole rc.conf to ~/.config/ranger/ and don&#39;t need the default one at all.</p>
+<p>If this variable is set to FALSE, ranger will not load the default rc.conf. This can save time if you copied the whole rc.conf to <i>~/.config/ranger/</i> and don&#39;t need the default one at all.</p>
 
 </dd>
 <dt id="VISUAL">VISUAL</dt>
@@ -1923,6 +2271,48 @@
 <dd>
 
 <p>Defines the terminal emulator command that ranger is going to use with the :terminal command and the &quot;t&quot; run flag. Defaults to &quot;xterm&quot;.</p>
+
+</dd>
+<dt id="BAT_STYLE">BAT_STYLE</dt>
+<dd>
+
+<p>Specifies the theme to be used for syntax highlighting when <i>bat</i> is installed, unless <i>highlight</i> is also installed. Find out possible values by running <code>bat --list-themes</code>.</p>
+
+</dd>
+<dt id="PYGMENTIZE_STYLE">PYGMENTIZE_STYLE</dt>
+<dd>
+
+<p>Specifies the theme to be used for syntax highlighting when <i>pygmentize</i> is installed, unless <i>highlight</i> is also installed. Find out possible values by running: python -c &#39;import pygments.styles; [print(stl) for stl in pygments.styles.get_all_styles()]&#39;</p>
+
+</dd>
+<dt id="HIGHLIGHT_STYLE">HIGHLIGHT_STYLE</dt>
+<dd>
+
+<p>Specifies the theme to be used for syntax highlighting when <i>highlight</i> is installed. Find out possible values by running <code>highlight --list-themes</code>.</p>
+
+</dd>
+<dt id="HIGHLIGHT_TABWIDTH">HIGHLIGHT_TABWIDTH</dt>
+<dd>
+
+<p>Specifies the number of spaces to use to replace tabs in <i>highlight</i>ed files.</p>
+
+</dd>
+<dt id="HIGHLIGHT_OPTIONS">HIGHLIGHT_OPTIONS</dt>
+<dd>
+
+<p><i>highlight</i> will pick up command line options specified in this variable. A <code>--style=</code> option specified here will override <code>HIGHLIGHT_STYLE</code>. Similarly, <code>--replace-tabs=</code> will override <code>HIGHLIGHT_TABWIDTH</code>.</p>
+
+</dd>
+<dt id="OPENSCAD_COLORSCHEME">OPENSCAD_COLORSCHEME</dt>
+<dd>
+
+<p>Specifies the colorscheme used by <i>openscad</i> while previewing 3D models. Read <i>openscad</i> man page for colorschemes. Ranger will default to Tomorrow Night.</p>
+
+</dd>
+<dt id="OPENSCAD_IMGSIZE">OPENSCAD_IMGSIZE</dt>
+<dd>
+
+<p>Specifies the internal resolution <i>openscad</i> will use for rendering 3D models. The image will be downscaled to fit the preview pane. This resolution will default to &quot;1000,1000&quot; if no value is set.</p>
 
 </dd>
 <dt id="XDG_CONFIG_HOME">XDG_CONFIG_HOME</dt>
@@ -1981,7 +2371,7 @@
 
 <p>ranger is maintained with the git version control system. To fetch a fresh copy, run:</p>
 
-<pre><code> git clone git://git.savannah.nongnu.org/ranger.git</code></pre>
+<pre><code> git clone git@github.com:ranger/ranger.git</code></pre>
 
 <h1 id="SEE-ALSO">SEE ALSO</h1>
 
