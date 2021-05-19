@@ -20,3 +20,9 @@ To update the "dynamic" content:
 ## How to add news
 
 See news/README
+
+## How to deploy
+
+The website is currently deployed via [github
+pages](https://pages.github.com/). All you need to do is update master on
+[github.com/ranger/ranger.github.io](https://github.com/ranger/ranger.github.io)
