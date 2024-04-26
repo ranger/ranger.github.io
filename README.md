@@ -23,6 +23,14 @@ See news/README
 
 ## How to deploy
 
-The website is currently deployed via [github
-pages](https://pages.github.com/). All you need to do is update master on
-[github.com/ranger/ranger.github.io](https://github.com/ranger/ranger.github.io)
+The website is currently fragmented:
+
+- One domain is [https://ranger.github.io](ranger.github.io) which is served by [GitHub pages](https://pages.github.com)
+- Another domain is [https://ranger.fm](https://ranger.fm) which is served by [Codeberg pages](https://codeberg.page)
+
+The plan is to sunset the github.io domain and move over to ranger.fm in the long term.
+
+To deploy the page, currently you need to update the master branch on both github and codeberg:
+
+- [https://github.com/ranger/ranger.github.io](https://github.com/ranger/ranger.github.io)
+- [https://codeberg.org/ranger/pages](https://codeberg.org/ranger/pages)
