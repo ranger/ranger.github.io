@@ -25,7 +25,7 @@ See news/README
 
 The website is currently fragmented:
 
-- One domain is [https://ranger.github.io](ranger.github.io) which is served by [GitHub pages](https://pages.github.com)
+- One domain is [https://ranger.github.io](https://ranger.github.io) which is served by [GitHub pages](https://pages.github.com)
 - Another domain is [https://ranger.fm](https://ranger.fm) which is served by [Codeberg pages](https://codeberg.page)
 
 The plan is to sunset the github.io domain and move over to ranger.fm in the long term.
