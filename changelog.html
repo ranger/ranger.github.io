@@ -2,7 +2,8 @@
 <!--get head from index.html-->
 <html>
     <head>
-        <title></title>
+        <title>Ranger &mdash; console file manager with VI key bindings</title>
+        <link rel="icon" type="image/png" href="ranger_logo.png"/>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="ROBOTS" content="NOINDEX, NOFOLLOW" />
@@ -28,6 +29,13 @@
 <h1>Changelog</h1>
 <!--run markdown CHANGELOG | sed 's/h1>/h2>/g' -->
 <p>This log documents changes between stable versions.</p>
+
+<h2>2024-11-04: version 1.9.4</h2>
+
+<ul>
+<li>Fixed import error of deprecated imghdr python library</li>
+</ul>
+
 
 <h2>2019-12-31: version 1.9.3</h2>
 
@@ -56,18 +64,18 @@
 <li>Fixed <code>chmod</code> behavior with <code>000</code> quantifier</li>
 <li>Fixed a crash involving <code>Ctrl+space</code></li>
 <li>Fixed behavior of statusbar when resizing terminal window</li>
-<li>Fixed busyloop when ranger's STDIN was closed</li>
+<li>Fixed busyloop when ranger&rsquo;s STDIN was closed</li>
 <li>Fixed drawing of borders in st</li>
 <li>Fixed handling of macros for <code>chain</code></li>
 <li>Fixed unicode decoding errors for previews</li>
 <li>Improved VCS integration by truncating long commit messages</li>
 <li>Improved <code>bulkrename</code> behavior when moving files to a non-existing directory</li>
-<li>Improved <code>bulkrename</code>'s handling of files with utf-16 surrogates in the name</li>
+<li>Improved <code>bulkrename</code>&rsquo;s handling of files with utf-16 surrogates in the name</li>
 <li>Improved behavior of <code>rename_append</code> for directories</li>
 <li>Improved configurability of syntax highlighting previews</li>
 <li>Improved coverage of unofficial MIME types, mostly audio formats</li>
 <li>Improved documentation of <code>multipane</code> viewmode</li>
-<li>Improved documentation of optional dependencies </li>
+<li>Improved documentation of optional dependencies</li>
 <li>Improved documentation on <code>copymap</code></li>
 <li>Improved documentation on <code>tab_shift</code></li>
 <li>Improved documentation on <code>w3m_offset</code></li>
@@ -82,8 +90,9 @@
 <li>Improved updating of tmux/screen window names</li>
 <li>Improved updating of window titles</li>
 <li>Improved validation of bookmarks</li>
-<li>Improved w3m preview method for terminals that aren't quite compatible</li>
+<li>Improved w3m preview method for terminals that aren&rsquo;t quite compatible</li>
 </ul>
+
 
 <h2>2018-09-09: version 1.9.2</h2>
 
@@ -97,7 +106,7 @@ the history <code>C-p</code></li>
 <li>Added an avfs plugin</li>
 <li>Added an option to the move command to enable launching the selected file
 instead of the marked files</li>
-<li>Added filtering functionality inspired by dired's filter stack, <code>.n, .| ...</code></li>
+<li>Added filtering functionality inspired by dired&rsquo;s filter stack, <code>.n, .| ...</code></li>
 <li>Added image preview method for Kitty</li>
 <li>Added option to disable the display of free space for high latency situations</li>
 <li>Added section to <code>scope.sh</code> for pdf previews with mutool</li>
@@ -111,7 +120,7 @@ need a path and are unaware of bookmarks</li>
 <li>Changed behavior of positional arguments to the ranger command, if you
 specify a path to a file ranger will open with that file selected</li>
 <li>Changed the <code>tilde_in_titlebar</code> setting to influence the window titlebar too</li>
-<li>Changed the default colorscheme to work properly in terminals that don't
+<li>Changed the default colorscheme to work properly in terminals that don&rsquo;t
 equate bold and bright</li>
 <li>Fixed StopIteration errors</li>
 <li>Fixed embedded null errors</li>
@@ -122,10 +131,11 @@ equate bold and bright</li>
 <li>Improved PEP8 adherence</li>
 <li>Improved VCS symbols</li>
 <li>Improved <code>--cmd</code> functionality</li>
-<li>Improved file encoding detection by using chardet if it's available</li>
-<li>Rifle's flag t should now work with more terminals than xterm and urxvt</li>
+<li>Improved file encoding detection by using chardet if it&rsquo;s available</li>
+<li>Rifle&rsquo;s flag t should now work with more terminals than xterm and urxvt</li>
 <li>Update colorscheme documentation</li>
 </ul>
+
 
 <h2>2018-02-22: version 1.9.1</h2>
 
@@ -140,6 +150,7 @@ with the process substitution (<code>&gt;(...)</code> in Bash)</li>
 <li>Changed the behavior of <code>:reset</code> to reload the tags too</li>
 <li>Added <code>geeqie</code> to the default <code>rifle.conf</code></li>
 </ul>
+
 
 <h2>2018-01-25: version 1.9.0</h2>
 
@@ -158,6 +169,7 @@ with the process substitution (<code>&gt;(...)</code> in Bash)</li>
 <li>Renamed setting <code>cd_tab_smart</code> to <code>cd_tab_fuzzy</code></li>
 <li>Changed command for mercurial integration from <code>hg</code> to <code>chg</code></li>
 </ul>
+
 
 <h2>2017-11-19: version 1.9.0b6</h2>
 
@@ -188,12 +200,14 @@ running ranger with the new option <code>--show-only-dirs</code></li>
 <li>Changed <code>:shell -p ...</code> to display stderr in pager</li>
 </ul>
 
+
 <h2>2017-02-19: version 1.9.0b5</h2>
 
 <ul>
 <li>Fixed width calculation of multibyte characters in preview</li>
 <li>Fixed crash in iTerm2 preview with python 3.5</li>
 </ul>
+
 
 <h2>2017-02-10: version 1.9.0b1</h2>
 
@@ -214,7 +228,7 @@ running ranger with the new option <code>--show-only-dirs</code></li>
 <li>Fixed error message that occasionally pops up when changing settings</li>
 <li>Introduced extensive linting to ensure code quality</li>
 <li>Added continuous integration.  Patches now require <code>make test</code> to pass.</li>
-<li>Added handling of arguments in "$PAGER" environment variable</li>
+<li>Added handling of arguments in &ldquo;$PAGER&rdquo; environment variable</li>
 <li>Added quote parsing for <code>:setlocal path=...</code></li>
 <li>Added <code>ys</code> to copy the selection to clipboard</li>
 <li>Added setting <code>hostname_in_titlebar</code></li>
@@ -222,7 +236,7 @@ running ranger with the new option <code>--show-only-dirs</code></li>
 <li>Added example plugin <code>plugin_fasd_add.py</code></li>
 <li>Added command <code>jump_non</code> to jump to the first non-directory file</li>
 <li>Added additional arguments to the command <code>:rename_append</code></li>
-<li>Added key binding 'zz' as an alternative to 'zf'</li>
+<li>Added key binding &lsquo;zz&rsquo; as an alternative to &lsquo;zf&rsquo;</li>
 <li>Added option <code>-c</code> to the <code>rifle</code> file opener command</li>
 <li>Added support for <code>$XDG_DATA_HOME</code></li>
 <li>Avoid exiting ranger while copying.  Use <code>:quit!</code> to quit while copying.</li>
@@ -236,11 +250,13 @@ running ranger with the new option <code>--show-only-dirs</code></li>
 <li>Automatically update bookmarks+tags when renaming them via ranger</li>
 </ul>
 
+
 <h2>2017-01-08: version 1.8.1</h2>
 
 <ul>
 <li>Fixed <code>:scout</code> break due to incompatible change in python 3.6</li>
 </ul>
+
 
 <h2>2016-12-24: version 1.8.0</h2>
 
@@ -270,6 +286,7 @@ the urxvt background (requires urxvt compiled with pixbuf support)</li>
 username/hostname for quick copy&amp;pasting by shift+double-clicking on it.</li>
 </ul>
 
+
 <h2>2015-10-04: version 1.7.2</h2>
 
 <ul>
@@ -287,6 +304,7 @@ username/hostname for quick copy&amp;pasting by shift+double-clicking on it.</li
 operation in a first-in-first-out order.</li>
 </ul>
 
+
 <h2>2015-05-04: version 1.7.1</h2>
 
 <ul>
@@ -296,6 +314,7 @@ operation in a first-in-first-out order.</li>
 <li>Fixed <code>:bulkrename</code> command in python3</li>
 <li>Fixed <code>S</code> key binding not working when SHELL=fish</li>
 </ul>
+
 
 <h2>2015-04-13: version 1.7.0</h2>
 
@@ -324,6 +343,7 @@ The full commands.py is still copied to <code>~/.config/ranger/commands_full.py<
 <li>Fixed broken copying of symlinks</li>
 </ul>
 
+
 <h2>2013-05-24: Version 1.6.1</h2>
 
 <ul>
@@ -335,10 +355,11 @@ to handle opening of all images in a directory at once.</li>
 <li>Now previewing with <code>i</code> uses the whole available width.</li>
 </ul>
 
+
 <h2>2013-02-22: Version 1.6.0</h2>
 
 <ul>
-<li>Overhauled all config files.  Please update them or use the --clean switch</li>
+<li>Overhauled all config files.  Please update them or use the &ndash;clean switch</li>
 <li>Added <code>examples/</code> directory to source code which contains sample programs or
 plugins that can be used together with ranger</li>
 <li>Added progress bars to copying, moving and directory loading processes</li>
@@ -376,11 +397,13 @@ please use <code>rifle [filename]</code> instead.</li>
 <li>Fixed <code>draw_borders=true</code> in combination with <code>padding_right=false</code></li>
 </ul>
 
+
 <h2>2012-08-10: Version 1.5.5</h2>
 
 <ul>
 <li>Ensure that detached programs continue to run when ranger is killed</li>
 </ul>
+
 
 <h2>2012-05-03: Version 1.5.4</h2>
 
@@ -390,13 +413,14 @@ please use <code>rifle [filename]</code> instead.</li>
 <li>Speedup in <code>ranger.ext.get_executables</code></li>
 </ul>
 
+
 <h2>2012-03-05: Version 1.5.3</h2>
 
 <ul>
-<li>Added --selectfile option that selects a certain file on startup</li>
-<li>Added --list-tagged-files option</li>
-<li>Added --cmd option to run commands on startup</li>
-<li>Added --profile option for additional debug information on exit</li>
+<li>Added &ndash;selectfile option that selects a certain file on startup</li>
+<li>Added &ndash;list-tagged-files option</li>
+<li>Added &ndash;cmd option to run commands on startup</li>
+<li>Added &ndash;profile option for additional debug information on exit</li>
 <li>Added a visual mode (activate with <code>V</code>, deactivate with Esc)</li>
 <li>Added a reversed visual mode (activate with <code>uV</code>)</li>
 <li>Added <code>$RANGER_LEVEL</code> environment variable which ranger sets to <code>1</code> or higher
@@ -415,6 +439,7 @@ so programs can know that they were spawned from ranger</li>
 <li>Fixed crash when opening images with sxiv/feh by running <code>ranger &lt;image&gt;</code></li>
 </ul>
 
+
 <h2>2011-10-23: Version 1.5.2</h2>
 
 <ul>
@@ -422,12 +447,13 @@ so programs can know that they were spawned from ranger</li>
 characters at the right edge.</li>
 </ul>
 
+
 <h2>2011-10-23: Version 1.5.1</h2>
 
 <ul>
 <li>Added <code>fm.select_file(path)</code></li>
-<li>Added --choosefiles option (like --choosefile, but chooses multiple files)</li>
-<li>Fixed --list-unused-keys</li>
+<li>Added &ndash;choosefiles option (like &ndash;choosefile, but chooses multiple files)</li>
+<li>Fixed &ndash;list-unused-keys</li>
 <li>Fixed Zombie processes</li>
 <li>Fixed handling of filenames with undecodable bytes (unicode surrogates)</li>
 <li>Fixed crashes due to incomplete loading of directories</li>
@@ -436,21 +462,22 @@ characters at the right edge.</li>
 <li>Fixed parsing of chained commands (like in the binding <code>om</code>)</li>
 </ul>
 
+
 <h2>2011-10-11: Version 1.5.0</h2>
 
 <ul>
 <li>Full python3.2 compatibility</li>
 <li>Added new configuration file <code>rc.conf</code> which contains a list
 of commands that are executed on startup - mainly used for keybindings</li>
-<li>Added --list-unused-keys</li>
+<li>Added &ndash;list-unused-keys</li>
 <li>Added new program handlers to apps.py</li>
 <li>Added pop-up window for keychains and bookmarks</li>
 <li>Added <code>load_default_rc</code> option</li>
 <li>Fixed all known unicode issues</li>
 <li>Fixed crash when $TERM is unknown to the system</li>
 <li>Fixed scrolling in colored preview</li>
-<li>Changed the default <code>column_ratios</code> to 1/3/4 and sorting method to <code>natural</code></li>
-<li>Changed :rename so it doesn't overwrite existing files</li>
+<li>Changed the default <code>column_ratios</code> to 1/&frac34; and sorting method to <code>natural</code></li>
+<li>Changed :rename so it doesn&rsquo;t overwrite existing files</li>
 <li>Internal actions are now accessible as commands</li>
 <li>Replaced unittests by doctests</li>
 <li>Replaced integrated help with an extended man page and dynamic lists
@@ -470,6 +497,7 @@ commands than :shell, for example :edit %f</li>
 <li>Countless small fixes and improvements</li>
 </ul>
 
+
 <h2>2011-10-02: Version 1.4.4</h2>
 
 <ul>
@@ -480,7 +508,7 @@ commands than :shell, for example :edit %f</li>
 <li>Added option <code>display_tags_in_all_columns</code></li>
 <li>Added command.cancel method which is called when pressing ESC in console</li>
 <li>Added sorting and cycling by ctime and atime</li>
-<li>Added custom tags (press "x)</li>
+<li>Added custom tags (press &ldquo;x)</li>
 <li>Added bittorrent preview</li>
 <li>Fixed blocking when using interactive scripts in scope.sh</li>
 <li>Fixed issues with ALT key</li>
@@ -488,6 +516,7 @@ commands than :shell, for example :edit %f</li>
 <li>Forbid piping things into ranger</li>
 <li>Improved hints</li>
 </ul>
+
 
 <h2>2011-04-05: Version 1.4.3</h2>
 
@@ -497,13 +526,15 @@ commands than :shell, for example :edit %f</li>
 <li>Minor improvements</li>
 </ul>
 
+
 <h2>2011-03-05: Version 1.4.2</h2>
 
 <ul>
-<li>Added --choosefile and --choosedir flag</li>
+<li>Added &ndash;choosefile and &ndash;choosedir flag</li>
 <li>Added use of bookmarks in tab completion of the :cd command</li>
 <li>Fixed bug with detached programs and python 3.2</li>
 </ul>
+
 
 <h2>2011-01-04: Version 1.4.1</h2>
 
@@ -511,6 +542,7 @@ commands than :shell, for example :edit %f</li>
 <li>Fixed crash when preview failed under some circumstances</li>
 <li>Fixed graphical bug when pressing i</li>
 </ul>
+
 
 <h2>2010-12-22: Version 1.4.0</h2>
 
@@ -532,6 +564,7 @@ the copied files between ranger instances</li>
 <li>Some restructuration of the source code</li>
 </ul>
 
+
 <h2>2010-12-13: Version 1.2.3</h2>
 
 <ul>
@@ -542,22 +575,25 @@ the copied files between ranger instances</li>
 <li>Fixed lazy lookup of some FSObject attributes</li>
 </ul>
 
+
 <h2>2010-10-10: Version 1.2.2</h2>
 
 <ul>
 <li>Prevent currently used directories from being garbage collected</li>
 <li>Disable mouse buttons when console is open</li>
-<li>Fixed :cd command: Without arguments, cd's into $HOME</li>
+<li>Fixed :cd command: Without arguments, cd&rsquo;s into $HOME</li>
 <li>Fixed bug which prevented pydoc to work on some config files</li>
 <li>Fixed some bugs in <code>snow</code> and <code>jungle</code> colorschemes</li>
 <li>Several other clean-ups and fixes</li>
 </ul>
+
 
 <h2>2010-09-16: Version 1.2.1</h2>
 
 <ul>
 <li>Fixed yy/pp bug when yanking multiple directories</li>
 </ul>
+
 
 <h2>2010-09-13: Version 1.2.0</h2>
 
@@ -575,6 +611,7 @@ the copied files between ranger instances</li>
 <li>Several clean-ups and fixes</li>
 </ul>
 
+
 <h2>2010-07-17: Version 1.1.2</h2>
 
 <ul>
@@ -584,6 +621,7 @@ the copied files between ranger instances</li>
 <li>Minor fixes</li>
 </ul>
 
+
 <h2>2010-06-18: Version 1.1.1</h2>
 
 <ul>
@@ -591,6 +629,7 @@ the copied files between ranger instances</li>
 <li>New flag for running programs: <code>w</code> (waits for enter press)</li>
 <li>Minor fixes</li>
 </ul>
+
 
 <h2>2010-06-09: Version 1.1.0</h2>
 
@@ -604,12 +643,13 @@ the copied files between ranger instances</li>
 <li>Possibility to turn off previews (zp and zP)</li>
 <li>Changing options with :set (e.g. <code>:set column_ratios=1,2,3,4</code>)</li>
 <li>Ask for confirmation when using :delete</li>
-<li>New invocation flag: --fail-unless-cd</li>
+<li>New invocation flag: &ndash;fail-unless-cd</li>
 <li>New hotkeys, commands, options.</li>
 <li>New syntax for ~/.ranger/keys.py</li>
 <li>Several user contributions</li>
 <li>And tons of general improvements</li>
 </ul>
+
 <!--/run-->
 <!--get foot from index.html-->
             <script type="text/javascript" src="mousetrap_1.6.2.min.js"></script>

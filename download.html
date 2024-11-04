@@ -2,7 +2,8 @@
 <!--get head from index.html-->
 <html>
     <head>
-        <title></title>
+        <title>Ranger &mdash; console file manager with VI key bindings</title>
+        <link rel="icon" type="image/png" href="ranger_logo.png"/>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="ROBOTS" content="NOINDEX, NOFOLLOW" />
@@ -37,6 +38,7 @@
 <a href="https://github.com/ranger/ranger/releases">releases on github</a></li>
 </ul>
 
+
 <p>Unpack the archive, enter the directory and run ranger:</p>
 
 <pre><code>tar xvf ranger-stable.tar.gz
@@ -69,7 +71,8 @@ git commit -a        # commit your changes to your local branch
 
 <h2 id="signed-packages">Signed Packages</h2>
 
-<p>If you want to be sure of the authenticity of the snapshot, please download <a href="ranger-stable.tar.gz">ranger-stable.tar.gz</a> and its <a href="ranger-stable.tar.gz.sig">signature</a>, then verify the signature with the author's public keys:</p>
+
+<p>If you want to be sure of the authenticity of the snapshot, please download <a href="ranger-stable.tar.gz">ranger-stable.tar.gz</a> and its <a href="ranger-stable.tar.gz.sig">signature</a>, then verify the signature with the author&rsquo;s public keys:</p>
 
 <pre><code>gpg --search-keys 1E9B36EC051FF6F7FFC969A7F08CE1E200FB5CDF  # Roman Zimbelmann's key
 gpg --search-keys 30193C49CB39CD27008246ADE5902A52B247B8DE  # Wojciech Siewierski's key
@@ -80,13 +83,14 @@ gpg --verify ranger-stable.tar.gz.sig  # Check if the package was signed by one 
 <p>We usually use the <a href="https://pgp.mit.edu">MIT keyserver pgp.mit.edu</a> so you
 might want to add <code>--keyserver pgp.mit.edu</code> to the key search commands.</p>
 
-<p>If this prints <code>Good signature</code>, the signature was verified.  However, you can only trust the authenticity of the snapshot as much as you trust the authenticity of the public key. Please ensure that the key really belongs to Roman Zimbelmann (aka hut), Wojciech Siewierski (aka vifon) or Toon Nolten (aka toonn, __monty__) by verifying it from multiple sources.  Once you are sure, you can sign the key with your own signature as described <a href="http://www.dewinter.com/gnupg_howto/english/GPGMiniHowto-3.html#ss3.6">here</a> to avoid the warning that says "This key is not certified with a trusted signature! There is no indication that the signature belongs to the owner."</p>
+<p>If this prints <code>Good signature</code>, the signature was verified.  However, you can only trust the authenticity of the snapshot as much as you trust the authenticity of the public key. Please ensure that the key really belongs to Roman Zimbelmann (aka hut), Wojciech Siewierski (aka vifon) or Toon Nolten (aka toonn, __monty__) by verifying it from multiple sources.  Once you are sure, you can sign the key with your own signature as described <a href="http://www.dewinter.com/gnupg_howto/english/GPGMiniHowto-3.html#ss3.6">here</a> to avoid the warning that says &ldquo;This key is not certified with a trusted signature! There is no indication that the signature belongs to the owner.&rdquo;</p>
 
 <p>This is a list of all released packages since 1.2.2 with their signatures:</p><!-- /run -->
 
 <ul>
   <!-- run ls *.tar.gz | sort -r | sed 's,\(.*\),<li><a href="\1">\1</a> - <a href="\1.sig">signature</a></li>,' -->
 <li><a href="ranger-stable.tar.gz">ranger-stable.tar.gz</a> - <a href="ranger-stable.tar.gz.sig">signature</a></li>
+<li><a href="ranger-1.9.4.tar.gz">ranger-1.9.4.tar.gz</a> - <a href="ranger-1.9.4.tar.gz.sig">signature</a></li>
 <li><a href="ranger-1.9.3.tar.gz">ranger-1.9.3.tar.gz</a> - <a href="ranger-1.9.3.tar.gz.sig">signature</a></li>
 <li><a href="ranger-1.9.2.tar.gz">ranger-1.9.2.tar.gz</a> - <a href="ranger-1.9.2.tar.gz.sig">signature</a></li>
 <li><a href="ranger-1.9.1.tar.gz">ranger-1.9.1.tar.gz</a> - <a href="ranger-1.9.1.tar.gz.sig">signature</a></li>

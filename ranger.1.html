@@ -4,7 +4,7 @@
 <head>
 <title></title>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link rev="made" href="mailto:root@nixoss-imac.local" />
+<link rev="made" href="mailto:" />
 </head>
 
 <body>
@@ -430,37 +430,37 @@
 
 <p>Macros can be used in commands to abbreviate things.</p>
 
-<pre><code> %f   the highlighted file
- %d   the path of the current directory
- %s   the selected files in the current directory
- %t   all tagged files in the current directory
- %c   the full paths of the currently copied/cut files
- %p   the full paths of selected files</code></pre>
+<pre><code>%f   the highlighted file
+%d   the path of the current directory
+%s   the selected files in the current directory
+%t   all tagged files in the current directory
+%c   the full paths of the currently copied/cut files
+%p   the full paths of selected files</code></pre>
 
 <p>The macros %f, %d, %p, and %s also have upper case variants, %F, %D, %P, and %S, which refer to the next tab. To refer to specific tabs, add a number in between. (%7s = selection of the seventh tab.)</p>
 
 <p>%c is the only macro which ranges out of the current directory. So you may &quot;abuse&quot; the copying function for other purposes, like diffing two files which are in different directories:</p>
 
-<pre><code> Yank the file A (type yy), move to the file B, then type
- @diff %c %f</code></pre>
+<pre><code>Yank the file A (type yy), move to the file B, then type
+@diff %c %f</code></pre>
 
 <p>Macros for file paths are generally shell-escaped so they can be used in the <code>shell</code> command.</p>
 
 <p>When mapping keys you can use the placeholder &lt;any&gt;, the key entered in that position can be used through the %any and %any_path macros. (When using multiple &lt;any&gt; placeholders you can index the macros: %any0, %any_path0, %any1, %any_path1...) The macro %any will be replaced with the key pressed in the position of the &lt;any&gt; placeholder. The macro %any_path will be replaced with the path of the bookmark mapped to the key pressed in the position of the &lt;any&gt; placeholder. For example this macro can be used to echo the key that was pressed after &quot;c&quot;:</p>
 
-<pre><code> map c&lt;any&gt; echo %any</code></pre>
+<pre><code>map c&lt;any&gt; echo %any</code></pre>
 
 <p>%any is used in the ranger configuration to create a keybinding for adding a bookmark. c&lt;set_bookmark&gt; creates a bookmark for the current directory and the key for the bookmark is the first supplied argument. In this case the key pressed after &quot;m&quot;:</p>
 
-<pre><code> map m&lt;any&gt; set_bookmark %any</code></pre>
+<pre><code>map m&lt;any&gt; set_bookmark %any</code></pre>
 
 <p>The %any_path macro can be used to echo the path of the bookmark that is set to the key pressed after &quot;c&quot;:</p>
 
-<pre><code> map c&lt;any&gt; echo %any_path</code></pre>
+<pre><code>map c&lt;any&gt; echo %any_path</code></pre>
 
 <p>A practical example of the use of %any_path is the pasting of cut/copied files to a bookmarked directory:</p>
 
-<pre><code> map p&#39;&lt;any&gt; paste dest=%any_path</code></pre>
+<pre><code>map p&#39;&lt;any&gt; paste dest=%any_path</code></pre>
 
 <p>The macro %rangerdir expands to the directory of ranger&#39;s python library, you can use it for something like this command: alias show_commands shell less %rangerdir/config/commands.py</p>
 
@@ -496,18 +496,18 @@
 
 <p>Flags give you a way to modify the behavior of the spawned process. They are used in the commands <code>:open_with</code> (key &quot;r&quot;) and <code>:shell</code> (key &quot;!&quot;).</p>
 
-<pre><code> f   Fork the process, i.e. run in background. Please use this flag
-     instead of calling &quot;disown&quot; or &quot;nohup&quot;, to avoid killing the
-     background command when pressing Ctrl+C in ranger.
- c   Run the current file only, instead of the selection
- r   Run application with root privilege (requires sudo)
- t   Run application in a new terminal window</code></pre>
+<pre><code>f   Fork the process, i.e. run in background. Please use this flag
+    instead of calling &quot;disown&quot; or &quot;nohup&quot;, to avoid killing the
+    background command when pressing Ctrl+C in ranger.
+c   Run the current file only, instead of the selection
+r   Run application with root privilege (requires sudo)
+t   Run application in a new terminal window</code></pre>
 
 <p>There are some additional flags that can currently be used only in the <code>shell</code> command: (for example <code>:shell -w df</code>)</p>
 
-<pre><code> p   Redirect output to the pager
- s   Silent mode.  Output will be discarded.
- w   Wait for an Enter-press when the process is done</code></pre>
+<pre><code>p   Redirect output to the pager
+s   Silent mode.  Output will be discarded.
+w   Wait for an Enter-press when the process is done</code></pre>
 
 <p>By default, all the flags are off unless otherwise specified in <i>rc.conf</i> key bindings or <i>rifle.conf</i> rules. You can specify as many flags as you want. An uppercase flag negates the effect: &quot;ffcccFsf&quot; is equivalent to &quot;cs&quot;.</p>
 
@@ -523,11 +523,11 @@
 
 <p>There are some hooks that are specifically made for the use in plugins. They are functions that start with hook_ and can be found throughout the code.</p>
 
-<pre><code> grep &#39;def hook_&#39; -r /path/to/rangers/source</code></pre>
+<pre><code>grep &#39;def hook_&#39; -r /path/to/rangers/source</code></pre>
 
 <p>Also try:</p>
 
-<pre><code> pydoc ranger.api</code></pre>
+<pre><code>pydoc ranger.api</code></pre>
 
 <p>Note that you should NOT simply overwrite a function unless you know what you&#39;re doing. Instead, save the existing function and call it from your new one. This way, multiple plugins can use the same hook. There are several sample plugins in the <i>/usr/share/doc/ranger/examples/</i> directory, including a hello-world plugin that describes this procedure.</p>
 
@@ -1015,22 +1015,22 @@
 
 <p>Settings can be changed in the file <i>~/.config/ranger/rc.conf</i> or on the fly with the command <b>:set option value</b>. Examples:</p>
 
-<pre><code> set column_ratios 1,2,3
- set show_hidden true</code></pre>
+<pre><code>set column_ratios 1,2,3
+set show_hidden true</code></pre>
 
 <p>Toggling options can be done with:</p>
 
-<pre><code> set show_hidden!</code></pre>
+<pre><code>set show_hidden!</code></pre>
 
 <p>The different types of settings and an example for each type:</p>
 
-<pre><code> setting type   | example values
- ---------------+----------------------------
- bool           | true, false
- integer        | 1, 23, 1337
- string         | foo, hello world
- list           | 1,2,3,4
- none           | none</code></pre>
+<pre><code>setting type   | example values
+---------------+----------------------------
+bool           | true, false
+integer        | 1, 23, 1337
+string         | foo, hello world
+list           | 1,2,3,4
+none           | none</code></pre>
 
 <p>You can view a list of all settings and their current values by pressing &quot;3?&quot; in ranger.</p>
 
@@ -1065,9 +1065,9 @@
 
 <p>Changes case sensitivity for the &quot;cd&quot; command tab completion. Possible values are:</p>
 
-<pre><code> sensitive
- insensitive
- smart</code></pre>
+<pre><code>sensitive
+insensitive
+smart</code></pre>
 
 </dd>
 <dt id="cd_tab_fuzzy-bool">cd_tab_fuzzy [bool]</dt>
@@ -1141,10 +1141,10 @@
 
 <p>Draw borders around or between the columns? Possible values are:</p>
 
-<pre><code> none           no borders of any sort
- outline        draw an outline around all the columns
- separators     draw only vertical lines between columns
- both           both of the above</code></pre>
+<pre><code>none           no borders of any sort
+outline        draw an outline around all the columns
+separators     draw only vertical lines between columns
+both           both of the above</code></pre>
 
 </dd>
 <dt id="draw_progress_bar_in_status_bar-bool">draw_progress_bar_in_status_bar [bool]</dt>
@@ -1170,7 +1170,7 @@
 
 <p>Like filter_inode_type, but globally for all directories. Useful in combination with <b>--choosedir</b>:</p>
 
-<pre><code> ranger --choosedir=/tmp/x --cmd=&#39;set global_inode_type_filter d&#39;</code></pre>
+<pre><code>ranger --choosedir=/tmp/x --cmd=&#39;set global_inode_type_filter d&#39;</code></pre>
 
 </dd>
 <dt id="hidden_filter-string">hidden_filter [string]</dt>
@@ -1178,7 +1178,7 @@
 
 <p>A regular expression pattern for files which should be hidden. For example, this pattern will hide all files that start with a dot or end with a tilde.</p>
 
-<pre><code> set hidden_filter ^\.|~$</code></pre>
+<pre><code>set hidden_filter ^\.|~$</code></pre>
 
 </dd>
 <dt id="hint_collapse_threshold-int">hint_collapse_threshold [int]</dt>
@@ -1222,9 +1222,9 @@
 
 <p>Show line numbers in main column. Possible values are:</p>
 
-<pre><code> false      turn the feature off
- absolute   absolute line numbers for use with &quot;&lt;N&gt;gg&quot;
- relative   relative line numbers for &quot;&lt;N&gt;k&quot; or &quot;&lt;N&gt;j&quot;</code></pre>
+<pre><code>false      turn the feature off
+absolute   absolute line numbers for use with &quot;&lt;N&gt;gg&quot;
+relative   relative line numbers for &quot;&lt;N&gt;k&quot; or &quot;&lt;N&gt;j&quot;</code></pre>
 
 </dd>
 <dt id="max_console_history_size-integer-none">max_console_history_size [integer, none]</dt>
@@ -1262,8 +1262,8 @@
 
 <p>Start line numbers from 1. Possible values are:</p>
 
-<pre><code> false      start line numbers from 0
- true       start line numbers from 1</code></pre>
+<pre><code>false      start line numbers from 0
+true       start line numbers from 1</code></pre>
 
 </dd>
 <dt id="open_all_images-bool">open_all_images [bool]</dt>
@@ -1461,10 +1461,10 @@
 
 <p>Sets the state for the version control backend. The possible values are:</p>
 
-<pre><code> disabled   Don&#39;t display any information.
- local      Display only local state.
- enabled    Display both, local and remote state.
-            May be slow for hg and bzr.</code></pre>
+<pre><code>disabled   Don&#39;t display any information.
+local      Display only local state.
+enabled    Display both, local and remote state.
+           May be slow for hg and bzr.</code></pre>
 
 </dd>
 <dt id="vcs_msg_length-int">vcs_msg_length [int]</dt>
@@ -1517,66 +1517,66 @@
 
 <p>You can always get a list of the currently existing commands by typing &quot;?c&quot; in ranger. For your convenience, this is a list of the &quot;public&quot; commands including their parameters, excluding descriptions:</p>
 
-<pre><code> alias [newcommand] [oldcommand]
- bulkrename
- cd [path]
- chain command1[; command2[; command3...]]
- chmod octal_number
- cmap key command
- console [-pSTARTPOSITION] command
- copycmap key newkey [newkey2...]
- copymap key newkey [newkey2...]
- copypmap key newkey [newkey2...]
- copytmap key newkey [newkey2...]
- cunmap keys...
- default_linemode [path=regexp | tag=tags] linemodename
- delete
- echo [text]
- edit [filename]
- eval [-q] python_code
- filter [string]
- filter_inode_type [dfl]
- find pattern
- flat level
- grep pattern
- help
- jump_non [-FLAGS...]
- linemode linemodename
- load_copy_buffer
- map key command
- mark pattern
- mark_tag [tags]
- meta key value
- mkdir dirname
- open_with [application] [flags] [mode]
- pmap key command
- prompt_metadata [key1 [key2 [...]]]
- punmap keys...
- quit
- quit!
- quitall
- quitall!
- relink newpath
- rename_append [-FLAGS...]
- rename newname
- save_copy_buffer
- scout [-FLAGS...] pattern
- search pattern
- search_inc pattern
- set option value
- setintag tags option value
- setlocal [path=&lt;path&gt;] option value
- shell [-FLAGS...] command
- source filename
- terminal
- tmap key command
- touch filename
- trash
- travel pattern
- tunmap keys...
- unmap keys...
- unmark pattern
- unmark_tag [tags]</code></pre>
+<pre><code>alias [newcommand] [oldcommand]
+bulkrename
+cd [path]
+chain command1[; command2[; command3...]]
+chmod octal_number
+cmap key command
+console [-pSTARTPOSITION] command
+copycmap key newkey [newkey2...]
+copymap key newkey [newkey2...]
+copypmap key newkey [newkey2...]
+copytmap key newkey [newkey2...]
+cunmap keys...
+default_linemode [path=regexp | tag=tags] linemodename
+delete
+echo [text]
+edit [filename]
+eval [-q] python_code
+filter [string]
+filter_inode_type [dfl]
+find pattern
+flat level
+grep pattern
+help
+jump_non [-FLAGS...]
+linemode linemodename
+load_copy_buffer
+map key command
+mark pattern
+mark_tag [tags]
+meta key value
+mkdir dirname
+open_with [application] [flags] [mode]
+pmap key command
+prompt_metadata [key1 [key2 [...]]]
+punmap keys...
+quit
+quit!
+quitall
+quitall!
+relink newpath
+rename_append [-FLAGS...]
+rename newname
+save_copy_buffer
+scout [-FLAGS...] pattern
+search pattern
+search_inc pattern
+set option value
+setintag tags option value
+setlocal [path=&lt;path&gt;] option value
+shell [-FLAGS...] command
+source filename
+terminal
+tmap key command
+touch filename
+trash
+travel pattern
+tunmap keys...
+unmap keys...
+unmark pattern
+unmark_tag [tags]</code></pre>
 
 <p>There are additional commands which are directly translated to python functions, one for every method in the ranger.core.actions.Actions class. They are not documented here, since they are mostly for key bindings, not to be typed in by a user. Read the source if you are interested in them.</p>
 
@@ -1707,15 +1707,15 @@
 
 <p>Manage the filter stack, adding, removing and manipulating filters. For example, to show only duplicate files and symlinks:</p>
 
-<pre><code>  :filter_stack add type f
-  :filter_stack add duplicate
-  :filter_stack add and
-  :filter_stack add type l
-  :filter_stack add or</code></pre>
+<pre><code>:filter_stack add type f
+:filter_stack add duplicate
+:filter_stack add and
+:filter_stack add type l
+:filter_stack add or</code></pre>
 
 <p>Or using the mapped keys:</p>
 
-<pre><code>  .f .&quot; .&amp; .l .|</code></pre>
+<pre><code>.f .&quot; .&amp; .l .|</code></pre>
 
 <p>Available subcommands:</p>
 
@@ -1857,26 +1857,26 @@
 
 <p>Sets the linemode of all files in the current directory. The linemode may be:</p>
 
-<pre><code> &quot;filename&quot;:
-   display each line as &quot;&lt;basename&gt;...&lt;size&gt;&quot;
- &quot;fileinfo&quot;:
-   display each line as &quot;&lt;basename&gt;...&lt;file(1) output&gt;&quot;
- &quot;mtime&quot;:
-   display each line as &quot;&lt;basename&gt;...&lt;mtime&gt;&quot; in ISO format
- &quot;humanreadablemtime&quot;:
-   display each line as &quot;&lt;basename&gt;...&lt;mtime&gt;&quot; in a human readable
-   format, more precise the more recent.
- &quot;sizemtime&quot;:
-   display each line as &quot;&lt;basename&gt;...&lt;size&gt; &lt;mtime&gt;&quot; in ISO format
- &quot;humanreadablesizemtime&quot;:
-   display each line as &quot;&lt;basename&gt;...&lt;size&gt; &lt;mtime&gt;&quot; in a human
-   readable format, more precise the more recent.
- &quot;permissions&quot;:
-   display each line as &quot;&lt;permissions&gt; &lt;owner&gt; &lt;group&gt; &lt;basename&gt;&quot;
- &quot;metatitle&quot;:
-   display metadata from .metadata.json files if available, fall back
-   to the &quot;filename&quot; linemode if no metadata was found.
-   See :meta command.</code></pre>
+<pre><code>&quot;filename&quot;:
+  display each line as &quot;&lt;basename&gt;...&lt;size&gt;&quot;
+&quot;fileinfo&quot;:
+  display each line as &quot;&lt;basename&gt;...&lt;file(1) output&gt;&quot;
+&quot;mtime&quot;:
+  display each line as &quot;&lt;basename&gt;...&lt;mtime&gt;&quot; in ISO format
+&quot;humanreadablemtime&quot;:
+  display each line as &quot;&lt;basename&gt;...&lt;mtime&gt;&quot; in a human readable
+  format, more precise the more recent.
+&quot;sizemtime&quot;:
+  display each line as &quot;&lt;basename&gt;...&lt;size&gt; &lt;mtime&gt;&quot; in ISO format
+&quot;humanreadablesizemtime&quot;:
+  display each line as &quot;&lt;basename&gt;...&lt;size&gt; &lt;mtime&gt;&quot; in a human
+  readable format, more precise the more recent.
+&quot;permissions&quot;:
+  display each line as &quot;&lt;permissions&gt; &lt;owner&gt; &lt;group&gt; &lt;basename&gt;&quot;
+&quot;metatitle&quot;:
+  display metadata from .metadata.json files if available, fall back
+  to the &quot;filename&quot; linemode if no metadata was found.
+  See :meta command.</code></pre>
 
 <p>The custom linemodes may be added by subclassing the <i>LinemodeBase</i> class. See the <i>ranger.core.linemode</i> module for some examples.</p>
 
@@ -1926,8 +1926,8 @@
 
 <p>Set the metadata of the currently highlighted file. Example:</p>
 
-<pre><code> :meta title The Hitchhiker&#39;s Guide to the Galaxy
- :meta year 1979</code></pre>
+<pre><code>:meta title The Hitchhiker&#39;s Guide to the Galaxy
+:meta year 1979</code></pre>
 
 <p>This metadata can be displayed by, for example, using the &quot;metatitle&quot; line mode by typing Mt.</p>
 
@@ -2033,13 +2033,13 @@
 
 <p>Assigns a new value to an option. Valid options are listed in the settings section. Use tab completion to get the current value of an option, though this doesn&#39;t work for functions and regular expressions. Valid values are:</p>
 
-<pre><code> setting type   | example values
- ---------------+----------------------------
- bool           | true, false
- integer        | 1, 23, 1337
- string         | foo, hello world
- list           | 1,2,3,4
- none           | none</code></pre>
+<pre><code>setting type   | example values
+---------------+----------------------------
+bool           | true, false
+integer        | 1, 23, 1337
+string         | foo, hello world
+list           | 1,2,3,4
+none           | none</code></pre>
 
 </dd>
 <dt id="setintag-tags-option-value">setintag <i>tags</i> <i>option</i> <i>value</i></dt>
@@ -2049,7 +2049,7 @@
 
 <p>For example, to change the sorting order in your downloads directory, tag it with the <i>v</i> tag by typing <i>&quot;v</i>, then use this command:</p>
 
-<pre><code> setintag v sort ctime</code></pre>
+<pre><code>setintag v sort ctime</code></pre>
 
 </dd>
 <dt id="setlocal-path-path-option-value">setlocal [path=<i>path</i>] <i>option</i> <i>value</i></dt>
@@ -2075,8 +2075,8 @@
 
 <p>This can be used to re-evaluate the rc.conf file after changing it:</p>
 
-<pre><code> map X chain shell vim -p %confdir/rc.conf %rangerdir/config/rc.conf; \
-                   source %confdir/rc.conf</code></pre>
+<pre><code>map X chain shell vim -p %confdir/rc.conf %rangerdir/config/rc.conf; \
+                  source %confdir/rc.conf</code></pre>
 
 </dd>
 <dt id="scroll_preview-value">scroll_preview <i>value</i></dt>
@@ -2371,7 +2371,7 @@
 
 <p>ranger is maintained with the git version control system. To fetch a fresh copy, run:</p>
 
-<pre><code> git clone git@github.com:ranger/ranger.git</code></pre>
+<pre><code>git clone git@github.com:ranger/ranger.git</code></pre>
 
 <h1 id="SEE-ALSO">SEE ALSO</h1>
 
