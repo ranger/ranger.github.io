@@ -6,6 +6,7 @@
   [master.tar.gz](http://github.com/ranger/ranger/archive/master.tar.gz)
 * More downloads: [See below](#signed-packages) or find the
   [releases on github](https://github.com/ranger/ranger/releases)
+* License: GPL v3 (no "or later")
 
 Unpack the archive, enter the directory and run ranger:
 
