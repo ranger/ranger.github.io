@@ -1,6 +1,0 @@
-A news post is a .md file in this directory.
-
-The convention is that a file name should start with a timestamp in the format
-"%Y-%m-%d-%H%M-" (UTC), followed by a short description of the post, and the
-file extension ".md".  Use underscores instead of whitespace in the
-description.
